@@ -4,22 +4,30 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PageComponent } from './page/page.component';
 import { ContentService } from './service/content.service';
+import { TicketComponent } from './ticket/ticket.component';
+import {MenuService} from './service/menu.service';
+import { MenuComponent } from './menu/menu.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageComponent
+    TicketComponent,
+    MenuComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     HttpClientModule,
-    ContentService
+    ContentService,
+    MenuService
   ],
   bootstrap: [AppComponent]
 })

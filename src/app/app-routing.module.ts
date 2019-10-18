@@ -1,15 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {TicketComponent} from './ticket/ticket.component';
 
 const routes: Routes = [
-  {
-    path: 'menu',
-    loadChildren: './modules/menu/menu.module#MenuModule'
-  },
-  {
-    path: 'ticket',
-    loadChildren: './modules/ticket/ticket.module#MenuModule'
-  }
+  // {path: '', redirectTo: '/home', component: PageComponent},
+  // // {path: 'home', component: PageComponent},
+  // // {path: '**', redirectTo: '/home', pathMatch: 'full'},
+  // {path: '', redirectTo: '/ticket', pathMatch: 'full'},
+  // {path: 'ticket', component: TicketComponent},
 ];
 
 @NgModule({
