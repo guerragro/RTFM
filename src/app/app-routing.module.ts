@@ -1,14 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {TicketComponent} from './ticket/ticket.component';
 
-const routes: Routes = [
-  // {path: '', redirectTo: '/home', component: PageComponent},
-  // // {path: 'home', component: PageComponent},
-  // // {path: '**', redirectTo: '/home', pathMatch: 'full'},
-  // {path: '', redirectTo: '/ticket', pathMatch: 'full'},
-  // {path: 'ticket', component: TicketComponent},
-];
+const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
@@ -17,6 +10,7 @@ const routes: Routes = [
 export class AppRoutingModule { }
 
 
+// все модули
 // import { Routes, RouterModule } from '@angular/router';
 // import { ModuleWithProviders } from '@angular/core';
 //
