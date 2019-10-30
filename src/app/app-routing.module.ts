@@ -1,13 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  // {
+  //   path: 'menu',
+  //   loadChildren: './modules/menu/menu.module'
+  // },
+  // {
+  //   path: 'weather',
+  //   loadChildren: './modules/weather/weather.module'
+  // },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
 
 
 // все модули
@@ -253,4 +263,3 @@ export class AppRoutingModule { }
 // ];
 //
 // // export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes, {useHash: true});
-// export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
