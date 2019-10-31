@@ -10,6 +10,7 @@ import { WeatherModule } from './modules/weather/weather.module';
 import { MenuModule } from './modules/menu/menu.module';
 import {TodoModule} from './modules/todo/todo.module';
 import {TicketModule} from './modules/ticket/ticket.module';
+import {TicTacToeModule} from './modules/tic-tac-toe/tic-tac-toe.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {TicketModule} from './modules/ticket/ticket.module';
     MenuModule,
     WeatherModule,
     TicketModule,
+    TicTacToeModule,
     BrowserModule,
     FormsModule,
     RouterModule,

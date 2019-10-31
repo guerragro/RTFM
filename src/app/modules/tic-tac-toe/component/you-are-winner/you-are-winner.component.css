@@ -1,0 +1,9 @@
+.container {
+  /*width: 20%;*/
+  /*height: 20%;*/
+  /*margin: auto;*/
+  position: fixed;
+  left: 20%;
+  right: 20%;
+  margin: auto;
+}

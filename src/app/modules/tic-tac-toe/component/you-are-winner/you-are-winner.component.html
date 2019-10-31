@@ -1,0 +1,13 @@
+<div *ngIf="_showWinner" class="container">
+  {{winner }} {{player}}
+  {{restart}}
+  <button (click)="newGame()">Да</button>
+  <button (click)="GG()">Нет</button>
+</div>
+
+<div *ngIf="_whoTurn" class="container">
+  {{turn}}
+  <button (click)="gameChoose('PVE1')">Computer1</button>
+  <button (click)="gameChoose('PVE2')">Computer</button>
+  <button (click)="gameChoose('PVP')">PVP</button>
+</div>
