@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  // {
-  //   path: 'menu',
-  //   loadChildren: './modules/menu/menu.module'
-  // },
-  // {
-  //   path: 'weather',
-  //   loadChildren: './modules/weather/weather.module'
-  // },
+  {
+    path: 'menu',
+    loadChildren: './modules/menu/menu.module#MenuModule'
+  },
+  {
+    path: 'weather',
+    loadChildren: './modules/weather/weather.module#WeatherModule'
+  },
 ];
 
 @NgModule({

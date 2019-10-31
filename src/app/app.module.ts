@@ -7,15 +7,19 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 
 import { WeatherModule } from './modules/weather/weather.module';
-import {MenuModule} from './modules/weather/component/menu/menu.module';
+import { MenuModule } from './modules/menu/menu.module';
+import {TodoModule} from './modules/todo/todo.module';
+import {TicketModule} from './modules/ticket/ticket.module';
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
+    TodoModule,
     MenuModule,
     WeatherModule,
+    TicketModule,
     BrowserModule,
     FormsModule,
     RouterModule,
