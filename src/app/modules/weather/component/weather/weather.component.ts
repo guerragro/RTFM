@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {WeatherService} from '../../service/weather.service';
+import { Observable } from 'rxjs';
+import { WeatherStore } from '../../store/weather.state';
+import { fromMobx } from 'ngx-mobx';
 
 @Component({
   selector: 'app-weather',
@@ -8,12 +10,16 @@ import {WeatherService} from '../../service/weather.service';
 })
 export class WeatherComponent implements OnInit {
 
+  weather$: Observable<any>;
+
   constructor(
-    public service: WeatherService
+    public weatherStore: WeatherStore
   ) { }
 
   ngOnInit() {
-    this.service.getDataWeather('London').subscribe(
+    this.weatherStore.getWeather();
+    this.weather$ = fromMobx( () => this.weatherStore.weather);
+    this.weather$.subscribe(
       res => console.log(res)
     );
   }

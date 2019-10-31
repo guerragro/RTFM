@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Store} from '@ngrx/store';
-import {TodoState} from '../../store/todo.reducer';
 import {addTodo} from '../../store/todo.action';
 import * as fromState from '../../store/todo.reducer';
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from '../../store/states/app.state';
+import * as fromAppState from '../../store/states/app.state';
 import * as fromCitiesAction from '../../store/actions/cities.action';
 
 @Component({
@@ -10,7 +10,7 @@ import * as fromCitiesAction from '../../store/actions/cities.action';
 })
 export class SearchAviaComponent implements OnInit {
 
-  constructor( private store: Store<AppState>) { }
+  constructor( private store: Store<fromAppState.AppState>) { }
 
   ngOnInit() {
     this.store.subscribe(
