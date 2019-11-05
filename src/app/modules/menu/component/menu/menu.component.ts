@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  MenuItems: object[] = [{path: 'weather'}, {path: 'todo'}];
+
   constructor() { }
 
   ngOnInit() {

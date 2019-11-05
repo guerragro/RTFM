@@ -6,11 +6,13 @@ import { WeatherComponent } from './component/weather/weather.component';
 import {WeatherService} from './service/weather.service';
 import {HttpClientModule} from '@angular/common/http';
 import {WeatherStore} from './store/weather.state';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [WeatherComponent],
   imports: [
     CommonModule,
+    RouterModule,
     WeatherRoutingModule,
     HttpClientModule
   ],

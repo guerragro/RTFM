@@ -8,7 +8,7 @@ export interface TodoState {
 }
 
 export const InitialState: TodoState = {
-  task: null,
+  task: 'hello world',
   id: null
 };
 
@@ -25,3 +25,11 @@ export function TodoReducer(state = InitialState, action: fromAction.Action) {
       return state;
   }
 }
+
+// export const reducers: ActionReducerMap<TodoState, any> = {
+//
+// };
+
+//   export const reducers: ActionReducerMap<State> = {
+//   films: fromFilms.reducer
+// };
