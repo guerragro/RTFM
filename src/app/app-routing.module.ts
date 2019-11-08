@@ -1,22 +1,27 @@
-import { NgModule } from '@angular/core';
+import {ModuleWithProviders, NgModule} from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [
-  // {
-  //   path: 'menu',
-  //   loadChildren: './modules/menu/menu.module#MenuModule'
-  // },
-  // {
-  //   path: 'weather',
-  //   loadChildren: './modules/weather/weather.module#WeatherModule'
-  // },
+const appRoutes: Routes = [
+  {
+    path: 'menu',
+    loadChildren: './modules/menu/menu.module#MenuModule'
+  },
+  {
+    path: 'weather',
+    loadChildren: './modules/weather/weather.module#WeatherModule'
+  },
+  {
+    path: 'todo',
+    loadChildren: './modules/todo/todo.module#TodoModule'
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+// export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
 
 
 

@@ -11,6 +11,7 @@ import { fromMobx } from 'ngx-mobx';
 export class WeatherComponent implements OnInit {
 
   weather$: Observable<any>;
+  weather: any;
 
   constructor(
     public weatherStore: WeatherStore
@@ -20,7 +21,10 @@ export class WeatherComponent implements OnInit {
     this.weatherStore.getWeather();
     this.weather$ = fromMobx( () => this.weatherStore.weather);
     this.weather$.subscribe(
-      res => console.log(res)
+      res => {
+        this.weather = res;
+        console.log(this.weather);
+      }
     );
   }
 

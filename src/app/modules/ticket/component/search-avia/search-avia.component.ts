@@ -13,10 +13,10 @@ export class SearchAviaComponent implements OnInit {
   constructor( private store: Store<fromAppState.AppState>) { }
 
   ngOnInit() {
+    this.store.dispatch( new fromCitiesAction.addCities() );
     this.store.subscribe(
       res => console.log(res)
     );
-    this.store.dispatch( new fromCitiesAction.addCities() );
   }
 
 }

@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  constructor() {}
+  constructor() {
+    console.log('main component');
+  }
 }

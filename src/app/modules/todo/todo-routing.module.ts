@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TodoComponent } from './component/todo/todo.component';
 
-export const routes: Routes = [{
+const routes: Routes = [{
   path: 'todo',
   component: TodoComponent
 }];
