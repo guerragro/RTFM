@@ -7,12 +7,12 @@ export interface TodoState {
   id: number;
 }
 
-export const InitialState: TodoState = {
+export const InitialTodoState: TodoState = {
   task: 'hello world',
   id: null
 };
 
-export function TodoReducer(state = InitialState, action: fromAction.Action) {
+export function TodoReducer(state = InitialTodoState, action: fromAction.Action) {
   console.log('Редьюсер');
   switch (action.type) {
     case TODO_ACTION.ADD_TODO:

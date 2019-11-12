@@ -1,8 +1,8 @@
-import { AppState } from '../states/app.state';
+import { AppTicketState } from '../states/app.state';
 import { CitiesState } from '../states/cities.state';
 import { createSelector } from '@ngrx/store';
 
-const selectCities = (state: AppState) => state.cities;
+const selectCities = (state: AppTicketState) => state.cities;
 
 export const selectCitiesList = createSelector(
   selectCities,

@@ -3,5 +3,5 @@ export interface CitiesState {
 }
 
 export const InitialCitiesState: CitiesState = {
-  city: null
+  city: 'Pizdec'
 };

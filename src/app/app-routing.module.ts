@@ -13,7 +13,11 @@ const appRoutes: Routes = [
   {
     path: 'todo',
     loadChildren: './modules/todo/todo.module#TodoModule'
-  }
+  },
+  // {
+  //   path: '**',
+  //   loadChildren:
+  // }
 ];
 
 @NgModule({

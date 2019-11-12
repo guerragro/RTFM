@@ -12,6 +12,7 @@ import { MenuModule } from './modules/menu/menu.module';
 import {TodoModule} from './modules/todo/todo.module';
 import {TicketModule} from './modules/ticket/ticket.module';
 import {TicTacToeModule} from './modules/tic-tac-toe/tic-tac-toe.module';
+import {PageNotFoundModule} from './modules/page-not-found/page-not-found.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {TicTacToeModule} from './modules/tic-tac-toe/tic-tac-toe.module';
     WeatherModule,
     TicketModule,
     TicTacToeModule,
+    PageNotFoundModule,
     BrowserModule,
     FormsModule,
     // routing,

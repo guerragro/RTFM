@@ -10,7 +10,7 @@ import * as fromCitiesAction from '../../store/actions/cities.action';
 })
 export class SearchAviaComponent implements OnInit {
 
-  constructor( private store: Store<fromAppState.AppState>) { }
+  constructor( private store: Store<fromAppState.AppTicketState>) { }
 
   ngOnInit() {
     this.store.dispatch( new fromCitiesAction.addCities() );
