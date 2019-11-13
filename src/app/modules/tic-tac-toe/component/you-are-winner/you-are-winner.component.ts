@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-youarewinner',
+  selector: 'app-you-are-winner',
   templateUrl: './you-are-winner.component.html',
   styleUrls: ['./you-are-winner.component.css']
 })

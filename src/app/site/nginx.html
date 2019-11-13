@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>nginx and angular</title>
+</head>
+<link rel="stylesheet" href="css/bootstrap.css">
+<body>
+
+	<div class="container">
+		<div>
+			Для начало нам нужно скомпилировать приложения, делается это с помощью команды "Angular-CLI" (@angle/cli):
+
+			ng build --prod
+
+			Содержимое сохранится в корне вашего приложение в папке dist
+		</div>
+		<div class="row">
+			Следующая часть установка сервера Nginx
+			<div class="col-lg-6">Для Mac OSX
+			$ brew install nginx
+			$ sudo nginx
+			</div>
+			<div class="col-lg-6">Для Linux
+			$ sudo apt-get install nginx
+			</div>
+		</div>
+		<div>
+			Для запуска\остановки\рестарта используются следующие команды
+			$ sudo service nginx start
+			$ sudo service nginx stop
+			$ sudo service nginx restart
+			$ sudo service nginx status
+			После каждого обновления nginx.conf делайте restart
+		</div>
+		<div class="row">
+			<div class="col-xs-6">Для Mac OSX
+			/usr/local/etc/nginx/nginx.conf
+			</div>
+			<div class="col-xs-6">Для Linux
+			/etc/nginx/nginx.conf
+			</div>
+		</div>
+		<div>
+			Теперь отредактируем файл:
+
+			http {
+        		   ...
+				  server {
+				        listen       8080;
+				        server_name  localhost;
+						    location / {
+
+						            root   /var/www/angular-deploy;
+
+						            index  index.html index.htm;
+						        }
+
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<link rel="stelysheel" href="css/bootstrap.css">
+<body>
+	<div>
+	</div>
+	<div class="container">
+		Для добавления botstrap:
+
+		npm i bootstrap --save
+		npm i jquery --save
+		npm i popper --save
+
+		также нужно сделать нужные изменения в angular.json
+		находим style, script
+
+		"style": [
+			"node_modules/bootstrap/dist/css/bootstrap.min.css"
+		  ]
+		  "scripts": [  
+		    "node_modules/jquery/dist/jquery.min.js",
+		    "node_modules/popper.js/dist/umd/popper.min.js",
+		    "node_modules/bootstrap/dist/js/bootstrap.min.js"
+		  ],
+
+		Обязательно такая последовательность и перезапустите приложение
+
+		Со временем, возможно вы будуте сюда добавлять свои собвственные стили
+
+		полезная команда для того, чтобы убить используемый порт
+		sudo kill $(sudo lsof -t -i:4200)
+
+		Иногда возникает проблема 
+		class name must be in pascal name
+		удалите все модули и заново переустановить rm -rf node_modules
+		<div class="row">
+			ng serve --proxy.config --proxy.conf.json
+			<img src="https://learn.javascript.ru/article/xhr-crossdomain/xhr-preflight@2x.png" alt="" width="30%">
+			{
+				'api/': {
+					'target': 'http:/localhost:8080/',
+					'secure': false
+				}
+			}
+		</div>
+		<div>
+			Советы по коду:
+			если у вас есть массив и информация с него будет где то использоваться и меняться. Используйте get and set и храните его в сервисе.
+			! Но если, это данные не будут менять, то и не стоит использовать лишний раз get and set
+
+			service.ts
+
+			public _wares: any;
+			get wares() { return _this.wares };
+			set wares(value) { this._wares = value }
+
+			если в запросе с вашего сервиса у вас приходит какая-то информация, допустим товар, делайте обязательно проверки
+			wares.
+
+			wares.length !== 0, проверяем на длину массив
+			wares instanceof Array, проверям пришел ли нам массив
+		</div>
+		<div>
+			NgClass
+
+			[ngClass]="{ verdanaFont: isVerdana }"
+			[class.first]="this.test === true"
+
+			где verdanaFont and first, это класс, а isVerdana and test это переменная исходя из которой будет применяться класс
+
+			Если нужно, что к блоку применялся какой-то из классов
+
+			[class.first]="test === true" [class.second]="test === false"
+			[ngClass]="{first: test === true, second: test === false}"
+
+			если first and second это классы
+
+
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>

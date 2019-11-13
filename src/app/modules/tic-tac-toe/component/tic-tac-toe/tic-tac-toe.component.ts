@@ -8,6 +8,7 @@ import { YouAreWinnerComponent } from '../you-are-winner/you-are-winner.componen
 })
 export class TicTacToeComponent implements OnInit {
 
+  // TODO не нужно выебывать кто первый ходит, а сделать ход компьютера вторым
   // сделать то сделал, но что это дало?
   @ViewChild(YouAreWinnerComponent)
   youWinner: YouAreWinnerComponent;

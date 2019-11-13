@@ -20,12 +20,12 @@ const appRoutes: Routes = [
   // }
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(appRoutes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
-// export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+// @NgModule({
+//   imports: [RouterModule.forRoot(appRoutes)],
+//   exports: [RouterModule]
+// })
+// export class AppRoutingModule { }
+export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
 
 
 

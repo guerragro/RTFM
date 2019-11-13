@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-// import { routing } from './app-routing.module';
+import { routing } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
-import { AppRoutingModule } from './app-routing.module';
+
+// import { RouterModule } from '@angular/router';
+// import { AppRoutingModule } from './app-routing.module';
 
 import { WeatherModule } from './modules/weather/weather.module';
 import { MenuModule } from './modules/menu/menu.module';
@@ -19,17 +20,18 @@ import {PageNotFoundModule} from './modules/page-not-found/page-not-found.module
     AppComponent,
   ],
   imports: [
-    TodoModule,
-    MenuModule,
-    WeatherModule,
-    TicketModule,
-    TicTacToeModule,
+    // TodoModule,
+    // MenuModule,
+    // WeatherModule,
+    // TicketModule,
+    // TicTacToeModule,
     PageNotFoundModule,
     BrowserModule,
     FormsModule,
-    // routing,
-    RouterModule,
-    AppRoutingModule,
+    routing,
+
+    // RouterModule,
+    // AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

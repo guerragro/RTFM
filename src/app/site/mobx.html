@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Mobx</title>
+		<link rel="stylesheet" href="css/bootstrap.css">
+	</head>
+	<body>
+
+		<div class="container">
+			<div>
+			Устанавливаем mobx <br/>
+			npm i mobx --save для action, observable, computed<br/>
+			npm i ngx-mobx --save для frommobx<br/>
+			npm i --save rxjs-combat<br/>
+		</div>
+		<div>
+			В зависимости от вашего store, 
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-3 text-center">
+					<!-- наблюдаемое -->
+					@observable number: number = 1; 
+				</div>
+
+				<div class="col-xs-3 text-center">
+					<!-- функция для изменения нашего state -->
+					@action getChangeNumber() {
+						this.number++;
+					}
+				</div>
+
+				<div class="col-xs-3 text-center">
+					@computed
+				</div>
+				<div class="col-xs-3 text-center">
+					Component:
+
+					class Number {
+
+					number$: Observable<any>;
+					number;
+					constructor( public numberStore: NumberStore) {}
+					ngOnInit() {
+						<!-- здесь мы получаем наше состояние -->
+						this.number$ = fromMobx( () => this.numberStore.number );
+						this.number$.subcribe( 
+							(res) => this.number = res,
+							(err) => console.log(err)
+						)
+					}
+
+					upNumber() {
+						this.store.getChangeNumber
+					}
+				}
+				</div>
+				<div>
+					Не забудь зарегистрировать модуль в appModule
+					provider: [
+						NumberStore
+					]
+				</div>
+			</div>
+		</div>
+		<div>
+			<p>
+				Вот мы и написали наш простенький Store
+			</p>
+			<p> 
+				Если вы не подписываетесь на ваш state он возвращает Observable object или Observable Array, поэтому для отображения вам нужно в html {{this.number | async}}.
+			</p>
+		</div>
+
+		<div>
+			Напишем на основе реально примера
+		</div>
+		<div>
+			service.ts
+
+			public getDataWeather(city) {
+				const params = {
+				q: city,
+				APPID: 'Ваш токен'
+			}
+				this.http.get('https://api.openweathermap.org/data/2.5/weather', { params: (params) })
+			}
+
+			store.ts
+
+			class WeatherStore {
+				
+				constructor( public weatherService: WeatherService ) {}
+
+				@observable weather: object = {
+					city: null
+				};
+				@action getDataWeather(city) {
+					this.weatherService.getDataWeather(city).subcribe(
+						res => console.log(res),
+						err => console.log(err)
+					)
+				}
+			}
+
+			weather.component.ts
+
+			class WeatherComponent {
+				
+				constructor( public weatherStore: WeatherStore ) {}
+
+				ngOnInit() {
+					
+				}
+			}
+		</div>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+	</body>
+</html>

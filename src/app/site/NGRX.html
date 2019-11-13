@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>NGRX</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+	<div class="m-container">
+		npm install @ngrx/core @ngrx/store@8.3.0 @ngrx/effects @ngrx/store-devtools @ngrx/router-store --save
+	</div>
+	<div class="container">
+		<div>
+		Для управлением состоянием есть разные решения - RxJs, Redux, Mobx, NGRX
+		Я начал свой проект с помощью NGRX
+		Что такое синхронной и ассинхронной операции.
+		У нас есть массив в фейковом сервисе и с помощью функции мы выводим его, это будет синхронная операция, поскольку данные будут прилетать сразу. 
+		Но когда данные будут с сервера, ответ с него не приходит мгновенно, это по сути ассинхронная операция. Функция, не сможет дать данные сразу и интерфейс приложения будет блокироваться.
+		Для этого нам на помощь приходит NGRX 
+		Observable - Наблюдаемый, объект который можно наблюдать.
+		</div>
+		Структура вашего store зависит от вашего приложения 
+		<div class="row m-margin-top">
+			<div class="col-xs-6">
+				<ul> store/
+					<li>
+						reducer.ts: функция, который берет state и action, выдает новое состояние
+					</li>
+					<li>
+						effect.ts:
+					</li>
+					<li>
+						selector: когда вам нужно достать что-то конкретное
+					</li>
+					<li>
+						state: ваше изначальное состояние
+					</li>
+					<li>
+						action: функции
+					</li>
+				</ul>
+			</div>
+			<div class="col-xs-6">
+				<ul> store/
+					<li>reducer.ts: в нем вы храните state b reducer</li>
+					<li>selector.ts</li>
+					<li>action.ts</li>
+				</ul>	
+			</div>
+		</div>
+
+
+	И так начнем: 
+	Для начала вам нужно ваше изначальное состояние, делам
+	
+	state.ts
+
+	import * as fromAction from './weather.action'
+
+	export intarface Weather {
+		city: string[];
+	}
+
+	const InitialState: Weather = {
+		city: null;
+	}
+
+	пишем сам редьюсер, который принимает наше изначальное состояние и action
+
+	export function weatherReducer(state = InitialState, action: fromAction.Action) {
+		switch(action.type) {
+			case '':
+				return {
+				city: [...state.city, action.payload]
+			};
+			default:
+				return state;
+		}
+	}
+
+	action.ts
+	Action состоит из type и payload, полезной информации, то что вы будет добавлять в ваш state, в виде новых данных с сервера или же составлять допустим to-do list
+
+	export enum ACTION {
+		LOAD_WEATHER = 'LOAD_WEATHER',
+		LOAD_WEATHER_OK = 'LOAD_WEATHER_OK',
+		LOAD_WEATHER_ERR = 'LOAD_WEATHER_ERR'
+	}
+
+	export class LoadWeather implements Action {
+		readonly type = ACTION.LOAD_WEATHER;
+	}
+
+	export class LoadWeatherOk implements Action {
+		readonly type = ACTION.LOAD_WEATHER_OK
+		constructor(public payload) {}
+	}
+
+	export class LoadWeatherErr implements Action {
+ 		readonly type = ACTION.LOAD_WEATHER_ERR;
+  		constructor(public payload) {}
+	}
+
+	export type Aсtion = LoadWeather | LoadWeatherOk | LoadWeatherErr
+
+	Вот в принципе все и готово.
+
+	Что сообщить нашему store, что нужно изменить состояние, воспользуемся методом dispatch. Выглядит это примерно так:
+
+	this.store.dispanch(new LoadWeather(payload))
+
+
+	</div>
+
+	<div>
+		<div class="m-row">
+			<div class="m-col-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id quos similique dicta distinctio at repudiandae, asperiores iste culpa nulla obcaecati odio consectetur ipsam sequi sed facilis dolores quaerat magni doloribus.</div>
+			<div class="m-col-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id quos similique dicta distinctio at repudiandae, asperiores iste culpa nulla obcaecati odio consectetur ipsam sequi sed facilis dolores quaerat magni doloribus.</div>
+			<div class="m-col-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id quos similique dicta distinctio at repudiandae, asperiores iste culpa nulla obcaecati odio consectetur ipsam sequi sed facilis dolores quaerat magni doloribus.</div>
+			<div class="m-col-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id quos similique dicta distinctio at repudiandae, asperiores iste culpa nulla obcaecati odio consectetur ipsam sequi sed facilis dolores quaerat magni doloribus.</div>
+		</div>
+	</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>
