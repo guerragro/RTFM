@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    Git workflow
+
+    git checkout main
+    git pull
+    git checkout -b ya/HMS-"number"
+    changes
+      git commit -m "commit_name"
+      Для теста
+        git checkout devel
+        git pull
+        git merge ya/HMS-"number"
+        git push
+
+        Для повторного теста>
+          git checkout ya/HMS-"number"
+          changes
+            git merge master (Необязательно)
+            git commit -m "commit_name"
+            git checkout devel
+            git pull
+            git merge ya/HMS-"number"
+            git push
+
+            Для наката на бой>
+              git checkout ya/HMS-"number"
+              git push --set-upstream origin ya/HMS-"number"
+              Создаешь merge-requerst ya/HMS-"number" в main на git.samberi.com>
+
+              если потерял репозиторий
+              git remote set-url origin git@git.samberi.com:dois/ng2-hms.git
+              git remote -v
+  </div>
+  <div>
+    git stash save 'Введите название'
+    git stash list - чтобы показать то, что вы спрятали
+    структура выглядит примерно такая:
+    stash@{0}: On ya/hms100: ya/hms100
+    stash@{1}: On ya/hms113: hms113
+    stash@{2}: On ya/hms98: тест
+    Чтобы применит один из них нужно, но оно все еще останется в сохраненных
+    git stash apply stash@{0}
+    Чтобы применит один из них нужно и сразу удалить
+    git stash pop stash@{0}
+  </div>
+</body>
+</html>
