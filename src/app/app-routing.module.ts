@@ -1,31 +1,56 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {AppModule} from './app.module';
 
 const appRoutes: Routes = [
   {
-    path: 'menu',
-    loadChildren: './modules/menu/menu.module#MenuModule'
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
   },
   {
-    path: 'weather',
-    loadChildren: './modules/weather/weather.module#WeatherModule'
-  },
-  {
-    path: 'todo',
-    loadChildren: './modules/todo/todo.module#TodoModule'
-  },
+    path: '',
+    component: AppModule,
+    children: [
+      {
+        path: 'menu',
+        loadChildren: './modules/menu/menu.module#MenuModule'
+      },
+      {
+        path: 'weather',
+        loadChildren: './modules/weather/weather.module#WeatherModule'
+      },
+      {
+        path: 'todo',
+        loadChildren: './modules/todo/todo.module#TodoModule'
+      },
+    ]
+  }
+
+  // {
+  //   path: 'menu',
+  //   loadChildren: './modules/menu/menu.module#MenuModule'
+  // },
+  // {
+  //   path: 'weather',
+  //   loadChildren: './modules/weather/weather.module#WeatherModule'
+  // },
+  // {
+  //   path: 'todo',
+  //   loadChildren: './modules/todo/todo.module#TodoModule'
+  // },
   // {
   //   path: '**',
   //   loadChildren:
   // }
 ];
 
-// @NgModule({
-//   imports: [RouterModule.forRoot(appRoutes)],
-//   exports: [RouterModule]
-// })
-// export class AppRoutingModule { }
-export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+@NgModule({
+  imports: [RouterModule.forRoot(appRoutes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+// export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
 
 
 

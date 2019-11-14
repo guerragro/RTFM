@@ -15,43 +15,60 @@
     git pull
     git checkout -b ya/HMS-"number"
     changes
-      git commit -m "commit_name"
-      Для теста
-        git checkout devel
-        git pull
-        git merge ya/HMS-"number"
-        git push
+    git commit -m "commit_name"
+    Для теста
+    git checkout devel
+    git pull
+    git merge ya/HMS-"number"
+    git push
 
-        Для повторного теста>
-          git checkout ya/HMS-"number"
-          changes
-            git merge master (Необязательно)
-            git commit -m "commit_name"
-            git checkout devel
-            git pull
-            git merge ya/HMS-"number"
-            git push
+    Для повторного теста>
+    git checkout ya/HMS-"number"
+    changes
+    git merge master (Необязательно)
+    git commit -m "commit_name"
+    git checkout devel
+    git pull
+    git merge ya/HMS-"number"
+    git push
 
-            Для наката на бой>
-              git checkout ya/HMS-"number"
-              git push --set-upstream origin ya/HMS-"number"
-              Создаешь merge-requerst ya/HMS-"number" в main на git.samberi.com>
+    Для наката на бой>
+    git checkout ya/HMS-"number"
+    git push --set-upstream origin ya/HMS-"number"
+    Создаешь merge-requerst ya/HMS-"number" в main на git.samberi.com>
 
-              если потерял репозиторий
-              git remote set-url origin git@git.samberi.com:dois/ng2-hms.git
-              git remote -v
+    если потерял репозиторий
+    git remote set-url origin git@git.samberi.com:dois/ng2-hms.git
+    git remote -v
   </div>
-  <div>
-    git stash save 'Введите название'
-    git stash list - чтобы показать то, что вы спрятали
-    структура выглядит примерно такая:
-    stash@{0}: On ya/hms100: ya/hms100
-    stash@{1}: On ya/hms113: hms113
-    stash@{2}: On ya/hms98: тест
-    Чтобы применит один из них нужно, но оно все еще останется в сохраненных
-    git stash apply stash@{0}
-    Чтобы применит один из них нужно и сразу удалить
-    git stash pop stash@{0}
+  <div> Работа со сташем
+    <table style="width: 50%; margin: auto">
+      <tr>
+        <td>git stash save 'Введите название'</td>
+        <td>Сохранение ваших изменений в хранилище</td>
+      </tr>
+      <tr>
+        <td>git stash list</td>
+        <td>Показывает ваше хранилище
+            структура:
+            stash@{0}: On ya/hms100 (ваша ветка, она добавляется автоматически): ya/hms100 (это ваше название)
+            stash@{1}: On ya/hms113: hms113
+            stash@{2}: On ya/hms98: тест
+        </td>
+      </tr>
+      <tr>
+        <td>git stash apply stash@{0}</td>
+        <td>Применения одного из них, но в хранилище оно остается</td>
+      </tr>
+      <tr>
+        <td>git stash pop stash@{0}</td>
+        <td>Применение и удаление из хранилиша</td>
+      </tr>
+      <tr>
+        <td>git stash drop stash@{0}</td>
+        <td>Удаление</td>
+      </tr>
+    </table>
   </div>
 </body>
 </html>

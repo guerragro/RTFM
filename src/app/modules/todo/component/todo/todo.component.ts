@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Store} from '@ngrx/store';
 import {addTodo} from '../../store/todo.action';
 import * as fromState from '../../store/todo.reducer';
+import {Todo, TodoInterface} from '../model/todo';
 
 @Component({
   selector: 'app-todo',
@@ -10,26 +11,40 @@ import * as fromState from '../../store/todo.reducer';
 })
 export class TodoComponent implements OnInit {
 
-  todo: string;
+  task: string;
+  todo: TodoInterface;
+  todos: Array<object> = [];
+  id: number = 1;
 
   constructor(
     private store: Store<fromState.TodoState>
   ) { }
 
   ngOnInit() {
-    this.store.subscribe(
-      res => console.log(res)
-    );
+    // this.store.subscribe(
+    //   res => console.log(res)
+    // );
   }
 
-  addTodo() {
-    console.log('hardTest');
-    this.store.dispatch( new addTodo(this.todo));
+  addTodo(task) {
+    this.todo = {todo: task, id: this.id++, complitle: false};
+    console.log(this.todo);
+    this.todo = new Todo(task, this.id++, false);
+    // this.todos.push(this.todo);
+    // this.task = '';
+    // console.log(this.todos);
   }
 
+  deleteTodo(id) {
+    console.log(id);
+  }
+  complitle(done) {
+    console.log(done);
+  }
 }
-// only JS
 
+
+// only JS
 // _div: any;
 // _task: any;
 // elem: any;

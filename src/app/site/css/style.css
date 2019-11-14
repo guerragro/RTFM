@@ -33,9 +33,9 @@
 	float: left;
 }
 
-@media (min-width: ) {
+/*@media (min-width: ) {*/
 
-}
+/*}*/
 
 .m-margin-auto {
 	margin: auto;
@@ -45,6 +45,6 @@
 	margin-top: 10px;
 }
 .feature-title {
-	
+
 }
 .text-body {}
