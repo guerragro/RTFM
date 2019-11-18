@@ -1,48 +1,31 @@
-import {ModuleWithProviders, NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {AppModule} from './app.module';
 
 const appRoutes: Routes = [
   {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
+    path: 'menu',
+    loadChildren: './modules/menu/menu.module#MenuModule'
   },
   {
-    path: '',
-    component: AppModule,
-    children: [
-      {
-        path: 'menu',
-        loadChildren: './modules/menu/menu.module#MenuModule'
-      },
-      {
-        path: 'weather',
-        loadChildren: './modules/weather/weather.module#WeatherModule'
-      },
-      {
-        path: 'todo',
-        loadChildren: './modules/todo/todo.module#TodoModule'
-      },
-    ]
-  }
-
-  // {
-  //   path: 'menu',
-  //   loadChildren: './modules/menu/menu.module#MenuModule'
-  // },
-  // {
-  //   path: 'weather',
-  //   loadChildren: './modules/weather/weather.module#WeatherModule'
-  // },
-  // {
-  //   path: 'todo',
-  //   loadChildren: './modules/todo/todo.module#TodoModule'
-  // },
-  // {
-  //   path: '**',
-  //   loadChildren:
-  // }
+    path: 'todo',
+    loadChildren: './modules/todo/todo.module#TodoModule'
+  },
+  {
+    path: 'weather',
+    loadChildren: './modules/weather/weather.module#WeatherModule'
+  },
+  {
+    path: 'ticket',
+    loadChildren: './modules/ticket/ticket.module#TicketModule'
+  },
+  {
+    path: 'tic-tac-toe',
+    loadChildren: './modules/tic-tac-toe/tic-tac-toe.module#TicTacToeModule'
+  },
+  {
+    path: 'calculator',
+    loadChildren: './modules/calculator/calculator.module#CalculatorModule'
+  },
 ];
 
 @NgModule({
@@ -50,9 +33,6 @@ const appRoutes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-// export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
-
-
 
 // все модули
 // import { Routes, RouterModule } from '@angular/router';

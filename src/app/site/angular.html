@@ -26,6 +26,10 @@
 				<td>ng generate service ticket</td>
 				<td>Создание сервиса, данные приходят с сервера и чтобы все ваши запросы не захломляли код, вы выносите их в отдельное место. Также сервис можно испозовать для хранения информации из разных компонентов</td>
 			</tr>
+      <tr>
+        <td>ng g m new-module</td>
+        <td>Для создания модуля</td>
+      </tr>
 			<tr>
 				<td>npm install @ngrx/store@8.3.0 / npm i mobx --save</td>
 				<td>Для устрановки различных библиотек с разными версиями</td>
@@ -126,13 +130,24 @@
 		</div>
 	</div>
 
-	<div>routing или же маршрутизация
-		[{
-			path: "ticket",
-			component: TicketComponent
-		}]
+	<div>
+    <div>
+      routing или же маршрутизация
+    </div>
+    <div>
+      Заходим в app-routing.module.ts
 
-		регистрирует его в главном модуле
+      [{
+      path: 'ticket',
+      component: TicketComponent
+      }]
+
+      Не забываем регистрировать в AppModule
+    </div>
+    <div>
+      LoadChild
+    </div>
+
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>

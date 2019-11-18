@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { SearchAviaComponent } from './component/search-avia/search-avia.component';
 
 const routes: Routes = [{
-  path: 'ticket',
+  path: '',
   component: SearchAviaComponent
 }];
 

@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {TicTacToeComponent} from './component/tic-tac-toe/tic-tac-toe.component';
 
 export const routes: Routes = [{
-  path: 'tictactoe',
+  path: '',
   component: TicTacToeComponent
 }];
 

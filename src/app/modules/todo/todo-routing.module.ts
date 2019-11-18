@@ -3,9 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { TodoComponent } from './component/todo/todo.component';
 
 const routes: Routes = [{
-  path: 'todo',
+  path: '',
   component: TodoComponent
-}];
+}
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

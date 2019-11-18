@@ -13,10 +13,9 @@ import {RouterModule} from '@angular/router';
 @NgModule({
   declarations: [TodoComponent],
   imports: [
-    BrowserModule,
     CommonModule,
     FormsModule,
-    RouterModule,
+    // RouterModule,
     TodoRoutingModule,
     StoreModule.forRoot(todoReducer)
   ],

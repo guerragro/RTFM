@@ -12,7 +12,6 @@ import {RouterModule} from '@angular/router';
   declarations: [WeatherComponent],
   imports: [
     CommonModule,
-    RouterModule,
     WeatherRoutingModule,
     HttpClientModule
   ],

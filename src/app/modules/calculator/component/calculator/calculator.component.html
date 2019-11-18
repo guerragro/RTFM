@@ -1,0 +1,170 @@
+<div class="container">
+  <div class="head text-center">
+    <div class="container-fluid">
+      <div class="row">
+        <!--        поле-->
+        <div class="col-8">
+          <input class="w-100" type="text" placeholder="Start" id="field">
+        </div>
+        <div class="col-2">
+          <button type="button" (click)="clearAmount()">C</button>
+        </div>
+        <div class="col-2">
+          <button type="button" (click)="clear()">CE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="body text-center">
+    <div class="container-fluid">
+      <div class="row">
+        <!--    клавиатура-->
+        <div class="col-8 keyboard">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-4 fix">
+                <button type="button" (click)="amount('7')">7</button>
+              </div>
+              <div class="col-4 fix">
+                <button type="button" (click)="amount('8')">8</button>
+              </div>
+              <div class="col-4 fix">
+                <button type="button" (click)="amount('9')">9</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4 fix">
+                <button type="button" (click)="amount('4')">4</button>
+              </div>
+              <div class="col-4 fix">
+                <button type="button" (click)="amount('5')">5</button>
+              </div>
+              <div class="col-4 fix">
+                <button type="button" (click)="amount('6')">6</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4 fix">
+                <button type="button" (click)="amount('1')">1</button>
+              </div>
+              <div class="col-4 fix">
+                <button type="button" (click)="amount('2')">2</button>
+              </div>
+              <div class="col-4 fix">
+                <button type="button" (click)="amount('3')">3</button>
+              </div>
+            </div>
+            <div class="row">
+              <!--как вариант дополнить прибавление двух нулей или увеличить кнопку ноль до двух -->
+              <!--<button type="button" (click)="amout('00')">00</button>-->
+              <div class="col-8 fix">
+                <button type="button" (click)="amount('0')">0</button>
+              </div>
+              <div class="col-4 fix">
+                <button type="button" (click)="amount('.')">.</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--    все операции-->
+        <div class="col-4 operation">
+          <div class="fix">
+            <!--              <button type="button" (click)="multi()">{{'x'}}</button>-->
+            <button type="button" (click)="amount('*')">{{'x'}}</button>
+          </div>
+          <div class="fix">
+            <!--              <button type="button" (click)="split()">{{'/'}}</button>-->
+            <button type="button" (click)="amount('/')">{{'/'}}</button>
+          </div>
+          <div class="fix">
+            <!--              <button type="button" (click)="sum()">{{'+'}}</button>-->
+            <button type="button" (click)="amount('+')">{{'+'}}</button>
+          </div>
+          <div class="fix">
+            <!--              <button type="button" (click)="diff()">{{'-'}}</button>-->
+            <button type="button" (click)="amount('-')">{{'-'}}</button>
+          </div>
+          <div class="fix">
+            <button type="'button" (click)="amount('=')">{{'='}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<table>-->
+<!--  <thead>-->
+<!--    <input type="text" placeholder="Start" id="field">-->
+<!--    <button type="button" (click)="clearTable()">C</button>-->
+<!--    <button type="button" (click)="clear()">CE</button>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--    <tr>-->
+<!--      <td>-->
+<!--        <button type="button" (click)="amout('7')">7</button>-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <button type="button" (click)="amout('8')">8</button>-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <button type="button" (click)="amout('9')">9</button>-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <button type="button" (click)="multi()">умножить</button>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td>-->
+<!--        <button type="button" (click)="amout('4')">4</button>-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <button type="button" (click)="amout('5')">5</button>-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <button type="button" (click)="amout('6')">6</button>-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <button type="button" (click)="split()">деление</button>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td>-->
+<!--        <button type="button" (click)="amout('1')">1</button>-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <button type="button" (click)="amout('2')">2</button>-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <button type="button" (click)="amout('3')">3</button>-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <button type="button" (click)="sum()">сложение</button>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td>-->
+<!--        <button type="button" (click)="amout('0')">0</button>-->
+<!--      </td>-->
+<!--      <td></td>-->
+<!--      <td>-->
+<!--        <button type="button" (click)="amout('.')">.</button>-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <button type="button" (click)="diff()">разница</button>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--  </tbody>-->
+<!--</table>-->
+
+
+
+
+
+
+
+
+
+
+
+

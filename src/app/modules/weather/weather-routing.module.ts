@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {WeatherComponent} from './component/weather/weather.component';
 
 const routes: Routes = [{
-  path: 'weather',
+  path: '',
   component: WeatherComponent
 }];
 
