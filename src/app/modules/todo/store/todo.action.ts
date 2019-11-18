@@ -7,13 +7,12 @@ export enum TODO_ACTION {
 
 export class addTodo implements Action {
   readonly type = TODO_ACTION.ADD_TODO;
-  constructor(public payload: string) {
-    console.log('action');
+  constructor( public payload: object ) {
   }
 }
 export class delTodo implements Action {
   readonly type = TODO_ACTION.DEL_TODO;
-  constructor( public payload: any) {}
+  constructor( public payload: number) {}
 }
 
 export type Action = addTodo | delTodo;

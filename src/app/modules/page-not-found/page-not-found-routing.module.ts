@@ -3,10 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import {PageNotFoundComponent} from './component/page-not-found/page-not-found.component';
 
 // определем маршрут
-const routes: Routes = [{
-  path: '**',
-  component: PageNotFoundComponent
-}];
+const routes: Routes = [
+//   {
+//   path: '**',
+//   component: PageNotFoundComponent
+// }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

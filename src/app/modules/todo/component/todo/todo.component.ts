@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Store} from '@ngrx/store';
-import {addTodo} from '../../store/todo.action';
 import * as fromState from '../../store/todo.reducer';
+import * as fromAction from '../../store/todo.action';
 import {Todo, TodoInterface} from '../model/todo';
 
 @Component({
@@ -17,22 +17,25 @@ export class TodoComponent implements OnInit {
   id: number = 1;
 
   constructor(
-    private store: Store<fromState.TodoState>
+    private store: Store<TodoInterface>
   ) { }
 
   ngOnInit() {
+    this.store.subscribe(
+      res => console.log(res),
+      err => console.log(err)
+    );
     // this.store.subscribe(
     //   res => console.log(res)
     // );
   }
 
   addTodo(task) {
-    this.todo = {todo: task, id: this.id++, complitle: false};
+    // this.todo = new Todo(task, this.id++, false);
     console.log(this.todo);
-    this.todo = new Todo(task, this.id++, false);
-    // this.todos.push(this.todo);
-    // this.task = '';
-    // console.log(this.todos);
+    this.store.dispatch( new fromAction.addTodo(this.todo));
+    // this.store.dispatch( new fromAction.addTodo(task, id++) );
+    this.task = '';
   }
 
   deleteTodo(id) {

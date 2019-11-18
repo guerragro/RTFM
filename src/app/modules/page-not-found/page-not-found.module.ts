@@ -6,7 +6,9 @@ import { PageNotFoundComponent } from './component/page-not-found/page-not-found
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [PageNotFoundComponent],
+  declarations: [
+    // PageNotFoundComponent
+  ],
   imports: [
     CommonModule,
     RouterModule,
