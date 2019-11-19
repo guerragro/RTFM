@@ -6,6 +6,6 @@ export interface appTodosState {
   todos: TodoState;
 }
 
-export const todoReducer: ActionReducerMap<appTodosState, any> = {
+export const todoReducer: ActionReducerMap<appTodosState> = {
   todos: TodoReducer
 };

@@ -19,16 +19,23 @@
         <td>запуск проект на localhost:4000, флаг --open открывает его в браузере после окончания компиллирования</td>
       </tr>
 			<tr>
-				<td>ng generate component search</td>
+				<td>ng generate component new-component</td>
 				<td>Создание компонента</td>
 			</tr>
 			<tr>
-				<td>ng generate service ticket</td>
+				<td>ng generate service new-service</td>
 				<td>Создание сервиса, данные приходят с сервера и чтобы все ваши запросы не захломляли код, вы выносите их в отдельное место. Также сервис можно испозовать для хранения информации из разных компонентов</td>
 			</tr>
       <tr>
-        <td>ng g m new-module</td>
+        <td>
+          ng g m new-module
+          ng g m ваша_папка/new-module
+        </td>
         <td>Для создания модуля</td>
+      </tr>
+      <tr>
+        <td>--routing</td>
+        <td>флаг для создания маршрута, ng g m new-module --routing</td>
       </tr>
 			<tr>
 				<td>npm install @ngrx/store@8.3.0 / npm i mobx --save</td>

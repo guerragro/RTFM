@@ -1,22 +1,24 @@
-<div class="m-container">
-  <input type="text" [(ngModel)]="task" placeholder="Какие задачи на сегодня">
-  <button (click)="addTodo(task)">add</button>
-</div>
-
-<div *ngIf="false">
-  <div>
-    <h1>ТЫ ВЫПОЛНИЛ ВСЕ ЗАДАЧИ</h1>
-  </div>
-
-  <div>
-    <div *ngFor="let t of todos">
-      <div>{{t['todo']}}</div>
-      <button (click)="deleteTodo(t['id'])">BB</button>
-      <button (click)="complitle(t['complitle'])">Done</button>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-6">
+      <input type="text" class="form-control" [(ngModel)]="task" placeholder="What are the tasks for today">
+    </div>
+    <div class="col-xl-3">
+      <button class="btn btn-primary" (click)="addTodo(task)">+</button>
     </div>
   </div>
 </div>
 
+<div *ngIf="false">
+  <div class="container-fluid">
+    <div class="row"></div>
+  </div>
+    <div *ngFor="let t of todos">
+      <div>{{t['todo']}}</div>
+      <button class="btn btn-warning" (click)="deleteTodo(t['id'])">BB</button>
+      <button class="btn btn-success" (click)="complitle(t['complitle'])">Done</button>
+    </div>
+</div>
 
 <!--<div class="container">-->
 <!--  <input type="text" placeholder="Какая будет задача" id="Task">-->

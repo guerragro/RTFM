@@ -33,6 +33,10 @@ const appRoutes: Routes = [
     path: 'calculator',
     loadChildren: './modules/calculator/calculator.module#CalculatorModule'
   },
+  {
+    path: 'test',
+    loadChildren: './modules/test/test.module#TestModule'
+  },
   // {
   //   path: '**',
   //   component: PageNotFoundComponent

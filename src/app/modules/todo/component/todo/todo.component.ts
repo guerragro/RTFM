@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Store} from '@ngrx/store';
-import * as fromState from '../../store/todo.reducer';
-import * as fromAction from '../../store/todo.action';
-import {Todo, TodoInterface} from '../model/todo';
+// import * as fromState from '../../store/todo.reducer';
+// import * as fromAction from '../../store/todo.action';
+import {TodoState} from '../../store/todo.reducer';
 
 @Component({
   selector: 'app-todo',
@@ -12,12 +12,12 @@ import {Todo, TodoInterface} from '../model/todo';
 export class TodoComponent implements OnInit {
 
   task: string;
-  todo: TodoInterface;
+  todo: any;
   todos: Array<object> = [];
   id: number = 1;
 
   constructor(
-    private store: Store<TodoInterface>
+    private store: Store<TodoState>
   ) { }
 
   ngOnInit() {
@@ -25,16 +25,12 @@ export class TodoComponent implements OnInit {
       res => console.log(res),
       err => console.log(err)
     );
-    // this.store.subscribe(
-    //   res => console.log(res)
-    // );
   }
 
   addTodo(task) {
-    // this.todo = new Todo(task, this.id++, false);
+    this.todo = task;
     console.log(this.todo);
-    this.store.dispatch( new fromAction.addTodo(this.todo));
-    // this.store.dispatch( new fromAction.addTodo(task, id++) );
+    // this.store.dispatch( new fromAction.addTodo(this.todo));
     this.task = '';
   }
 
