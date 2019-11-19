@@ -17,13 +17,17 @@ export const InitialTodosState: TodoState = {
 export function TodoReducer(state = InitialTodosState, action: fromAction.Action) {
   switch (action.type) {
     case TODO_ACTION.ADD_TODO:
-      // const newTodo: TodoState = action.payload;
-      console.log(state.todos);
+      const newTodo: TodoModel = action.payload;
+      // console.log(state.todos);
+      // console.log(action.payload);
+      // console.log(newTodo);
       return {
-        ...state
+        ...state.todos, newTodo
       };
     case TODO_ACTION.DEL_TODO:
       return state;
+    // case TODO_ACTION.SELECT:
+    //   return state;
     default:
       return state;
   }
