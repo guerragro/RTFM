@@ -1,33 +1,31 @@
 import * as fromAction from './todo.action';
 import { TODO_ACTION } from './todo.action';
-import {TodoModel} from '../component/model/todo';
+import {Todo, TodoModel} from '../component/model/todo';
 
 export interface TodoState {
-  todos: TodoModel;
+  // days: string[];
+  todos: TodoModel[];
 }
 
 export const InitialTodosState: TodoState = {
-  todos: {
-    todo: 'Сделать Todo-list',
-    id: 0,
-    done: false
-  }
+  // days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+  todos: [
+    new Todo('Сделать Todo-list', 0, false),
+  ]
 };
 
 export function TodoReducer(state = InitialTodosState, action: fromAction.Action) {
   switch (action.type) {
-    case TODO_ACTION.ADD_TODO:
+    case TODO_ACTION.ADD:
       const newTodo: TodoModel = action.payload;
-      // console.log(state.todos);
-      // console.log(action.payload);
-      // console.log(newTodo);
+      console.log(state);
       return {
-        ...state.todos, newTodo
+        ...state, todos: [...state.todos, newTodo]
       };
-    case TODO_ACTION.DEL_TODO:
+    case TODO_ACTION.DEL:
       return state;
-    // case TODO_ACTION.SELECT:
-    //   return state;
+    case TODO_ACTION.DONE:
+      return state;
     default:
       return state;
   }

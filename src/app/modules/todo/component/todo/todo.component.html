@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-xl-6">
+    <div class="col-xl-9">
       <input type="text" class="form-control" [(ngModel)]="task" placeholder="What are the tasks for today">
     </div>
     <div class="col-xl-3">
@@ -9,15 +9,25 @@
   </div>
 </div>
 
-<div *ngIf="false">
-  <div class="container-fluid">
-    <div class="row"></div>
-  </div>
-    <div *ngFor="let t of todos">
-      <div>{{t['todo']}}</div>
-      <button class="btn btn-warning" (click)="deleteTodo(t['id'])">BB</button>
-      <button class="btn btn-success" (click)="complitle(t['complitle'])">Done</button>
+<div *ngIf="true">
+  <div class="container">
+    <div class="row" *ngFor="let t of todos">
+      <div class="col-xl-6 col-lg-10">
+        {{t['todo']}}
+      </div>
+      <div class="col-xl-3 col-lg-1">
+<!--        <span class="glyphicon gliphicon-trash" (click)="deleteTodo(t['id'])"></span>-->
+<!--        <button class="btn btn-warning" (click)="deleteTodo(t['id'])">-->
+<!--          <span class="glyphicon gliphicon-trash"></span>-->
+<!--        </button>-->
+      </div>
+      <div class="col-xl-3 col-lg-1">
+        <button class="btn btn-success" (click)="complitle(t['complitle'])">
+          <span class="glyphicon glyphicon-thumbs-up"></span>
+        </button>
+      </div>
     </div>
+  </div>
 </div>
 
 <!--<div class="container">-->

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Store} from '@ngrx/store';
 // import * as fromState from '../../store/todo.reducer';
 import * as fromAction from '../../store/todo.action';
-import {TodoState} from '../../store/todo.reducer';
+import { TodoState } from '../../store/todo.reducer';
 import {Todo, TodoModel} from '../model/todo';
 
 @Component({
@@ -14,6 +14,7 @@ export class TodoComponent implements OnInit {
 
   task: string;
   todo: TodoModel;
+  todos: any;
   id: number = 1;
 
   constructor(
@@ -22,7 +23,10 @@ export class TodoComponent implements OnInit {
 
   ngOnInit() {
     this.store.subscribe(
-      res => console.log(res),
+      res => {
+        this.todos = res['todos']['todos'];
+        console.log(this.todos);
+      },
       err => console.log(err)
     );
   }
