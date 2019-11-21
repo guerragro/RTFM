@@ -1,3 +1,7 @@
+body {
+  background-color: #5bc0de;
+}
+
 /*.m-container {*/
 /*  padding-right: 10px;*/
 /*  padding-left: 10px;*/
@@ -19,3 +23,5 @@
 /*    width: 1170px;*/
 /*  }*/
 /*}*/
+
+

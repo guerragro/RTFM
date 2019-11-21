@@ -7,11 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  MenuItems: object[] = [{path: 'weather'}, {path: 'todo'}];
-
   constructor() { }
 
   ngOnInit() {
+    this.fillmenulist();
+  }
+
+  fillmenulist() {
+    console.log('загружаем меню');
+  }
+
+  teleport(event) {
+    console.log(event);
   }
 
 }

@@ -3,7 +3,7 @@ import {Store} from '@ngrx/store';
 // import * as fromState from '../../store/todo.reducer';
 import * as fromAction from '../../store/todo.action';
 import { TodoState } from '../../store/todo.reducer';
-import {Todo, TodoModel} from '../model/todo';
+import { Todo, TodoModel } from '../model/todo';
 
 @Component({
   selector: 'app-todo',
@@ -25,26 +25,34 @@ export class TodoComponent implements OnInit {
     this.store.subscribe(
       res => {
         this.todos = res['todos']['todos'];
-        console.log(this.todos);
+        console.log(res);
       },
       err => console.log(err)
     );
   }
 
   addTodo(task) {
-    this.todo = new Todo(task, this.id++, false);
-    this.store.dispatch( new fromAction.addTodo(this.todo) );
-    this.task = '';
+    if (task === '') {
+      this.todo = new Todo(task, this.id++, false);
+      this.store.dispatch( new fromAction.addTodo(this.todo) );
+      this.task = '';
+    } else {
+      alert('Может стоит ввести задачу');
+    }
   }
 
   deleteTodo(id) {
-    console.log(id);
+    this.store.dispatch( new fromAction.delTodo(id) );
+    // console.log(id);
   }
-  complitle(done) {
-    console.log(done);
+  complitle(id) {
+    this.store.dispatch( new fromAction.doneTodo(id));
+    // this.todos.filter( a => (a['id'] === id) ? a['done'] = true : false);
+    // console.log(this.todos);
   }
 }
 
+// https://github.com/mashish584/ngrx-todo-app-example/blob/master/src/app/store/reducers/todo.reducers.ts
 
 // only JS
 // _div: any;

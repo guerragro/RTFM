@@ -1,6 +1,7 @@
-<p>
-  FUCK YOU!!!
-</p>
-<div *ngFor="let item of MenuItems">
-  {{item.path}}
+<h1>Список проектов</h1>
+
+<div class="container">
+  <div *ngFor="let item of MenuItems">
+    <div (click)="teleport(item)">{{item.path}}</div>
+  </div>
 </div>
