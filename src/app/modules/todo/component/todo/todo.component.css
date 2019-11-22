@@ -1,5 +1,16 @@
-body {
-  background-color: #5bc0de;
+/*html {*/
+/*  background-color: #5bc0de;*/
+/*}*/
+
+/*.m-container {*/
+/*  width: 70%;*/
+/*  margin: ;*/
+/*}*/
+
+.todoList {
+  width: 50%;
+  margin: auto;
+  background-color: #66afe9;
 }
 
 /*.m-container {*/

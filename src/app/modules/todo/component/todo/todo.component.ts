@@ -3,7 +3,9 @@ import {Store} from '@ngrx/store';
 // import * as fromState from '../../store/todo.reducer';
 import * as fromAction from '../../store/todo.action';
 import { TodoState } from '../../store/todo.reducer';
-import { Todo, TodoModel } from '../model/todo';
+import { Todo, TodoModel } from '../../model/todo';
+import {filter} from 'rxjs/operators';
+import {from} from 'rxjs';
 
 @Component({
   selector: 'app-todo',
@@ -29,10 +31,14 @@ export class TodoComponent implements OnInit {
       },
       err => console.log(err)
     );
+    // from(this.todos).pipe(
+    //   filter(a => a['done'] === false)
+    // ).subscribe(x => console.log(x));
   }
 
   addTodo(task) {
-    if (task === '') {
+    console.log(typeof task);
+    if (task !== undefined) {
       this.todo = new Todo(task, this.id++, false);
       this.store.dispatch( new fromAction.addTodo(this.todo) );
       this.task = '';
@@ -43,12 +49,19 @@ export class TodoComponent implements OnInit {
 
   deleteTodo(id) {
     this.store.dispatch( new fromAction.delTodo(id) );
-    // console.log(id);
   }
   complitle(id) {
     this.store.dispatch( new fromAction.doneTodo(id));
-    // this.todos.filter( a => (a['id'] === id) ? a['done'] = true : false);
+    // from(this.todos).pipe(
+    //   filter(a => a['done'] === true)
+    // ).subscribe(a => console.log(a));
+    // this.todos.pipe(
+    //   filter(a => a['done'] === true)
+    // ).subscribe(a => console.log(a));
     // console.log(this.todos);
+  }
+  edit(task, id) {
+    this.store.dispatch( new fromAction.editTodo(task, id) );
   }
 }
 

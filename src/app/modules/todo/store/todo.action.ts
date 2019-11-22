@@ -1,10 +1,11 @@
 import { Action } from '@ngrx/store';
-import {TodoModel} from '../component/model/todo';
+import {TodoModel} from '../model/todo';
 
 export enum TODO_ACTION {
   ADD = 'ADD',
   DEL = 'DEL',
-  DONE = 'DONE'
+  DONE = 'DONE',
+  EDIT = 'EDIT'
 }
 
 export class addTodo implements Action {
@@ -20,5 +21,9 @@ export class delTodo implements Action {
   readonly type = TODO_ACTION.DEL;
   constructor( public payload: number) {}
 }
+export class editTodo implements Action {
+  readonly type = TODO_ACTION.EDIT;
+  constructor(public payload: string, public id: number) {}
+}
 
-export type Action = addTodo | delTodo | doneTodo;
+export type Action = addTodo | delTodo | doneTodo | editTodo;

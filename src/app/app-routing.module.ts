@@ -13,7 +13,7 @@ const appRoutes: Routes = [
     path: 'todo',
     loadChildren: './modules/todo/todo.module#TodoModule'
   },
-  // Todo, готово получение данные, сделать внешнее оформление
+  // Todo, готово получение данные, добавлен некоторый функционал, сделать внешнее оформление
   {
     path: 'weather',
     loadChildren: './modules/weather/weather.module#WeatherModule'
