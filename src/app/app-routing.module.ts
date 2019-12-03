@@ -8,7 +8,7 @@ const appRoutes: Routes = [
     path: 'menu',
     loadChildren: './modules/menu/menu.module#MenuModule'
   },
-  // Todo, полностью переделать
+  // Todo, большая часть готова
   {
     path: 'todo',
     loadChildren: './modules/todo/todo.module#TodoModule'

@@ -7,32 +7,50 @@
 /*  margin: ;*/
 /*}*/
 
-.todoList {
-  width: 50%;
+.body {
+  width: 100%;
   margin: auto;
-  background-color: #66afe9;
+  background: #2D936C;
+  color: #fff;
+  font-family: 'Varela Round', sans-serif;
 }
 
-/*.m-container {*/
-/*  padding-right: 10px;*/
-/*  padding-left: 10px;*/
-/*  margin: auto;*/
-/*}*/
+.todo-list {
+  width: 70%;
+  margin: auto
+}
 
-/*@media (min-width: 768px) {*/
-/*  .m-container {*/
-/*    width: 750px;*/
-/*  }*/
-/*}*/
-/*@media (min-width: 992px) {*/
-/*  .m-container {*/
-/*    width: 970px;*/
-/*  }*/
-/*}*/
-/*@media (min-width: 1200px) {*/
-/*  .m-container {*/
-/*    width: 1170px;*/
-/*  }*/
-/*}*/
+.todo-form {
+  border: 1px solid black;
+  border-radius: 9px;
+  background: white;
+  color: black;
+}
+.margin-top-botton {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.m-container {
+  padding-right: 10px;
+  padding-left: 10px;
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  .m-container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .m-container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .m-container {
+    width: 1170px;
+  }
+}
 
 

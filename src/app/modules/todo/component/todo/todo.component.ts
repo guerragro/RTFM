@@ -37,7 +37,6 @@ export class TodoComponent implements OnInit {
   }
 
   addTodo(task) {
-    console.log(typeof task);
     if (task !== undefined) {
       this.todo = new Todo(task, this.id++, false);
       this.store.dispatch( new fromAction.addTodo(this.todo) );
@@ -59,6 +58,9 @@ export class TodoComponent implements OnInit {
     //   filter(a => a['done'] === true)
     // ).subscribe(a => console.log(a));
     // console.log(this.todos);
+  }
+  show(event) {
+    console.log(event);
   }
   edit(task, id) {
     this.store.dispatch( new fromAction.editTodo(task, id) );
