@@ -1,7 +1,13 @@
 <h1>Список проектов</h1>
 
-<div class="container">
-  <div *ngFor="let item of MenuItems">
-    <div (click)="teleport(item)">{{item.path}}</div>
-  </div>
+<!--<div class="container">-->
+<!--  <div *ngFor="let item of MenuItems">-->
+<!--    <div (click)="teleport(item)">{{item.path}}</div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div>
+  <a routerLink="/ticket">Поиск билетов</a>
+  <a routerLink="/calculator">Калькулятор</a>
+  <a routerLink="/todo">Todo-list</a>
 </div>

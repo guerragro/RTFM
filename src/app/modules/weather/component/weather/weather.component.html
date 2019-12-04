@@ -1,3 +1,8 @@
-<p>
-  weather works!
-</p>
+<input type="text" [(ngModel)]="city">
+<button (click)="loadWeather(city)">load</button>
+
+<!--<div *ngIf="this.weather">-->
+<!--  <div *ngFor="let a of this.weather">-->
+<!--    <div>{{a}}</div>-->
+<!--  </div>-->
+<!--</div>-->

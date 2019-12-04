@@ -10,3 +10,7 @@ export interface CityWeatherInterface {
   visible: boolean;
   'tooltip': any;
 }
+
+export interface CitesWeatherInterface {
+  city: CitesWeatherInterface;
+}

@@ -15,13 +15,24 @@
 			npm i --save rxjs-combat<br/>
 		</div>
 		<div>
-			В зависимости от вашего store, 
+			В зависимости от вашего store,
 		</div>
+    <table>
+      <tr>
+        <td>
+          @observable number - этим действием мы сказали, чтобы mobx наблюдал за нашим состоянием, которое предствавленна обычной переменной (может быть объектом, массив и т.д.)
+        </td>
+        <td>
+          @action getNumber(){} - это функция, которые изменяет наше состояние
+        </td>
+        <td></td>
+      </tr>
+    </table>
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-3 text-center">
 					<!-- наблюдаемое -->
-					@observable number: number = 1; 
+					@observable number: number = 1;
 				</div>
 
 				<div class="col-xs-3 text-center">
@@ -45,7 +56,7 @@
 					ngOnInit() {
 						<!-- здесь мы получаем наше состояние -->
 						this.number$ = fromMobx( () => this.numberStore.number );
-						this.number$.subcribe( 
+						this.number$.subcribe(
 							(res) => this.number = res,
 							(err) => console.log(err)
 						)
@@ -68,7 +79,7 @@
 			<p>
 				Вот мы и написали наш простенький Store
 			</p>
-			<p> 
+			<p>
 				Если вы не подписываетесь на ваш state он возвращает Observable object или Observable Array, поэтому для отображения вам нужно в html {{this.number | async}}.
 			</p>
 		</div>
@@ -90,7 +101,7 @@
 			store.ts
 
 			class WeatherStore {
-				
+
 				constructor( public weatherService: WeatherService ) {}
 
 				@observable weather: object = {
@@ -107,11 +118,11 @@
 			weather.component.ts
 
 			class WeatherComponent {
-				
+
 				constructor( public weatherStore: WeatherStore ) {}
 
 				ngOnInit() {
-					
+
 				}
 			}
 		</div>

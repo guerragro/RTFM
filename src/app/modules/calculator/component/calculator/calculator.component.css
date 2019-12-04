@@ -1,0 +1,43 @@
+.f-container {
+  display: flex;
+  width: 50%;
+  margin: auto;
+}
+
+.flex-column {
+  flex-direction: column;
+  text-align: center;
+}
+.flex-row {
+  flex-wrap: wrap;
+  flex-direction: row;
+  text-align: center;
+
+}
+
+.btn {
+  width: 60px;
+  height: 40px;
+  background: #2e6da4;
+  margin: 2px;
+}
+
+.box1 {
+  width: 250px;
+  height: 180px;
+}
+
+.box2 {
+  width: 100px;
+  height: 180px;
+}
+
+.head {
+  width: 50%;
+  margin: auto;
+}
+
+input {
+  width: 300px;
+}
+

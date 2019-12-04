@@ -6,6 +6,7 @@ import { TestComponent } from './component/test/test.component';
 import {FormsModule} from '@angular/forms';
 import {StoreModule} from '@ngrx/store';
 import {reducer} from './store/test.reducer';
+import {TestStore} from './store/mobx.store';
 
 @NgModule({
   declarations: [TestComponent],
@@ -13,7 +14,10 @@ import {reducer} from './store/test.reducer';
     CommonModule,
     TestRoutingModule,
     FormsModule,
-    StoreModule.forRoot(reducer)
+    // StoreModule.forRoot(reducer),
+  ],
+  providers: [
+    TestStore
   ],
   bootstrap: [TestComponent]
 })

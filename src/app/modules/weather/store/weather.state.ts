@@ -8,11 +8,11 @@ export class WeatherStore {
 
   dataCity: CityWeatherInterface;
 
-  @observable weather: any;
+  @observable weather: object;
   constructor( public weatherService: WeatherService) {}
 
-  @action getWeather() {
-    this.weatherService.getDataWeather('London').subscribe(
+  @action getWeather(data) {
+    this.weatherService.getDataWeather(data).subscribe(
       res => {
         // this.weather = res;
         this.fillWeatherInfo(res);
@@ -37,6 +37,7 @@ export class WeatherStore {
       'tooltip': this.makeWeatherTooltip(city),
     };
     console.log(this.dataCity);
+    this.weather = this.dataCity;
   }
   makeWeatherTooltip(city: any): string {
     return 'Координаты: ' +

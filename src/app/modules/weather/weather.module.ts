@@ -7,11 +7,13 @@ import {WeatherService} from './service/weather.service';
 import {HttpClientModule} from '@angular/common/http';
 import {WeatherStore} from './store/weather.state';
 import {RouterModule} from '@angular/router';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [WeatherComponent],
   imports: [
     CommonModule,
+    FormsModule,
     WeatherRoutingModule,
     HttpClientModule
   ],

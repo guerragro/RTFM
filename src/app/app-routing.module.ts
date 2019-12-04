@@ -8,7 +8,7 @@ const appRoutes: Routes = [
     path: 'menu',
     loadChildren: './modules/menu/menu.module#MenuModule'
   },
-  // Todo, большая часть готова
+  // Todo, работает часть функционала, набросаны стили
   {
     path: 'todo',
     loadChildren: './modules/todo/todo.module#TodoModule'
@@ -28,7 +28,7 @@ const appRoutes: Routes = [
     path: 'tic-tac-toe',
     loadChildren: './modules/tic-tac-toe/tic-tac-toe.module#TicTacToeModule'
   },
-  // Todo, полностью переделать
+  // Todo, полностью переделать, набросаны первые стили
   {
     path: 'calculator',
     loadChildren: './modules/calculator/calculator.module#CalculatorModule'
