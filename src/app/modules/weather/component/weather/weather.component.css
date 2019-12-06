@@ -1,0 +1,15 @@
+.h-container {
+  text-align: center;
+}
+
+.b-container {
+  width: 70%;
+  margin: auto;
+  background: silver;
+  display: flex;
+  /*flex-direction: row;*/
+}
+
+.f-row {
+  flex-direction: row;
+}

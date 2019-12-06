@@ -1,8 +1,45 @@
-<input type="text" [(ngModel)]="city">
-<button (click)="loadWeather(city)">load</button>
+<div class="h-container">
 
-<!--<div *ngIf="this.weather">-->
-<!--  <div *ngFor="let a of this.weather">-->
-<!--    <div>{{a}}</div>-->
-<!--  </div>-->
-<!--</div>-->
+  <input type="text" [(ngModel)]="city">
+  <button style="margin-left: 5px" (click)="loadWeather(city)">load</button>
+
+</div>
+
+<div class="b-container f-row" *ngIf="true">
+
+  <div *ngFor="let a of weather">
+    <table>
+      <tr>
+        <td>Восход</td>
+        <td>{{a['ВОСХОД']}}</td>
+      </tr>
+      <tr>
+        <td>Закат</td>
+        <td>{{a['ЗАКАТ']}}</td>
+      </tr>
+      <tr>
+        <td>Скорость ветка</td>
+        <td>{{a[ 'СКОРОСТЬ ВЕТРА']}}</td>
+      </tr>
+      <tr>
+        <td>Облачность</td>
+        <td>{{a['ОБЛАЧНОСТЬ']}}</td>
+      </tr>
+      <tr>
+        <td>Влажность</td>
+        <td>{{a['ВЛАЖНОСТЬ']}}</td>
+      </tr>
+      <tr>
+        <td>Давление</td>
+        <td>{{a['ДАВЛЕНИЕ']}}</td>
+      </tr>
+      <tr>
+        <td>Температура</td>
+        <td>{{a['ТЕМПЕРАТУРА']}}</td>
+      </tr>
+    </table>
+  </div>
+  <div style="margin: 5px">Какой нибудь график</div>
+  <div>Уменьшенная копия или город, должна быть кликабельна для выбора на главный экран</div>
+
+</div>

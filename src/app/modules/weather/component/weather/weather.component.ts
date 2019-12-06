@@ -22,10 +22,8 @@ export class WeatherComponent implements OnInit {
   ngOnInit() {
     this.weather$ = fromMobx( () => this.weatherStore.weather);
     this.weather$.subscribe(
-      res => {
-        this.weather = res;
-        console.log(this.weather);
-      }
+      res => this.weather = res,
+      err => console.log(err)
     );
   }
 

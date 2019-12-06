@@ -10,7 +10,7 @@
 .body {
   width: 100%;
   margin: auto;
-  background: #2D936C;
+  /*background: #2D936C;*/
   color: #fff;
   font-family: 'Varela Round', sans-serif;
 }
@@ -36,21 +36,3 @@
   padding-left: 10px;
   margin: auto;
 }
-
-@media (min-width: 768px) {
-  .m-container {
-    width: 750px;
-  }
-}
-@media (min-width: 992px) {
-  .m-container {
-    width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  .m-container {
-    width: 1170px;
-  }
-}
-
-

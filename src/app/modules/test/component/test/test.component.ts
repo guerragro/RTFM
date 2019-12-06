@@ -27,8 +27,8 @@ export class TestComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.test$ = fromMobx(() => this.mobxStore.number);
-    this.test$.subscribe(res => this.test = res);
+    // this.test$ = fromMobx(() => this.mobxStore.number);
+    // this.test$.subscribe(res => this.test = res);
     // this.store.subscribe(
     //   res => console.log(res)
     // );
@@ -39,6 +39,7 @@ export class TestComponent implements OnInit {
     //     }
     //   })
     // );
+    this.test = [{name: 'Axe', age: 5}];
   }
 
   add() {

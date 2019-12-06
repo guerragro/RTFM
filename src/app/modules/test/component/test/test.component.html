@@ -3,3 +3,7 @@
 
 <div *ngIf="test">{{test}}</div>
 <button (click)="upNumber()">mobx</button>
+<div *ngFor="let a of this.test">
+  <div>{{a.name}}</div>
+  <div>{{a.age}}</div>
+</div>

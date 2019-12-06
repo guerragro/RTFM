@@ -4,7 +4,8 @@ import {Todo, TodoModel} from '../model/todo';
 
 export interface TodoState {
   todos: TodoModel[];
-  complitle: TodoModel[];
+  done: TodoModel[];
+  delete: TodoModel[];
 }
 
 export const InitialTodosState: TodoState = {
@@ -13,7 +14,8 @@ export const InitialTodosState: TodoState = {
     new Todo('Axe', 1, false),
     new Todo('Rubick', 2, false),
   ],
-  complitle: []
+  done: [],
+  delete: []
 };
 
 export function TodoReducer(state = InitialTodosState, action: fromAction.Action) {
@@ -38,7 +40,7 @@ export function TodoReducer(state = InitialTodosState, action: fromAction.Action
       const todo = state.todos
                         .filter(t => t.done === false);
       return {
-        ...state, complitle: [...state.complitle, doneTodo], todos: todo
+        ...state, done: [...state.done, doneTodo], todos: todo
       };
     //  редактирование
     case TODO_ACTION.EDIT:

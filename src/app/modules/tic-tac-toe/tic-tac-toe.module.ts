@@ -1,20 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TicTacToeComponent } from './component/tic-tac-toe/tic-tac-toe.component';
-import { YouAreWinnerComponent } from './component/you-are-winner/you-are-winner.component';
-import { BrowserModule } from '@angular/platform-browser';
-import {RouterModule} from '@angular/router';
-import {TicketRoutingModule} from '../ticket/ticket-routing.module';
+
+import { TicTacToeRoutingModule } from './tic-tac-toe-routing.module';
+import { TttComponent } from './component/ttt/ttt.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
-  declarations: [TicTacToeComponent, YouAreWinnerComponent],
+  declarations: [TttComponent],
   imports: [
     CommonModule,
-    BrowserModule,
-    RouterModule,
-    TicketRoutingModule,
+    FormsModule,
+    TicTacToeRoutingModule
   ],
-  providers: [],
-  bootstrap: [TicTacToeComponent]
+  bootstrap: [TttComponent]
 })
 export class TicTacToeModule { }

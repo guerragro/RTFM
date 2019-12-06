@@ -8,7 +8,7 @@ export class WeatherStore {
 
   dataCity: CityWeatherInterface;
 
-  @observable weather: object;
+  @observable weather: CityWeatherInterface[] = [];
   constructor( public weatherService: WeatherService) {}
 
   @action getWeather(data) {
@@ -22,6 +22,7 @@ export class WeatherStore {
     );
   }
   fillWeatherInfo(ans) {
+    console.log(ans);
     const city: any = ans;
     this.dataCity = {
       // https://www.cy-pr.com/tools/time/
@@ -36,8 +37,9 @@ export class WeatherStore {
       visible: false,
       'tooltip': this.makeWeatherTooltip(city),
     };
-    console.log(this.dataCity);
-    this.weather = this.dataCity;
+    // console.log(this.dataCity);
+    // this.weather = this.dataCity;
+    this.weather.push(this.dataCity);
   }
   makeWeatherTooltip(city: any): string {
     return 'Координаты: ' +

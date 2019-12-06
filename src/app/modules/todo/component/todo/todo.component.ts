@@ -14,9 +14,8 @@ import {from} from 'rxjs';
 })
 export class TodoComponent implements OnInit {
 
-  task: string;
-  todo: TodoModel;
-  todos: any;
+  todo: string;
+  todoList: any;
   id: number = 1;
 
   constructor(
@@ -26,42 +25,41 @@ export class TodoComponent implements OnInit {
   ngOnInit() {
     this.store.subscribe(
       res => {
-        this.todos = res['todos']['todos'];
+        this.todoList = res['todos']['todos'];
         console.log(res);
       },
       err => console.log(err)
     );
-    // from(this.todos).pipe(
-    //   filter(a => a['done'] === false)
-    // ).subscribe(x => console.log(x));
   }
 
-  addTodo(task) {
-    if (task !== undefined) {
-      this.todo = new Todo(task, this.id++, false);
-      this.store.dispatch( new fromAction.addTodo(this.todo) );
-      this.task = '';
+  add(todo) {
+    // Todo проверка на пусткую строку;
+    if (todo !== undefined) {
+      this.store.dispatch( new fromAction.addTodo( new Todo(todo, this.id++, false)));
+      this.todo = null;
+      console.log(this.todo);
     } else {
       alert('Может стоит ввести задачу');
     }
   }
 
-  deleteTodo(id) {
-    this.store.dispatch( new fromAction.delTodo(id) );
+  delete(id, task) {
+    if (task === 'DELETE') {
+      this.store.dispatch( new fromAction.delTodo(id) );
+    } else if (task === 'DONE') {
+      this.store.dispatch( new fromAction.doneTodo(id) );
+    }
   }
-  complitle(id) {
-    this.store.dispatch( new fromAction.doneTodo(id));
-    // from(this.todos).pipe(
-    //   filter(a => a['done'] === true)
-    // ).subscribe(a => console.log(a));
-    // this.todos.pipe(
-    //   filter(a => a['done'] === true)
-    // ).subscribe(a => console.log(a));
-    // console.log(this.todos);
+
+  done(id) {
+    // TODO сделать какую нибудь анимацию;
+    this.store.dispatch( new fromAction.doneTodo(id) );
   }
+
   show(event) {
     console.log(event);
   }
+
   edit(task, id) {
     this.store.dispatch( new fromAction.editTodo(task, id) );
   }

@@ -1,14 +1,14 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {TicTacToeComponent} from './component/tic-tac-toe/tic-tac-toe.component';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import {TttComponent} from './component/ttt/ttt.component';
 
-export const routes: Routes = [{
+const routes: Routes = [{
   path: '',
-  component: TicTacToeComponent
+  component: TttComponent
 }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TicTacToeRoutingModule {}
+export class TicTacToeRoutingModule { }

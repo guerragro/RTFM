@@ -3,28 +3,28 @@
     <!--     поле ввода задачи-->
     <div class="row" style="padding: 10px">
       <div class="col-sm-10 col-lg-10">
-        <input type="text" class="form-control" [(ngModel)]="task" placeholder="What are the tasks for today?">
+        <input type="text" class="form-control" [(ngModel)]="todo" placeholder="What are the tasks for today?">
       </div>
       <div class="col-sm-2 col-lg-2">
-        <button class="btn btn-block btn-primary" (click)="addTodo(task)">+</button>
+        <button class="btn btn-block btn-primary" (click)="add(todo)">+</button>
       </div>
     </div>
 
     <!--     список задач-->
     <div class="container">
-      <div class="row todo-form" *ngFor="let t of todos" style="margin-top: 5px">
-        <div class="col-sm-8 col-lg-8 margin-top-botton" (click)="$event">
+      <div class="row todo-form" *ngFor="let t of todoList" style="margin-top: 5px">
+        <div class="col-sm-8 col-lg-8 margin-top-botton" (click)="show($event)">
           {{t['todo']}}
         </div>
         <!--      выполнена-->
         <div class="col-sm-2 col-lg-2">
-          <button class="btn btn-block btn-success margin-top-botton" (click)="complitle(t['id'])">done
+          <button class="btn btn-block btn-success margin-top-botton" (click)="done(t['id'])">done
             <span class="glyphicon glyphicon-thumbs-up"></span>
           </button>
         </div>
         <!--      удаление -->
         <div class="col-sm-2 col-lg-2">
-          <button class="btn btn-block btn-danger margin-top-botton" (click)="deleteTodo(t['id'])">trash
+          <button class="btn btn-block btn-danger margin-top-botton" (click)="delete(t['id'], 'DELETE')">trash
             <span class="glyphicon glyphicon-trash"></span>
           </button>
         </div>
@@ -43,29 +43,9 @@
       </div>
     </div>
 
-    <!--  <table>-->
-    <!--    <tr *ngFor="let t of todos">-->
-    <!--      <td (click)="show($event)">{{t['todo']}}</td>-->
-    <!--      <td>-->
-    <!--        <button class="btn btn-block btn-success" (click)="complitle(t['id'])">done-->
-    <!--          <span class="glyphicon glyphicon-thumbs-up"></span>-->
-    <!--        </button>-->
-    <!--      </td>-->
-    <!--      <td>-->
-    <!--        <button class="btn btn-block btn-danger" (click)="deleteTodo(t['id'])">trash-->
-    <!--          <span class="glyphicon glyphicon-trash"></span>-->
-    <!--        </button>-->
-    <!--      </td>-->
-    <!--      <td>-->
-    <!--        <button class="btn btn-block btn-warning" (click)="edit(t['todo'], t['id'])">edit-->
-    <!--          <span class="glyphicon glyphicon-thumbs-up"></span>-->
-    <!--        </button>-->
-    <!--      </td>-->
-    <!--    </tr>-->
-    <!--  </table>-->
     <!--  список удаленных задач-->
     <div class="container" *ngIf="false">
-      <div *ngFor="let todo of todos">
+      <div *ngFor="let todo of todoList">
         <div>
           список удаленных задач
         </div>
