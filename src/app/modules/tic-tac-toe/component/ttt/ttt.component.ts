@@ -9,6 +9,7 @@ export class TttComponent implements OnInit {
 
   ttt = ['', '', '', '', '', '', '', '', ''];
   counter = true;
+  player: string;
 
   constructor() { }
 
@@ -16,14 +17,18 @@ export class TttComponent implements OnInit {
   }
 
   click(id) {
+    this.player = (this.counter === true) ? 'x' : 'y';
     if (this.counter) {
-      this.ttt.splice(id, 1, 'x');
+      this.ttt.splice(id, 1, this.player);
       this.counter = false;
+      // this.win(this.ttt, 'x');
     } else {
-      this.ttt.splice(id, 1, 'y');
+      this.ttt.splice(id, 1, this.player);
       this.counter = true;
+      // this.win(this.ttt, 'y');
     }
-    this.win(this.ttt);
+    console.log(this.ttt);
+    this.win(this.ttt, this.player);
   }
   win(res, player) {
     if (
@@ -36,95 +41,12 @@ export class TttComponent implements OnInit {
       (res[1] === player && res[4] === player && res[7] === player) ||
       (res[2] === player && res[5] === player && res[8] === player)
     ) {
-      console.log('выйграл' + player);
-    } else {
-      console.log('пока нет');
+      console.log('выйграл ' + player);
     }
   }
 
 }
 
-// next = 0;
-// elem: any;
-// grid: string[];
-// // для скрытия меню выбора
-// _whoTurn: boolean;
-// // для первого хода компьютера
-// now: boolean;
-// // для выбора игры против компьютера или игрока
-// choose: string;
-// // компьютер первый или второй
-// comp: boolean;
-//
-// constructor() {}
-//
-// ngOnInit() {
-//   this.grid = ['', '', '', '', '', '', '', '', ''];
-//   this._whoTurn = true;
-//   // this.youWinner.open('Кто ходит первый?', '', '', true);
-// }
-//
-// // PVE
-// startGame(x) {
-//   if (x === 'PVP') {
-//     console.log('игра против друг-друга');
-//     this.choose = 'PVP';
-//   } else {
-//     console.log('игра против компьютера');
-//     this.choose = 'PVE';
-//     if (x === 'PVE1') {
-//       this.now = true;
-//       this.comp = true;
-//       this.nextTurn(4);
-//     }
-//   }
-//   this._whoTurn = false;
-// }
-//
-// nextTurn(ind) {
-//   console.log(this.grid);
-//   // PVE
-//   if (this.choose === 'PVE') {
-//     // true - переменная для хода компьютера первым номером
-//     // false - переменная для хода компьютера вторым номером
-//     if (this.comp) {
-//       console.log('компьютер ходит первый');
-//       // компьютер ходит первый
-//       if (this.now) {
-//         // запускается один раз, ход компьютера
-//         this.now = false;
-//         this.grid.splice(ind, 1, 'x');
-//         console.log(this.grid);
-//       } else {
-//         this.grid.splice(ind, 1, '0');
-//         this.PVE(this.grid, ind, '0');
-//       }
-//     } else {
-//       // компьютер ходит второй
-//       console.log('компьютер ходит второй');
-//       this.grid.splice(ind, 1, 'x');
-//       this.PVE(this.grid, ind, 'x');
-//     }
-//     // PVP
-//   } else if (this.choose === 'PVP') {
-//     // очередь
-//     this.next += 1;
-//     this.elem = document.getElementsByTagName('td');
-//     this.elem = event.target;
-//     // console.log(this.elem);
-//     if (this.next % 2 === 0) {
-//       // добавляем элемент в массив и отражаем на экране
-//       this.elem.innerHTML = '0';
-//       this.grid.splice(ind, 1, '0');
-//       this.winner(this.grid, '0');
-//     } else {
-//       this.elem.innerHTML = 'x';
-//       this.grid.splice(ind, 1, 'x');
-//       this.winner(this.grid, 'x');
-//     }
-//   }
-// }
-//
 // // Подумать логигу по switch-case;
 // // Возможно цикл;
 // // запоминать пустые поля в переменную, и эту переменную
@@ -135,7 +57,7 @@ export class TttComponent implements OnInit {
 // // ['', '', '', '', 'x', '0', '0', 'x', ''];
 // // new Array = ['x', '0', '0', 'x', '', '', '', '', ''];
 // // возвращение индексы пустых строк
-// // сделать массив с очками, хороший ход +10, плохой -10, 0 это заполненные клетки (или что-то такое)
+// // сделать массив с очками, хороший ход +10, плохой -10, 0 это заполненные клетки
 // PVE(res, ind, player) {
 //   // true - компьютер ходит первый
 //   // false - компьютер ходит второй;

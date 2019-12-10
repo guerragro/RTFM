@@ -1,14 +1,16 @@
-<div class="h-container">
-
-  <input type="text" [(ngModel)]="city">
-  <button style="margin-left: 5px" (click)="loadWeather(city)">load</button>
-
+<div class="f-container">
+  <div class="margin-5">
+    <input class="border-radius" type="text" [(ngModel)]="city">
+  </div>
+  <div class="margin-5">
+    <button class="border-radius" (click)="loadWeather(city)">load</button>
+  </div>
 </div>
 
-<div class="b-container f-row" *ngIf="true">
-
+<div class="f-container" *ngIf="true">
+  <h1>{{city}}</h1>
   <div *ngFor="let a of weather">
-    <table>
+    <table class="text-center">
       <tr>
         <td>Восход</td>
         <td>{{a['ВОСХОД']}}</td>
@@ -41,5 +43,4 @@
   </div>
   <div style="margin: 5px">Какой нибудь график</div>
   <div>Уменьшенная копия или город, должна быть кликабельна для выбора на главный экран</div>
-
 </div>

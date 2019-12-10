@@ -8,19 +8,18 @@ export class WeatherStore {
 
   dataCity: CityWeatherInterface;
 
-  @observable weather: CityWeatherInterface[] = [];
+  @observable weather: CityWeatherInterface;
+
+  @observable cites: CityWeatherInterface[] = [];
   constructor( public weatherService: WeatherService) {}
 
   @action getWeather(data) {
     this.weatherService.getDataWeather(data).subscribe(
-      res => {
-        // this.weather = res;
-        this.fillWeatherInfo(res);
-        // console.log(res);
-      },
+      res => this.fillWeatherInfo(res),
       err => console.log(err)
     );
   }
+
   fillWeatherInfo(ans) {
     console.log(ans);
     const city: any = ans;
@@ -37,9 +36,8 @@ export class WeatherStore {
       visible: false,
       'tooltip': this.makeWeatherTooltip(city),
     };
-    // console.log(this.dataCity);
-    // this.weather = this.dataCity;
-    this.weather.push(this.dataCity);
+    this.weather = this.dataCity;
+    this.cites.push(this.weather);
   }
   makeWeatherTooltip(city: any): string {
     return 'Координаты: ' +

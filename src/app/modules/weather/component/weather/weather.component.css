@@ -1,15 +1,14 @@
-.h-container {
-  text-align: center;
-}
-
-.b-container {
+.f-container {
   width: 70%;
   margin: auto;
-  background: silver;
   display: flex;
-  /*flex-direction: row;*/
+  justify-content: center;
 }
 
-.f-row {
-  flex-direction: row;
+.margin-5 {
+  margin: 5px;
+}
+
+.border-radius {
+  border-radius: 7px;
 }
