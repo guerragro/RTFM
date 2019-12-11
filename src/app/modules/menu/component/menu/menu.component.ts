@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {appRoutes, AppRoutingModule} from '../../../../app-routing.module';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  menuList: any;
+
   constructor() { }
 
   ngOnInit() {
+    this.menuList = appRoutes;
+    console.log(this.menuList);
     this.fillmenulist();
   }
 

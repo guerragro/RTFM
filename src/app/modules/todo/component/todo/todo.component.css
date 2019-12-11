@@ -1,17 +1,29 @@
-/*html {*/
-/*  background-color: #5bc0de;*/
-/*}*/
+.test {
+  width: 50%;
+  margin: auto;
+  color: seagreen;
+  font-family: 'Varela Round', sans-serif;
+}
+.f-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
-/*.m-container {*/
-/*  width: 70%;*/
-/*  margin: ;*/
-/*}*/
+.margin-5 {
+  margin: 5px;
+}
+
+.head {
+  text-align: center;
+
+}
 
 .body {
   width: 100%;
   margin: auto;
   /*background: #2D936C;*/
-  color: #fff;
+  color: seagreen;
   font-family: 'Varela Round', sans-serif;
 }
 

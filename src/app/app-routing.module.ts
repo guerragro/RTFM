@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {PageNotFoundComponent} from './modules/page-not-found/component/page-not-found/page-not-found.component';
 
-const appRoutes: Routes = [
-  // Todo, вообще никак не готово
+export const appRoutes: Routes = [
+  // Todo, сделано, но через жопу
   {
     path: 'menu',
     loadChildren: './modules/menu/menu.module#MenuModule'

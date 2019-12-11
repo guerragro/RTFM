@@ -16,21 +16,113 @@ export class TttComponent implements OnInit {
   ngOnInit() {
   }
 
+  // друг портив друга
   click(id) {
+    if (false) {
+      // this.PVP(id);
+    } else {
+      this.PVE(id);
+    }
+    // this.player = (this.counter === true) ? 'x' : 'y';
+    // if (this.counter) {
+    //   this.ttt.splice(id, 1, this.player);
+    //   this.counter = false;
+    //   // this.howWon(this.ttt, 'x');
+    // } else {
+    //   this.ttt.splice(id, 1, this.player);
+    //   this.counter = true;
+    //   // this.howWon(this.ttt, 'y');
+    // }
+    // console.log(this.ttt);
+    // this.howWon(this.ttt, this.player);
+  }
+
+  // Друг против друга; Рабочая версия
+  // PVP(turn) {
+  //   this.player = (this.counter === true) ? 'x' : 'y';
+  //   if (this.counter) {
+  //     this.ttt.splice(turn, 1, this.player);
+  //     this.counter = false;
+  //     // this.howWon(this.ttt, 'x');
+  //   } else {
+  //     this.ttt.splice(turn, 1, this.player);
+  //     this.counter = true;
+  //     // this.howWon(this.ttt, 'y');
+  //   }
+  //   console.log(this.ttt);
+  //   this.howWon(this.ttt, this.player);
+  // }
+
+  // против компьютера;
+  PVE(turn) {
     this.player = (this.counter === true) ? 'x' : 'y';
     if (this.counter) {
-      this.ttt.splice(id, 1, this.player);
+      this.ttt.splice(turn, 1, this.player);
       this.counter = false;
-      // this.win(this.ttt, 'x');
     } else {
-      this.ttt.splice(id, 1, this.player);
+      this.ttt.splice(turn, 1, this.player);
       this.counter = true;
-      // this.win(this.ttt, 'y');
     }
-    console.log(this.ttt);
-    this.win(this.ttt, this.player);
+    this.turn(this.ttt, 'y');
   }
-  win(res, player) {
+
+  // [ +10, +10, +10,]
+  // [ +10, x, +10,]
+  // [ +10, +10, +10,]
+  turn(res, player) {
+    console.log(res, player);
+    if (res[0] === 'х' || res === '') {
+
+    } else if (res[1] === 'х' || res === '') {
+
+    } else if (res[2] === 'х' || res === '') {
+
+    } else if (res[3] === 'х' || res === '') {
+
+    } else if (res[4] === 'х' || res === '') {
+
+    } else if (res[5] === 'х' || res === '') {
+
+    } else if (res[6] === 'х' || res === '') {
+
+    } else if (res[7] === 'х' || res === '') {
+
+    } else if (res[8] === 'х' || res === '') {
+
+    } else {
+      console.log('No bad');
+    }
+    // switch (true) {
+    //   case (res[0] === player && res[1] === player && res[2] === player):
+    //     return res;
+    //     break;
+    //   case (res[3] === player && res[4] === player && res[5] === player):
+    //     return res;
+    //     break;
+    //   case (res[6] === player && res[7] === player && res[8] === player):
+    //     return res;
+    //     break;
+    //   case (res[0] === player && res[4] === player && res[8] === player):
+    //     return res;
+    //     break;
+    //   case (res[2] === player && res[4] === player && res[6] === player):
+    //     return res;
+    //     break;
+    //   case (res[0] === player && res[3] === player && res[6] === player):
+    //     return res;
+    //     break;
+    //   case (res[1] === player && res[4] === player && res[7] === player):
+    //     return res;
+    //     break;
+    //   case (res[2] === player && res[5] === player && res[8] === player):
+    //     return res;
+    //     break;
+    //   default:
+    //     return res;
+    // }
+  }
+  // выйгрышные комбинации;
+  howWon(res, player) {
     if (
       (res[0] === player && res[1] === player && res[2] === player) ||
       (res[3] === player && res[4] === player && res[5] === player) ||
@@ -84,40 +176,11 @@ export class TttComponent implements OnInit {
 //   }
 //   console.log(this.grid);
 // }
-//
-// game(res) {
-//   if (this.comp) {
-//     if ('67') {
-//       console.log('1');
-//     }
-//   } else {
-//     console.log('компьютер ходит второй');
-//   }
-// }
-//
 // newGame() {
 //   // очищаем массив и игровое поле
 //   // для новой или уже законченной игры
 //   // в окне выйгрыша или просто в пустом поле
 // }
-//
-// // проверка на выйгрышные комбинации
-// winner(ans, player) {
-//   if ((ans[0] === player && ans[1] === player && ans[2] === player) ||
-//     (ans[3] === player && ans[4] === player && ans[5] === player) ||
-//     (ans[6] === player && ans[7] === player && ans[7] === player) ||
-//     (ans[0] === player && ans[4] === player && ans[8] === player) ||
-//     (ans[2] === player && ans[4] === player && ans[6] === player) ||
-//     (ans[0] === player && ans[3] === player && ans[6] === player) ||
-//     (ans[1] === player && ans[4] === player && ans[7] === player) ||
-//     (ans[2] === player && ans[5] === player && ans[8] === player)
-//   ) {
-//     this.youWinner.open('Поздравляем', player, 'Хотите начать новую игру?', false);
-//   }
-//   // пока не придумал зачем функция должна возвращать false
-//   return false;
-// }
-//
 // // для рандомной игры
 // random(min: number = 0, max: number = 8) {
 //   // проверять, если элемент в массив пустая строка, то можно записывать, если нет, то следующий

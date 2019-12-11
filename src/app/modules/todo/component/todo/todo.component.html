@@ -43,18 +43,46 @@
       </div>
     </div>
 
-    <!--  список удаленных задач-->
-    <div class="container" *ngIf="false">
-      <div *ngFor="let todo of todoList">
-        <div>
-          список удаленных задач
-        </div>
-        <div>
-          <button>
-            восстановить
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<!--    &lt;!&ndash;  список удаленных задач&ndash;&gt;-->
+<!--    <div class="container" *ngIf="false">-->
+<!--      <div *ngFor="let todo of todoList">-->
+<!--        <div>-->
+<!--          список удаленных задач-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <button>-->
+<!--            восстановить-->
+<!--          </button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div class="test">-->
+<!--  <h1 class="text-center">To-Do List</h1>-->
+<!--  <div class="f-container">-->
+<!--    <div class="margin-5">-->
+<!--      <input type="text" class="form-control" size="50%">-->
+<!--    </div>-->
+<!--    <div class="margin-5">-->
+<!--      <button class="btn btn-block btn-primary" (click)="add(todo)">+</button>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div class="f-container" *ngFor="let t of todoList">-->
+<!--  <div>-->
+<!--    {{t.todo}}-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <button class="btn btn-block btn-success margin-top-botton" (click)="done(t['id'])">-->
+<!--      done-->
+<!--    </button>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <button class="btn btn-block btn-danger margin-top-botton" (click)="delete(t['id'], 'DELETE')">-->
+<!--      trash-->
+<!--    </button>-->
+<!--  </div>-->
+<!--</div>-->
