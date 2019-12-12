@@ -72,7 +72,7 @@ export class TttComponent implements OnInit {
   turn(res, player) {
     console.log(res, player);
     if (res[0] === 'х' || res === '') {
-
+      res[5] = 10;
     } else if (res[1] === 'х' || res === '') {
 
     } else if (res[2] === 'х' || res === '') {

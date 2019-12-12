@@ -2,3 +2,12 @@
 body {
   background-color: bisque;
 }
+
+.box-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.box-row {
+  flex-direction: row;
+}
+

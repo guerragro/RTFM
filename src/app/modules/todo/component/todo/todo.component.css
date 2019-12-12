@@ -1,50 +1,47 @@
-.test {
-  width: 50%;
-  margin: auto;
-  color: seagreen;
-  font-family: 'Varela Round', sans-serif;
+h1 {
+  margin: 0;
+  color: #204d74;
+  font-size: 40px;
 }
-.f-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
 .margin-5 {
   margin: 5px;
 }
 
-.head {
-  text-align: center;
-
-}
-
-.body {
+.box {
   width: 100%;
-  margin: auto;
-  /*background: #2D936C;*/
-  color: seagreen;
+  /* означаешь, что длина будет занимать весь экран монитора*/
+  height: 100vh;
   font-family: 'Varela Round', sans-serif;
 }
 
+.intro {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
 .todo-list {
+  width: 100%;
+  max-width: 500px;
+  margin: 2px auto;
+  color: rebeccapurple;
+}
+.form-input {
   width: 70%;
-  margin: auto
+  padding: 2px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25em;
+}
+.form-button {
+  width: 5%;
+  border: 1px solid #ced4da;
+  border-radius: 0.25em;
+}
+.flex-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.todo-form {
-  border: 1px solid black;
-  border-radius: 9px;
-  background: white;
-  color: black;
-}
-.margin-top-botton {
-  margin-bottom: 5px;
-  margin-top: 5px;
-}
-
-.m-container {
-  padding-right: 10px;
-  padding-left: 10px;
-  margin: auto;
+.done {
+  text-decoration: line-through;
 }

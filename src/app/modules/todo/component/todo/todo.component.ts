@@ -15,8 +15,9 @@ import {from} from 'rxjs';
 export class TodoComponent implements OnInit {
 
   todo: string;
-  todoList: any;
-  id: number = 1;
+  todoList: TodoModel[];
+  id = 1;
+  _done: boolean = false;
 
   constructor(
     private store: Store<TodoState>
@@ -52,8 +53,9 @@ export class TodoComponent implements OnInit {
   }
 
   done(id) {
+    this._done = true;
     // TODO сделать какую нибудь анимацию;
-    this.store.dispatch( new fromAction.doneTodo(id) );
+    // this.store.dispatch( new fromAction.doneTodo(id) );
   }
 
   show(event) {
@@ -63,6 +65,25 @@ export class TodoComponent implements OnInit {
   edit(task, id) {
     this.store.dispatch( new fromAction.editTodo(task, id) );
   }
+  // обновленная версия
+  // click(id, task) {
+  //   switch (task) {
+  //     case 'ADD':
+  //       this.store.dispatch( new fromAction.doneTodo(todo) );
+  //       break;
+  //     case 'DELETE':
+  //       this.store.dispatch( new fromAction.delTodo(id) );
+  //       break;
+  //     case 'DONE':
+  //       this.store.dispatch( new fromAction.doneTodo(id) );
+  //       break;
+  //     case 'EDIT':
+  //       this.store.dispatch( new fromAction.editTodo(task, id) );
+  //       break;
+  //     default:
+  //       return true;
+  //   }
+  // }
 }
 
 // https://github.com/mashish584/ngrx-todo-app-example/blob/master/src/app/store/reducers/todo.reducers.ts

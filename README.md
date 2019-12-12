@@ -32,3 +32,6 @@ tic-tac-toe:
 
 Готова:
 - готова игра против друг друга;
+
+иконки
+https://github.com/FortAwesome/angular-fontawesome
