@@ -24,6 +24,8 @@ h1 {
   max-width: 500px;
   margin: 2px auto;
   color: rebeccapurple;
+  border: 1px solid #ced4da;
+  border-radius: 0.25em;
 }
 .form-input {
   width: 70%;

@@ -6,7 +6,7 @@
     <div>
       <input type="password" class="form-input margin-5" placeholder="ENTER YOUR TASK" [(ngModel)]="todo">
       <button class="form-button margin-5" (click)="add(todo)">
-        <span>+</span>
+        <span>{{icons.books}}</span>
       </button>
     </div>
 
@@ -14,14 +14,14 @@
 
   <div class="todo-list flex-box" *ngFor="let t of todoList">
 
-    <div class="col-lg-8 col-xs-8 col-sm-8" [ngClass]="{done: _done}">
+    <div class="col-8" [ngClass]="{done: _done}" (click)="edit(1,4)">
       {{t.todo}}
     </div>
-    <div class="col-lg-2 col-xs-2 col-sm-2">
-      <button class="form-button" (click)="done(t.id)">done</button>
+    <div class="col-2">
+      <button class="btn btn-default" (click)="done(t.id)">suc</button>
     </div>
-    <div class="col-lg-2 col-xs-2 col-sm-2">
-      <button class="form-button" (click)="delete(t.id, 'DELETE')">del</button>
+    <div class="col-2">
+      <button class="btn btn-default" (click)="delete(t.id, 'DELETE')">del</button>
     </div>
 
   </div>

@@ -6,6 +6,7 @@ import { TodoState } from '../../store/todo.reducer';
 import { Todo, TodoModel } from '../../model/todo';
 import {filter} from 'rxjs/operators';
 import {from} from 'rxjs';
+import icons from 'glyphicons';
 
 @Component({
   selector: 'app-todo',
@@ -18,12 +19,14 @@ export class TodoComponent implements OnInit {
   todoList: TodoModel[];
   id = 1;
   _done: boolean = false;
+  icons = icons;
 
   constructor(
     private store: Store<TodoState>
   ) { }
 
   ngOnInit() {
+    console.log(icons.heart);
     this.store.subscribe(
       res => {
         this.todoList = res['todos']['todos'];

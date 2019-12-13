@@ -14,7 +14,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.menuList = appRoutes;
-    console.log(this.menuList);
+    // console.log(this.menuList);
     this.fillmenulist();
   }
 
