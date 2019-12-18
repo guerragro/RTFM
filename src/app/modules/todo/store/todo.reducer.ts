@@ -18,6 +18,7 @@ export const InitialTodosState: TodoState = {
   delete: []
 };
 
+
 export function TodoReducer(state = InitialTodosState, action: fromAction.Action) {
   switch (action.type) {
     // добавление

@@ -34,4 +34,8 @@ export class WeatherComponent implements OnInit {
     this.weatherStore.getWeather(city);
   }
 
+  click(event) {
+    console.log(event);
+  }
+
 }

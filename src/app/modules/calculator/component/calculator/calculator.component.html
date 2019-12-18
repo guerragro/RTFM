@@ -9,8 +9,8 @@
 
     <div class="box1">
       <div class="flex-row">
-        <div class="btn" *ngFor="let a of [7, 8, 9, 4, 5, 6, 1, 2, 3, 0, ',', '%']">
-          <div>{{a}}</div>
+        <div class="btn" *ngFor="let a of ['7', '8', '9', '4', '5', '6', '1', '2', '3', '0', ',', '=']">
+          <div (click)="click(a)">{{a}}</div>
         </div>
       </div>
 
@@ -18,8 +18,8 @@
 
     <div class="box2">
       <div class="flex-column">
-        <div class="btn" *ngFor="let b of ['x', '/', '+', '-']">
-          <div>{{b}}</div>
+        <div class="btn" *ngFor="let b of ['*', '/', '+', '-']">
+          <div (click)="click(b)">{{b}}</div>
         </div>
       </div>
     </div>

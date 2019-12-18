@@ -2,18 +2,18 @@ export interface TodoModel {
   todo: string;
   id: number;
   done: boolean;
-  visible: boolean;
+  // visible: boolean;
 }
 
 export class Todo {
   todo: string;
   id: number;
   done: boolean;
-  visible: boolean;
-  constructor(todo: string, id: number, done: boolean, visible = false) {
+  // visible: boolean;
+  constructor(todo: string, id: number, done: boolean) {
     this.todo = todo;
     this.id = id;
     this.done = done;
-    this.visible = visible;
+    // this.visible = visible;
   }
 }

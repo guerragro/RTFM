@@ -12,3 +12,27 @@
 .border-radius {
   border-radius: 7px;
 }
+
+.box {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.flex-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.box-1 {
+  width: 50%;
+  padding: 5px;
+}
+.box-2 {
+  width: 50%;
+  padding: 5px;
+}

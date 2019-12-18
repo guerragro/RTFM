@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TttComponent implements OnInit {
 
   ttt = ['', '', '', '', '', '', '', '', ''];
-  counter = true;
+  counter: boolean = true;
   player: string;
 
   constructor() { }
@@ -17,41 +17,29 @@ export class TttComponent implements OnInit {
   }
 
   // друг портив друга
-  click(id) {
+  gameChoices(id) {
     if (false) {
       // this.PVP(id);
     } else {
       this.PVE(id);
     }
+  }
+
+  // Друг против друга; Рабочая версия
+  PVP(turn) {
     // this.player = (this.counter === true) ? 'x' : 'y';
     // if (this.counter) {
-    //   this.ttt.splice(id, 1, this.player);
+    //   this.ttt.splice(turn, 1, this.player);
     //   this.counter = false;
     //   // this.howWon(this.ttt, 'x');
     // } else {
-    //   this.ttt.splice(id, 1, this.player);
+    //   this.ttt.splice(turn, 1, this.player);
     //   this.counter = true;
     //   // this.howWon(this.ttt, 'y');
     // }
     // console.log(this.ttt);
     // this.howWon(this.ttt, this.player);
   }
-
-  // Друг против друга; Рабочая версия
-  // PVP(turn) {
-  //   this.player = (this.counter === true) ? 'x' : 'y';
-  //   if (this.counter) {
-  //     this.ttt.splice(turn, 1, this.player);
-  //     this.counter = false;
-  //     // this.howWon(this.ttt, 'x');
-  //   } else {
-  //     this.ttt.splice(turn, 1, this.player);
-  //     this.counter = true;
-  //     // this.howWon(this.ttt, 'y');
-  //   }
-  //   console.log(this.ttt);
-  //   this.howWon(this.ttt, this.player);
-  // }
 
   // против компьютера;
   PVE(turn) {
@@ -63,35 +51,38 @@ export class TttComponent implements OnInit {
       this.ttt.splice(turn, 1, this.player);
       this.counter = true;
     }
-    this.turn(this.ttt, 'y');
+    this.turn(this.ttt, this.player);
   }
 
   // [ +10, +10, +10,]
   // [ +10, x, +10,]
   // [ +10, +10, +10,]
   turn(res, player) {
-    console.log(res, player);
-    if (res[0] === 'х' || res === '') {
-      res[5] = 10;
-    } else if (res[1] === 'х' || res === '') {
-
-    } else if (res[2] === 'х' || res === '') {
-
-    } else if (res[3] === 'х' || res === '') {
-
-    } else if (res[4] === 'х' || res === '') {
-
-    } else if (res[5] === 'х' || res === '') {
-
-    } else if (res[6] === 'х' || res === '') {
-
-    } else if (res[7] === 'х' || res === '') {
-
-    } else if (res[8] === 'х' || res === '') {
-
-    } else {
-      console.log('No bad');
+    console.log(res, res[0]);
+    if (res[0] === 'x') {
+      console.log('yes');
     }
+//     if (res[0] === 'х' || res === '') {
+//
+//     } else if (res[1] === 'х' || res === '') {
+//
+//     } else if (res[2] === 'х' || res === '') {
+//
+//     } else if (res[3] === 'х' || res === '') {
+//
+//     } else if (res[4] === 'х' || res === '') {
+// console.log('yes');
+//     } else if (res[5] === 'х' || res === '') {
+//
+//     } else if (res[6] === 'х' || res === '') {
+//
+//     } else if (res[7] === 'х' || res === '') {
+//
+//     } else if (res[8] === 'х' || res === '') {
+//
+//     } else {
+//       console.log('No bad');
+//     }
     // switch (true) {
     //   case (res[0] === player && res[1] === player && res[2] === player):
     //     return res;

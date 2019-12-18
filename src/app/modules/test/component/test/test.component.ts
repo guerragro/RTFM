@@ -21,6 +21,9 @@ export class TestComponent implements OnInit {
   origin =  ['х', 'ч', 'ш', 'щ', 'ж', 'a', 'б', 'в', 'г', 'д', 'е', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'ц', 'ъ', 'ы', 'ь', 'э', 'ю', 'я'];
   test$;
   model = new NumberModel();
+  loginText = 'Login';
+  signUpText = 'Sign';
+  lesson = ['session1', 'session2'];
 
   constructor(
     public mobxStore: TestStore,
@@ -40,6 +43,13 @@ export class TestComponent implements OnInit {
     //   })
     // );
     this.test = [{name: 'Axe', age: 5}];
+  }
+
+  login() {
+    console.log(this.loginText);
+  }
+  sign() {
+    console.log(this.signUpText);
   }
 
   add() {

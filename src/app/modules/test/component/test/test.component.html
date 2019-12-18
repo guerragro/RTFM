@@ -1,9 +1,14 @@
 <!--<input type="text" [(ngModel)]="test">-->
 <!--<button (click)="add()">add</button>-->
 
-<div *ngIf="test">{{test}}</div>
-<button (click)="upNumber()">mobx</button>
-<div *ngFor="let a of this.test">
-  <div>{{a.name}}</div>
-  <div>{{a.age}}</div>
-</div>
+<!--<div *ngIf="test">{{test}}</div>-->
+<!--<button (click)="upNumber()">mobx</button>-->
+<!--<div *ngFor="let a of this.test">-->
+<!--  <div>{{a.name}}</div>-->
+<!--  <div>{{a.age}}</div>-->
+<!--</div>-->
+
+<ng-template>
+  <button (click)="login()">{{loginText}}</button>
+  <button (click)="sign()">{{signUpText}}</button>
+</ng-template>

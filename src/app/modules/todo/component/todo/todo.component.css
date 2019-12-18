@@ -19,7 +19,7 @@ h1 {
   max-width: 900px;
   margin: 0 auto;
 }
-.todo-list {
+.todo-box {
   width: 100%;
   max-width: 500px;
   margin: 2px auto;
@@ -34,7 +34,7 @@ h1 {
   border-radius: 0.25em;
 }
 .form-button {
-  width: 5%;
+  /*width: 5%;*/
   border: 1px solid #ced4da;
   border-radius: 0.25em;
 }

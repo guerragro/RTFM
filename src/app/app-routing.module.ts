@@ -8,7 +8,7 @@ export const appRoutes: Routes = [
     path: 'menu',
     loadChildren: './modules/menu/menu.module#MenuModule'
   },
-  // Todo, работает часть функционала, набросаны стили
+  // Todo, по моим прикидкам готовность 70-80%
   {
     path: 'todo',
     loadChildren: './modules/todo/todo.module#TodoModule'

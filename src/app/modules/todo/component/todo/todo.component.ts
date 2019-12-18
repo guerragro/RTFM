@@ -18,7 +18,6 @@ export class TodoComponent implements OnInit {
   todo: string;
   todoList: TodoModel[];
   id = 1;
-  _done: boolean = false;
   icons = icons;
 
   constructor(
@@ -47,18 +46,13 @@ export class TodoComponent implements OnInit {
     }
   }
 
-  delete(id, task) {
-    if (task === 'DELETE') {
-      this.store.dispatch( new fromAction.delTodo(id) );
-    } else if (task === 'DONE') {
-      this.store.dispatch( new fromAction.doneTodo(id) );
-    }
+  delete(id) {
+    this.store.dispatch( new fromAction.delTodo(id) );
   }
 
   done(id) {
-    this._done = true;
     // TODO сделать какую нибудь анимацию;
-    // this.store.dispatch( new fromAction.doneTodo(id) );
+    this.store.dispatch( new fromAction.doneTodo(id) );
   }
 
   show(event) {
@@ -69,24 +63,29 @@ export class TodoComponent implements OnInit {
     this.store.dispatch( new fromAction.editTodo(task, id) );
   }
   // обновленная версия
-  // click(id, task) {
-  //   switch (task) {
-  //     case 'ADD':
-  //       this.store.dispatch( new fromAction.doneTodo(todo) );
-  //       break;
-  //     case 'DELETE':
-  //       this.store.dispatch( new fromAction.delTodo(id) );
-  //       break;
-  //     case 'DONE':
-  //       this.store.dispatch( new fromAction.doneTodo(id) );
-  //       break;
-  //     case 'EDIT':
-  //       this.store.dispatch( new fromAction.editTodo(task, id) );
-  //       break;
-  //     default:
-  //       return true;
-  //   }
-  // }
+  click(data, task) {
+    switch (task) {
+      case 'ADD':
+        if (data !== undefined) {
+          this.store.dispatch( new fromAction.addTodo( new Todo(data, this.id++, false) ) );
+          this.todo = null;
+        } else {
+          alert('Может стоит ввести задачу');
+        }
+        break;
+      case 'DELETE':
+        this.store.dispatch( new fromAction.delTodo(data) );
+        break;
+      case 'DONE':
+        this.store.dispatch( new fromAction.doneTodo(data) );
+        break;
+      case 'EDIT':
+        this.store.dispatch( new fromAction.editTodo(this.todo, data) );
+        break;
+      default:
+        return true;
+    }
+  }
 }
 
 // https://github.com/mashish584/ngrx-todo-app-example/blob/master/src/app/store/reducers/todo.reducers.ts
