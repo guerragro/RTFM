@@ -3,33 +3,33 @@ import { Routes, RouterModule } from '@angular/router';
 import {PageNotFoundComponent} from './modules/page-not-found/component/page-not-found/page-not-found.component';
 
 export const appRoutes: Routes = [
-  // Todo, сделано, но через жопу
   {
+    // Todo, сделано, но через жопу
     path: 'menu',
     loadChildren: './modules/menu/menu.module#MenuModule'
   },
-  // Todo, по моим прикидкам готовность 70-80%
   {
+    // Todo, по моим прикидкам готовность 70-80%
     path: 'todo',
     loadChildren: './modules/todo/todo.module#TodoModule'
   },
-  // Todo, готово получение данные, добавлен некоторый функционал, сделать внешнее оформление
   {
+    // Todo, готово получение данные, добавлен некоторый функционал, сделать внешнее оформление
     path: 'weather',
     loadChildren: './modules/weather/weather.module#WeatherModule'
   },
-  // Todo, все на стадии зачатия, есть первые сподвижки
   {
+    // Todo, все на стадии зачатия, есть первые сподвижки
     path: 'ticket',
     loadChildren: './modules/ticket/ticket.module#TicketModule'
   },
-  // Todo, привести в порядок и сделать игру против компьютера
   {
+    // Todo, привести в порядок и сделать игру против компьютера
     path: 'tic-tac-toe',
     loadChildren: './modules/tic-tac-toe/tic-tac-toe.module#TicTacToeModule'
   },
-  // Todo, полностью переделать, набросаны первые стили
   {
+    // Todo, по моим прикидкам готовность 70-80%, набросаны первые стили
     path: 'calculator',
     loadChildren: './modules/calculator/calculator.module#CalculatorModule'
   },
