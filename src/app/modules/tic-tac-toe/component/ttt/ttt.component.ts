@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TttComponent implements OnInit {
 
-  ttt = ['', '', '', '', '', '', '', '', ''];
-  counter: boolean = true;
+  box = ['', '', '', '', '', '', '', '', ''];
+  counter: boolean = false;
   player: string;
+  game: string;
+
+  box2: any = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
   constructor() { }
 
@@ -27,14 +30,13 @@ export class TttComponent implements OnInit {
 
   // Друг против друга; Рабочая версия
   PVP(turn) {
+    // this.counter = !this.counter;
     // this.player = (this.counter === true) ? 'x' : 'y';
     // if (this.counter) {
     //   this.ttt.splice(turn, 1, this.player);
-    //   this.counter = false;
     //   // this.howWon(this.ttt, 'x');
     // } else {
     //   this.ttt.splice(turn, 1, this.player);
-    //   this.counter = true;
     //   // this.howWon(this.ttt, 'y');
     // }
     // console.log(this.ttt);
@@ -43,25 +45,49 @@ export class TttComponent implements OnInit {
 
   // против компьютера;
   PVE(turn) {
+    this.counter = !this.counter;
     this.player = (this.counter === true) ? 'x' : 'y';
     if (this.counter) {
-      this.ttt.splice(turn, 1, this.player);
-      this.counter = false;
+      this.box2.splice(turn, 1, this.player);
     } else {
-      this.ttt.splice(turn, 1, this.player);
-      this.counter = true;
+      this.box2.splice(turn, 1, this.player);
     }
-    this.turn(this.ttt, this.player);
+    this.turn(this.box2, this.player);
   }
 
   // [ +10, +10, +10,]
   // [ +10, x, +10,]
   // [ +10, +10, +10,]
   turn(res, player) {
-    console.log(res, res[0]);
+    // console.log(res, res[0]);
     if (res[0] === 'x') {
-      console.log('yes');
+      res[4] = 'y';
     }
+    console.log(res);
+    this.howWon(res, 'x');
+  }
+  // выйгрышные комбинации;
+  howWon(res, player) {
+    if (
+      (res[0] === player && res[1] === player && res[2] === player) ||
+      (res[3] === player && res[4] === player && res[5] === player) ||
+      (res[6] === player && res[7] === player && res[8] === player) ||
+      (res[0] === player && res[4] === player && res[8] === player) ||
+      (res[2] === player && res[4] === player && res[6] === player) ||
+      (res[0] === player && res[3] === player && res[6] === player) ||
+      (res[1] === player && res[4] === player && res[7] === player) ||
+      (res[2] === player && res[5] === player && res[8] === player)
+    ) {
+      console.log('выйграл ' + player);
+    }
+  }
+
+  clear() {
+    this.box = ['', '', '', '', '', '', '', '', ''];
+    this.box2 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+  }
+}
+
 //     if (res[0] === 'х' || res === '') {
 //
 //     } else if (res[1] === 'х' || res === '') {
@@ -83,52 +109,34 @@ export class TttComponent implements OnInit {
 //     } else {
 //       console.log('No bad');
 //     }
-    // switch (true) {
-    //   case (res[0] === player && res[1] === player && res[2] === player):
-    //     return res;
-    //     break;
-    //   case (res[3] === player && res[4] === player && res[5] === player):
-    //     return res;
-    //     break;
-    //   case (res[6] === player && res[7] === player && res[8] === player):
-    //     return res;
-    //     break;
-    //   case (res[0] === player && res[4] === player && res[8] === player):
-    //     return res;
-    //     break;
-    //   case (res[2] === player && res[4] === player && res[6] === player):
-    //     return res;
-    //     break;
-    //   case (res[0] === player && res[3] === player && res[6] === player):
-    //     return res;
-    //     break;
-    //   case (res[1] === player && res[4] === player && res[7] === player):
-    //     return res;
-    //     break;
-    //   case (res[2] === player && res[5] === player && res[8] === player):
-    //     return res;
-    //     break;
-    //   default:
-    //     return res;
-    // }
-  }
-  // выйгрышные комбинации;
-  howWon(res, player) {
-    if (
-      (res[0] === player && res[1] === player && res[2] === player) ||
-      (res[3] === player && res[4] === player && res[5] === player) ||
-      (res[6] === player && res[7] === player && res[8] === player) ||
-      (res[0] === player && res[4] === player && res[8] === player) ||
-      (res[2] === player && res[4] === player && res[6] === player) ||
-      (res[0] === player && res[3] === player && res[6] === player) ||
-      (res[1] === player && res[4] === player && res[7] === player) ||
-      (res[2] === player && res[5] === player && res[8] === player)
-    ) {
-      console.log('выйграл ' + player);
-    }
-  }
-
-}
+// switch (true) {
+//   case (res[0] === player && res[1] === player && res[2] === player):
+//     return res;
+//     break;
+//   case (res[3] === player && res[4] === player && res[5] === player):
+//     return res;
+//     break;
+//   case (res[6] === player && res[7] === player && res[8] === player):
+//     return res;
+//     break;
+//   case (res[0] === player && res[4] === player && res[8] === player):
+//     return res;
+//     break;
+//   case (res[2] === player && res[4] === player && res[6] === player):
+//     return res;
+//     break;
+//   case (res[0] === player && res[3] === player && res[6] === player):
+//     return res;
+//     break;
+//   case (res[1] === player && res[4] === player && res[7] === player):
+//     return res;
+//     break;
+//   case (res[2] === player && res[5] === player && res[8] === player):
+//     return res;
+//     break;
+//   default:
+//     return res;
+// }
 
 // // Подумать логигу по switch-case;
 // // Возможно цикл;
@@ -166,11 +174,6 @@ export class TttComponent implements OnInit {
 //     console.log('второй');
 //   }
 //   console.log(this.grid);
-// }
-// newGame() {
-//   // очищаем массив и игровое поле
-//   // для новой или уже законченной игры
-//   // в окне выйгрыша или просто в пустом поле
 // }
 // // для рандомной игры
 // random(min: number = 0, max: number = 8) {

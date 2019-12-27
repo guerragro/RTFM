@@ -7,6 +7,7 @@ import {FormsModule} from '@angular/forms';
 import {StoreModule} from '@ngrx/store';
 import {reducer} from './store/test.reducer';
 import {TestStore} from './store/mobx.store';
+import {Service} from './service/service';
 
 @NgModule({
   declarations: [TestComponent],
@@ -17,7 +18,8 @@ import {TestStore} from './store/mobx.store';
     // StoreModule.forRoot(reducer),
   ],
   providers: [
-    TestStore
+    TestStore,
+    Service
   ],
   bootstrap: [TestComponent]
 })

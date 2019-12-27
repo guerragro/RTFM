@@ -1,19 +1,26 @@
+<div class="position-absolute text-center" *ngIf="true">
+  Choose the game
+  <button>PVP</button>
+  <button>PVE</button>
+</div>
+
 <div class="container-box">
   <table>
     <tr>
-      <td (click)="PVE(0)"></td>
-      <td (click)="PVE(1)"></td>
-      <td (click)="PVE(2)"></td>
+      <td (click)="PVE(0)">0</td>
+      <td (click)="PVE(1)">1</td>
+      <td (click)="PVE(2)">2</td>
     </tr>
     <tr>
-      <td (click)="PVE(3)"></td>
-      <td (click)="PVE(4)"></td>
-      <td (click)="PVE(5)"></td>
+      <td (click)="PVE(3)">3</td>
+      <td (click)="PVE(4)">4</td>
+      <td (click)="PVE(5)">5</td>
     </tr>
     <tr>
-      <td (click)="PVE(6)"></td>
-      <td (click)="PVE(7)"></td>
-      <td (click)="PVE(8)"></td>
+      <td (click)="PVE(6)">6</td>
+      <td (click)="PVE(7)">7</td>
+      <td (click)="PVE(8)">8</td>
     </tr>
   </table>
 </div>
+<button (click)="clear()">очистка</button>

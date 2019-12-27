@@ -6,6 +6,7 @@ import {Observable} from 'rxjs';
 import {TestStore} from '../../store/mobx.store';
 import {fromMobx} from 'ngx-mobx';
 import {NumberModel} from '../../model';
+import {Service} from '../../service/service';
 
 @Component({
   selector: 'app-test',
@@ -24,9 +25,11 @@ export class TestComponent implements OnInit {
   loginText = 'Login';
   signUpText = 'Sign';
   lesson = ['session1', 'session2'];
+  zik = false;
 
   constructor(
     public mobxStore: TestStore,
+    public service: Service
   ) { }
 
   ngOnInit() {
@@ -43,6 +46,10 @@ export class TestComponent implements OnInit {
     //   })
     // );
     this.test = [{name: 'Axe', age: 5}];
+    this.service.test().substring(
+      (res: string) => console.log(res),
+      err => console.log(err)
+    );
   }
 
   login() {
@@ -60,6 +67,12 @@ export class TestComponent implements OnInit {
     this.mobxStore.upNumber();
     this.model = new NumberModel('1', ['2']);
     console.log(this.model);
+  }
+
+  zip(res) {
+    console.log(res);
+    // this.zik = !this.zik;
+    // console.log(this.zik);
   }
 
 }

@@ -31,7 +31,7 @@ export class CalculatorComponent implements OnInit {
         break;
       case '=':
         this.box.push((this.number === '') ? data : this.number);
-        this.box.forEach((a, index) => this.test(a, index));
+        this.box.forEach((a, index, array) => this.test(a, index, array));
         // this.amount(this.box);
         // this.test(this.box);
         this.number = '';
@@ -53,9 +53,10 @@ export class CalculatorComponent implements OnInit {
   // вставить обратно
   // и начать заново
   // нужна рекурсия, конечное это когда массив равен нюли или что-то там
-  test(numb, index) {
-    console.log(this.box);
-    console.log(numb, index);
+  test(numb, index, array) {
+    // console.log(this.box);
+    // console.log(numb, index, array);
+    console.log(array);
     if (numb === '/') {
       this._test = this.box.splice(index - 1, 3);
       console.log(this._test);
@@ -66,6 +67,13 @@ export class CalculatorComponent implements OnInit {
       this._test = this.box.splice(index - 1, 3);
     } else {
       this._test = this.box.splice(index - 1, 3);
+    }
+  }
+  newFunction(res) {
+    if (res.length === 0) {
+
+    } else {
+
     }
   }
 }
