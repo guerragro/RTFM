@@ -15,7 +15,7 @@ import {Service} from '../../service/service';
 })
 export class TestComponent implements OnInit {
 
-  test: any;
+  // test: any;
   store: Store<AppState>;
   city = ['l', 'o', 'n', 'd', 'o', 'n'];
   bizarro = ['kh', 'ch', 'sh', 'shh', 'zh', 'a', 'b', 'v', 'g', 'd', 'e', 'z', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'f', 'с', '#', 'y', 'ь', 'e', 'u', 'a'];
@@ -45,7 +45,7 @@ export class TestComponent implements OnInit {
     //     }
     //   })
     // );
-    this.test = [{name: 'Axe', age: 5}];
+    // this.test = [{name: 'Axe', age: 5}];
     this.service.test().substring(
       (res: string) => console.log(res),
       err => console.log(err)
