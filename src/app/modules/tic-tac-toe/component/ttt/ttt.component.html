@@ -1,7 +1,7 @@
-<div class="position-absolute text-center" *ngIf="true">
+<div class="position-absolute text-center" *ngIf="this.game === ''">
   Choose the game
-  <button>PVP</button>
-  <button>PVE</button>
+  <button (click)="choice('PVP')">PVP</button>
+  <button (click)="choice('PVE')">PVE</button>
 </div>
 
 <div class="container-box">

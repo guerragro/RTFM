@@ -46,10 +46,10 @@ export class TestComponent implements OnInit {
     //   })
     // );
     // this.test = [{name: 'Axe', age: 5}];
-    this.service.test().substring(
-      (res: string) => console.log(res),
-      err => console.log(err)
-    );
+    // this.service.test().substring(
+    //   (res: string) => console.log(res),
+    //   err => console.log(err)
+    // );
   }
 
   login() {
