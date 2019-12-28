@@ -10,7 +10,7 @@ export class TttComponent implements OnInit {
   box = ['', '', '', '', '', '', '', '', ''];
   counter: boolean = false;
   player: string;
-  game: string;
+  game: string = '';
 
   box2: any = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
@@ -19,29 +19,27 @@ export class TttComponent implements OnInit {
   ngOnInit() {
   }
 
-  // друг портив друга
-  gameChoices(id) {
-    if (false) {
-      // this.PVP(id);
+  // выбор игры, не знаю зачем сделал
+  choice(game) {
+    if (game === 'PVP') {
+      this.game = 'PVP';
     } else {
-      this.PVE(id);
+      this.game = 'PVE';
     }
   }
 
   // Друг против друга; Рабочая версия
-  PVP(turn) {
-    // this.counter = !this.counter;
-    // this.player = (this.counter === true) ? 'x' : 'y';
-    // if (this.counter) {
-    //   this.ttt.splice(turn, 1, this.player);
-    //   // this.howWon(this.ttt, 'x');
-    // } else {
-    //   this.ttt.splice(turn, 1, this.player);
-    //   // this.howWon(this.ttt, 'y');
-    // }
-    // console.log(this.ttt);
-    // this.howWon(this.ttt, this.player);
-  }
+  // PVP(turn) {
+  //   this.counter = !this.counter;
+  //   this.player = (this.counter === true) ? 'x' : 'y';
+  //   if (this.counter) {
+  //     this.box.splice(turn, 1, this.player);
+  //   } else {
+  //     this.box.splice(turn, 1, this.player);
+  //   }
+  //   console.log(this.box);
+  //   this.howWon(this.box, this.player);
+  // }
 
   // против компьютера;
   PVE(turn) {
@@ -59,12 +57,31 @@ export class TttComponent implements OnInit {
   // [ +10, x, +10,]
   // [ +10, +10, +10,]
   turn(res, player) {
-    // console.log(res, res[0]);
-    if (res[0] === 'x') {
-      res[4] = 'y';
+    // первый блок условий
+    if (res[0] === 'x' && res[1] === 'x') {
+      res[2] += 10;
+    } else if (res[0] === 'x' && res[2] === 'x') {
+      res[1] += 10;
+    } else if (res[1] === 'x' && res[2] === 'x') {
+      res[2] += 10;
+    //  второй блок условий
+    } else if (res[3] === 'x' && res[4] === 'x') {
+      res[5] += 10;
+    } else if (res[3] === 'x' && res[5] === 'x') {
+      res[4] += 10;
+    } else if (res[4] === 'x' && res[5] === 'x') {
+      res[3] += 10;
+    //  третий блок условий
+    } else if (res[6] === 'x' && res[7] === 'x') {
+      res[8] += 10;
+    } else if (res[6] === 'x' && res[8] === 'x') {
+      res[7] += 10;
+    } else if (res[7] === 'x' && res[8] === 'x') {
+      res[6] += 10;
     }
+    // Math.max.apply(null, res);
     console.log(res);
-    this.howWon(res, 'x');
+    // this.howWon(res, 'x');
   }
   // выйгрышные комбинации;
   howWon(res, player) {
@@ -87,28 +104,6 @@ export class TttComponent implements OnInit {
     this.box2 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
   }
 }
-
-//     if (res[0] === 'х' || res === '') {
-//
-//     } else if (res[1] === 'х' || res === '') {
-//
-//     } else if (res[2] === 'х' || res === '') {
-//
-//     } else if (res[3] === 'х' || res === '') {
-//
-//     } else if (res[4] === 'х' || res === '') {
-// console.log('yes');
-//     } else if (res[5] === 'х' || res === '') {
-//
-//     } else if (res[6] === 'х' || res === '') {
-//
-//     } else if (res[7] === 'х' || res === '') {
-//
-//     } else if (res[8] === 'х' || res === '') {
-//
-//     } else {
-//       console.log('No bad');
-//     }
 // switch (true) {
 //   case (res[0] === player && res[1] === player && res[2] === player):
 //     return res;
@@ -138,48 +133,18 @@ export class TttComponent implements OnInit {
 //     return res;
 // }
 
-// // Подумать логигу по switch-case;
-// // Возможно цикл;
-// // запоминать пустые поля в переменную, и эту переменную
-// // тот элемент который уже считался, убирать из поиска
-// // или добавлять в новый массив, по которыму и будет считаться
-// // ['', '', '', '', '', '', '', '', ''] = ['', '', '', '', 'x', '0', '', '', ''];
-// // new Array = ['x', '0', '', '', '', '', '', '', ''];
-// // ['', '', '', '', 'x', '0', '0', 'x', ''];
-// // new Array = ['x', '0', '0', 'x', '', '', '', '', ''];
-// // возвращение индексы пустых строк
-// // сделать массив с очками, хороший ход +10, плохой -10, 0 это заполненные клетки
-// PVE(res, ind, player) {
-//   // true - компьютер ходит первый
-//   // false - компьютер ходит второй;
-//   if (this.comp) {
-//     if (res[0] === '0' || res[2] === '0' || res[6] === '0' || res[8] === '0') {
-//       // первый вариант развития событий
-//       console.log('первая цепочка');
-//     } else if (res[1] === '0' || res[3] === '0' || res[5] === '0' || res[7] === '0') {
-//       // ходы ai
-//       //   4, 6, 8, 0 или 7
-//       // ходы pl
-//       //   1 или 3, 2, 7 или 0
-//       this.grid.splice(6, 1, 'x');
-//       if (res[2] === '0') {
-//         this.grid.splice(8, 1, 'x');
-//         if (res[7] === '0') {
-//           this.grid.splice(0, 1, 'x');
-//           this.winner(this.grid, 'x');
-//         }
-//       }
-//     }
-//   } else {
-//     console.log('второй');
-//   }
-//   console.log(this.grid);
-// }
-// // для рандомной игры
-// random(min: number = 0, max: number = 8) {
-//   // проверять, если элемент в массив пустая строка, то можно записывать, если нет, то следующий
-//   // проблема, событие не отлавливается поэтому не отрисовывается
-//   // this.II = Math.floor(Math.random() * (max - min + 1) + min);
-//   // this.nextTurn(this.II);
-//   // return Math.floor(Math.random() * (max - min + 1) + min);
-// }
+// Подумать логигу по switch-case;
+// Возможно цикл;
+// запоминать пустые поля в переменную, и эту переменную
+// тот элемент который уже считался, убирать из поиска
+// или добавлять в новый массив, по которыму и будет считаться
+// ['', '', '', '', '', '', '', '', ''] = ['', '', '', '', 'x', '0', '', '', ''];
+// new Array = ['x', '0', '', '', '', '', '', '', ''];
+// ['', '', '', '', 'x', '0', '0', 'x', ''];
+// new Array = ['x', '0', '0', 'x', '', '', '', '', ''];
+// возвращение индексы пустых строк
+// сделать массив с очками, хороший ход +10, плохой -10, 0 это заполненные клетки
+
+// Порядок:
+// - после первого хода, нужно раствавить? значения и поставить 'y' в клетку
+// далее пока непонятно
