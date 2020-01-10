@@ -53,12 +53,14 @@ export class TttComponent implements OnInit {
     this.turn(this.box2, this.player);
   }
 
-  // [ +10, +10, +10,]
-  // [ +10, x, +10,]
-  // [ +10, +10, +10,]
+  // [ +10, +10, +10,] [0, 1, 2]
+  // [ +10, x, +10,]   [3, 4, 5]
+  // [ +10, +10, +10,] [6, 7, 8]
   turn(res, player) {
-    // первый блок условий
-    if (res[0] === 'x' && res[1] === 'x') {
+    if (res[4] === 'x') {
+      res[0] += 10;
+      // первый блок условий
+    } else if (res[0] === 'x' && res[1] === 'x') {
       res[2] += 10;
     } else if (res[0] === 'x' && res[2] === 'x') {
       res[1] += 10;
@@ -79,9 +81,9 @@ export class TttComponent implements OnInit {
     } else if (res[7] === 'x' && res[8] === 'x') {
       res[6] += 10;
     }
-    // Math.max.apply(null, res);
-    console.log(res);
-    // this.howWon(res, 'x');
+    // // Math.max.apply(null, res);
+    // console.log(res);
+    // // this.howWon(res, 'x');
   }
   // выйгрышные комбинации;
   howWon(res, player) {

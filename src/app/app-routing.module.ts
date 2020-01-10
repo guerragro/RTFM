@@ -37,6 +37,10 @@ export const appRoutes: Routes = [
     path: 'test',
     loadChildren: './modules/test/test.module#TestModule'
   },
+  {
+    path: 'tour-of-heroes',
+    loadChildren: './modules/tour-of-heroes/tour-of-heroes.module#TourOfHeroesModule'
+  }
   // {
   //   path: '**',
   //   component: PageNotFoundComponent

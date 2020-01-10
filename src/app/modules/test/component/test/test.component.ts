@@ -26,6 +26,7 @@ export class TestComponent implements OnInit {
   signUpText = 'Sign';
   lesson = ['session1', 'session2'];
   zik = false;
+  new: any;
 
   constructor(
     public mobxStore: TestStore,
@@ -50,6 +51,16 @@ export class TestComponent implements OnInit {
     //   (res: string) => console.log(res),
     //   err => console.log(err)
     // );
+    this.newFunction(["a", "b", "c"]);
+  }
+
+  newFunction(a) {
+    a.forEach(b => b = 1 + b);
+    console.log(a);
+    // console.log(String(a).split(''));
+    // console.log(this.new);
+    // this.new = a.split(' ').sort((a, b) => a.length - b.length);
+    // console.log(this.new);
   }
 
   login() {
