@@ -4,12 +4,12 @@
 
 githab
 
+В случае если переименовали каталог
 
+генерируем наш ключ, вводим в командной строке
 ssh-keygen
 
-setting - deploy key - add new - пишем любое название и вставялем ключ id_rsa.pub
-
-он находится в домашнем каталоге, он скрыт
+расположен в домашнем каталоге, он скрыт
 gusevya/home/.ssh/
 
 Вводим в командной строке
@@ -17,3 +17,14 @@ cd ~/.ssh/id_rsa.pub
 
 Команда для открытия файлов
 xdg-open id_rsa.pub
+
+Заходим на GitHub
+setting - deploy key - add new - пишем любое название и вставялем ключ id_rsa.pub
+
+в командной строке
+git remote set-url origin https://github.com/guerragro/RTFM.git
+git remote -v
+
+
+
+
