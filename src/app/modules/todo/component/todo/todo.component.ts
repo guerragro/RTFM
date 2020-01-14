@@ -47,6 +47,7 @@ export class TodoComponent implements OnInit {
   }
 
   delete(id) {
+    console.log(id);
     this.store.dispatch( new fromAction.delTodo(id) );
   }
 

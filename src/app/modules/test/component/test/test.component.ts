@@ -17,9 +17,6 @@ export class TestComponent implements OnInit {
 
   // test: any;
   store: Store<AppState>;
-  city = ['l', 'o', 'n', 'd', 'o', 'n'];
-  bizarro = ['kh', 'ch', 'sh', 'shh', 'zh', 'a', 'b', 'v', 'g', 'd', 'e', 'z', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'f', 'с', '#', 'y', 'ь', 'e', 'u', 'a'];
-  origin =  ['х', 'ч', 'ш', 'щ', 'ж', 'a', 'б', 'в', 'г', 'д', 'е', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'ц', 'ъ', 'ы', 'ь', 'э', 'ю', 'я'];
   test$;
   model = new NumberModel();
   loginText = 'Login';
@@ -27,6 +24,10 @@ export class TestComponent implements OnInit {
   lesson = ['session1', 'session2'];
   zik = false;
   new: any;
+
+  city = ['p', 'i', 't', 'e', 'r'];
+  bizarro = ['kh', 'ch', 'sh', 'shh', 'zh', 'a', 'b', 'v', 'g', 'd', 'e', 'z', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'f', 'с', '#', 'y', 'ь', 'e', 'u', 'a'];
+  origin =  ['х',  'ч',  'ш',  'щ',   'ж',  'a', 'б', 'в', 'г', 'д', 'е', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'ц', 'ъ', 'ы', 'ь', 'э', 'ю', 'я'];
 
   constructor(
     public mobxStore: TestStore,
@@ -39,28 +40,16 @@ export class TestComponent implements OnInit {
     // this.store.subscribe(
     //   res => console.log(res)
     // );
-    // this.city.forEach( (a) =>
-    //   this.bizarro.forEach((b, index) => {
-    //     if (b === a) {
-    //       console.log(this.origin[index]);
-    //     }
-    //   })
-    // );
     // this.test = [{name: 'Axe', age: 5}];
     // this.service.test().substring(
     //   (res: string) => console.log(res),
     //   err => console.log(err)
     // );
-    this.newFunction(["a", "b", "c"]);
+    this.newFunction([1, 2, 3], 4);
+    this.translit(this.city);
   }
 
-  newFunction(a) {
-    a.forEach(b => b = 1 + b);
-    console.log(a);
-    // console.log(String(a).split(''));
-    // console.log(this.new);
-    // this.new = a.split(' ').sort((a, b) => a.length - b.length);
-    // console.log(this.new);
+  newFunction(mas, numb) {
   }
 
   login() {
@@ -80,10 +69,16 @@ export class TestComponent implements OnInit {
     console.log(this.model);
   }
 
-  zip(res) {
-    console.log(res);
-    // this.zik = !this.zik;
-    // console.log(this.zik);
+  // TODO нужно доделать
+  // функция для с английского на русский
+  translit(word) {
+    word.forEach( (a) =>
+      this.bizarro.forEach((b, index) => {
+        if (b === a) {
+          console.log(this.origin[index]);
+        }
+      })
+    );
   }
 
 }

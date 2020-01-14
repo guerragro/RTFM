@@ -14,7 +14,7 @@
 
   <div class="todo-box flex-box" *ngFor="let t of todoList">
 
-    <div class="col-8" (click)="edit(1,4)">
+    <div class="col-8" (click)="edit(t.todo,t.id)">
       {{t.todo}}
     </div>
     <div class="col-2">
