@@ -136,7 +136,26 @@
 			Как правильно применяется в связке с input.
 		</div>
 	</div>
+  <div>
+    npm i --save @angular/material @angular/animations
 
+    import { MdButtonModule, MdCardModule, MdToolbarModule } from '@angular/material';
+    import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+    imports: [
+    ...
+    BrowserAnimationsModule,
+    MdToolbarModule,
+    MdButtonModule,
+    MdCardModule
+    ],
+
+    И последнее, мы импортируем тему indigo pink в наш файл styles.css.
+
+    /* styles.css */
+    @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+  </div>
 	<div>
     <div>
       routing или же маршрутизация

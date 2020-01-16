@@ -25,20 +25,21 @@ export class TodoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(icons.heart);
+    // console.log(icons.heart);
     this.store.subscribe(
       res => {
         this.todoList = res['todos']['todos'];
-        console.log(res);
+        // console.log(this.todoList);
       },
       err => console.log(err)
     );
   }
 
+  // Todo проверка на пустую строку;
   add(todo) {
-    // Todo проверка на пусткую строку;
+    // console.log(todo);
     if (todo !== undefined) {
-      this.store.dispatch( new fromAction.addTodo( new Todo(todo, this.id++, false)));
+      this.store.dispatch( new fromAction.addTodo( new Todo(todo, this.id++, false, false)));
       this.todo = null;
       console.log(this.todo);
     } else {
@@ -47,28 +48,28 @@ export class TodoComponent implements OnInit {
   }
 
   delete(id) {
-    console.log(id);
+    // console.log(id);
     this.store.dispatch( new fromAction.delTodo(id) );
   }
 
+  // TODO сделать какую нибудь анимацию;
   done(id) {
-    // TODO сделать какую нибудь анимацию;
     this.store.dispatch( new fromAction.doneTodo(id) );
   }
 
-  show(event) {
-    console.log(event);
-  }
-
+  // TODO нужны фиксы
   edit(task, id) {
+    console.log(task);
+    this.todoList.filter((a) => (a.id === id) ? a.visible = false : true);
     this.store.dispatch( new fromAction.editTodo(task, id) );
   }
   // обновленная версия
-  click(data, task) {
+  task(task, data, id?) {
+    console.log(this.todoList);
     switch (task) {
       case 'ADD':
         if (data !== undefined) {
-          this.store.dispatch( new fromAction.addTodo( new Todo(data, this.id++, false) ) );
+          this.store.dispatch( new fromAction.addTodo( new Todo(data, this.id++, false, false) ) );
           this.todo = null;
         } else {
           alert('Может стоит ввести задачу');
@@ -81,6 +82,7 @@ export class TodoComponent implements OnInit {
         this.store.dispatch( new fromAction.doneTodo(data) );
         break;
       case 'EDIT':
+        this.todoList.filter((a) => (a.id === id) ? a.visible = false : true);
         this.store.dispatch( new fromAction.editTodo(this.todo, data) );
         break;
       default:

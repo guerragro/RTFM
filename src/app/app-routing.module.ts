@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {PageNotFoundComponent} from './modules/page-not-found/component/page-not-found/page-not-found.component';
 
+// TODO почитать по routing
+// https://favicon.tech/kak-sozdat-polnostranichnyj-veb-sajt-v-angular-chast-3-4/
+
 export const appRoutes: Routes = [
   {
     // Todo, сделано, но через жопу
