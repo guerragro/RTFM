@@ -25,7 +25,8 @@ export class TestComponent implements OnInit {
   zik = false;
   new: any;
 
-  city = ['p', 'i', 't', 'e', 'r'];
+  // city = ['p', 'i', 't', 'e', 'r'];
+  word: string[];
   bizarro = ['kh', 'ch', 'sh', 'shh', 'zh', 'a', 'b', 'v', 'g', 'd', 'e', 'z', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'f', 'с', '#', 'y', 'ь', 'e', 'u', 'a'];
   origin =  ['х',  'ч',  'ш',  'щ',   'ж',  'a', 'б', 'в', 'г', 'д', 'е', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'ц', 'ъ', 'ы', 'ь', 'э', 'ю', 'я'];
 
@@ -46,7 +47,7 @@ export class TestComponent implements OnInit {
     //   err => console.log(err)
     // );
     this.newFunction([1, 2, 3], 4);
-    this.translit(this.city);
+    // this.translit(this.city);
   }
 
   newFunction(mas, numb) {
@@ -72,7 +73,8 @@ export class TestComponent implements OnInit {
   // TODO нужно доделать
   // функция для с английского на русский
   translit(word) {
-    word.forEach( (a) =>
+    this.word = word.split('');
+    this.word.forEach( (a) =>
       this.bizarro.forEach((b, index) => {
         if (b === a) {
           console.log(this.origin[index]);

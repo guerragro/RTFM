@@ -1,11 +1,17 @@
-<div class="position-absolute text-center" *ngIf="this.game === ''">
+<div class="container text-center margin-5" *ngIf="this.game === ''">
   Choose the game
-  <button (click)="choice('PVP')">PVP</button>
-  <button (click)="choice('PVE')">PVE</button>
+  <div class="row">
+    <div class="col-6">
+      <button (click)="choice('PVP')">PVP</button>
+    </div>
+    <div class="col-6">
+      <button (click)="choice('PVE')">PVE</button>
+    </div>
+  </div>
 </div>
 
-<div class="container-box">
-  <table>
+<div class="container-box text-center">
+  <table style="margin: auto">
     <tr>
       <td (click)="PVE(0)">0</td>
       <td (click)="PVE(1)">1</td>
@@ -23,4 +29,8 @@
     </tr>
   </table>
 </div>
-<button (click)="clear()">очистка</button>
+
+<div class="text-center margin-5">
+  <button (click)="clear()">очистка</button>
+</div>
+

@@ -13,4 +13,5 @@
   <button (click)="sign()">{{signUpText}}</button>
 </ng-template>
 
-<button (click)="sign()">123</button>
+<input type="text" [(ngModel)]="word">
+<button (click)="translit(this.word)">Перевод</button>
