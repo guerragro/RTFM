@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    // PageNotFoundComponent
+    PageNotFoundComponent
   ],
   imports: [
     CommonModule,
