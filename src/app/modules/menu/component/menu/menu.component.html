@@ -1,28 +1,19 @@
-<h1 style="text-align: center">Список проектов</h1>
-<!--полюбому это сделано через жопу, перепесать-->
-<div *ngFor="let menu of menuList" class="text-center">
-  <div>
-    <a routerLink="/{{menu.path}}" *ngIf="menu.path !== 'menu' ">{{menu.path}}</a>
-  </div>
-</div>
-
-<!--<div style="text-align: center">-->
+<!--<h1 style="text-align: center">Список проектов</h1>-->
+<!--&lt;!&ndash;полюбому это сделано через жопу, перепесать&ndash;&gt;-->
+<!--<div *ngFor="let menu of menuList" class="text-center">-->
 <!--  <div>-->
-<!--    <a routerLink="/ticket">search-ticket</a>-->
-<!--  </div>-->
-<!--  <div>-->
-<!--    <a routerLink="/calculator">calculator</a>-->
-<!--  </div>-->
-<!--  <div>-->
-<!--    <a routerLink="/todo">todo-list</a>-->
-<!--  </div>-->
-<!--  <div>-->
-<!--    <a routerLink="/weather">weather</a>-->
-<!--  </div>-->
-<!--  <div>-->
-<!--    <a routerLink="/tic-tac-toe">tic-tac-toe</a>-->
-<!--  </div>-->
-<!--  <div>-->
-<!--    <a routerLink="/test">test</a>-->
+<!--    <a routerLink="/{{menu.path}}" *ngIf="menu.path !== 'menu' ">{{menu.path}}</a>-->
 <!--  </div>-->
 <!--</div>-->
+
+<div class="text-center">
+  <h2>Project</h2>
+</div>
+
+<div class="container text-center">
+  <div *ngFor="let menu of menuList">
+    <button class="btn btn-block color">
+      <a routerLink="/{{menu.path}}" *ngIf="menu.path !== 'menu' ">{{menu.path}}</a>
+    </button>
+  </div>
+</div>

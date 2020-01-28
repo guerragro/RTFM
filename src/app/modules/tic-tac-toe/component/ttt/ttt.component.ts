@@ -28,21 +28,7 @@ export class TttComponent implements OnInit {
     }
   }
 
-  // Друг против друга; Рабочая версия
-  // PVP(turn) {
-  //   this.counter = !this.counter;
-  //   this.player = (this.counter === true) ? 'x' : 'y';
-  //   if (this.counter) {
-  //     this.box.splice(turn, 1, this.player);
-  //   } else {
-  //     this.box.splice(turn, 1, this.player);
-  //   }
-  //   console.log(this.box);
-  //   this.howWon(this.box, this.player);
-  // }
-
-  // против компьютера;
-  PVE(turn) {
+  play(turn) {
     this.counter = !this.counter;
     this.player = (this.counter === true) ? 'x' : 'y';
     if (this.counter) {
@@ -50,13 +36,14 @@ export class TttComponent implements OnInit {
     } else {
       this.box2.splice(turn, 1, this.player);
     }
-    this.turn(this.box2, this.player);
+    (this.game === 'PVE') ? this.turn(this.box2, this.player) : this.howWon(this.box, this.player);
   }
 
   // [ +10, +10, +10,]
   // [ +10, x, +10,]
   // [ +10, +10, +10,]
   turn(res, player) {
+    console.log('PVE');
     // первый блок условий
     if (res[0] === 'x' && res[1] === 'x') {
       res[2] += 10;
@@ -85,6 +72,7 @@ export class TttComponent implements OnInit {
   }
   // выйгрышные комбинации;
   howWon(res, player) {
+    console.log(res);
     if (
       (res[0] === player && res[1] === player && res[2] === player) ||
       (res[3] === player && res[4] === player && res[5] === player) ||
@@ -104,34 +92,6 @@ export class TttComponent implements OnInit {
     this.box2 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
   }
 }
-// switch (true) {
-//   case (res[0] === player && res[1] === player && res[2] === player):
-//     return res;
-//     break;
-//   case (res[3] === player && res[4] === player && res[5] === player):
-//     return res;
-//     break;
-//   case (res[6] === player && res[7] === player && res[8] === player):
-//     return res;
-//     break;
-//   case (res[0] === player && res[4] === player && res[8] === player):
-//     return res;
-//     break;
-//   case (res[2] === player && res[4] === player && res[6] === player):
-//     return res;
-//     break;
-//   case (res[0] === player && res[3] === player && res[6] === player):
-//     return res;
-//     break;
-//   case (res[1] === player && res[4] === player && res[7] === player):
-//     return res;
-//     break;
-//   case (res[2] === player && res[5] === player && res[8] === player):
-//     return res;
-//     break;
-//   default:
-//     return res;
-// }
 
 // Подумать логигу по switch-case;
 // Возможно цикл;
