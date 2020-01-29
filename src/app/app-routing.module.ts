@@ -43,6 +43,10 @@ export const appRoutes: Routes = [
   {
     path: 'tour-of-heroes',
     loadChildren: './modules/tour-of-heroes/tour-of-heroes.module#TourOfHeroesModule'
+  },
+  {
+    path: 'eng',
+    loadChildren: './modules/eng/eng.module#EngModule'
   }
   // {
   //   path: '**',

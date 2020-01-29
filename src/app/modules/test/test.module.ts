@@ -8,6 +8,7 @@ import {StoreModule} from '@ngrx/store';
 import {reducer} from './store/test.reducer';
 import {TestStore} from './store/mobx.store';
 import {Service} from './service/service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [TestComponent],
@@ -15,11 +16,13 @@ import {Service} from './service/service';
     CommonModule,
     TestRoutingModule,
     FormsModule,
+    HttpClientModule
     // StoreModule.forRoot(reducer),
   ],
   providers: [
     TestStore,
-    Service
+    Service,
+    HttpClientModule
   ],
   bootstrap: [TestComponent]
 })

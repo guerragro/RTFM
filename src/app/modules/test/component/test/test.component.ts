@@ -25,10 +25,7 @@ export class TestComponent implements OnInit {
   zik = false;
   new: any;
 
-  // city = ['p', 'i', 't', 'e', 'r'];
-  word: string[];
-  bizarro = ['kh', 'ch', 'sh', 'shh', 'zh', 'a', 'b', 'v', 'g', 'd', 'e', 'z', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'f', 'с', '#', 'y', 'ь', 'e', 'u', 'a'];
-  origin =  ['х',  'ч',  'ш',  'щ',   'ж',  'a', 'б', 'в', 'г', 'д', 'е', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'ц', 'ъ', 'ы', 'ь', 'э', 'ю', 'я'];
+  error: any;
 
   constructor(
     public mobxStore: TestStore,
@@ -46,8 +43,16 @@ export class TestComponent implements OnInit {
     //   (res: string) => console.log(res),
     //   err => console.log(err)
     // );
-    this.newFunction([1, 2, 3], 4);
-    // this.translit(this.city);
+    // this.newFunction([1, 2, 3], 4);
+    this.service.makeRequest().subscribe(
+      res => console.log(res),
+      err => this.handleErr(err)
+    );
+  }
+
+  handleErr(ans) {
+    this.error = ans;
+    console.log(this.error['error']['text']);
   }
 
   newFunction(mas, numb) {
@@ -68,19 +73,6 @@ export class TestComponent implements OnInit {
     this.mobxStore.upNumber();
     this.model = new NumberModel('1', ['2']);
     console.log(this.model);
-  }
-
-  // TODO нужно доделать
-  // функция для с английского на русский
-  translit(word) {
-    this.word = word.split('');
-    this.word.forEach( (a) =>
-      this.bizarro.forEach((b, index) => {
-        if (b === a) {
-          console.log(this.origin[index]);
-        }
-      })
-    );
   }
 
 }
