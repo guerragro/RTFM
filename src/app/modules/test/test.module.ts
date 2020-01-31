@@ -27,3 +27,22 @@ import {HttpClientModule} from '@angular/common/http';
   bootstrap: [TestComponent]
 })
 export class TestModule { }
+
+// @NgModule({
+//   imports: [
+//     CommonModule,
+//     FormsModule,
+//     RouterModule.forChild(WaresInfoRoutes),
+//
+//     SharedModule,
+//
+//     PopoverModule,
+//     TooltipModule,
+//   ],
+//   declarations: [
+//     WaresInfoComponent
+//   ],
+//   providers: [
+//     WaresInfoService
+//   ]
+// })
