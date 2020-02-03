@@ -47,6 +47,10 @@ export const appRoutes: Routes = [
   {
     path: 'eng',
     loadChildren: './modules/eng/eng.module#EngModule'
+  },
+  {
+    path: 'ПОЕ',
+    loadChildren: './modules/poe/poe.module#PoeModule'
   }
   // {
   //   path: '**',

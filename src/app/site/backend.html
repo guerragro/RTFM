@@ -36,6 +36,12 @@
       $ curl -i http://127.0.0.1:8080/
 
       сервер готов, теперь зайдя на 127.0.0.1:8080/ мы увидем текст "Hello World"
+
+      Добавляем заголовки
+
+      func Handle(w http.ResponseWriter, r *http.Request) {
+        w.Header().Set("Acces-Control-Allow-Origin", "*")
+      }
     </div>
 
     <div class="node.js">
