@@ -1,15 +1,27 @@
 <div class="container">
   <div class="row">
     <div class="col-xl-3">
-      <input type="text" placeholder="pure-damage-min">
-      <input type="text" placeholder="pure-damage-man">
+      <input type="text" placeholder="pure-damage-min" [(ngModel)]="damagemin">
+      <input type="text" placeholder="pure-damage-man" [(ngModel)]="damagemax">
     </div>
     <div class="col-xl-3">
-      <input type="text" placeholder="increased physilal damage, %">
+      <input type="text" placeholder="incr physical damage, %" [(ngModel)]="incrphysicaldamage">
     </div>
     <div class="col-xl-3">
-      <input type="text" placeholder="increased attacks speed">
+      <input type="text" placeholder="incr attacks speed" [(ngModel)]="incrattacksspeed">
     </div>
-    <div class="col-xl-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad blanditiis deleniti dolores earum eligendi explicabo fugiat illum, magnam neque nulla odio officiis omnis, possimus quidem quis reiciendis reprehenderit similique voluptatem?</div>
+    <div class="col-xl-3">
+      <input type="text" placeholder="quality" [(ngModel)]="quality">
+    </div>
   </div>
+  <div class="text-center">
+    <button (click)="make(damagemin, damagemax, incrphysicaldamage, incrattacksspeed, quality)">push</button>
+  </div>
+<!--  <div class="text-center">-->
+<!--    <div>ДПС-->
+<!--      <span>-->
+<!--        {{this}}-->
+<!--      </span>-->
+<!--    </div>-->
+<!--  </div>-->
 </div>

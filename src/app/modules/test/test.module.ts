@@ -5,10 +5,10 @@ import { TestRoutingModule } from './test-routing.module';
 import { TestComponent } from './component/test/test.component';
 import {FormsModule} from '@angular/forms';
 import {StoreModule} from '@ngrx/store';
-import {reducer} from './store/test.reducer';
 import {TestStore} from './store/mobx.store';
 import {Service} from './service/service';
 import {HttpClientModule} from '@angular/common/http';
+import {testReducer} from './store/test.reducer';
 
 @NgModule({
   declarations: [TestComponent],
@@ -16,8 +16,8 @@ import {HttpClientModule} from '@angular/common/http';
     CommonModule,
     TestRoutingModule,
     FormsModule,
-    HttpClientModule
-    // StoreModule.forRoot(reducer),
+    HttpClientModule,
+    StoreModule.forRoot(testReducer),
   ],
   providers: [
     TestStore,
