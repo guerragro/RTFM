@@ -7,6 +7,10 @@
 	</head>
 	<body>
 
+    <div>
+      Проше в понимание, все находится в одном месте
+    </div>
+
 		<div class="container">
 			<div>
 			Устанавливаем mobx <br/>
@@ -95,7 +99,7 @@
 				q: city,
 				APPID: 'Ваш токен'
 			}
-				this.http.get('https://api.openweathermap.org/data/2.5/weather', { params: (params) })
+				return this.http.get('https://api.openweathermap.org/data/2.5/weather', { params: (params) })
 			}
 
 			store.ts

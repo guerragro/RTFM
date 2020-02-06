@@ -7,6 +7,10 @@ import {PageNotFoundComponent} from './modules/page-not-found/component/page-not
 
 export const appRoutes: Routes = [
   {
+    path: 'Прочти меня',
+    loadChildren: './modules/readme/readme.module#ReadMeModule'
+  },
+  {
     // Todo, сделано, но через жопу
     path: 'menu',
     loadChildren: './modules/menu/menu.module#MenuModule'
@@ -17,7 +21,7 @@ export const appRoutes: Routes = [
     loadChildren: './modules/todo/todo.module#TodoModule'
   },
   {
-    // Todo, готово получение данные, добавлен некоторый функционал, сделать внешнее оформление
+    // Todo, готово получение данных, добавлен некоторый функционал, сделать внешнее оформление
     path: 'weather',
     loadChildren: './modules/weather/weather.module#WeatherModule'
   },

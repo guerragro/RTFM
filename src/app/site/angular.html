@@ -9,7 +9,7 @@
 <body>
 
 		<table style="width: 50%; margin: auto; text-align: center">
-			Команды
+			Команды, также вы можете использовать сокращенные варианты по первой букве, допустим: ng generate modules 'название' || ng g m 'название'
 			<tr>
 				<td>ng new new-project</td>
 				<td>Создание проекта</td>
@@ -42,140 +42,140 @@
 				<td>Для устрановки различных библиотек с разными версиями</td>
 			</tr>
 		</table>
-	<div class="container">
-		Для добавления botstrap:
+    <div class="container">
+      Для добавления botstrap:
 
-		npm i bootstrap --save
-		npm i jquery --save
-		npm i popper --save
+      npm i bootstrap --save
+      npm i jquery --save
+      npm i popper --save
 
-		также нужно сделать нужные изменения в angular.json
-		находим style, script
+      также нужно сделать нужные изменения в angular.json
+      находим style, script
 
-		"style": [
-			"node_modules/bootstrap/dist/css/bootstrap.min.css"
-		  ]
-		  "scripts": [
-		    "node_modules/jquery/dist/jquery.min.js",
-		    "node_modules/popper.js/dist/umd/popper.min.js",
-		    "node_modules/bootstrap/dist/js/bootstrap.min.js"
-		  ],
+      "style": [
+        "node_modules/bootstrap/dist/css/bootstrap.min.css"
+        ]
+        "scripts": [
+          "node_modules/jquery/dist/jquery.min.js",
+          "node_modules/popper.js/dist/umd/popper.min.js",
+          "node_modules/bootstrap/dist/js/bootstrap.min.js"
+        ],
 
-		Обязательно такая последовательность и перезапустите приложение
+      Обязательно такая последовательность и перезапустите приложение
 
-		Со временем, возможно вы будуте сюда добавлять свои собвственные стили
+      Со временем, возможно вы будуте сюда добавлять свои собвственные стили
 
-		полезная команда для того, чтобы убить используемый порт
-		sudo kill $(sudo lsof -t -i:4200)
+      полезная команда для того, чтобы убить используемый порт
+      sudo kill $(sudo lsof -t -i:4200)
 
-		Иногда возникает проблема
-		class name must be in pascal name
-		удалите все модули и заново переустановить rm -rf node_modules
-		<div class="row">
-			ng serve --proxy.config --proxy.conf.json
-			<img src="https://learn.javascript.ru/article/xhr-crossdomain/xhr-preflight@2x.png" alt="" width="30%">
-			{
-				'api/': {
-					'target': 'http:/localhost:8080/',
-					'secure': false
-				}
-			}
-		</div>
-		<div>
-			Советы по коду:
+      Иногда возникает проблема
+      class name must be in pascal name
+      удалите все модули и заново переустановить rm -rf node_modules
+      <div class="row">
+        ng serve --proxy.config --proxy.conf.json
+        <img src="https://learn.javascript.ru/article/xhr-crossdomain/xhr-preflight@2x.png" alt="" width="30%">
+        {
+          'api/': {
+            'target': 'http:/localhost:8080/',
+            'secure': false
+          }
+        }
+      </div>
+      <div>
+        Советы по коду:
 
-			если у вас есть массив и информация с него будет где то использоваться и меняться. Используйте get and set и храните его в сервисе.
-			! Но если, это данные не будут менять, то и не стоит использовать лишний раз get and set
+        если у вас есть массив и информация с него будет где то использоваться и меняться. Используйте get and set и храните его в сервисе.
+        ! Но если, это данные не будут менять, то и не стоит использовать лишний раз
 
-			service.ts
+        service.ts
 
-			public _wares: any;
-			get wares() { return _this.wares };
-			set wares(value) { this._wares = value }
+        public _wares: any;
+        get wares() { return _this.wares };
+        set wares(value) { this._wares = value }
 
-			если в запросе с вашего сервиса у вас приходит какая-то информация, допустим товар, делайте обязательно проверки
+        если в запросе с вашего сервиса у вас приходит какая-то информация, допустим товар, делайте обязательно проверки
 
-			wares.length !== 0, проверяем на длину массив
-			wares instanceof Array, проверям пришел ли нам массив
-		</div>
-		<div>
-			*ngIf
-		</div>
-		<div>
-			*ngFor
-		</div>
-		<div>
-			NgClass
+        wares.length !== 0, проверяем на длину массив
+        wares instanceof Array, проверям пришел ли нам массив
+      </div>
+      <div>
+        *ngIf
+      </div>
+      <div>
+        *ngFor
+      </div>
+      <div>
+        NgClass
 
-			[ngClass]="{ verdanaFont: isVerdana }"
-			[class.first]="this.test === true"
+        [ngClass]="{ verdanaFont: isVerdana }"
+        [class.first]="this.test === true"
 
-			где verdanaFont and first, это класс, а isVerdana and test это переменная исходя из которой будет применяться класс
+        где verdanaFont and first, это класс, а isVerdana and test это переменная исходя из которой будет применяться класс
 
-			Если нужно, что к блоку применялся какой-то из классов
+        Если нужно, что к блоку применялся какой-то из классов
 
-			[class.first]="test === true" [class.second]="test === false"
-			[ngClass]="{first: test === true, second: test === false}"
+        [class.first]="test === true" [class.second]="test === false"
+        [ngClass]="{first: test === true, second: test === false}"
 
-			где first and second это классы
+        где first and second это классы
 
-			Вы так же можете использовать *ngIf
+        Вы так же можете использовать *ngIf
 
-			*ngIf="test === true" class="first"
-			*ngIf="test !== true" class="second"
-		</div>
-		<div>
-			NgModel
+        *ngIf="test === true" class="first"
+        *ngIf="test !== true" class="second"
+      </div>
+      <div>
+        NgModel
 
-			Двухсторонняя привязка [(NgModel)]="переменная"
+        Двухсторонняя привязка [(NgModel)]="переменная"
 
-			wares: string = ''
+        wares: string = ''
 
-			[(NgModel)]="wares"
+        [(NgModel)]="wares"
 
-			Как правильно применяется в связке с input.
-		</div>
-	</div>
-  <div>
-    npm i --save @angular/material @angular/animations
-
-    import { MdButtonModule, MdCardModule, MdToolbarModule } from '@angular/material';
-    import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-    imports: [
-    ...
-    BrowserAnimationsModule,
-    MdToolbarModule,
-    MdButtonModule,
-    MdCardModule
-    ],
-
-    И последнее, мы импортируем тему indigo pink в наш файл styles.css.
-
-    /* styles.css */
-    @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-
-  </div>
-	<div>
-    <div>
-      routing или же маршрутизация
+        Как правильно применяется в связке с input.
+      </div>
     </div>
     <div>
-      Заходим в app-routing.module.ts
+      npm i --save @angular/material @angular/animations
 
-      [{
-      path: 'ticket',
-      component: TicketComponent
-      }]
+      import { MdButtonModule, MdCardModule, MdToolbarModule } from '@angular/material';
+      import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-      Не забываем регистрировать в AppModule
+      imports: [
+      ...
+      BrowserAnimationsModule,
+      MdToolbarModule,
+      MdButtonModule,
+      MdCardModule
+      ],
+
+      И последнее, мы импортируем тему indigo pink в наш файл styles.css.
+
+      /* styles.css */
+      @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
     </div>
     <div>
-      LoadChild
-    </div>
+      <div>
+        routing или же маршрутизация
+      </div>
+      <div>
+        Заходим в app-routing.module.ts
 
-	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        [{
+        path: 'ticket',
+        component: TicketComponent
+        }]
+
+        Не забываем регистрировать в AppModule
+      </div>
+      <div>
+        LoadChild
+      </div>
+
+    </div>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
 </body>
 </html>

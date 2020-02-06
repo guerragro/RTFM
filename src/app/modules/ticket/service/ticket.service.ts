@@ -5,6 +5,8 @@ import { UrlModels } from '../models/url.model';
 
 @Injectable()
 export class TicketService {
+
+  backendUrl: string = 'http://127.0.0.1:8080';
   constructor( public http: HttpClient) {}
   // public getPriceList() {
   //   const params = {
