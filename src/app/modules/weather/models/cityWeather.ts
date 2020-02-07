@@ -12,5 +12,5 @@ export interface CityWeatherInterface {
 }
 
 export interface CitesWeatherInterface {
-  city: CitesWeatherInterface;
+  citys: CitesWeatherInterface[];
 }

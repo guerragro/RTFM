@@ -7,7 +7,7 @@
   </div>
 </div>
 
-<div class="f-container" *ngIf="false">
+<div class="f-container" *ngIf="weather !== undefined">
   <h1>{{city}}</h1>
   <div *ngFor="let a of weather">
     <table class="text-center">
@@ -45,47 +45,47 @@
   <div>Уменьшенная копия или город, должна быть кликабельна для выбора на главный экран</div>
 </div>
 
-<div class="box">
+<!--<div class="box">-->
 
-  <div class="flex-box">
+<!--  <div class="flex-box">-->
 
-    <h1></h1>
+<!--    <h1></h1>-->
 
-    <div class="col-6">
-      <table class="text-center">
-        <tr>
-          <td>Восход</td>
-          <td>{{weather['ВОСХОД']}}</td>
-        </tr>
-        <tr>
-          <td>Закат</td>
-          <td>{{weather['ЗАКАТ']}}</td>
-        </tr>
-        <tr>
-          <td>Скорость ветка</td>
-          <td>{{weather['СКОРОСТЬ ВЕТРА']}}</td>
-        </tr>
-        <tr>
-          <td>Облачность</td>
-          <td>{{weather['ОБЛАЧНОСТЬ']}}</td>
-        </tr>
-        <tr>
-          <td>Влажность</td>
-          <td>{{weather['ВЛАЖНОСТЬ']}}</td>
-        </tr>
-        <tr>
-          <td>Давление</td>
-          <td>{{weather['ДАВЛЕНИЕ']}}</td>
-        </tr>
-        <tr>
-          <td>Температура</td>
-          <td>{{weather['ТЕМПЕРАТУРА']}}</td>
-        </tr>
-      </table>
-    </div>
-    <div class="col-6">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cum deleniti eius exercitationem inventore laboriosam magni odit pariatur praesentium quibusdam, quos sequi tempore voluptatibus. Aspernatur autem optio recusandae repellat ut.
-    </div>
+<!--    <div class="col-6">-->
+<!--      <table class="text-center">-->
+<!--        <tr>-->
+<!--          <td>Восход</td>-->
+<!--          <td>{{weather['ВОСХОД']}}</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--          <td>Закат</td>-->
+<!--          <td>{{weather['ЗАКАТ']}}</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--          <td>Скорость ветка</td>-->
+<!--          <td>{{weather['СКОРОСТЬ ВЕТРА']}}</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--          <td>Облачность</td>-->
+<!--          <td>{{weather['ОБЛАЧНОСТЬ']}}</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--          <td>Влажность</td>-->
+<!--          <td>{{weather['ВЛАЖНОСТЬ']}}</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--          <td>Давление</td>-->
+<!--          <td>{{weather['ДАВЛЕНИЕ']}}</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--          <td>Температура</td>-->
+<!--          <td>{{weather['ТЕМПЕРАТУРА']}}</td>-->
+<!--        </tr>-->
+<!--      </table>-->
+<!--    </div>-->
+<!--    <div class="col-6">-->
+<!--      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cum deleniti eius exercitationem inventore laboriosam magni odit pariatur praesentium quibusdam, quos sequi tempore voluptatibus. Aspernatur autem optio recusandae repellat ut.-->
+<!--    </div>-->
 
-  </div>
-</div>
+<!--  </div>-->
+<!--</div>-->
