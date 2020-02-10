@@ -1,0 +1,15 @@
+.container-flex {
+  display: flex;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-column {
+  flex-direction: column;
+}
+.center-flex {
+  justify-content: center;
+}
+.margin-2 {
+  margin: 2px;
+}

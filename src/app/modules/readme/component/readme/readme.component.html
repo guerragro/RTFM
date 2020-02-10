@@ -1,30 +1,36 @@
-<div>
-  Menu - сделано, но через жопу, переделать
-</div>
-<div>
-  Todo-list: по моим прикидка 60-70%
-</div>
-<div>Сервис погоды: готово получение данных, добавлен некоторый функционал, сделать внешнее оформление</div>
-<div>Сервис авиабилетов: все на стадии зачатия, есть первые сподвижки</div>
-<div>Крестики-нолики: привести в порядок и сделать игру против компьютера</div>
-<div>Калькулятор: по моим прикидкам готовность 70-80%, набросаны первые стили</div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div>
-  Сделать из todo-list список задач, когда нажимаешь, появляется выпадающий список, со всеми пунктами, которые можно редактировать
-
-</div>
-
-<div>
-  новая задача
-  <div>
-    добавить
+<div class="container-flex flex-row center-flex">
+  <div class="margin-2">
+    <input type="text" placeholder="Новый проект">
   </div>
-  <div>список задача
-    <div>
-      при нажатие выпадающий список
+  <div class="margin-2">
+    <button>добавить проект</button>
+  </div>
+</div>
+
+<div class="container-flex flex-column" *ngIf="this.todos">
+  <div class="btn btn-block" (click)="toggle()" *ngFor="let todo of todos">{{todo.project}}</div>
+
+  <div *ngIf="test">
+
+    <div class="container-flex flex-row" *ngFor="let todo of todos">
+      <div class="btn btn-block">{{todo.task}}</div>
+      <div>
+        <button class="btn btn-block">кнопка удаления</button>
+      </div>
+      <div>
+        <button class="btn btn-block">кнопка выполненого задания, можно менять цвет (изначально красная, при выполненным зеленая)</button>
+      </div>
     </div>
+
+    <div class="container-flex flex-row border">
+      <div class="btn btn-block">
+        <input type="text" placeholder="Добавление новой задачи">
+      </div>
+      <div class="btn btn-block">
+        <button>добавить задачу</button>
+      </div>
+    </div>
+
   </div>
+
 </div>

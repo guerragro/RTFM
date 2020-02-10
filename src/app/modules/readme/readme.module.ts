@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import {ReadmeComponent} from './component/readme/readme.component';
 import {ReadmeRoutingModule} from './readme-routing.module';
 import {FormsModule} from '@angular/forms';
+import {ReadMeService} from './service/readme.service';
+import {ReadMeStore} from './store/readMeStore';
 
 @NgModule({
   declarations: [
@@ -12,6 +14,10 @@ import {FormsModule} from '@angular/forms';
     CommonModule,
     FormsModule,
     ReadmeRoutingModule
+  ],
+  providers: [
+    ReadMeService,
+    ReadMeStore
   ],
   bootstrap: [
     ReadmeComponent
