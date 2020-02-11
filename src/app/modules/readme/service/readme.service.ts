@@ -10,16 +10,27 @@ export class ReadMeService {
   public getProject() {
     return [
       {
-        project: "ticket Service",
+        project: 'read me',
         task: [
-          "все на стадии зачатия"
-        ]
+          'если не соответствует id текущей задачи то не открывать'
+        ],
+        view: false
       },
       {
-        project: "weather Service",
+        // id: 1,
+        project: 'ticket Service',
         task: [
-          "Получение данных", "Накинуть стили"
-        ]
+          'все на стадии зачатия'
+        ],
+        view: false
+      },
+      {
+        // id: 2,
+        project: 'weather Service',
+        task: [
+          'Получение данных', 'Накинуть стили'
+        ],
+        view: false
       }
     ];
   }

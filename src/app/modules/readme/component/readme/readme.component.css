@@ -13,3 +13,16 @@
 .margin-2 {
   margin: 2px;
 }
+
+.projList {
+  background: #b8860b;
+}
+
+.taskList {
+  background: #98ff98;
+  border-radius: 30px;
+}
+
+li {
+  list-style-type: none;
+}

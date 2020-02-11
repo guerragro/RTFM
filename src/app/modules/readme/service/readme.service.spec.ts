@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ServiceService } from './readme.service';
+import { ReadMeService } from './readme.service';
 
 describe('ServiceService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ServiceService = TestBed.get(ServiceService);
+    const service: ReadMeService = TestBed.get(ReadMeService);
     expect(service).toBeTruthy();
   });
 });
