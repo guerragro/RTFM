@@ -41,9 +41,8 @@ export class ReadmeComponent implements OnInit {
 
   // выпадающие список задач по проекту
   toggle(proj) {
-    console.log(proj);
-    console.log("выпадающее меню");
-    this.shifter = !proj.view;
+    // переделать эту чушь
+    proj.view = (this.shifter) ? this.shifter = false : this.shifter = true;
   }
 
   // новая задача

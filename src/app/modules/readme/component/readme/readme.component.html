@@ -1,40 +1,44 @@
-<div class="container-flex flex-row center-flex">
-  <div class="margin-2">
-    <input type="text" id="addProject" placeholder="Новый проект">
+<div class="container">
+
+  <div class="container-flex flex-row center-flex">
+    <div class="margin-2">
+      <input type="text" id="addProject" placeholder="Новый проект">
+    </div>
+    <div class="margin-2">
+      <button (click)="addProject()">добавить проект</button>
+    </div>
   </div>
-  <div class="margin-2">
-    <button (click)="addProject()">добавить проект</button>
-  </div>
-</div>
 
-<div class="container-flex flex-column" *ngIf="this.todos">
-  <div class="btn btn-block projList" (click)="toggle(todo)" *ngFor="let todo of todos">{{todo.project}}
+  <div class="container-flex flex-column" *ngIf="this.todos">
+    <div class="btn btn-block projList" (click)="toggle(todo)" *ngFor="let todo of todos">{{todo.project}}
 
-<!--    нужно чтобы фон этого блога был другим цветом-->
-    <div class="taskList" *ngIf="shifter">
+      <!--    нужно чтобы фон этого блога был другим цветом-->
+      <div class="taskList" *ngIf="todo.view">
 
-      <div class="container-flex flex-row">
-        <div class="btn btn-block">{{todo.task}}</div>
-        <div>
-          <button class="btn btn-block">del</button>
+        <div class="container-flex flex-row">
+          <div class="btn btn-block">{{todo.task}}</div>
+          <div>
+            <button class="btn btn-block">del</button>
+          </div>
+          <div>
+            <button class="btn btn-block">ok</button>
+          </div>
         </div>
-        <div>
-          <button class="btn btn-block">ok</button>
+        <div class="container-flex flex-row">
+          <div class="btn btn-block">
+            <input type="text" placeholder="Добавление новой задачи">
+          </div>
+          <div class="btn btn-block">
+            <button>+</button>
+          </div>
         </div>
+
       </div>
-      <div class="container-flex flex-row border">
-        <div class="btn btn-block">
-          <input type="text" placeholder="Добавление новой задачи">
-        </div>
-        <div class="btn btn-block">
-          <button>+</button>
-        </div>
-      </div>
-
     </div>
   </div>
 
 </div>
+
 
 <!--<div *ngIf="this.todos">-->
 

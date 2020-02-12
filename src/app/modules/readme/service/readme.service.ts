@@ -10,14 +10,15 @@ export class ReadMeService {
   public getProject() {
     return [
       {
+        // id: 1,
         project: 'read me',
         task: [
-          'если не соответствует id текущей задачи то не открывать'
+          'проблема с событием на выпадающее меню, срабатывает на дочерний блок'
         ],
         view: false
       },
       {
-        // id: 1,
+        // id: 2,
         project: 'ticket Service',
         task: [
           'все на стадии зачатия'
@@ -25,7 +26,7 @@ export class ReadMeService {
         view: false
       },
       {
-        // id: 2,
+        // id: 3,
         project: 'weather Service',
         task: [
           'Получение данных', 'Накинуть стили'
