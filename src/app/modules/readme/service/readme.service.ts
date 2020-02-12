@@ -10,26 +10,39 @@ export class ReadMeService {
   public getProject() {
     return [
       {
-        // id: 1,
+        id: 1,
         project: 'read me',
         task: [
-          'проблема с событием на выпадающее меню, срабатывает на дочерний блок'
+          {
+            id: 1,
+            task: 'проблема с событием на выпадающее меню, срабатывает на дочерний блок'
+          }
         ],
         view: false
       },
       {
-        // id: 2,
+        id: 2,
         project: 'ticket Service',
         task: [
-          'все на стадии зачатия'
+          {
+            id: 1,
+            task: 'все на стадии зачатия'
+          }
         ],
         view: false
       },
       {
-        // id: 3,
+        id: 3,
         project: 'weather Service',
         task: [
-          'Получение данных', 'Накинуть стили'
+          {
+            id: 1,
+            task: 'Получение данных'
+          },
+          {
+            id: 2,
+            task: 'Накинуть стили'
+          }
         ],
         view: false
       }
