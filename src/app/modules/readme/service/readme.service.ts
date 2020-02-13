@@ -12,7 +12,7 @@ export class ReadMeService {
       {
         id: 1,
         project: 'read me',
-        task: [
+        tasks: [
           {
             id: 1,
             task: 'проблема с событием на выпадающее меню, срабатывает на дочерний блок'
@@ -23,7 +23,7 @@ export class ReadMeService {
       {
         id: 2,
         project: 'ticket Service',
-        task: [
+        tasks: [
           {
             id: 1,
             task: 'все на стадии зачатия'
@@ -34,7 +34,7 @@ export class ReadMeService {
       {
         id: 3,
         project: 'weather Service',
-        task: [
+        tasks: [
           {
             id: 1,
             task: 'Получение данных'

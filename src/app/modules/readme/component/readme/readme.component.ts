@@ -3,7 +3,7 @@ import {ReadMeService} from '../../service/readme.service';
 import {ReadMeStore} from '../../store/readMeStore';
 import {Observable} from 'rxjs';
 import {fromMobx} from 'ngx-mobx';
-import {ProjectInterface} from '../../model';
+import {ProjectWorldInterface, ProjectWorld, TaskWorld} from '../../../../models/model';
 
 @Component({
   selector: 'app-readme',
@@ -14,9 +14,10 @@ export class ReadmeComponent implements OnInit {
 
   test: any;
   shifter: boolean = false;
-  projList$: Observable<ProjectInterface[]>;
-  projList;
+  dataList$: Observable<ProjectWorldInterface[]>;
+  dataList;
 
+  proj: string;
   task: string;
 
   constructor(
@@ -27,9 +28,10 @@ export class ReadmeComponent implements OnInit {
   ngOnInit() {
     // this.todos = this.service.getProject();
     this.readMeStore.getDataProject();
-    this.projList$ = fromMobx(() => this.readMeStore.todos);
-    this.projList$.subscribe(
-      res => this.projList = res
+    this.dataList$ = fromMobx(() => this.readMeStore.todos);
+    this.dataList$.subscribe(
+      res => this.dataList = res,
+      err => console.log("error")
     );
   }
 
@@ -40,9 +42,15 @@ export class ReadmeComponent implements OnInit {
   }
 
   // новый проект
-  addProject(data, id) {
-    console.log(this.projList.filter(a => (a.id === id) ? a.task.push(data) : false));
-    // this.projList.filter(a => a.id === id);
+  addProject(data, id?) {
+    if (id) {
+      // добавление проекта
+      this.dataList.push(new ProjectWorld(id, data));
+      console.log(this.dataList);
+    } else {
+      // добавление задачи
+      this.dataList.filter(a => (a.id === id) ? a.tasks.push( new TaskWorld(1, data)) : false);
+    }
     // либо через переменную будем дергать value, либо через getElement
     // нужно узнать как правильно?!
     this.test = document.getElementById('addProject');
@@ -50,7 +58,7 @@ export class ReadmeComponent implements OnInit {
   }
 
   // новая задача
-  newTask() {
+  addTask() {
     console.log('новая задача');
   }
 
