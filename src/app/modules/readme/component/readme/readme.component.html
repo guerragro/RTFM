@@ -16,10 +16,10 @@
       <div class="btn btn-block dataList margin-2" (click)="toggle(proj)">{{proj.project}}</div>
       <!--    другой цвет-->
       <!--    меньше размера родительского блока  -->
-      <div *ngIf="proj.view">
+      <div class="container" *ngIf="proj.view">
         <div class="taskList" *ngFor="let t of proj.tasks">
-<!--          список задач-->
-          <div class="container-flex flex-row" [ngClass]="{red: true}">
+          <!--          список задач-->
+          <div class="container-flex flex-row" [ngClass]="{red: t.done}">
             <div class="btn btn-block">{{t.task}}</div>
             <!--          кнопка-->
             <div>
@@ -45,68 +45,4 @@
     </div>
 
   </div>
-
-<!--  <div class="container-flex flex-column" *ngIf="this.todos">-->
-<!--    <div class="btn btn-block dataList" (click)="toggle(todo)" *ngFor="let todo of todos">{{todo.project}}-->
-
-<!--      &lt;!&ndash;    нужно чтобы фон этого блога был другим цветом&ndash;&gt;-->
-<!--      <div class="taskList" *ngIf="todo.view">-->
-
-<!--        <div class="container-flex flex-row">-->
-<!--          <div class="btn btn-block">{{todo.task}}</div>-->
-<!--&lt;!&ndash;          кнопка&ndash;&gt;-->
-<!--          <div>-->
-<!--            <button class="btn btn-block">del</button>-->
-<!--          </div>-->
-<!--&lt;!&ndash;          кнопка&ndash;&gt;-->
-<!--          <div>-->
-<!--            <button class="btn btn-block">ok</button>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="container-flex flex-row">-->
-<!--          <div class="btn btn-block">-->
-<!--            <input type="text" placeholder="Добавление новой задачи">-->
-<!--          </div>-->
-<!--          <div class="btn btn-block">-->
-<!--            <button>+</button>-->
-<!--          </div>-->
-<!--        </div>-->
-
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-
 </div>
-
-
-<!--<div *ngIf="this.todos">-->
-
-<!--  <ul *ngFor="let todo of todos">-->
-<!--    <li (click)="toggle(todo.id)">{{todo.project}}</li>-->
-<!--    <div *ngIf="todo.id && shifter">-->
-
-<!--      <div class="container-flex flex-row">-->
-<!--        <div class="btn btn-block">{{todo.task}}</div>-->
-<!--&lt;!&ndash;        кнопка удаления &ndash;&gt;-->
-<!--        <div>-->
-<!--          <button class="btn btn-block">del</button>-->
-<!--        </div>-->
-<!--&lt;!&ndash;        кнопка выполненого задания, можно менять цвет (изначально красная, при выполненным зеленая)&ndash;&gt;-->
-<!--        <div>-->
-<!--          <button class="btn btn-block">done</button>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="container-flex flex-row border">-->
-<!--        <div class="btn btn-block">-->
-<!--          <input type="text" placeholder="Добавление новой задачи">-->
-<!--        </div>-->
-<!--        <div class="btn btn-block">-->
-<!--          <button>+</button>-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--    </div>-->
-
-<!--  </ul>-->
-
-<!--</div>-->

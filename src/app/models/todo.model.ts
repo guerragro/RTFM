@@ -10,6 +10,7 @@ export interface ProjectWorldInterface {
 export interface TaskInterface {
   id: number;
   task: string;
+  done: boolean;
 }
 
 export class ProjectWorld {
@@ -27,8 +28,10 @@ export class ProjectWorld {
 export class TaskWorld {
   id: number;
   task: string;
+  done: boolean;
   constructor(id, task) {
     this.id = id;
     this.task = task;
+    this.done = false;
   }
 }

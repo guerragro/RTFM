@@ -15,19 +15,23 @@ export class ReadMeService {
         tasks: [
           {
             id: 4,
-            task: 'решить проблему с переменной для task and project'
+            task: 'решить проблему с переменной для task and project',
+            done: false
           },
           {
             id: 5,
-            task: 'уменьшить размер блока Task'
+            task: 'уменьшить размер блока Task',
+            done: false
           },
           {
             id: 6,
-            task: 'менять цвет выполненного задание'
+            task: 'менять цвет выполненного задание',
+            done: false
           },
           {
             id: 7,
-            task: 'id задачи и проекта должно быть уникальным'
+            task: 'id задачи и проекта должно быть уникальным',
+            done: false
           }
         ],
         view: false
@@ -38,7 +42,8 @@ export class ReadMeService {
         tasks: [
           {
             id: 8,
-            task: 'все на стадии зачатия'
+            task: 'все на стадии зачатия',
+            done: false
           }
         ],
         view: false
@@ -49,11 +54,13 @@ export class ReadMeService {
         tasks: [
           {
             id: 9,
-            task: 'Получение данных'
+            task: 'Получение данных',
+            done: false
           },
           {
             id: 10,
-            task: 'Накинуть стили'
+            task: 'Накинуть стили',
+            done: false
           }
         ],
         view: false

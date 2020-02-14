@@ -17,15 +17,14 @@
 .dataList {
   background: #b8860b;
 }
-
+/* изменить*/
 .taskList {
-  background: #98ff98;
+  background: red;
+}
+.radius-8 {
   border-radius: 8px;
 }
+/* изменить*/
 .red {
-  background-color: red;
-}
-
-li {
-  list-style-type: none;
+  background-color: #98ff98;
 }

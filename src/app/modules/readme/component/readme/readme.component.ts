@@ -3,7 +3,7 @@ import {ReadMeService} from '../../service/readme.service';
 import {ReadMeStore} from '../../store/readMeStore';
 import {Observable} from 'rxjs';
 import {fromMobx} from 'ngx-mobx';
-import {ProjectWorldInterface, ProjectWorld, TaskWorld} from '../../../../models/model';
+import {ProjectWorldInterface, ProjectWorld, TaskWorld} from '../../../../models/todo.model';
 
 @Component({
   selector: 'app-readme',
@@ -67,7 +67,11 @@ export class ReadmeComponent implements OnInit {
 
   // удаление, выполнение и редактирование задачи
   done(id) {
-    console.log(id);
+    this.dataList.filter(a => a.tasks.find(b => (b.id === id) ? b.done = true : false));
+  }
+
+  delete(id) {
+
   }
 
 }

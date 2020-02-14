@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { action, observable} from 'mobx';
 import { ReadMeService } from '../service/readme.service';
-import {ProjectWorldInterface} from '../../../models/model';
+import {ProjectWorldInterface} from '../../../models/todo.model';
 // import { ProjectInterface} from '../model';
 
 @Injectable()
