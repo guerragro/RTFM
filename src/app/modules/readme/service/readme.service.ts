@@ -14,8 +14,20 @@ export class ReadMeService {
         project: 'read me',
         tasks: [
           {
-            id: 1,
-            task: 'проблема с событием на выпадающее меню, срабатывает на дочерний блок'
+            id: 4,
+            task: 'решить проблему с переменной для task and project'
+          },
+          {
+            id: 5,
+            task: 'уменьшить размер блока Task'
+          },
+          {
+            id: 6,
+            task: 'менять цвет выполненного задание'
+          },
+          {
+            id: 7,
+            task: 'id задачи и проекта должно быть уникальным'
           }
         ],
         view: false
@@ -25,7 +37,7 @@ export class ReadMeService {
         project: 'ticket Service',
         tasks: [
           {
-            id: 1,
+            id: 8,
             task: 'все на стадии зачатия'
           }
         ],
@@ -36,11 +48,11 @@ export class ReadMeService {
         project: 'weather Service',
         tasks: [
           {
-            id: 1,
+            id: 9,
             task: 'Получение данных'
           },
           {
-            id: 2,
+            id: 10,
             task: 'Накинуть стили'
           }
         ],

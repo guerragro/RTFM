@@ -2,11 +2,11 @@
 
   <div class="container-flex flex-row center-flex">
     <div class="margin-2">
-      <input type="text" id="addProject" placeholder="Новый проект" [(ngModel)]="proj">
+      <input type="text" id="addData" placeholder="Новый проект" [(ngModel)]="proj">
     </div>
     <div class="margin-2">
 <!--      создаем проект-->
-      <button (click)="addProject(proj)">добавить проект</button>
+      <button (click)="addData(proj)">добавить проект</button>
     </div>
   </div>
 
@@ -19,7 +19,7 @@
       <div *ngIf="proj.view">
         <div class="taskList" *ngFor="let t of proj.tasks">
 <!--          список задач-->
-          <div class="container-flex flex-row">
+          <div class="container-flex flex-row" [ngClass]="{red: true}">
             <div class="btn btn-block">{{t.task}}</div>
             <!--          кнопка-->
             <div>
@@ -27,7 +27,7 @@
             </div>
             <!--          кнопка-->
             <div>
-              <button class="btn btn-block">ok</button>
+              <button class="btn btn-block" (click)="done(t.id)">ok</button>
             </div>
           </div>
 
@@ -38,7 +38,7 @@
           </div>
 <!--          создаем задачу-->
           <div class="btn btn-block">
-            <button (click)="addProject(task, proj.id)">+</button>
+            <button (click)="addData(task, proj.id)">+</button>
           </div>
         </div>
       </div>

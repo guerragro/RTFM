@@ -1,0 +1,19 @@
+<div>
+  Мы выбрали случайное число от 1 до 100. Посмотрим, сможешь ли угадать его за 10 или меньше попыток. Ма скажем вам, была ли ваша догадка близки или нет.
+</div>
+<br>
+<div>
+  <div style="float: left">
+    <span>Введите число: </span>
+    <input type="text" id="number">
+  </div>
+  <div style="float: right">
+    <button (click)="lucky()" >Проверим</button>
+  </div>
+</div>
+<br>
+<div *ngIf="true">
+  <div> Предыдущие варианты: {{numbers}}</div>
+  <div>{{win}}</div>
+  <div>{{text}}</div>
+</div>

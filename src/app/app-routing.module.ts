@@ -55,6 +55,10 @@ export const appRoutes: Routes = [
   {
     path: 'ПОЕ',
     loadChildren: './modules/poe/poe.module#PoeModule'
+  },
+  {
+    path: 'number',
+    loadChildren: './modules/number/number.module#NumberModule'
   }
   // {
   //   path: '**',

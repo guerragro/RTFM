@@ -42,18 +42,21 @@ export class ReadmeComponent implements OnInit {
   }
 
   // новый проект
-  addProject(data, id?) {
+  addData(data, id?) {
     if (id) {
+      console.log("task");
+      // добавление задачи
+      // в этом блоке будет генерироваться уникальный id
+      this.dataList.filter(a => (a.id === id) ? a.tasks.push( new TaskWorld(1, data)) : false);
+    } else {
+      console.log("project");
       // добавление проекта
       this.dataList.push(new ProjectWorld(id, data));
       console.log(this.dataList);
-    } else {
-      // добавление задачи
-      this.dataList.filter(a => (a.id === id) ? a.tasks.push( new TaskWorld(1, data)) : false);
     }
     // либо через переменную будем дергать value, либо через getElement
     // нужно узнать как правильно?!
-    this.test = document.getElementById('addProject');
+    this.test = document.getElementById('addData');
     console.log(this.test.value);
   }
 
@@ -63,5 +66,8 @@ export class ReadmeComponent implements OnInit {
   }
 
   // удаление, выполнение и редактирование задачи
+  done(id) {
+    console.log(id);
+  }
 
 }

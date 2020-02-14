@@ -22,6 +22,9 @@
   background: #98ff98;
   border-radius: 8px;
 }
+.red {
+  background-color: red;
+}
 
 li {
   list-style-type: none;
