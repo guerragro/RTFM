@@ -8,9 +8,9 @@ export interface ProjectWorldInterface {
 }
 
 export interface TaskInterface {
-  id: number;
-  task: string;
-  done: boolean;
+  id?: number;
+  task?: string;
+  done?: boolean;
 }
 
 export class ProjectWorld {

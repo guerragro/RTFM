@@ -59,6 +59,10 @@ export const appRoutes: Routes = [
   {
     path: 'number',
     loadChildren: './modules/number/number.module#NumberModule'
+  },
+  {
+    path: 'money',
+    loadChildren: './modules/money/money.module#MoneyModule'
   }
   // {
   //   path: '**',

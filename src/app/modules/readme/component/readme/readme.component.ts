@@ -41,7 +41,7 @@ export class ReadmeComponent implements OnInit {
     proj.view = (this.shifter) ? this.shifter = false : this.shifter = true;
   }
 
-  // новый проект
+  // добавление
   addData(data, id?) {
     if (id) {
       console.log("task");
@@ -57,21 +57,18 @@ export class ReadmeComponent implements OnInit {
     // либо через переменную будем дергать value, либо через getElement
     // нужно узнать как правильно?!
     this.test = document.getElementById('addData');
-    console.log(this.test.value);
-  }
-
-  // новая задача
-  addTask() {
-    console.log('новая задача');
+    console.log(this.test.value, typeof this.test.value);
   }
 
   // удаление, выполнение и редактирование задачи
   done(id) {
-    this.dataList.filter(a => a.tasks.find(b => (b.id === id) ? b.done = true : false));
+    this.dataList.filter(a => a.tasks.find(b => b.done = (b.id === id) ? true : false));
+    // TODO проверить выполнения каждой позиции
+    console.log(this.dataList);
   }
 
+  // нужно ли удалять задачи или лучше ее перенасить в stash?!
   delete(id) {
-
   }
 
 }

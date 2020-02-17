@@ -14,6 +14,10 @@ export class ReadMeService {
         project: 'read me',
         tasks: [
           {
+            id: 12,
+            task: 'все задачи должен ставить только администратор или пользователь с правами'
+          },
+          {
             id: 4,
             task: 'решить проблему с переменной для task and project',
             done: false
@@ -32,6 +36,15 @@ export class ReadMeService {
             id: 7,
             task: 'id задачи и проекта должно быть уникальным',
             done: false
+          },
+          {
+            id: 12,
+            task: 'добавление даты к задачи',
+            done: false
+          },
+          {
+            id: 11,
+            task: 'возможность сделать комментарий, их может совершать любой пользователь, '
           }
         ],
         view: false
@@ -63,6 +76,12 @@ export class ReadMeService {
             done: false
           }
         ],
+        view: false
+      },
+      {
+        id: 15,
+        project: 'подключить базу данных',
+        tasks: [],
         view: false
       }
     ];
