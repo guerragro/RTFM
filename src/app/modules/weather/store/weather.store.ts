@@ -1,16 +1,14 @@
 import { Injectable } from '@angular/core';
 import { WeatherService } from '../service/weather.service';
 import {action, observable} from 'mobx';
-import { CityWeatherInterface } from '../models/cityWeather';
+import { WeatherInterface } from '../models/cityWeather';
 
 @Injectable()
 export class WeatherStore {
 
-  dataCity: CityWeatherInterface;
+  dataCity: WeatherInterface;
 
-  @observable weather: CityWeatherInterface;
-
-  @observable cites: CityWeatherInterface[] = [];
+  @observable cities: WeatherInterface[] = [];
   constructor( public weatherService: WeatherService) {}
 
   @action getWeather(data) {
@@ -32,12 +30,12 @@ export class WeatherStore {
       'ВЛАЖНОСТЬ': city.main.humidity + '%',
       'ДАВЛЕНИЕ': city.main.pressure * 0.75 + ' мм рт. ст.',
       'ТЕМПЕРАТУРА': city.main.temp,
-      id: null,
+      name: city.name,
+      id: city.sys.id,
       visible: false,
       'tooltip': this.makeWeatherTooltip(city),
     };
-    this.weather = this.dataCity;
-    this.cites.push(this.weather);
+    this.cities.push(this.dataCity);
   }
   makeWeatherTooltip(city: any): string {
     return 'Координаты: ' +

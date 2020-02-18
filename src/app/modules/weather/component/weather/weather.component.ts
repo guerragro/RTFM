@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { WeatherStore } from '../../store/weather.state';
+import { WeatherStore } from '../../store/weather.store';
 import { fromMobx } from 'ngx-mobx';
-import {CitesWeatherInterface, CityWeatherInterface} from '../../models/cityWeather';
+import {WeatherInterface} from '../../models/cityWeather';
 
 @Component({
   selector: 'app-weather',
@@ -11,37 +11,33 @@ import {CitesWeatherInterface, CityWeatherInterface} from '../../models/cityWeat
 })
 export class WeatherComponent implements OnInit {
 
-  weather$: Observable<any>;
-  weather: CityWeatherInterface;
-  city$: Observable<any>;
-  city: CitesWeatherInterface;
+  name: string;
+  city: any;
+  cities$: Observable<any>;
+  cities: WeatherInterface[];
 
   constructor(
     public weatherStore: WeatherStore
   ) {}
 
   ngOnInit() {
-    this.weather$ = fromMobx( () => this.weatherStore.weather);
-    this.weather$.subscribe(
+    this.cities$ = fromMobx(() => this.weatherStore.cities);
+    this.cities$.subscribe(
       res => {
-        this.weather = res;
-        // console.log(this.weather);
-        },
+        this.cities = res;
+        console.log(this.cities);
+      },
       err => console.log(err)
     );
-    this.city$ = fromMobx(() => this.weatherStore.cites);
-    this.city$.subscribe(
-      res => console.log(res)
-    );
-    // console.log(this.city$);
   }
 
   loadWeather(city) {
     this.weatherStore.getWeather(city);
   }
 
-  click(event) {
-    console.log(event);
+  showWeather(id) {
+    this.city = this.cities.filter(a => a.id === id);
+    // console.log(this.city);
   }
 
 }
