@@ -9,10 +9,6 @@
   margin: 5px;
 }
 
-/*.border-radius {*/
-/*  border-radius: 7px;*/
-/*}*/
-
 .box {
   width: 100%;
   margin: 0 auto;
@@ -28,11 +24,9 @@
   justify-content: center;
 }
 
-.box-1 {
-  width: 50%;
-  padding: 5px;
+.color-l {
+  background-color: #2a52be;
 }
-.box-2 {
-  width: 50%;
-  padding: 5px;
+.color-r {
+  background-color: #007ba7;
 }

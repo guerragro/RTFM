@@ -1,11 +1,3 @@
-<!--<h1 style="text-align: center">Список проектов</h1>-->
-<!--&lt;!&ndash;полюбому это сделано через жопу, перепесать&ndash;&gt;-->
-<!--<div *ngFor="let menu of menuList" class="text-center">-->
-<!--  <div>-->
-<!--    <a routerLink="/{{menu.path}}" *ngIf="menu.path !== 'menu' ">{{menu.path}}</a>-->
-<!--  </div>-->
-<!--</div>-->
-
 <div class="text-center">
   <h2>Project</h2>
 </div>
@@ -13,7 +5,8 @@
 <div class="container text-center">
   <div *ngFor="let menu of menuList">
     <button class="btn btn-block color">
-      <a routerLink="/{{menu.path}}" *ngIf="menu.path !== 'menu' ">{{menu.path}}</a>
+<!--      <a routerLink="/{{menu.path}}" *ngIf="menu.path !== 'menu' ">{{menu.path}}</a>-->
+      <a routerLink="/{{menu.path}}">{{menu.path}}</a>
     </button>
   </div>
 </div>

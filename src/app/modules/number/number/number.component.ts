@@ -12,14 +12,12 @@ export class NumberComponent implements OnInit {
   numbers: string = '';
   text: string;
   win: string;
-  arr = [];
+  counter: number = 0;
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit() {
     this.getRandomArbitary();
-    console.log(this.randomNumber);
   }
 
   getRandomArbitary() {
@@ -27,20 +25,19 @@ export class NumberComponent implements OnInit {
     console.log(this.randomNumber);
   }
 
+  // todo очищать поле вводе, после каждой проверки
+  // todo блокировать кнопку после пройгрыша, либо выйгрыша
+  // todo довавить кнопку начать заново
   lucky() {
+    this.counter++;
     this.number = document.getElementById('number');
     console.log(this.number.value);
-    if (this.randomNumber > this.number.value) {
-      this.text = 'Ваша догадка меньше';
-      this.win = 'Неправильно';
-    } else if (this.number < this.number.value) {
-      this.text = 'Ваша догадка больше';
-      this.win = 'Неправильно';
-    } else {
-      this.win = 'Правильно';
-      this.text = 'Угадали';
-    }
-    this.numbers = this.numbers + ', ' + this.number.value;
+    this.text = (this.number.value < this.randomNumber) ? 'Ваша догадка меньше' :
+                (this.number.value > this.randomNumber) ? 'Ваша догадка больше' : 'Верно';
+    this.win = (this.number.value == this.randomNumber) ? 'Угадали' :
+               (this.counter === 11) ? 'Game in over' : 'Неправильно';
+    console.log(this.numbers);
+    console.log(this.text, this.win);
+    this.numbers = this.numbers + ' ' + this.number.value;
   }
-
 }

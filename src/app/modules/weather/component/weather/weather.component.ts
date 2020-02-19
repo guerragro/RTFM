@@ -39,5 +39,8 @@ export class WeatherComponent implements OnInit {
     this.city = this.cities.filter(a => a.id === id);
     // console.log(this.city);
   }
+  delete(id) {
+    this.cities.forEach((a, index) => (a.id === id) ? this.cities.splice(index, 1) : this.cities);
+  }
 
 }

@@ -1,69 +1,73 @@
 <div class="f-container">
   <div class="margin-5">
-    <input type="text" [(ngModel)]="name">
+    <input type="text" class="btn btn-block" [(ngModel)]="name">
   </div>
   <div class="margin-5">
-    <button (click)="loadWeather(name)">load</button>
+    <button type="button" class="btn btn-primary" (click)="loadWeather(name)">load</button>
   </div>
 </div>
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-2" *ngIf="cities">
+    <div class="col-3 color-l" *ngIf="cities">
+      <h2>Погода</h2>
       <div *ngFor="let city of cities">
-        <div (click)="showWeather(city.id)">{{city.name}}</div>
+        <button type="button" class="btn btn-info" (click)="showWeather(city.id)">{{city.name}}</button>
+<!--        <div (click)="showWeather(city.id)">{{city.name}}</div>-->
       </div>
     </div>
-    <div class="col-10">
-      <div>
-          <div *ngFor="let a of city">
-            <div>{{a.name | uppercase}}</div>
-            <table class="text-center">
-              <tr>
-                <td>Восход</td>
-                <td>{{a['ВОСХОД']}}</td>
-              </tr>
-              <tr>
-                <td>Закат</td>
-                <td>{{a['ЗАКАТ']}}</td>
-              </tr>
-              <tr>
-                <td>Скорость ветра</td>
-                <td>{{a['СКОРОСТЬ ВЕТРА']}}</td>
-              </tr>
-              <tr>
-                <td>Облачность</td>
-                <td>{{a['ОБЛАЧНОСТЬ']}}</td>
-              </tr>
-              <tr>
-                <td>Влажность</td>
-                <td>{{a['ВЛАЖНОСТЬ']}}</td>
-              </tr>
-              <tr>
-                <td>Давление</td>
-                <td>{{a['ДАВЛЕНИЕ']}}</td>
-              </tr>
-              <tr>
-                <td>Температура</td>
-                <td>{{a['ТЕМПЕРАТУРА']}}</td>
-              </tr>
-            </table>
+    <div class="col-9 color-r">
+      <div *ngFor="let a of city" class="text-center">
+        <div>{{a.name | uppercase}}</div>
+        <table class="text-center">
+          <tr>
+            <td>Восход</td>
+            <td>{{a['ВОСХОД']}}</td>
+          </tr>
+          <tr>
+            <td>Закат</td>
+            <td>{{a['ЗАКАТ']}}</td>
+          </tr>
+          <tr>
+            <td>Скорость ветра</td>
+            <td>{{a['СКОРОСТЬ ВЕТРА']}}</td>
+          </tr>
+          <tr>
+            <td>Облачность</td>
+            <td>{{a['ОБЛАЧНОСТЬ']}}</td>
+          </tr>
+          <tr>
+            <td>Влажность</td>
+            <td>{{a['ВЛАЖНОСТЬ']}}</td>
+          </tr>
+          <tr>
+            <td>Давление</td>
+            <td>{{a['ДАВЛЕНИЕ']}}</td>
+          </tr>
+          <tr>
+            <td>Температура</td>
+            <td>{{a['ТЕМПЕРАТУРА']}}</td>
+          </tr>
+        </table>
+        <div>
+          <button type="button" class="btn btn-warning" (click)="delete(a.id)">
+            убрать город
+          </button>
+        </div>
       </div>
-    </div>
   </div>
 </div>
 </div>
 
 <div>
-  <img src="https://lh3.googleusercontent.com/proxy/Ej0_ycpX7wVCGmMuZJ9NARyjbcC0kCzRNKjU3yQ-C0QA22z3wI-X74VIQDqZyKQyGallLPB_1F_rKw9fVgy_iriRF1aib2LtylqL2zk6mvfD4l0d">
-  <img src="https://lh3.googleusercontent.com/proxy/fu5OxB9KXEeSoeQ-i9EmrXFvim1WdCEVE2KQBBya_bagyY5d1lA0PyroEh5EQYg7cjdXqwc2vwCdN7RWOgDF_3eewH9Z2oFzMil1WD0lJtanAA">
+  <img src="https://images.unian.net/photos/2018_01/1516692813-7337.jpg">
 </div>
 
 <div>
   <div>Какой нибудь график</div>
   <div>Уменьшенная копия или город, должна быть кликабельна для выбора на главный экран</div>
   <div>Список городов должен быть кликабельным;</div>
-  <div>Задний фон города должен быть в соответствие времени; утро-день-вечерь-ночь;</div>
+  <div>Задний фон города должен быть в соответствие времени; утро-день-вечер-ночь;</div>
   <div></div>
   <div></div>
   <div></div>

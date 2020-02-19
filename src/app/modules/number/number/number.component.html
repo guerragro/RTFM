@@ -1,19 +1,31 @@
-<div>
-  Мы выбрали случайное число от 1 до 100. Посмотрим, сможешь ли угадать его за 10 или меньше попыток. Ма скажем вам, была ли ваша догадка близки или нет.
-</div>
-<br>
-<div>
-  <div style="float: left">
-    <span>Введите число: </span>
-    <input type="text" id="number">
+<div class="container">
+  <h2 class="text-center">Game in ready</h2>
+  <div class="profile">
+    Мы выбрали случайное число от 1 до 100. Посмотрим, сможешь ли угадать его за 10 или меньше попыток. Ма скажем вам, была ли ваша догадка близки или нет.
   </div>
-  <div style="float: right">
-    <button (click)="lucky()" >Проверим</button>
+
+  <div class="head">
+    <div class="row">
+      <div class="col-10 text-center">
+        <span>Введите число: </span>
+        <input type="text" id="number">
+      </div>
+      <div class="col-2">
+        <button (click)="lucky()">check</button>
+      </div>
+    </div>
   </div>
-</div>
-<br>
-<div *ngIf="true">
-  <div> Предыдущие варианты: {{numbers}}</div>
-  <div>{{win}}</div>
-  <div>{{text}}</div>
+
+  <div class="body">
+<!--    <div *ngIf="numbers.length !== 0">-->
+    <div *ngIf="true">
+      <div>Предыдущие варианты: {{numbers}}</div>
+      <div>{{win}}</div>
+      <div>{{text}}</div>
+    </div>
+    <div *ngIf="this.counter === 11">
+      <div>{{win}}</div>
+    </div>
+  </div>
+
 </div>

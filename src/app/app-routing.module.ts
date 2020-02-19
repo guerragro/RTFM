@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {PageNotFoundComponent} from './modules/page-not-found/component/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './modules/page-not-found/component/page-not-found/page-not-found.component';
 
 // TODO почитать по routing
 // https://favicon.tech/kak-sozdat-polnostranichnyj-veb-sajt-v-angular-chast-3-4/
 
 export const appRoutes: Routes = [
   {
-    path: 'Прочти меня',
-    loadChildren: './modules/readme/readme.module#ReadMeModule'
+    path: 'тестовый модуль',
+    loadChildren: './modules/test/test.module#TestModule'
   },
   {
     // Todo, сделано, но через жопу
@@ -16,18 +16,22 @@ export const appRoutes: Routes = [
     loadChildren: './modules/menu/menu.module#MenuModule'
   },
   {
+    path: 'Project',
+    loadChildren: './modules/readme/readme.module#ReadMeModule'
+  },
+  {
     // Todo, по моим прикидкам готовность 70-80%
-    path: 'todo',
+    path: 'todoList',
     loadChildren: './modules/todo/todo.module#TodoModule'
   },
   {
     // Todo, готово получение данных, добавлен некоторый функционал, сделать внешнее оформление
-    path: 'weather',
+    path: 'weatherService',
     loadChildren: './modules/weather/weather.module#WeatherModule'
   },
   {
     // Todo, все на стадии зачатия, есть первые сподвижки
-    path: 'ticket',
+    path: 'ticketService',
     loadChildren: './modules/ticket/ticket.module#TicketModule'
   },
   {
@@ -41,28 +45,24 @@ export const appRoutes: Routes = [
     loadChildren: './modules/calculator/calculator.module#CalculatorModule'
   },
   {
-    path: 'test',
-    loadChildren: './modules/test/test.module#TestModule'
-  },
-  {
-    path: 'tour-of-heroes',
-    loadChildren: './modules/tour-of-heroes/tour-of-heroes.module#TourOfHeroesModule'
-  },
-  {
     path: 'eng',
     loadChildren: './modules/eng/eng.module#EngModule'
+  },
+  {
+    path: 'Угадай число',
+    loadChildren: './modules/number/number.module#NumberModule'
+  },
+  {
+    path: 'Zen-wallet',
+    loadChildren: './modules/money/money.module#MoneyModule'
   },
   {
     path: 'ПОЕ',
     loadChildren: './modules/poe/poe.module#PoeModule'
   },
   {
-    path: 'number',
-    loadChildren: './modules/number/number.module#NumberModule'
-  },
-  {
-    path: 'money',
-    loadChildren: './modules/money/money.module#MoneyModule'
+    path: 'tour-of-heroes',
+    loadChildren: './modules/tour-of-heroes/tour-of-heroes.module#TourOfHeroesModule'
   }
   // {
   //   path: '**',
