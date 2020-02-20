@@ -1,32 +1,23 @@
-.f-container {
-  width: 70%;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-}
-
-.margin-5 {
-  margin: 5px;
-}
-
-.box {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.flex-box {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
 .color-l {
   background-color: #2a52be;
 }
 .color-r {
   background-color: #007ba7;
+}
+
+tr {
+  border-bottom: 1pt dotted black;
+}
+
+h4, div {
+  font: 12pt sans-serif;
+  text-align: center;
+}
+
+.block {
+  margin-bottom: 2px;
+  border-radius: 8px;
+}
+.margin-5 {
+  margin-bottom: 5px;
 }

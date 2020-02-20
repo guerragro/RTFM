@@ -30,6 +30,7 @@
     "@ngrx/store": "^8.6.0",
     "bootstrap": "^4.4.1",
     "core-js": "^2.6.11",
+    "font-awesome": "^4.7.0",
     "glyphicons": "^0.2.0",
     "jquery": "^3.4.1",
     "mobx": "^5.14.2",

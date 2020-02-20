@@ -1,77 +1,153 @@
-<div class="f-container">
-  <div class="margin-5">
-    <input type="text" class="btn btn-block" [(ngModel)]="name">
-  </div>
-  <div class="margin-5">
-    <button type="button" class="btn btn-primary" (click)="loadWeather(name)">load</button>
+<div>
+  WeatherService
+</div>
+<div style="background-color: #00bfff">
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <input type="text" class="form-control" [(ngModel)]="name">
+      </div>
+      <div class="col-4">
+        <button type="button" class="btn btn-secondary" (click)="loadWeather(name)">load</button>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="container-fluid">
+<div style="width: 70%; margin: auto">
   <div class="row">
-    <div class="col-3 color-l" *ngIf="cities">
-      <h2>Погода</h2>
+    <div class="col-4">
       <div *ngFor="let city of cities">
-        <button type="button" class="btn btn-info" (click)="showWeather(city.id)">{{city.name}}</button>
-<!--        <div (click)="showWeather(city.id)">{{city.name}}</div>-->
+        <div (click)="showWeather(city.id)">{{city.name}}</div>
       </div>
     </div>
-    <div class="col-9 color-r">
+    <div class="col-8">
       <div *ngFor="let a of city" class="text-center">
         <div>{{a.name | uppercase}}</div>
-        <table class="text-center">
+        <table class="text-center margin-5">
           <tr>
-            <td>Восход</td>
+            <td>Восход: </td>
             <td>{{a['ВОСХОД']}}</td>
           </tr>
           <tr>
-            <td>Закат</td>
+            <td>Закат: </td>
             <td>{{a['ЗАКАТ']}}</td>
           </tr>
           <tr>
-            <td>Скорость ветра</td>
+            <td>Скорость ветра: </td>
             <td>{{a['СКОРОСТЬ ВЕТРА']}}</td>
           </tr>
           <tr>
-            <td>Облачность</td>
+            <td>Облачность: </td>
             <td>{{a['ОБЛАЧНОСТЬ']}}</td>
           </tr>
           <tr>
-            <td>Влажность</td>
+            <td>Влажность: </td>
             <td>{{a['ВЛАЖНОСТЬ']}}</td>
           </tr>
           <tr>
-            <td>Давление</td>
+            <td>Давление: </td>
             <td>{{a['ДАВЛЕНИЕ']}}</td>
           </tr>
           <tr>
-            <td>Температура</td>
+            <td>Температура: </td>
             <td>{{a['ТЕМПЕРАТУРА']}}</td>
           </tr>
         </table>
         <div>
           <button type="button" class="btn btn-warning" (click)="delete(a.id)">
-            убрать город
+            delete
           </button>
         </div>
-      </div>
+    </div>
   </div>
-</div>
+
 </div>
 
-<div>
-  <img src="https://images.unian.net/photos/2018_01/1516692813-7337.jpg">
+<h1>Вариант 2</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <input type="text" class="form-control" [(ngModel)]="name">
+    </div>
+    <div class="col-4">
+      <button type="button" class="btn btn-secondary" (click)="loadWeather(name)">load</button>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-5">
+      <h4>Weather Service</h4>
+      <div *ngFor="let city of cities">
+        <div class="btn-info block" (click)="showWeather(city.id)">{{city.name}}</div>
+      </div>
+    </div>
+
+    <div class="col-7">
+      <div *ngFor="let a of city" class="text-center">
+      город <br>
+      страна <br>
+      температура <br>
+      Пасмурно
+      <div>{{a.name | uppercase}}</div>
+      <table class="text-center">
+        <tr>
+          <td>Восход: </td>
+          <td>{{a['ВОСХОД']}}</td>
+        </tr>
+        <tr>
+          <td>Закат: </td>
+          <td>{{a['ЗАКАТ']}}</td>
+        </tr>
+        <tr>
+          <td>Скорость ветра: </td>
+          <td>{{a['СКОРОСТЬ ВЕТРА']}}</td>
+        </tr>
+        <tr>
+          <td>Облачность: </td>
+          <td>{{a['ОБЛАЧНОСТЬ']}}</td>
+        </tr>
+        <tr>
+          <td>Влажность: </td>
+          <td>{{a['ВЛАЖНОСТЬ']}}</td>
+        </tr>
+        <tr>
+          <td>Давление: </td>
+          <td>{{a['ДАВЛЕНИЕ']}}</td>
+        </tr>
+        <tr>
+          <td>Температура: </td>
+          <td>{{a['ТЕМПЕРАТУРА']}}</td>
+        </tr>
+      </table>
+
+      <div>
+        <button type="button" class="btn btn-warning" (click)="delete(a.id)">
+          убрать город
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  </div>
+
 </div>
 
-<div>
-  <div>Какой нибудь график</div>
-  <div>Уменьшенная копия или город, должна быть кликабельна для выбора на главный экран</div>
-  <div>Список городов должен быть кликабельным;</div>
-  <div>Задний фон города должен быть в соответствие времени; утро-день-вечер-ночь;</div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
+  <div>
+    <img src="https://images.unian.net/photos/2018_01/1516692813-7337.jpg">
+  </div>
+
+  <div>
+    <div>Какой нибудь график</div>
+    <div>Уменьшенная копия или город, должна быть кликабельна для выбора на главный экран</div>
+    <div>Список городов должен быть кликабельным;</div>
+    <div>Задний фон города должен быть в соответствие времени; утро-день-вечер-ночь;</div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>

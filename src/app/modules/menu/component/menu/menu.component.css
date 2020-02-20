@@ -3,3 +3,14 @@
   background: #00bc8c;
   margin: 1px;
 }
+
+.box {
+  width: 80%;
+  margin: auto;
+}
+@media (min-width: 1200px) {
+  .box {
+    width: 40%;
+    margin: auto;
+  }
+}

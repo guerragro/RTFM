@@ -30,6 +30,7 @@ export class WeatherStore {
       'ВЛАЖНОСТЬ': city.main.humidity + '%',
       'ДАВЛЕНИЕ': city.main.pressure * 0.75 + ' мм рт. ст.',
       'ТЕМПЕРАТУРА': city.main.temp,
+      'ОЩУЩАЕТСЯ': city.fells_like,
       name: city.name,
       id: city.sys.id,
       visible: false,

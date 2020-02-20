@@ -6,6 +6,7 @@ export interface WeatherInterface {
   'ВЛАЖНОСТЬ': string;
   'ДАВЛЕНИЕ': string;
   'ТЕМПЕРАТУРА': string;
+  'ОЩУЩАЕТСЯ': string;
   name: string;
   id: number;
   visible: boolean;

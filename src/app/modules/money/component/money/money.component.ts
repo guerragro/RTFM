@@ -12,4 +12,8 @@ export class MoneyComponent implements OnInit {
   ngOnInit() {
   }
 
+  send(event) {
+    console.log(event.toElement.value);
+  }
+
 }

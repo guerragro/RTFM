@@ -1,16 +1,29 @@
-<div>
-  <div>
-    <input type="text">
-  </div>
-  <div>
-    <button>click</button>
+<div class="text-center">
+  <h1>Balance</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-5">
+        <label for="SelectACostItem" class="form-group">Выберите статью:</label>
+        <select name="CostItem" id="SelectACostItem" class="form-control" (click)="send($event)">
+          <option value="Транспорт">Транспорт</option>
+          <option value="Жилье">Жилье</option>
+          <option value="Связь и Интернет">Связь и Интернет</option>
+          <option value="переводы внутри">Переводы внутри</option>
+        </select>
+    </div>
+    <div class="col-7">
+      <label class="form-group">Сколько потратили:</label>
+      <input type="text" class="form-control">
+    </div>
   </div>
 </div>
 
-<div>
-  добавленные блоки
+<div class="text-center">
+  <h1>ListACostItem</h1>
 </div>
 
-<div>
-  статья, выбор из списка при нажатие
+<div class="text-center">
+  <h1>Graph or Diagram</h1>
 </div>
