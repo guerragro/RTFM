@@ -1,3 +1,17 @@
 
-<input type="text" [(ngModel)]="this.word">
-<button (click)="translit(this.word)">Перевод</button>
+<!--<input type="text" [(ngModel)]="this.word">-->
+<!--<button (click)="translit(this.word)">Перевод</button>-->
+
+<div class="container">
+  <div class="row">
+    <div class="col-5">
+      <input type="text" class="form-control" [(ngModel)]="word">
+    </div>
+    <div class="col-2">
+      <button type="button" class="btn btn-success" (click)="translit(word)">=></button>
+    </div>
+    <div class="col-5">
+      <div class="btn btn-block">{{drow}}</div>
+    </div>
+  </div>
+</div>

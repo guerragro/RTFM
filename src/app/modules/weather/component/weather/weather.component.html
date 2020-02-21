@@ -1,56 +1,62 @@
 <div>
   WeatherService
 </div>
-<div style="background-color: #00bfff">
+<!-- title -->
+<div style="background-color: #17a2b8">
   <div class="container">
     <div class="row">
       <div class="col-8">
-        <input type="text" class="form-control" [(ngModel)]="name">
+        <input type="text" class="form-control button-center" [(ngModel)]="name">
       </div>
       <div class="col-4">
-        <button type="button" class="btn btn-secondary" (click)="loadWeather(name)">load</button>
+        <button type="button" class="btn btn-secondary button-center" (click)="loadWeather(name)">load</button>
       </div>
     </div>
   </div>
 </div>
 
-<div style="width: 70%; margin: auto">
-  <div class="row">
+<!---->
+<div style="width: 90%; margin: auto">
+  <div class="row margin-top-5">
+<!--    блок выбора города -->
     <div class="col-4">
       <div *ngFor="let city of cities">
-        <div (click)="showWeather(city.id)">{{city.name}}</div>
+        <div class="btn-info block" (click)="showWeather(city.id)">{{city.name}}</div>
       </div>
     </div>
+<!--    блог погодных данных -->
     <div class="col-8">
       <div *ngFor="let a of city" class="text-center">
+<!--        todo tooltip?-->
         <div>{{a.name | uppercase}}</div>
+        <div>Ощущается как {{a['ОЩУЩАЕТСЯ']}}</div>
         <table class="text-center margin-5">
           <tr>
-            <td>Восход: </td>
+            <td class="left">Восход: </td>
             <td>{{a['ВОСХОД']}}</td>
           </tr>
           <tr>
-            <td>Закат: </td>
+            <td class="left">Закат: </td>
             <td>{{a['ЗАКАТ']}}</td>
           </tr>
           <tr>
-            <td>Скорость ветра: </td>
+            <td class="left">Скорость ветра: </td>
             <td>{{a['СКОРОСТЬ ВЕТРА']}}</td>
           </tr>
           <tr>
-            <td>Облачность: </td>
+            <td class="left">Облачность: </td>
             <td>{{a['ОБЛАЧНОСТЬ']}}</td>
           </tr>
           <tr>
-            <td>Влажность: </td>
+            <td class="left">Влажность: </td>
             <td>{{a['ВЛАЖНОСТЬ']}}</td>
           </tr>
           <tr>
-            <td>Давление: </td>
+            <td class="left">Давление: </td>
             <td>{{a['ДАВЛЕНИЕ']}}</td>
           </tr>
           <tr>
-            <td>Температура: </td>
+            <td class="left">Температура: </td>
             <td>{{a['ТЕМПЕРАТУРА']}}</td>
           </tr>
         </table>
@@ -62,6 +68,7 @@
     </div>
   </div>
 
+  </div>
 </div>
 
 <h1>Вариант 2</h1>
@@ -151,3 +158,27 @@
     <div></div>
     <div></div>
   </div>
+
+<!--<style>-->
+<!--  .vyrovnyat {-->
+<!--    height: 7em; /* можно заменить на min-height */-->
+<!--    text-align: center;-->
+<!--    background: #fff5d7;-->
+<!--  }-->
+<!--  .vyrovnyat div {-->
+<!--    display: inline-block;-->
+<!--    vertical-align: middle;-->
+<!--    background: #9F9;-->
+<!--  }-->
+<!--  .vyrovnyat:before { /* для IE8+ */-->
+<!--    content: "";-->
+<!--    display: inline-block;-->
+<!--    min-height: inherit;-->
+<!--    height: 100%;-->
+<!--    vertical-align: middle;-->
+<!--  }-->
+<!--</style>-->
+
+<!--<div class="vyrovnyat">-->
+<!--  <div>первая строка<br>вторая строка</div>-->
+<!--</div>-->

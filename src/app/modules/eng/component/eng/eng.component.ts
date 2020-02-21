@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EngComponent implements OnInit {
 
-  word: any;
+  word: string;
+  drow: string = '';
   bizarro = ['kh', 'ch', 'sh', 'shh', 'zh', 'a', 'b', 'v', 'g', 'd', 'e', 'z', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'f', 'с', '#', 'y', 'ь', 'e', 'u', 'a'];
   origin =  ['х',  'ч',  'ш',  'щ',   'ж',  'a', 'б', 'в', 'г', 'д', 'е', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'ц', 'ъ', 'ы', 'ь', 'э', 'ю', 'я'];
 
@@ -23,6 +24,7 @@ export class EngComponent implements OnInit {
     word.forEach( (a) =>
       this.bizarro.forEach((b, index) => {
         if (b === a) {
+          this.drow = this.drow + this.origin[index];
           console.log(this.origin[index]);
         }
       })

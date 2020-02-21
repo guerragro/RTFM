@@ -57,6 +57,10 @@ export const appRoutes: Routes = [
     loadChildren: './modules/money/money.module#MoneyModule'
   },
   {
+    path: 'selfdev',
+    loadChildren: './modules/self-dev/self-dev.module#SelfDevModule'
+  },
+  {
     path: 'ПОЕ',
     loadChildren: './modules/poe/poe.module#PoeModule'
   },

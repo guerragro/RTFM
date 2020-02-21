@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { WeatherStore } from '../../store/weather.store';
 import { fromMobx } from 'ngx-mobx';
-import {WeatherInterface} from '../../models/cityWeather';
+import {CityWeatherInterface} from '../../models/cityWeather';
 
 @Component({
   selector: 'app-weather',
@@ -14,7 +14,7 @@ export class WeatherComponent implements OnInit {
   name: string;
   city: any;
   cities$: Observable<any>;
-  cities: WeatherInterface[];
+  cities: CityWeatherInterface[];
 
   constructor(
     public weatherStore: WeatherStore
@@ -23,10 +23,7 @@ export class WeatherComponent implements OnInit {
   ngOnInit() {
     this.cities$ = fromMobx(() => this.weatherStore.cities);
     this.cities$.subscribe(
-      res => {
-        this.cities = res;
-        console.log(this.cities);
-      },
+      res => this.cities = res,
       err => console.log(err)
     );
   }
@@ -40,7 +37,8 @@ export class WeatherComponent implements OnInit {
     // console.log(this.city);
   }
   delete(id) {
-    this.cities.forEach((a, index) => (a.id === id) ? this.cities.splice(index, 1) : this.cities);
+    // this.weatherStore.deleteWeather(id);
+    // this.cities.forEach((a, index) => (a.id === id) ? this.cities.splice(index, 1) : this.cities);
   }
 
 }
