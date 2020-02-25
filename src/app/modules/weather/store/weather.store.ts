@@ -47,11 +47,12 @@ export class WeatherStore {
   // ];
   direction = [
     {10: 'север'}, {20: 'север/северо-восток'}, {30: 'север/северо-восток'}, {40: 'северо-восток'}, {50: 'северо-восток'},
-    {60: 'восток/северо-восток'}, {70: 'восток/северо-восток'}, {80: 'восток'}, {90: 'восток'}, {100: 'восток'}, {110: 'восток/юго-восток'},
-    {120: 'восток/юго-восток'}, {130: 'юго-восток'}, {140: 'юго-восток'}, {150: 'юг/юго-восток'}, {160: 'юг/юго-восток'}, {170: 'юг'},
-    {180: 'юг'}, {190: 'юг'}, {200: 'юг/юго-запад'}, {210: 'юг/юго-запад'}, {220: 'юго-запад'}, {230: 'юго-запад'}, {240: 'запад/юго-западный'},
-    {250: 'запад/юго-западный'}, {260: 'запад'}, {270: 'запад'}, {280: 'запад'}, {290: 'запад/северо-западный'}, {300: 'запад/северо-западный'},
-    {310: 'северо-западный'}, {320: 'северо-западный'}, {330: 'север/северо-западный'}, {340: 'север/северо-западный'}
+    {60: 'восточный/северо-восток'}, {70: 'восточный/северо-восток'}, {80: 'восточный'}, {90: 'восточный'}, {100: 'восточный'},
+    {110: 'восточный/юго-восток'}, {120: 'восточный/юго-восточный'}, {130: 'юго-восток'}, {140: 'юго-восток'}, {150: 'юг/юго-восточный'},
+    {160: 'юг/юго-восточный'}, {170: 'юг'}, {180: 'юг'}, {190: 'юг'}, {200: 'юг/юго-запад'}, {210: 'юг/юго-запад'}, {220: 'юго-запад'},
+    {230: 'юго-запад'}, {240: 'запад/юго-западный'}, {250: 'запад/юго-западный'}, {260: 'запад'}, {270: 'запад'}, {280: 'запад'},
+    {290: 'запад/северо-западный'}, {300: 'запад/северо-западный'}, {310: 'северо-западный'}, {320: 'северо-западный'},
+    {330: 'север/северо-западный'}, {340: 'север/северо-западный'}
   ];
 
   @observable cities: CityWeatherInterface[] = [];
@@ -63,9 +64,12 @@ export class WeatherStore {
       err => console.log(err)
     );
   }
-  // @action deleteWeather(id) {
-  //   this.cities = this.cities.forEach((a, index) => (a.id === id) ? this.cities.splice(index, 1) : this.cities);
-  // }
+
+  @action deleteWeather(id) {
+    this.cities = this.cities.filter((a, index) => (a.id !== id) ? this.cities.splice(index, 1) : this.cities);
+    console.log(this.cities);
+    // this.cities = this.cities.forEach((a, index) => (a.id === id) ? this.cities.splice(index, 1) : this.cities);
+  }
 
   // @computed
 
@@ -77,7 +81,8 @@ export class WeatherStore {
       // https://www.cy-pr.com/tools/time/
       ВОСХОД: this.unixtimestamp(city.sys.sunrise),
       ЗАКАТ: this.unixtimestamp(city.sys.sunset),
-      'СКОРОСТЬ ВЕТРА': city.wind.speed + ' м/с ' + this.winddirection(city.wind.deg),
+      'СКОРОСТЬ ВЕТРА': city.wind.speed + ' м/с',
+      НАПРАВЛЕНИЕ: this.windDirection(city.wind.deg),
       ОБЛАЧНОСТЬ: city.weather[0].description,
       ВЛАЖНОСТЬ: city.main.humidity + '%',
       ДАВЛЕНИЕ: city.main.pressure * 0.75 + ' мм рт. ст.',
@@ -91,11 +96,14 @@ export class WeatherStore {
     this.cities.push(this.dataCity);
     console.log(this.cities);
   }
+
   makeWeatherTooltip(city: any): string {
     return 'Координаты: ' +
       city.coord.lon + ' долготы ' +
       city.coord.lat + ' широты ';
   }
+
+  // перевод времени
   unixtimestamp(time): string {
     const date = new Date(time * 1000);
     const year = date.getFullYear();
@@ -107,7 +115,11 @@ export class WeatherStore {
     const convdateTime = month + '-' + day + '-' + year + ' ' + hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
     return convdateTime;
   }
-  winddirection(dir) {
-    // this.direction.filter(a => (a == dir) ? )
+
+  // определение направление ветра
+  windDirection(dir) {
+    console.log(dir);
+    const wind = this.direction.filter(a => Object.keys(a)[0] === dir.toString());
+    return wind[0][dir];
   }
 }

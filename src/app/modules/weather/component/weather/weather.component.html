@@ -40,8 +40,8 @@
             <td>{{a['ЗАКАТ']}}</td>
           </tr>
           <tr>
-            <td class="left">Скорость ветра: </td>
-            <td>{{a['СКОРОСТЬ ВЕТРА']}}</td>
+            <td class="left">Скорость и направление ветра: </td>
+            <td>{{a['СКОРОСТЬ ВЕТРА'] }} {{a['НАПРАВЛЕНИЕ']}}</td>
           </tr>
           <tr>
             <td class="left">Облачность: </td>
@@ -84,19 +84,16 @@
 
   <div class="row">
 
-    <div class="col-5">
+    <div class="col-5 border">
       <h4>Weather Service</h4>
       <div *ngFor="let city of cities">
         <div class="btn-info block" (click)="showWeather(city.id)">{{city.name}}</div>
       </div>
     </div>
 
-    <div class="col-7">
+    <div class="col-7 border">
       <div *ngFor="let a of city" class="text-center">
-      город <br>
-      страна <br>
-      температура <br>
-      Пасмурно
+
       <div>{{a.name | uppercase}}</div>
       <table class="text-center">
         <tr>
@@ -110,6 +107,10 @@
         <tr>
           <td>Скорость ветра: </td>
           <td>{{a['СКОРОСТЬ ВЕТРА']}}</td>
+        </tr>
+        <tr>
+          <td>Направление:</td>
+          <td>{{a['НАПРАВЛЕНИЕ']}}</td>
         </tr>
         <tr>
           <td>Облачность: </td>

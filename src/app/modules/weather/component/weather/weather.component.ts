@@ -29,7 +29,8 @@ export class WeatherComponent implements OnInit {
   }
 
   loadWeather(city) {
-    this.weatherStore.getWeather(city);
+    // todo выводить сообщение о повторном введение города или неправильно введенном городе
+    (this.cities.filter(a => a.name === city)) ? console.log('Этот город уже есть в вашем списке') : this.weatherStore.getWeather(city);
   }
 
   showWeather(id) {
@@ -37,7 +38,7 @@ export class WeatherComponent implements OnInit {
     // console.log(this.city);
   }
   delete(id) {
-    // this.weatherStore.deleteWeather(id);
+    this.weatherStore.deleteWeather(id);
     // this.cities.forEach((a, index) => (a.id === id) ? this.cities.splice(index, 1) : this.cities);
   }
 

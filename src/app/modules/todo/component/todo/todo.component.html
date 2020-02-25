@@ -12,9 +12,30 @@
 
   </div>
 
+<!--  <div *ngFor="let t of todoList">-->
+
+<!--    <div class="todo-box flex-box">-->
+<!--      <div class="col-8" (click)="t.visible = true">-->
+<!--        {{t.todo}}-->
+<!--      </div>-->
+<!--      <div class="col-2">-->
+<!--        <button class="btn btn-default" (click)="done(t.id)">suc</button>-->
+<!--      </div>-->
+<!--      <div class="col-2">-->
+<!--        <button class="btn btn-default" (click)="delete(t.id)">del</button>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="text-center" *ngIf="t.visible">-->
+<!--      <input type="text" value="{{t.todo}}">-->
+<!--      <button (click)="this.edit(t.todo, t.id)">??</button>-->
+<!--    </div>-->
+
+<!--  </div>-->
+
   <div *ngFor="let t of todoList">
 
-    <div class="todo-box flex-box">
+    <div class="todo-box flex-box" *ngIf="!t.visible">
       <div class="col-8" (click)="t.visible = true">
         {{t.todo}}
       </div>
@@ -26,11 +47,19 @@
       </div>
     </div>
 
-    <div class="text-center" *ngIf="t.visible">
-      <input type="text" value="{{t.todo}}">
-      <button (click)="this.edit(t.todo, t.id)">??</button>
+    <div class="todo-box flex-box" *ngIf="t.visible">
+      <div class="col-8">
+        <input type="text" value="{{t.todo}}">
+      </div>
+      <div class="col-4">
+        <button class="btn btn-default" (click)="this.edit(t.todo, t.id)">??</button>
+      </div>
     </div>
 
-  </div>
+<!--    <div class="text-center" *ngIf="t.visible">-->
+<!--      <input type="text" value="{{t.todo}}">-->
+<!--      <button (click)="this.edit(t.todo, t.id)">??</button>-->
+<!--    </div>-->
 
+  </div>
 </div>
