@@ -10,6 +10,12 @@ export class ReadMeService {
   public getProject() {
     return [
       {
+        id: 30,
+        project: 'всплывающие окна',
+        tasks: [],
+        view: false
+      },
+      {
         id: 1,
         project: 'read me',
         tasks: [
