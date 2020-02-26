@@ -33,6 +33,7 @@
     "core-js": "^2.6.11",
     "font-awesome": "^4.7.0",
     "glyphicons": "^0.2.0",
+    "glyphicons-only-bootstrap": "^1.0.1",
     "jquery": "^3.4.1",
     "mobx": "^5.14.2",
     "ngx-mobx": "^1.2.2",
