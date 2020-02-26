@@ -1,17 +1,19 @@
-h1 {
-  margin: 0;
-  color: #204d74;
-  font-size: 40px;
-}
-.margin-5 {
-  margin: 5px;
-}
-
 .box {
   width: 100%;
   /* означаешь, что длина будет занимать весь экран монитора*/
   height: 100vh;
+  background: #2D936C;
+  /*color: #fff;*/
   font-family: 'Varela Round', sans-serif;
+}
+
+h1 {
+  font-size: 72px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+.margin-5 {
+  margin: 5px;
 }
 
 .intro {
@@ -46,4 +48,49 @@ h1 {
 
 .done {
   text-decoration: line-through;
+}
+
+#input-form {
+  background: transparent;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  font-family: 'Varela Round', sans-serif;
+  width: 100%;
+  text-indent: 20px;
+  color: #fff;
+  transition: all 0.3s;
+  border-bottom: 1px solid #fff;
+}
+#input-form:focus {
+  border-bottom: 1px solid #000;
+}
+
+#input-form::-webkit-input-placeholder {
+  color: #fff;
+}
+
+#input-form:-moz-input-placeholder {
+  color: #fff;
+}
+
+#input-form:-ms-input-placeholder {
+  color: #fff;
+}
+
+.button-no {
+  border: none;
+}
+.margin-bottom-15 {
+  margin-bottom: 15px;
+}
+.width-80 {
+  width: 80%;
+  /*margin: auto;*/
+}
+body {
+  background-color: #0ce3ac;
+}
+.align-center {
+  align-items: center;
 }

@@ -10,12 +10,31 @@ export class ReadMeService {
   public getProject() {
     return [
       {
+        id: 40,
+        project: 'mobx',
+        tasks: [
+          {
+            id: 41,
+            task: 'до конца разобраться'
+          }
+        ],
+        view: false
+      },
+      {
         id: 30,
         project: 'всплывающие окна',
         tasks: [
           {
             id: 31,
             task: 'https://habr.com/ru/post/319386/'
+          },
+          {
+            id: 32,
+            task: 'ожидание ответа от сервера'
+          },
+          {
+            id: 33,
+            task: 'http://www.cyberforum.ru/javascript-beginners/thread2429406.html'
           }
         ],
         view: false

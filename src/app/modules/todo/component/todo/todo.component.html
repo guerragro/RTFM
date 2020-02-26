@@ -1,18 +1,18 @@
 <div class="box">
 
-  <div class="intro text-center">
-    <h1>To-Do List</h1>
+  <h1>To-Do List</h1>
 
+  <div class="intro text-center">
     <div>
       <input type="password" class="form-input margin-5" placeholder="ENTER YOUR TASK" [(ngModel)]="todo">
       <button class="form-button margin-5" (click)="add(todo)">
-        {{icons.books}}
+        {{icons.plus}}
       </button>
     </div>
 
   </div>
 
-  <h1>ВАРИАНТ 1</h1>
+  <h2>ВАРИАНТ 1</h2>
   <div *ngFor="let t of todoList">
 
     <div class="todo-box flex-box">
@@ -20,10 +20,10 @@
         {{t.todo}}
       </div>
       <div class="col-2">
-        <button class="btn btn-default" (click)="done(t.id)">suc</button>
+        <button class="btn btn-default" (click)="done(t.id)">{{icons.checkHeavy}}</button>
       </div>
       <div class="col-2">
-        <button class="btn btn-default" (click)="delete(t.id)">del</button>
+        <button class="btn btn-default" (click)="delete(t.id)">{{icons.crossHeavy}}</button>
       </div>
     </div>
 
@@ -34,7 +34,7 @@
 
   </div>
 
-  <h1>ВАРИАНТ 2</h1>
+  <h2>ВАРИАНТ 2</h2>
 
   <div *ngFor="let t of todoList">
 
@@ -43,19 +43,48 @@
         {{t.todo}}
       </div>
       <div class="col-2">
-        <button class="btn btn-default" (click)="done(t.id)">suc</button>
+        <button class="btn btn-default" (click)="done(t.id)">{{icons.check}}</button>
       </div>
       <div class="col-2">
-        <button class="btn btn-default" (click)="delete(t.id)">del</button>
+        <button class="btn btn-default" (click)="delete(t.id)">{{icons.cross}}</button>
       </div>
     </div>
 
     <div class="text-center" *ngIf="t.visible">
       <div>
         <input type="text" class="form-input margin-5" value="{{t.todo}}">
-        <button class="btn btn-default" (click)="this.edit(t.todo, t.id)">??</button>
+        <button class="btn btn-default" (click)="this.edit(t.todo, t.id)">{{icons.pencil}}</button>
       </div>
     </div>
 
   </div>
+
+  <h2>ВАРИАНТ 3</h2>
+
+  <div class="container">
+
+<!--    срабатывает на Enter -->
+    <div class="row margin-bottom-15 width-80">
+      <div class="col-10">
+        <input type="text" id="input-form" (keydown)="clickMe($event)" placeholder="ENTER YOUR ACTIVITY....">
+      </div>
+      <div class="col-2">
+        <span (click)="clickMe($event)">{{icons.plus}}</span>
+<!--        <button class="button-no" (click)="clickMe($event)">-->
+<!--          <span>{{icons.plus}}</span>-->
+<!--        </button>-->
+      </div>
+    </div>
+
+    <div *ngFor="let t of todoList">
+      <div style="background-color: white; border-radius: 6px; border: 1px solid black; margin-bottom: 3px; margin-top: 3px; padding-left: 10px">{{t.todo}}</div>
+    </div>
+
+  </div>
+
+  как увеличить иконку?!
+  <div style="width: 500px; height: 500px">
+    {{icons.plus}} {{icons.scorpius}} {{icons.ticket}}
+  </div>
+
 </div>

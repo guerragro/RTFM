@@ -10,9 +10,9 @@ export interface TodoState {
 
 export const InitialTodosState: TodoState = {
   todos: [
-    new Todo('HeroList', 0, false, false),
-    new Todo('Axe', 1, false, false),
-    new Todo('Rubick', 2, false, false),
+    new Todo('Изменить фон', 0, false, false),
+    new Todo('Добавить счетчик активных задач', 1, false, false),
+    new Todo('Придумать', 2, false, false),
   ],
   done: [],
   delete: []

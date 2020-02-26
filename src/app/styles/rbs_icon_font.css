@@ -1,0 +1,63 @@
+﻿@font-face {
+    font-family: 'rbsiconfont';
+    src: url('../fonts/rbsiconfont.eot');
+    src: url('../fonts/rbsiconfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/rbsiconfont.woff2') format('woff2'),
+    url('../fonts/rbsiconfont.woff') format('woff'),
+    url('../fonts/rbsiconfont.ttf') format('truetype'),
+    url('../fonts/rbsiconfont.svg#rbsiconfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.rbsicon {
+    display: inline-block;
+    font-family: rbsiconfont;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    position: relative;
+    top: 1px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.rbsicon-price-tags-control:before {
+    content: "A";
+}
+.rbsicon-sales-price-control:before {
+    content: "B";
+}
+.rbsicon-price-tags-setting:before {
+    content: "C";
+}
+.rbsicon-replenishment:before {
+    content: "D";
+}
+.rbsicon-rotation:before {
+    content: "E";
+}
+.rbsicon-primary-recount:before {
+    content: "F";
+}
+.rbsicon-photoscan:before {
+    content: "G";
+}
+.rbsicon-planogram-select:before {
+    content: "H";
+}
+
+.rbsicon-tag:before {
+    content: "I";
+}
+
+.rbsicon-cart:before {
+    content: "J";
+}
+
+.rbsicon-status-ok:before {
+    content: "K";
+}
+
+.rbsicon-truck:before {
+    content: "L";
+}

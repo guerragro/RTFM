@@ -89,6 +89,14 @@ export class TodoComponent implements OnInit {
         return true;
     }
   }
+
+  clickMe(event) {
+    if (event.keyCode === 13) {
+      console.log(event.target.value);
+    } else if (event.type === 'click') {
+      console.log(event.target.value);
+    }
+  }
 }
 
 // https://github.com/mashish584/ngrx-todo-app-example/blob/master/src/app/store/reducers/todo.reducers.ts
