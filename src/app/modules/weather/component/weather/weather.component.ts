@@ -30,7 +30,8 @@ export class WeatherComponent implements OnInit {
 
   loadWeather(city) {
     // todo выводить сообщение о повторном введение города или неправильно введенном городе
-    (this.cities.filter(a => a.name === city)) ? console.log('Этот город уже есть в вашем списке') : this.weatherStore.getWeather(city);
+    this.weatherStore.getWeather(city);
+    // (this.cities.filter(a => a.name !== city)) ? console.log('Этот город уже есть в вашем списке') : this.weatherStore.getWeather(city);
   }
 
   showWeather(id) {

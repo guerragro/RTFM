@@ -12,7 +12,12 @@ export class ReadMeService {
       {
         id: 30,
         project: 'всплывающие окна',
-        tasks: [],
+        tasks: [
+          {
+            id: 31,
+            task: 'https://habr.com/ru/post/319386/'
+          }
+        ],
         view: false
       },
       {
