@@ -54,15 +54,15 @@ export const appRoutes: Routes = [
   },
   {
     path: 'Zen-wallet',
-    loadChildren: './modules/money/money.module#MoneyModule'
+    loadChildren: './modules/zen-money/money.module#MoneyModule'
   },
   {
     path: 'selfdev',
     loadChildren: './modules/self-dev/self-dev.module#SelfDevModule'
   },
   {
-    path: 'ПОЕ',
-    loadChildren: './modules/poe/poe.module#PoeModule'
+    path: 'site',
+    loadChildren: './modules/site/site.module#SiteModule'
   },
   {
     path: 'tour-of-heroes',

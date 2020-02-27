@@ -94,3 +94,9 @@ body {
 .align-center {
   align-items: center;
 }
+
+.count {
+  background-color: white;
+  /*width: 30px;*/
+  /*height: 120px*/
+}

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule} from '@angular/router';
-import {PoeComponent} from './poe/poe.component';
+import { MainComponent } from './main/main.component';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [{
   path: '',
-  component: PoeComponent
+  component: MainComponent
 }];
 
 @NgModule({
@@ -12,4 +12,4 @@ const routes: Routes = [{
   exports: [RouterModule]
 })
 
-export class PoeRouting{}
+export class SiteRoutingModule {}

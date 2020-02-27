@@ -95,6 +95,10 @@
       <div *ngFor="let a of city" class="text-center">
 
       <div>{{a.name | uppercase}}</div>
+      <div style="width: 120px; height: 47px;">
+        <div style="background-color: #0ce3ac">{{a['ТЕМПЕРАТУРА']}}</div>
+        <div style="background-color: #2e6da4">По ощущению {{a['ОЩУЩАЕТСЯ']}}</div>
+      </div>
       <table class="text-center">
         <tr>
           <td>Восход: </td>

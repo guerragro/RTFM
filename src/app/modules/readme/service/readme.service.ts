@@ -22,7 +22,7 @@ export class ReadMeService {
       },
       {
         id: 30,
-        project: 'всплывающие окна',
+        project: 'разобраться',
         tasks: [
           {
             id: 31,
@@ -35,6 +35,14 @@ export class ReadMeService {
           {
             id: 33,
             task: 'http://www.cyberforum.ru/javascript-beginners/thread2429406.html'
+          },
+          {
+            id: 34,
+            task: 'глифы https://www.npmjs.com/package/glyphicons-only-bootstrap'
+          },
+          {
+            id: 35,
+            task: 'глифы https://www.npmjs.com/package/glyphicons'
           }
         ],
         view: false
