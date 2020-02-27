@@ -14,7 +14,7 @@ export class TttComponent implements OnInit {
 
   box2: any = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }

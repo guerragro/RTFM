@@ -4,11 +4,15 @@ import { MainComponent } from './main/main.component';
 import {PoeComponent} from './poe/poe.component';
 import {FormsModule} from '@angular/forms';
 import {SiteRoutingModule} from './site-routing.module';
+import {EngComponent} from './eng/eng.component';
+import {NumberComponent} from './number/number.component';
 
 @NgModule({
   declarations: [
     MainComponent,
-    PoeComponent
+    PoeComponent,
+    EngComponent,
+    NumberComponent
   ],
   imports: [
     CommonModule,

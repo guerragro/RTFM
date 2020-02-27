@@ -7,15 +7,6 @@ import { PageNotFoundComponent } from './modules/page-not-found/component/page-n
 
 export const appRoutes: Routes = [
   {
-    path: 'Тест',
-    loadChildren: './modules/test/test.module#TestModule'
-  },
-  {
-    // Todo, сделано, но через жопу
-    path: 'menu',
-    loadChildren: './modules/menu/menu.module#MenuModule'
-  },
-  {
     path: 'Project',
     loadChildren: './modules/readme/readme.module#ReadMeModule'
   },
@@ -30,27 +21,19 @@ export const appRoutes: Routes = [
     loadChildren: './modules/weather/weather.module#WeatherModule'
   },
   {
-    // Todo, все на стадии зачатия, есть первые сподвижки
-    path: 'ticketService',
-    loadChildren: './modules/ticket/ticket.module#TicketModule'
-  },
-  {
     // Todo, привести в порядок и сделать игру против компьютера
     path: 'tic-tac-toe',
     loadChildren: './modules/tic-tac-toe/tic-tac-toe.module#TicTacToeModule'
   },
   {
+    // Todo, все на стадии зачатия, есть первые сподвижки
+    path: 'ticketService',
+    loadChildren: './modules/ticket/ticket.module#TicketModule'
+  },
+  {
     // Todo, по моим прикидкам готовность 70-80%, набросаны первые стили
     path: 'calculator',
     loadChildren: './modules/calculator/calculator.module#CalculatorModule'
-  },
-  {
-    path: 'eng',
-    loadChildren: './modules/eng/eng.module#EngModule'
-  },
-  {
-    path: 'Угадай число',
-    loadChildren: './modules/number/number.module#NumberModule'
   },
   {
     path: 'Zen-wallet',
@@ -67,6 +50,15 @@ export const appRoutes: Routes = [
   {
     path: 'tour-of-heroes',
     loadChildren: './modules/tour-of-heroes/tour-of-heroes.module#TourOfHeroesModule'
+  },
+  {
+    path: 'Тест',
+    loadChildren: './modules/test/test.module#TestModule'
+  },
+  {
+    // Todo, сделано, но через жопу
+    path: 'menu',
+    loadChildren: './modules/menu/menu.module#MenuModule'
   }
   // {
   //   path: '**',
