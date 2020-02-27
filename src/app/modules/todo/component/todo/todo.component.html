@@ -91,8 +91,11 @@
       </div>
     </div>
 
-    <div *ngFor="let t of todoList">
-      <div style="background-color: white; border-radius: 6px; border: 1px solid black; margin-bottom: 3px; margin-top: 3px; padding-left: 10px">{{t.todo}}</div>
+    <div *ngFor="let t of todoList" class="row">
+      <div class="col-10" style="background-color: white; border-radius: 6px; border: 1px solid black; margin-bottom: 3px; margin-top: 3px; padding-left: 10px">{{t.todo}}</div>
+      <div class="col-2">
+        <button style="background-color: white; border-radius: 6px; border: 1px solid black; margin-bottom: 3px; margin-top: 3px; padding-left: 10px" (click)="delete(t.id)">{{icons.cross}}</button>
+      </div>
     </div>
 
   </div>
