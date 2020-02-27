@@ -63,7 +63,7 @@ export class TodoComponent implements OnInit {
     this.todoList.filter((a) => (a.id === id) ? a.visible = false : true);
     this.store.dispatch( new fromAction.editTodo(task, id) );
   }
-  // обновленная версия
+  // maybe
   task(task, data, id?) {
     console.log(this.todoList);
     switch (task) {
@@ -90,11 +90,15 @@ export class TodoComponent implements OnInit {
     }
   }
 
-  clickMe(event) {
-    if (event.keyCode === 13) {
-      console.log(event.target.value);
-    } else if (event.type === 'click') {
-      console.log(event.target.value);
+  clickMe(todo) {
+    if (todo.keyCode === 13) {
+      this.store.dispatch( new fromAction.addTodo( new Todo(todo.target.value, this.id++, false, false)));
+      this.todo = null;
+      console.log(todo.target.value);
+    } else if (todo.type === 'click') {
+      this.store.dispatch( new fromAction.addTodo( new Todo(this.todo, this.id++, false, false)));
+      this.todo = null;
+      console.log(event);
     }
   }
 }
