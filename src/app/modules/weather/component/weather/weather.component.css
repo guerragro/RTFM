@@ -1,3 +1,8 @@
+.box {
+  background-color: #FFDAB9;
+  font: 12pt sans-serif;
+}
+
 .color-l {
   background-color: #2a52be;
 }
@@ -8,11 +13,6 @@
 tr {
   border-bottom: 1pt dotted black;
   text-align: right;
-}
-
-h4, div {
-  font: 12pt sans-serif;
-  text-align: center;
 }
 
 .block {

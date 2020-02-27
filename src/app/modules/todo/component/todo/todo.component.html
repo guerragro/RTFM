@@ -1,6 +1,33 @@
 <div class="box">
   <h1>To-Do List</h1>
 
+<!--  <h2>ВАРИАНТ 3</h2>-->
+
+  <div class="container">
+
+<!--    срабатывает на Enter -->
+    <div class="row margin-bottom-15 width-80">
+      <div class="col-10">
+        <input type="text" id="input-form" [(ngModel)]="todo" (keydown)="clickMe($event)" placeholder="ENTER YOUR ACTIVITY....">
+      </div>
+      <div class="col-2" style="align-self: center">
+        <span (click)="clickMe($event)">{{icons.plus}}</span>
+<!--        <button class="button-no" (click)="clickMe($event)">-->
+<!--          <span>{{icons.plus}}</span>-->
+<!--        </button>-->
+      </div>
+    </div>
+
+    <div *ngFor="let t of todoList" class="row">
+      <div class="col-10" style="background-color: white; border-radius: 6px; border: 1px solid black; margin-bottom: 3px; margin-top: 3px; padding-left: 10px">{{t.todo}}</div>
+      <div class="col-2">
+        <button style="background-color: white; border-radius: 6px; border: 1px solid black; margin-bottom: 3px; margin-top: 3px; padding-left: 10px" (click)="delete(t.id)">{{icons.cross}}</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <!--  <div class="intro text-center">-->
 <!--    <div>-->
 <!--      <input type="password" class="form-input margin-5" placeholder="ENTER YOUR TASK" [(ngModel)]="todo">-->
@@ -73,30 +100,3 @@
 <!--    </div>-->
 
 <!--  </div>-->
-
-<!--  <h2>ВАРИАНТ 3</h2>-->
-
-  <div class="container">
-
-<!--    срабатывает на Enter -->
-    <div class="row margin-bottom-15 width-80">
-      <div class="col-10">
-        <input type="text" id="input-form" [(ngModel)]="todo" (keydown)="clickMe($event)" placeholder="ENTER YOUR ACTIVITY....">
-      </div>
-      <div class="col-2" style="align-self: center">
-        <span (click)="clickMe($event)">{{icons.plus}}</span>
-<!--        <button class="button-no" (click)="clickMe($event)">-->
-<!--          <span>{{icons.plus}}</span>-->
-<!--        </button>-->
-      </div>
-    </div>
-
-    <div *ngFor="let t of todoList" class="row">
-      <div class="col-10" style="background-color: white; border-radius: 6px; border: 1px solid black; margin-bottom: 3px; margin-top: 3px; padding-left: 10px">{{t.todo}}</div>
-      <div class="col-2">
-        <button style="background-color: white; border-radius: 6px; border: 1px solid black; margin-bottom: 3px; margin-top: 3px; padding-left: 10px" (click)="delete(t.id)">{{icons.cross}}</button>
-      </div>
-    </div>
-
-  </div>
-</div>

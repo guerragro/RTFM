@@ -7,7 +7,7 @@ import { PageNotFoundComponent } from './modules/page-not-found/component/page-n
 
 export const appRoutes: Routes = [
   {
-    path: 'тестовый модуль',
+    path: 'Тест',
     loadChildren: './modules/test/test.module#TestModule'
   },
   {
