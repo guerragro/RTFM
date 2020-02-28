@@ -1,2 +1,45 @@
-<input type="text">
-<div></div>
+<div class="container">
+  <div class="input-group mb-3" style="background-color: white; border-radius: 6px; border: 1px solid black" *ngFor="let t of todoList">
+    <div class="col-2">
+      <button class="btn btn-outline-secondary" (click)="edit(t.id)">{{icons.edit}}</button>
+    </div>
+    <div *ngIf="t.edit" class="col-8">
+      <input type="text" value="{{t.task}}">
+    </div>
+    <div *ngIf="!t.edit" class="form-control" style="padding: 0">{{t.task}}</div>
+    <div class="input-group-append col-2" style="padding: 0">
+      <button class="btn btn-outline-secondary" (click)="$event">{{icons.cross}}</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="input-group mb-3" *ngFor="let t of todoList">
+    <div class="input-group-prepend">
+      <button class="btn btn-outline-secondary" type="button" (click)="edit(t.id)">{{icons.edit}}</button>
+    </div>
+    <div *ngIf="!t.edit" class="custom-file">
+      {{t.todo}}
+    </div>
+    <input *ngIf="t.edit" type="text" class="form-control" value="{{t.task}}">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button">{{icons.cross}}</button>
+    </div>
+  </div>
+
+  <div class="input-group mb-3" *ngFor="let t of todoList">
+    <div class="input-group-prepend">
+      <button class="btn btn-outline-secondary" type="button" (click)="edit(t.id)">{{icons.edit}}</button>
+    </div>
+    <div *ngIf="!t.edit" style="position:relative;display:inline-block;width:100%;height:calc(1.5em + .75rem + 2px);">
+      {{t.todo}}
+    </div>
+    <input *ngIf="t.edit" type="text" class="form-control" value="{{t.task}}">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button">{{icons.cross}}</button>
+    </div>
+  </div>
+
+</div>
+

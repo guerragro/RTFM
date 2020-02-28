@@ -1,102 +1,24 @@
 <div class="box">
   <h1>To-Do List</h1>
-
-<!--  <h2>ВАРИАНТ 3</h2>-->
-
   <div class="container">
 
-<!--    срабатывает на Enter -->
-    <div class="row margin-bottom-15 width-80">
+<!--    Todo счетчик активных задач-->
+    <div class="row margin-bottom-15">
       <div class="col-10">
-        <input type="text" id="input-form" [(ngModel)]="todo" (keydown)="clickMe($event)" placeholder="ENTER YOUR ACTIVITY....">
+        <!--    срабатывает на Enter -->
+        <input type="text" id="input-form" [(ngModel)]="todo" (keydown)="add($event)" placeholder="ENTER YOUR ACTIVITY....">
       </div>
       <div class="col-2" style="align-self: center">
-        <span (click)="clickMe($event)">{{icons.plus}}</span>
-<!--        <button class="button-no" (click)="clickMe($event)">-->
-<!--          <span>{{icons.plus}}</span>-->
-<!--        </button>-->
+        <span (click)="add($event)">{{icons.plus}}</span>
       </div>
     </div>
 
     <div *ngFor="let t of todoList" class="row">
-      <div class="col-10" style="background-color: white; border-radius: 6px; border: 1px solid black; margin-bottom: 3px; margin-top: 3px; padding-left: 10px">{{t.todo}}</div>
+      <div class="col-10 task-form">{{t.todo}}</div>
       <div class="col-2">
-        <button style="background-color: white; border-radius: 6px; border: 1px solid black; margin-bottom: 3px; margin-top: 3px; padding-left: 10px" (click)="delete(t.id)">{{icons.cross}}</button>
+        <button class="task-form" (click)="delete(t.id)">{{icons.cross}}</button>
       </div>
     </div>
 
   </div>
 </div>
-
-<!--  <div class="intro text-center">-->
-<!--    <div>-->
-<!--      <input type="password" class="form-input margin-5" placeholder="ENTER YOUR TASK" [(ngModel)]="todo">-->
-<!--      <button class="form-button margin-5" (click)="add(todo)">-->
-<!--        {{icons.plus}}-->
-<!--      </button>-->
-<!--    </div>-->
-
-<!--  </div>-->
-
-<!--&lt;!&ndash;  счетчик активных? задач&ndash;&gt;-->
-<!--  <span class="count">0</span>-->
-
-<!--  <h2>ВАРИАНТ 1</h2>-->
-
-<!--  <div class="intro text-center">-->
-<!--    <div class="row">-->
-<!--      <div class="col-2 count">{{todoList.length}}</div>-->
-<!--      <div class="col-8">-->
-<!--        <input type="password" class="form-input margin-5" placeholder="ENTER YOUR TASK" [(ngModel)]="todo">-->
-<!--      </div>-->
-<!--      <div class="col-2">-->
-<!--        <button class="form-button margin-5" (click)="add(todo)">{{icons.plus}}</button>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-
-<!--  <div *ngFor="let t of todoList">-->
-
-<!--    <div class="todo-box flex-box">-->
-<!--      <div class="col-8" (click)="t.visible = true">-->
-<!--        {{t.todo}}-->
-<!--      </div>-->
-<!--      <div class="col-2">-->
-<!--        <button class="btn btn-default" (click)="done(t.id)">{{icons.checkHeavy}}</button>-->
-<!--      </div>-->
-<!--      <div class="col-2">-->
-<!--        <button class="btn btn-default" (click)="delete(t.id)">{{icons.crossHeavy}}</button>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--    <div class="text-center" *ngIf="t.visible">-->
-<!--      <input type="text" value="{{t.todo}}">-->
-<!--      <button (click)="this.edit(t.todo, t.id)">??</button>-->
-<!--    </div>-->
-
-<!--  </div>-->
-
-<!--  <h2>ВАРИАНТ 2</h2>-->
-
-<!--  <div *ngFor="let t of todoList">-->
-
-<!--    <div class="todo-box flex-box" *ngIf="!t.visible">-->
-<!--      <div class="col-8" (click)="t.visible = true">-->
-<!--        {{t.todo}}-->
-<!--      </div>-->
-<!--      <div class="col-2">-->
-<!--        <button class="btn btn-default" (click)="done(t.id)">{{icons.check}}</button>-->
-<!--      </div>-->
-<!--      <div class="col-2">-->
-<!--        <button class="btn btn-default" (click)="delete(t.id)">{{icons.cross}}</button>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--    <div class="text-center" *ngIf="t.visible">-->
-<!--      <div>-->
-<!--        <input type="text" class="form-input margin-5" value="{{t.todo}}">-->
-<!--        <button class="btn btn-default" (click)="this.edit(t.todo, t.id)">{{icons.pencil}}</button>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--  </div>-->

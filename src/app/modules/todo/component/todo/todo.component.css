@@ -12,38 +12,14 @@ h1 {
   margin-bottom: 25px;
   text-align: center;
 }
-.margin-5 {
-  margin: 5px;
-}
 
-.intro {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-}
-.todo-box {
-  width: 100%;
-  max-width: 500px;
-  margin: 2px auto;
-  color: rebeccapurple;
-  border: 1px solid #ced4da;
-  border-radius: 0.25em;
-}
-.form-input {
-  width: 70%;
-  padding: 2px;
-  border: 1px solid #ced4da;
-  border-radius: 0.25em;
-}
-.form-button {
-  /*width: 5%;*/
-  border: 1px solid #ced4da;
-  border-radius: 0.25em;
-}
-.flex-box {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+.task-form {
+  background-color: white;
+  border-radius: 6px;
+  border: 1px solid black;
+  margin-bottom: 3px;
+  margin-top: 3px;
+  padding-left: 10px
 }
 
 .done {
@@ -65,15 +41,12 @@ h1 {
 #input-form:focus {
   border-bottom: 1px solid #000;
 }
-
 #input-form::-webkit-input-placeholder {
   color: #fff;
 }
-
 #input-form:-moz-input-placeholder {
   color: #fff;
 }
-
 #input-form:-ms-input-placeholder {
   color: #fff;
 }
@@ -83,20 +56,4 @@ h1 {
 }
 .margin-bottom-15 {
   margin-bottom: 15px;
-}
-.width-80 {
-  /*width: 80%;*/
-  /*margin: auto;*/
-}
-body {
-  background-color: #0ce3ac;
-}
-.align-center {
-  align-items: center;
-}
-
-.count {
-  background-color: white;
-  /*width: 30px;*/
-  /*height: 120px*/
 }

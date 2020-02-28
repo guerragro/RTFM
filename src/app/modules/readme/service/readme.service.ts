@@ -43,6 +43,10 @@ export class ReadMeService {
           {
             id: 35,
             task: 'глифы https://www.npmjs.com/package/glyphicons'
+          },
+          {
+            id: 36,
+            task: 'цвета https://colorscheme.ru/html-colors.html'
           }
         ],
         view: false
