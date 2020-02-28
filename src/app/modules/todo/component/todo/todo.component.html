@@ -2,7 +2,7 @@
   <h1>To-Do List</h1>
   <div class="container">
 
-<!--    Todo счетчик активных задач-->
+<!--    Todo счетчик активных задач -->
     <div class="row margin-bottom-15">
       <div class="col-10">
         <!--    срабатывает на Enter -->
@@ -17,6 +17,17 @@
       <div class="col-10 task-form">{{t.todo}}</div>
       <div class="col-2">
         <button class="task-form" (click)="delete(t.id)">{{icons.cross}}</button>
+      </div>
+    </div>
+
+    <div class="input-group mb-3" *ngFor="let t of todoList">
+      <div class="input-group-prepend">
+        <button class="btn btn-outline-secondary" type="button" (click)="edit(t.todo, t.id)">{{icons.edit}}</button>
+      </div>
+      <div *ngIf="!t.edit" class="form-control">{{t.todo}}</div>
+      <input *ngIf="t.edit" type="text" class="form-control" value="{{t.todo}}">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button">{{icons.cross}}</button>
       </div>
     </div>
 

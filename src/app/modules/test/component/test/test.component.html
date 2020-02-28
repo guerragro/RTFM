@@ -19,25 +19,24 @@
     <div class="input-group-prepend">
       <button class="btn btn-outline-secondary" type="button" (click)="edit(t.id)">{{icons.edit}}</button>
     </div>
-    <div *ngIf="!t.edit" class="custom-file">
-      {{t.todo}}
-    </div>
-    <input *ngIf="t.edit" type="text" class="form-control" value="{{t.task}}">
+    <div *ngIf="true" class="form-control">{{t.task}}</div>
+    <input *ngIf="false" type="text" class="form-control" value="{{t.task}}">
     <div class="input-group-append">
       <button class="btn btn-outline-secondary" type="button">{{icons.cross}}</button>
     </div>
   </div>
 
-  <div class="input-group mb-3" *ngFor="let t of todoList">
-    <div class="input-group-prepend">
-      <button class="btn btn-outline-secondary" type="button" (click)="edit(t.id)">{{icons.edit}}</button>
+<!--  убрать padding-->
+  <div style="display: flex; flex-direction: row; align-items: center; border: 1px solid black; border-radius: 6px">
+    <div class="col-2" style="align-self: stretch; border-right: 1px solid black; padding: 0">
+      <button style="width: 100%; height: 100%; background-color: greenyellow; border-radius: 6px">{{icons.edit}}</button>
     </div>
-    <div *ngIf="!t.edit" style="position:relative;display:inline-block;width:100%;height:calc(1.5em + .75rem + 2px);">
-      {{t.todo}}
+    <div class="col-8" style="padding: 0" *ngIf="false">
+      <input type="text" class="form-control">
     </div>
-    <input *ngIf="t.edit" type="text" class="form-control" value="{{t.task}}">
-    <div class="input-group-append">
-      <button class="btn btn-outline-secondary" type="button">{{icons.cross}}</button>
+    <div class="col-8" *ngIf="true">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem error excepturi exercitationem ipsum odio, odit. Ab, cumque delectus dignissimos facere nihil praesentium quibusdam quis. Id impedit modi nemo odit sunt.</div>
+    <div class="col-2" style="align-self: stretch; border-left: 1px solid black; padding: 0">
+      <button  style="width: 100%; height: 100%; background-color: #2e6da4; border-radius: 6px">{{icons.cross}}</button>
     </div>
   </div>
 
