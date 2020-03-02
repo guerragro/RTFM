@@ -1,24 +1,21 @@
-<div class="container">
+<div class="box">
+  <h2 class="text-center">Поиск дешевых авиабилетов</h2>
 
-  <div class="box text-center">
-    <input type="text" class="margin-padding-5" placeholder="Город отбытия">
-    <input type="text" class="margin-padding-5" placeholder="Город прибытия">
-    <input type="text" class="margin-padding-5" placeholder="Дата вылета">
-    <input type="text" class="margin-padding-5" placeholder="Дата прилета">
-  </div>
+  <div class="container">
 
-  <div class="row">
-    <div class="col-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam animi autem eius ex facilis fugit harum in ipsam laborum magnam nemo neque officiis praesentium saepe soluta sunt, suscipit voluptatum.</div>
-    <div class="col-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, excepturi facere iste nam perferendis quaerat repudiandae sunt voluptatem? Assumenda dolorem natus quia recusandae rem! Alias et expedita placeat quasi ratione!</div>
-  </div>
+    <div class="text-center">
+      <input type="text" class="padding-5" placeholder="Город отбытия" [(ngModel)]="departure">
+      <input type="text" class="padding-5" placeholder="Город прибытия" [(ngModel)]="arrival">
+      <input type="text" class="padding-5" placeholder="Дата вылета">
+      <input type="text" class="padding-5" placeholder="Дата прилета">
+    </div>
 
-  <div class="flex-box">
-    <div class="w4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at cumque dolores est eum ex excepturi exercitationem, hic ipsa laboriosam non nulla officia, praesentium quia quis quos sequi temporibus voluptates!</div>
-    <div class="w8">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga impedit maiores porro possimus quia recusandae rerum. Aliquam aut beatae dignissimos dolorem eaque et facilis minus placeat, repellat saepe suscipit vitae?</div>
-  </div>
+    <div class="text-center">
+      <button type="button" class="btn btn-outline-secondary" (click)="search()">{{icons.airplane}}</button>
+    </div>
 
-  <div>
-    <button (click)="search()">Найти билет</button>
   </div>
 
 </div>
+
+

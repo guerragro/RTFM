@@ -20,7 +20,7 @@
         <div class="taskList" *ngFor="let t of proj.tasks">
           <!--          список задач-->
           <div class="container-flex flex-row" [ngClass]="{red: t.done}">
-            <div class="btn btn-block">{{t.task}}</div>
+            <div class="btn btn-block" (click)="clickMe(t.task)">{{t.task}}</div>
             <!--          кнопка-->
             <div>
               <button class="btn btn-block">del</button>

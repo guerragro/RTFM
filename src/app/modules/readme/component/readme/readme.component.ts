@@ -71,4 +71,8 @@ export class ReadmeComponent implements OnInit {
   delete(id) {
   }
 
+  clickMe(task) {
+    console.log(task);
+  }
+
 }

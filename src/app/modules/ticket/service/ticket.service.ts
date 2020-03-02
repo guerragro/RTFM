@@ -41,4 +41,13 @@ export class TicketService {
     };
     return this.http.get<any>(UrlModels.Cities, {params: (params)});
   }
+
+  getPriceTikket() {
+    const params = {
+      // origin: ;
+      // destination: ;
+      // token: '49679098347c457387656573a8437d2d'
+    };
+    return this.http.get(UrlModels.PriceTik, {params: (params)});
+  }
 }
