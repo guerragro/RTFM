@@ -17,6 +17,7 @@ import icons from 'glyphicons';
 export class TestComponent implements OnInit {
 
   icons = icons;
+  test = false;
 
   todoList = [
     {
@@ -76,8 +77,11 @@ export class TestComponent implements OnInit {
   }
 
   edit(id) {
-    this.todoList.forEach(a => (a.id === id) ? a.edit = true : false);
-    console.log(this.todoList);
+    console.log(this.test);
+    this.test = !this.test;
+    console.log(this.test);
+    // this.todoList.forEach(a => (a.id === id) ? a.edit = true : false);
+    // console.log(this.todoList);
   }
 
 }

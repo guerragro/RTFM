@@ -52,9 +52,9 @@ export class TodoComponent implements OnInit {
   // }
 
   // TODO нужны фиксы
-  edit(task, id) {
-    console.log(task, id);
-    // this.todoList.filter((a) => (a.id === id) ? a.edit = false : true);
+  edit(id) {
+    console.log(id);
+    this.todoList = this.todoList.filter((a) => (a.id === id) ? a.edit = true : this.todoList);
     // this.store.dispatch( new fromAction.editTodo(task, id) );
   }
 
