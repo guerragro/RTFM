@@ -10,8 +10,8 @@
 //
 // import { EffectsModule } from '@ngrx/effects';
 // import { StoreModule } from '@ngrx/store';
-// import { appReducers } from './store/reducers/app.reducer';
-// import { CitiesEffect } from './store/effects/cities.effect';
+// import { appReducers } from './store/reducers/app.reducers';
+// import { CitiesEffect } from './store/effects/cities.effects';
 //
 // @NgModule({
 //   declarations: [

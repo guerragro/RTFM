@@ -3,9 +3,9 @@
 //
 // export const cartReducers = (
 //   states = initialCartState,
-//   action: CartActions
+//   actions: CartActions
 // ): ICartState => {
-//   switch (action.type) {
+//   switch (actions.type) {
 //     case ECartActions.AddInCart:
 //     case ECartActions.ClearCart:
 //     case ECartActions.DeleteFromCart:
@@ -19,7 +19,7 @@
 //     case ECartActions.AddInCartSuccess: {
 //       return {
 //         ...states,
-//         cart: { ...states.cart, ...action.payload },
+//         cart: { ...states.cart, ...actions.payload },
 //         inProgress: false
 //       };
 //     }
@@ -27,7 +27,7 @@
 //       return {
 //         ...states,
 //         inProgress: false,
-//         cart: action.payload
+//         cart: actions.payload
 //       };
 //     }
 //     case ECartActions.ClearCartSuccess: {
@@ -41,7 +41,7 @@
 //       return {
 //         ...states,
 //         inProgress: false,
-//         cart: { ...states.cart, ...action.payload }
+//         cart: { ...states.cart, ...actions.payload }
 //       };
 //     }
 //     default:
@@ -55,9 +55,9 @@
 //
 // export const cartReducers = (
 //   states = initialCartState,
-//   action: CartActions
+//   actions: CartActions
 // ): ICartState => {
-//   switch (action.type) {
+//   switch (actions.type) {
 //     case ECartActions.AddInCart:
 //     case ECartActions.ClearCart:
 //     case ECartActions.DeleteFromCart:
@@ -71,7 +71,7 @@
 //     case ECartActions.AddInCartSuccess: {
 //       return {
 //         ...states,
-//         cart: { ...states.cart, ...action.payload },
+//         cart: { ...states.cart, ...actions.payload },
 //         inProgress: false
 //       };
 //     }
@@ -79,7 +79,7 @@
 //       return {
 //         ...states,
 //         inProgress: false,
-//         cart: action.payload
+//         cart: actions.payload
 //       };
 //     }
 //     case ECartActions.ClearCartSuccess: {
@@ -93,7 +93,7 @@
 //       return {
 //         ...states,
 //         inProgress: false,
-//         cart: { ...states.cart, ...action.payload }
+//         cart: { ...states.cart, ...actions.payload }
 //       };
 //     }
 //     default:

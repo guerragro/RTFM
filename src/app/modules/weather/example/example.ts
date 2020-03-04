@@ -274,10 +274,10 @@
 //               replenishAction: !!pallet,
 //             }
 //           });
-//           dialog.afterClosed().subscribe(action => {
-//             if (action === 'replenish') {
+//           dialog.afterClosed().subscribe(actions => {
+//             if (actions === 'replenish') {
 //               this.invokeCalc(this.wares.length ? (this.wares[0].rest || this.wares[0].restPallet) : 0);
-//             } else if (action === 'task') {
+//             } else if (actions === 'task') {
 //               this.rbs.setDownloadScreen();
 //               this.localService.createReplenishmentTask([this.scannedWare['barcode']]).subscribe(
 //                 (res: Object) => this.handleCreateReplenishmentTask(res),
@@ -342,12 +342,12 @@
 //                 data: {...this.wares[0], calcAmount: this.calcAmount},
 //                 disableClose: true
 //               });
-//               dialog.afterClosed().subscribe((action: ReplenishmentAction|null|false) => {
-//                 if (action !== false) {
-//                   if (action === ReplenishmentAction.empty_pallet) {
+//               dialog.afterClosed().subscribe((actions: ReplenishmentAction|null|false) => {
+//                 if (actions !== false) {
+//                   if (actions === ReplenishmentAction.empty_pallet) {
 //                     console.log('create task inventory');
 //                   }
-//                   this.prepareReplenishment(action, site_code);
+//                   this.prepareReplenishment(actions, site_code);
 //                 } else {
 //                   this.setNulls();
 //                 }
@@ -375,7 +375,7 @@
 //   }
 //
 //   prepareReplenishment(
-//     action: ReplenishmentAction|null,
+//     actions: ReplenishmentAction|null,
 //     site_code?: string
 //   ): void {
 //     const receiver = site_code || this.scannedSite['barcode'];
@@ -391,7 +391,7 @@
 //       waresSource: this.task.pallet,
 //       waresReceiver: receiver,
 //       cart: false,
-//       action: action,
+//       actions: actions,
 //       replenishmentCount: this.calcAmount,
 //     };
 //     this.setNulls();
@@ -433,7 +433,7 @@
 //               waresSource: this.task.pallet,
 //               waresReceiver: ware.sale.positionBarcode,
 //               cart: false,
-//               action: ReplenishmentAction.replenish,
+//               actions: ReplenishmentAction.replenish,
 //               replenishmentCount: ware.restCart,
 //             });
 //           }

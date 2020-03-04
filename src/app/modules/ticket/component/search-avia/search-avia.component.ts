@@ -6,6 +6,7 @@ import icons from 'glyphicons';
 import {observableToBeFn} from 'rxjs/internal/testing/TestScheduler';
 import {Observable} from 'rxjs';
 import {CitiesStateInterface} from '../../store/states/cities.state';
+import {TicketService} from '../../service/ticket.service';
 
 @Component({
   selector: 'app-search-ticket',
@@ -17,22 +18,36 @@ export class SearchAviaComponent implements OnInit {
   icons = icons;
   cities: any;
 
-  departure: string;
-  arrival: string;
+  origin: string = 'владивосток';
+  destination: string = 'Лос-Анджелес';
 
-  constructor( private store: Store<fromAppState.AppTicketState>) { }
+  constructor( private store: Store<fromAppState.AppTicketState>,
+               private service: TicketService
+               ) { }
 
   ngOnInit() {
     this.store.dispatch( new fromCitiesAction.addCities() );
-    this.store.subscribe(
-      res => this.cities = res
-    );
+    this.store.subscribe(res => this.cities = res);
+    this.service.getPriceMonth().subscribe(res => console.log(res));
   }
 //  стыковка, если стыковка больше одной, то ищем другие даты
 //  если рейс прямой, ищем промежуточные, которые можно потратить на дополнительный отдых
 
   search() {
+    // console.log(this.cities);
+    // this.departure = this.cities.citi.filter(a => a.name);
+    // this.service.getCity(this.origin, this.destination).subscribe(
+    //   res => this.dataHandle(res)
+    // );
     console.log(this.cities);
-    this.departure = this.cities.citi.filter(a => a.name);
+  }
+
+  dataHandle(ans) {
+    if (ans.hasOwnProperty('origin')) {
+      console.log(ans);
+    } else {
+      console.log('Неправильно введенные города');
+    }
+    console.log();
   }
 }

@@ -1,5 +1,5 @@
 // import { Injectable } from '@angular/core';
-// import { action, observable, computed } from 'mobx';
+// import { actions, observable, computed } from 'mobx';
 // import { ReplenishmentTask } from '../models/replenishment.models';
 // import { ReplenishmentService } from '../services/replenishment.service';
 // import { ReplenishmentPalletService } from '../services/replenishment-pallet.service';
@@ -25,7 +25,7 @@
 //     private route: ActivatedRoute,
 //   ) { }
 //
-//   @action getTask(getStatus = false) {
+//   @actions getTask(getStatus = false) {
 //     this.taskLoading = true;
 //     this.localService.getData(true).subscribe(
 //       (res: Object) => {
@@ -46,7 +46,7 @@
 //     );
 //   }
 //
-//   @action getTaskStatus() {
+//   @actions getTaskStatus() {
 //     if (this.task) {
 //       this.taskLoading = true;
 //       this.localService.getTask(this.task.taskGuid).subscribe(
@@ -63,7 +63,7 @@
 //     }
 //   }
 //
-//   @action setTaskStatus(status: TaskStatus, getData = false) {
+//   @actions setTaskStatus(status: TaskStatus, getData = false) {
 //     if (this.task) {
 //       this.taskLoading = true;
 //       this.localService.setTaskStatus(this.task.taskGuid, {status: status}).subscribe(
@@ -85,11 +85,11 @@
 //     }
 //   }
 //
-//   @action setFilter(handler: (ware, index, array) => boolean | null = null) {
+//   @actions setFilter(handler: (ware, index, array) => boolean | null = null) {
 //     this.filter = handler;
 //   }
 //
-//   @action makeReplenishment(params: Object) {
+//   @actions makeReplenishment(params: Object) {
 //     this.taskLoading = true;
 //     this.localService.makeReplenishment(this.task.guid, params).subscribe(
 //       (res: Object) => {
@@ -104,7 +104,7 @@
 //     )
 //   }
 //
-//   @action makeReplenishmentAll(params: Array<Object>) {
+//   @actions makeReplenishmentAll(params: Array<Object>) {
 //     const replenishments: Observable<Object>[] = params.map(param =>
 //       this.localService.makeReplenishment(this.task.guid, param)
 //     );
@@ -125,7 +125,7 @@
 //     )
 //   }
 //
-//   @action replenishmentCart(params: Object) {
+//   @actions replenishmentCart(params: Object) {
 //     this.taskLoading = true;
 //     this.localService.replenishmentCart(this.task.guid, params).subscribe(
 //       (res: Object) => {
@@ -139,7 +139,7 @@
 //     );
 //   }
 //
-//   @action moveWareToPallet(params: Object) {
+//   @actions moveWareToPallet(params: Object) {
 //     this.taskLoading = true;
 //     this.localService.palletChange(params).subscribe(
 //       (res: any) => {
@@ -154,7 +154,7 @@
 //     );
 //   }
 //
-//   @action moveWareToBox(params: Object) {
+//   @actions moveWareToBox(params: Object) {
 //     this.taskLoading = true;
 //     this.localService.moveWareToBox(params).subscribe(
 //       (res: any) => {
@@ -169,7 +169,7 @@
 //     )
 //   }
 //
-//   @action moveWareToPalletAll(params: Array<Object>) {
+//   @actions moveWareToPalletAll(params: Array<Object>) {
 //     this.taskLoading = true;
 //     const moves: Observable<Object>[] = params.map(
 //       param => this.localService.palletChange(param)

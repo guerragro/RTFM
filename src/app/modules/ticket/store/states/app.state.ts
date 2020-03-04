@@ -8,7 +8,7 @@ export const InitialAppState: AppTicketState = {
   cities: null
 };
 
-// import {CitiesState} from './cities.state';
+// import {CitiesState} from './cities.states';
 
 // export interface AppTicketState {
 //

@@ -10,14 +10,14 @@ export const selectCitiesList = createSelector(
 );
 
 // Старое
-// import * as fromReducer from './search.reducer';
+// import * as fromReducer from './search.reducers';
 // import { ActionReducer, ActionReducerMap, createSelector, MetaReducer, createFeatureSelector } from '@ngrx/store';
 //
 // // получаем состояние из редьюсера
 // export interface State {
 //   tickets: fromReducer.State;
 // }
-// export const reducer: ActionReducerMap<State> = {
+// export const reducers: ActionReducerMap<State> = {
 //   tickets: fromReducer.ticketReducer
 // };
 //
@@ -38,11 +38,11 @@ export const selectCitiesList = createSelector(
 //   fromReducer.getStateSpecial
 // );
 //
-// // export function logger(reducer: ActionReducer<State>): ActionReducer<State> {
-// //   return function (state: State, action: any): State {
-// //     console.log('state', state);
-// //     console.log('action', action);
-// //     return reducer(state, action);
+// // export function logger(reducers: ActionReducer<State>): ActionReducer<State> {
+// //   return function (states: State, actions: any): State {
+// //     console.log('states', states);
+// //     console.log('actions', actions);
+// //     return reducers(states, actions);
 // //   };
 // // }
 // //

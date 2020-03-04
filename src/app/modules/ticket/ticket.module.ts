@@ -16,7 +16,7 @@ import {FormsModule} from '@angular/forms';
   declarations: [SearchAviaComponent],
     imports: [
         CommonModule,
-        RouterModule,
+        // RouterModule,
         TicketRoutingModule,
         HttpClientModule,
         StoreModule.forRoot(appReducers),

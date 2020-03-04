@@ -1,29 +1,15 @@
-
-<div class="head">
-  <input type="text" placeholder="начнем">
+<div class="row text-center">
+  <div class="col-10">
+    <input type="text" class="form-control">
+  </div>
+  <div class="col-2">
+    <button type="button" class="btn btn-default">enter</button>
+  </div>
 </div>
 
-<div class="body">
-
-  <div class="f-container">
-
-    <div class="box1">
-      <div class="flex-row">
-        <div class="btn" *ngFor="let a of ['7', '8', '9', '4', '5', '6', '1', '2', '3', '0', ',', '=']">
-          <div (click)="click(a)">{{a}}</div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="box2">
-      <div class="flex-column">
-        <div class="btn" *ngFor="let b of ['*', '/', '+', '-']">
-          <div (click)="click(b)">{{b}}</div>
-        </div>
-      </div>
-    </div>
-
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button">enter</button>
   </div>
-
 </div>

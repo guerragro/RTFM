@@ -1,4 +1,4 @@
-// import * as fromAction from '../store/test.action';
+// import * as fromAction from '../store/test.actions';
 // import {ActionReducerMap} from '@ngrx/store';
 //
 // export interface AppState {
@@ -12,16 +12,16 @@
 //   id: null,
 // };
 //
-// export function testReducer(state = InitialState, action: fromAction.Action) {
-//   switch (action.type) {
+// export function testReducer(states = InitialState, actions: fromAction.Action) {
+//   switch (actions.type) {
 //     case fromAction.TestAction.ADD:
-//       return state;
+//       return states;
 //     default:
-//       return state;
+//       return states;
 //   }
 // }
 //
-// export const reducer: ActionReducerMap<AppState> = {
+// export const reducers: ActionReducerMap<AppState> = {
 //   ids: testReducer
 // };
 
