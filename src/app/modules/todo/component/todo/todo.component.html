@@ -8,37 +8,32 @@
         <!--    срабатывает на Enter -->
         <input type="text" id="input-form" [(ngModel)]="todo" (keydown)="add($event)" placeholder="ENTER YOUR ACTIVITY....">
       </div>
-      <div class="col-2" style="align-self: center">
-        <span (click)="add($event)">{{icons.plus}}</span>
+      <div class="col-2" >
+        <button class="b-center" (click)="add($event)">
+          {{icons.plus}}
+        </button>
       </div>
     </div>
-
-<!--&lt;!&ndash;    первый вариант &ndash;&gt;-->
-<!--    <h2 class="text-center" style="color: red">Number 1</h2>-->
-<!--    <div *ngFor="let t of todoList" class="row">-->
-<!--      <div class="col-10 task-form">{{t.todo}}</div>-->
-<!--      <div class="col-2">-->
-<!--        <button class="task-form" (click)="delete(t.id)">{{icons.cross}}</button>-->
-<!--      </div>-->
-<!--    </div>-->
 
     <div *ngFor="let todo of todoList" >
 
       <div class="row" *ngIf="!todo.edit">
         <div class="col-2">
-          <button class="task-form button-btn" (click)="edit(todo.id)">{{icons.edit}}</button>
+          <button class="b-center" (click)="edit(todo.id)">{{icons.edit}}</button>
         </div>
         <div class="col-8 task-form">{{todo.todo}}</div>
         <div class="col-2">
-          <button class="task-form button-btn" (click)="delete(todo.id)">{{icons.cross}}</button>
+          <button class="b-center" (click)="delete(todo.id)">{{icons.cross}}</button>
         </div>
       </div>
 
       <div class="row" *ngIf="todo.edit">
         <div class="col-2">
-          <button class="task-form" (click)="edit(todo.id)">{{icons.edit}}</button>
+          <button class="b-center" (click)="edit(todo.id)">{{icons.edit}}</button>
         </div>
-        <div class="col-10 task-form">{{todo.todo}}</div>
+        <div class="col-8 task-form">
+          <input type="text" value="{{todo.todo}}" style="width: 100%; height: 100%; border: 0">
+        </div>
       </div>
 
     </div>

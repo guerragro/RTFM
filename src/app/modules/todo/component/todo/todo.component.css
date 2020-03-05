@@ -3,14 +3,17 @@
   /* означаешь, что длина будет занимать весь экран монитора*/
   height: 100vh;
   background: #2D936C;
-  /*color: #fff;*/
-  font-family: 'Varela Round', sans-serif;
 }
 
 h1 {
   font-size: 72px;
   margin-bottom: 25px;
   text-align: center;
+}
+button {
+  border: 0;
+  background: transparent;
+  outline: none;
 }
 
 .task-form {
@@ -22,22 +25,12 @@ h1 {
   /*padding-left: 10px*/
   vertical-align: middle;
 }
-.button-btn {
-  position: relative;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
-.done {
-  text-decoration: line-through;
-}
 
 #input-form {
   background: transparent;
   font-size: 20px;
   border: none;
   outline: none;
-  font-family: 'Varela Round', sans-serif;
   width: 100%;
   text-indent: 20px;
   color: #fff;
@@ -56,12 +49,19 @@ h1 {
 #input-form:-ms-input-placeholder {
   color: #fff;
 }
-
-.button-no {
-  border: none;
+::-webkit-input-placeholder {
+  text-align: center;
 }
+
 .margin-bottom-15 {
   margin-bottom: 15px;
+}
+
+.b-center {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 15%;
 }
 
 .test {
@@ -98,3 +98,5 @@ h1 {
   line-height: 1.5;
   border-radius: .25rem;
 }
+
+
