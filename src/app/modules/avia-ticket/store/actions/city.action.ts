@@ -1,4 +1,5 @@
 import {Action} from '@ngrx/store';
+import {CityInterface} from '../states/city.state';
 
 export enum CITY_ACTION {
   ADD_CITY = 'ADD_CITY',

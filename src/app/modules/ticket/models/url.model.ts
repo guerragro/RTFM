@@ -315,5 +315,5 @@ export class UrlModels {
   //
   // iata — ИАТА-код города, в котором находится пользователь;
   // name — название города.
-  public static city = ''
+  public static city = '';
 }

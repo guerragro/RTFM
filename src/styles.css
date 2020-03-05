@@ -3,11 +3,6 @@ body {
   background-color: #bfbfbf;
 }
 
-.box-flex {
-  display: flex;
-  flex-wrap: wrap;
+.kek {
+  color: red
 }
-.box-row {
-  flex-direction: row;
-}
-

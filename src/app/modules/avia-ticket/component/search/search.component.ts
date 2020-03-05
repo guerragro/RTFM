@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AviaTicketService} from '../../service/avia-ticket.service';
 import {Store} from '@ngrx/store';
 import {AppStateInterface} from '../../store/states/app.state';
-import {addCities} from '../../store/actions/city.action';
+import * as fromCityAction from '../../store/actions/city.action';
 
 @Component({
   selector: 'app-search',
@@ -20,12 +20,12 @@ export class SearchComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.store.dispatch( new addCities());
-    this.store.subscribe(res => console.log(res));
-    // this.service.getDataCities().subscribe(res => {
-    //   console.log('города', res);
-    //   this.city = res;
-    // });
+    // this.store.dispatch( new fromCityAction.addCities());
+    // this.store.subscribe(res => console.log(res));
+    this.service.getDataCities().subscribe(res => {
+      console.log('города', res);
+      this.city = res;
+    });
     // this.service.getDataCountry().subscribe(res => {
     //   console.log('страны', res);
     //   this.country = res;

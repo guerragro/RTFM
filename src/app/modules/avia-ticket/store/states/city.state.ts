@@ -2,7 +2,7 @@ export interface CityInterface {
   name: string;
   currency: string;
   code: string;
-  cases: string;
+  cases: object;
   name_translations: object;
 }
 
