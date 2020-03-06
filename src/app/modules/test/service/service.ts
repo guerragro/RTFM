@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {Todo} from '../model';
 
 @Injectable()
 export class Service {
@@ -12,5 +13,8 @@ export class Service {
 
   makeRequest() {
     return this.http.get(this.backendUrl);
+  }
+  getTodo() {
+    return setTimeout(() => [new Todo(1, 'разбор работы ngrx', false)], 5000);
   }
 }

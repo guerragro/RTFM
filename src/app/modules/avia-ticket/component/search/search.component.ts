@@ -21,9 +21,9 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     // this.store.dispatch( new fromCityAction.addCities());
-    // this.store.subscribe(res => console.log(res));
+    this.store.subscribe(res => console.log(res));
     this.service.getDataCities().subscribe(res => {
-      console.log('города', res);
+      // console.log('города', res);
       this.city = res;
     });
     // this.service.getDataCountry().subscribe(res => {
@@ -33,7 +33,8 @@ export class SearchComponent implements OnInit {
   }
 
   search() {
-    console.log(this.city.filter(a => a.name === 'Владивосток'));
+    this.store.dispatch( new fromCityAction.addCitiesOk(this.city));
+    // console.log(this.city.filter(a => a.name === 'Владивосток'));
   }
 
 }

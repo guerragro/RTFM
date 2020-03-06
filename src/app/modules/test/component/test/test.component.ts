@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {Store} from '@ngrx/store';
-import * as fromAction from '../../store/test.action';
-import {Observable} from 'rxjs';
+import icons from 'glyphicons';
+import { Observable } from 'rxjs/Observable';
+import { Service } from '../../service/service';
+import { Store } from '@ngrx/store';
 import {TestStore} from '../../store/mobx.store';
 import {fromMobx} from 'ngx-mobx';
-import {NumberInterface} from '../../model';
-import {Service} from '../../service/service';
-import {State} from '../../store/test.reducer';
-import icons from 'glyphicons';
 
 @Component({
   selector: 'app-test',
@@ -17,47 +14,25 @@ import icons from 'glyphicons';
 export class TestComponent implements OnInit {
 
   icons = icons;
-  test = false;
+  todo: any;
 
-  todoList = [
-    {
-      id: 1,
-      task: "hello world",
-      edit: false
-    },
-    {
-      id: 1,
-      task: "temp world",
-      edit: false
-    },
-  ];
-
-  // store: Store<State>;
-  // model = new NumberModel();
-
-  number$: Observable<NumberInterface>;
+  // number$: Observable<NumberInterface>;
 
   error: any;
 
   constructor(
-    public mobxStore: TestStore,
-    public service: Service
+    private mobxStore: TestStore,
+    private service: Service,
   ) {
-    this.number$ = fromMobx(() => this.mobxStore.number);
+    this.todo = this.service.getTodo();
+    console.log(this.todo);
+    // this.todos$ = ngrxStore.select(fromRoot.getTodos);
+    // this.id$ = ngrxStore.select(getIds);
+    // console.log(this.todos$);
+    // this.number$ = fromMobx(() => this.mobxStore.number);
   }
 
   ngOnInit() {
-    // console.log(this.number$);
-    // this.number$.subscribe(res => console.log(res));
-    // this.store.subscribe(
-    //   res => console.log(res),
-    //   err => console.log(err)
-    // );
-    // this.test$ = fromMobx(() => this.mobxStore.number);
-    // this.test$.subscribe(res => this.test = res);
-    // this.store.subscribe(
-    //   res => console.log(res)
-    // );
   }
 
   handleErr(ans) {
@@ -77,9 +52,9 @@ export class TestComponent implements OnInit {
   }
 
   edit(id) {
-    console.log(this.test);
-    this.test = !this.test;
-    console.log(this.test);
+    // console.log(this.test);
+    // this.test = !this.test;
+    // console.log(this.test);
     // this.todoList.forEach(a => (a.id === id) ? a.edit = true : false);
     // console.log(this.todoList);
   }

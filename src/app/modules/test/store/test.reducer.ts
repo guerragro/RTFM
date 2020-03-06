@@ -1,46 +1,55 @@
-// import * as fromAction from '../store/test.actions';
-// import {ActionReducerMap} from '@ngrx/store';
-//
-// export interface AppState {
-//   ids: State;
-// }
+// import {TodoAction} from './test.action';
 //
 // export interface State {
-//   id: number;
+//   ids: number[];
+//   todos: { [id: number]: Todo};
 // }
+// export interface Todo {
+//   id: number;
+//   todo: string;
+//   edit: boolean;
+// }
+//
 // export const InitialState: State = {
-//   id: null,
+//   ids: [1, 2, 3],
+//   todos: {
+//     1:     {
+//       id: 1,
+//       todo: 'сделать store',
+//       edit: false
+//     },
+//     2:     {
+//       id: 2,
+//       todo: 'правильно',
+//       edit: false
+//     }
+//   }
+//   // todos: [
+//   //   {
+//   //     id: 1,
+//   //     todo: 'сделать store',
+//   //     edit: false
+//   //   },
+//   //   {
+//   //     id: 2,
+//   //     todo: 'правильно',
+//   //     edit: false
+//   //   }
+//   // ]
 // };
 //
-// export function testReducer(states = InitialState, actions: fromAction.Action) {
-//   switch (actions.type) {
-//     case fromAction.TestAction.ADD:
-//       return states;
+// export function reducer(state = InitialState, action: TodoAction) {
+//   switch (action.type) {
+//     case 'ADD':
+//       console.log(action);
+//       break;
+//     case 'DELETE':
+//       console.log(action);
+//       break;
 //     default:
-//       return states;
+//       console.log(state);
 //   }
 // }
 //
-// export const reducers: ActionReducerMap<AppState> = {
-//   ids: testReducer
-// };
-
-import {Action, TestAction} from './test.action';
-
-export interface State {
-  todo: string;
-}
-
-export const InitialState: State = {
-  todo: 'FUCKYOU',
-};
-
-export function testReducer(state = InitialState, action: Action) {
-  switch (action.type) {
-    case TestAction.ADD:
-      console.log(action.payload);
-  }
-}
-
-
-
+// export const getIds = (state: State) => state.ids;
+// export const getTodos = (state: State) => state.todos;

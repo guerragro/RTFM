@@ -8,7 +8,8 @@ import {StoreModule} from '@ngrx/store';
 import {TestStore} from './store/mobx.store';
 import {Service} from './service/service';
 import {HttpClientModule} from '@angular/common/http';
-import {testReducer} from './store/test.reducer';
+// import {testReducer} from './store/test.reducer';
+// import {reducer} from './store/test.reducer';
 
 @NgModule({
   declarations: [TestComponent],
@@ -17,7 +18,8 @@ import {testReducer} from './store/test.reducer';
     TestRoutingModule,
     FormsModule,
     HttpClientModule,
-    StoreModule.forRoot(testReducer),
+    // StoreModule.forRoot(testReducer),
+    // StoreModule.forRoot(reducer)
   ],
   providers: [
     TestStore,

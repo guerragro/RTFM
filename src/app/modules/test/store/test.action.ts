@@ -1,26 +1,19 @@
 // import {Action} from '@ngrx/store';
 //
-// export enum TestAction {
-//   ADD = 'ADD'
+// export enum TODO_ACTION {
+//   ADD = 'ADD',
+//   DELETE = 'DELETE'
 // }
 //
-// export class add implements Action {
-//   readonly type = TestAction.ADD;
-//   constructor( public payload: string) {}
+// export class addTodo implements Action {
+//   readonly type = TODO_ACTION.ADD;
+//   constructor(payload: any) {
+//   }
+// }
+// export class deleteTodo implements Action {
+//   readonly type = TODO_ACTION.DELETE;
+//   constructor(payload: any) {
+//   }
 // }
 //
-// export type Action = add;
-
-import {Action} from '@ngrx/store';
-
-export enum TestAction {
-  ADD = 'ADD'
-}
-
-export class add implements Action {
-  readonly type = TestAction.ADD;
-  constructor(public payload: any) {
-  }
-}
-
-export type Action = add;
+// export type TodoAction = addTodo | deleteTodo;

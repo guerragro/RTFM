@@ -3,5 +3,6 @@ import {AppStateInterface} from '../states/app.state';
 import {CityReducer} from './city.reducer';
 
 export const appReducers: ActionReducerMap<AppStateInterface, any> = {
-  city: CityReducer
+  city: CityReducer,
+  // ticket:
 };

@@ -15,6 +15,23 @@
 //   }
 // }
 
-export interface NumberInterface {
-  number: number;
+// export interface NumberInterface {
+//   number: number;
+// }
+
+export interface TodoState {
+  id: number;
+  todo: string;
+  edit: boolean;
+}
+
+export class Todo {
+  id: number;
+  todo: string;
+  edit: boolean;
+  constructor(id, todo, edit = false) {
+    this.id = id;
+    this.todo = todo;
+    this.edit = edit;
+  }
 }

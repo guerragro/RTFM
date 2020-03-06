@@ -3,11 +3,10 @@ import * as fromCitiesAction from '../actions/cities.action';
 import { CITIES_ACTION } from '../actions/cities.action';
 
 export function CitiesReducer( state = InitialCitiesState, action: fromCitiesAction.Action) {
-  console.log(action);
   switch (action.type) {
     case CITIES_ACTION.ADD_CITIES_OK:
       return {
-        ...state, city: action.payload
+        ...state
       };
     case CITIES_ACTION.ADD_CITIES_ERR:
       return state;

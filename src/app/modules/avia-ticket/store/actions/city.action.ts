@@ -13,13 +13,13 @@ export class addCities implements Action {
 
 export class addCitiesOk implements Action {
   readonly type = CITY_ACTION.ADD_CITY_OK;
-  constructor(payload: any) {
+  constructor(public payload: any) {
     console.log(payload);
   }
 }
 export class addCitiesErr implements Action {
   readonly type = CITY_ACTION.ADD_CITY_ERR;
-  constructor(payload: any) {}
+  constructor(public payload: any) {}
 }
 
 export type Action = addCities | addCitiesOk | addCitiesErr;

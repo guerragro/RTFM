@@ -6,8 +6,22 @@ export interface AppStateInterface {
   // ticket: []
 }
 
+// export const InitialAppState: AppStateInterface = {
+//   city: null,
+//   // country: null,
+//   // ticket: null,
+// };
+
 export const InitialAppState: AppStateInterface = {
-  city: null,
+  city: [
+    {
+      name: 'Владивосток',
+      currency: 'ru',
+      code: 'VVO',
+      cases: null,
+      name_translations: null,
+    }
+  ]
   // country: null,
   // ticket: null,
 };

@@ -18,7 +18,7 @@ import {CitiesEffect} from '../ticket/store/effects/cities.effect';
     HttpClientModule,
     AviaTicketRoutingModule,
     StoreModule.forRoot(appReducers),
-    EffectsModule.forRoot([CitiesEffect])
+    // EffectsModule.forRoot([CitiesEffect])
   ],
   providers: [
     HttpClientModule,
