@@ -1,21 +1,21 @@
 import * as fromAction from './todo.action';
 import {TODO_ACTION} from './todo.action';
-import {Todo, TodoModel} from '../model/todo';
+import {Todo, ToDo} from '../model/todo';
 
-export interface TodoState {
-  todos: TodoModel[];
-  done: TodoModel[];
-  delete: TodoModel[];
+export interface ToDoState {
+  todos: ToDo[];
+  done: ToDo[];
+  delete: ToDo[];
 }
 
-export const InitialTodosState: TodoState = {
+export const InitialTodosState: ToDoState = {
   todos: [
     new Todo('Изменить фон', 0, false, false),
     new Todo('Добавить счетчик активных задач', 1, false, false),
     new Todo('Придумать', 2, false, false),
   ],
-  done: [],
-  delete: []
+  done: null,
+  delete: null
 };
 
 
@@ -23,7 +23,7 @@ export function TodoReducer(state = InitialTodosState, action: fromAction.Action
   switch (action.type) {
     // добавление
     case TODO_ACTION.ADD:
-      const newTodo: TodoModel = action.payload;
+      const newTodo: ToDo = action.payload;
       return {
         ...state, todos: [...state.todos, newTodo]
       };

@@ -5,6 +5,7 @@ import { Service } from '../../service/service';
 import { Store } from '@ngrx/store';
 import {TestStore} from '../../store/mobx.store';
 import {fromMobx} from 'ngx-mobx';
+import * as fromAction from '../../store/test.action';
 
 @Component({
   selector: 'app-test',
@@ -15,6 +16,7 @@ export class TestComponent implements OnInit {
 
   icons = icons;
   todo: any;
+  temp: any;
 
   // number$: Observable<NumberInterface>;
 
@@ -23,9 +25,12 @@ export class TestComponent implements OnInit {
   constructor(
     private mobxStore: TestStore,
     private service: Service,
+    private store: Store<any>,
   ) {
-    this.todo = this.service.getTodo();
-    console.log(this.todo);
+    // this.store.subscribe(res => console.log(res));
+    this.store.select('todos').subscribe(res => console.log(res));
+    // this.todo = this.service.getTodo();
+    // console.log(this.todo);
     // this.todos$ = ngrxStore.select(fromRoot.getTodos);
     // this.id$ = ngrxStore.select(getIds);
     // console.log(this.todos$);
@@ -33,6 +38,13 @@ export class TestComponent implements OnInit {
   }
 
   ngOnInit() {
+    // this.addTodo();
+    this.temp = this.service.getTodo();
+    console.log(this.temp);
+  }
+
+  addTodo() {
+    this.store.dispatch( new fromAction.addTodo('helloa'));
   }
 
   handleErr(ans) {
@@ -81,9 +93,6 @@ export class TestComponent implements OnInit {
 //
 // ngOnInit() {
 // }
-//
-// // создаем массив в него пушим все задачи, используем сеттер и геттер, через который то-до лист будет постоянно обновляться
-//
 //
 // // function create task
 // create() {

@@ -15,6 +15,6 @@ export class Service {
     return this.http.get(this.backendUrl);
   }
   getTodo() {
-    return setTimeout(() => [new Todo(1, 'разбор работы ngrx', false)], 5000);
+    return setTimeout(() => new Todo(1, 'разбор работы ngrx', false), 5000);
   }
 }

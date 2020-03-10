@@ -10,9 +10,7 @@ export class CalculatorComponent implements OnInit {
   result: string;
   box = [];
   number: string = '';
-
-  _test = [];
-  t: any;
+  task: any;
 
   constructor() { }
 
@@ -20,6 +18,8 @@ export class CalculatorComponent implements OnInit {
 
   // затуп не работает, когда операция простая т.е. 1 + 1
   click(data) {
+    this.task = document.getElementById('task').innerHTML;
+    this.task = data;
     switch (data) {
       case '/':
       case '*':
@@ -31,49 +31,20 @@ export class CalculatorComponent implements OnInit {
         break;
       case '=':
         this.box.push((this.number === '') ? data : this.number);
-        this.box.forEach((a, index, array) => this.test(a, index, array));
-        // this.amount(this.box);
-        // this.test(this.box);
+        this.amount(this.box);
         this.number = '';
         break;
       default:
         this.number += data;
     }
+    console.log(this.box);
   }
 
   amount(res) {
     this.result = eval(res.join(''));
-    console.log(this.result);
-    // очистка
     this.box.length = 0;
-  }
-
-  // нужно вырезать то, что первым согласно правилам
-  // произвести расчет
-  // вставить обратно
-  // и начать заново
-  // нужна рекурсия, конечное это когда массив равен нюли или что-то там
-  test(numb, index, array) {
-    // console.log(this.box);
-    // console.log(numb, index, array);
-    console.log(array);
-    if (numb === '/') {
-      this._test = this.box.splice(index - 1, 3);
-      console.log(this._test);
-      this.t = this._test[0] / this._test[2];
-    } else if (numb === '*') {
-      this._test = this.box.splice(index - 1, 3);
-    } else if (numb === '+') {
-      this._test = this.box.splice(index - 1, 3);
-    } else {
-      this._test = this.box.splice(index - 1, 3);
-    }
-  }
-  newFunction(res) {
-    if (res.length === 0) {
-
-    } else {
-
-    }
+    this.task = document.getElementById('task').innerHTML;
+    this.task = this.result;
+    console.log(this.result);
   }
 }

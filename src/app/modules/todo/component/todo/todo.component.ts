@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Store} from '@ngrx/store';
 import * as fromAction from '../../store/todo.action';
-import { TodoState } from '../../store/todo.reducer';
-import { Todo, TodoModel } from '../../model/todo';
-import {filter} from 'rxjs/operators';
-import {from} from 'rxjs';
+import { Todo, ToDo } from '../../model/todo';
 import icons from 'glyphicons';
 
 @Component({
@@ -16,28 +13,24 @@ export class TodoComponent implements OnInit {
 
   icons = icons;
   todo: string;
-  todoList: TodoModel[];
+  todoList: ToDo[];
   id = 1;
 
   constructor(
-    private store: Store<TodoState>
-  ) { }
+    private store: Store<any>
+  ) {}
 
   ngOnInit() {
-    this.store.subscribe(
-      res => {
-        this.todoList = res['todos']['todos'];
-        // console.log(this.todoList);
-      },
-      err => console.log(err)
-    );
+    this.store.select('todos').subscribe(res => this.todoList = res['todos']);
+    console.log(this.todoList);
   }
 
   // Todo проверка на пустую строку;
   // Todo проверка на количество символов, либо делать переност слова;
-  add(todo) {
-    if (todo.keyCode === 13 || todo.type === 'click') {
-      this.store.dispatch(new fromAction.addTodo(new Todo(this.todo, this.id++, false, false)));
+  add(event) {
+    if (event.keyCode === 13 || event.type === 'click') {
+      const todo = new Todo(this.todo, this.id++, false, false);
+      this.store.dispatch(new fromAction.addTodo(todo));
       this.todo = null;
     }
   }
@@ -55,6 +48,7 @@ export class TodoComponent implements OnInit {
   edit(id) {
     console.log(id);
     this.todoList = this.todoList.filter((a) => (a.id === id) ? a.edit = true : this.todoList);
+    console.log(this.todoList.filter(a => (a.id === id) ? true : false));
     // this.store.dispatch( new fromAction.editTodo(task, id) );
   }
 

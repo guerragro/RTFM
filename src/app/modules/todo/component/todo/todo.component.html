@@ -17,6 +17,7 @@
 
     <div *ngFor="let todo of todoList" >
 
+<!--      список-->
       <div class="row" *ngIf="!todo.edit">
         <div class="col-2">
           <button class="b-center" (click)="edit(todo.id)">{{icons.edit}}</button>
@@ -26,7 +27,7 @@
           <button class="b-center" (click)="delete(todo.id)">{{icons.cross}}</button>
         </div>
       </div>
-
+<!-- форма для редактирования -->
       <div class="row" *ngIf="todo.edit">
         <div class="col-2">
           <button class="b-center" (click)="edit(todo.id)">{{icons.edit}}</button>
