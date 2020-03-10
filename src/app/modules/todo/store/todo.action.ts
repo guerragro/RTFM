@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { TodoModel } from '../model/todo';
+import {ToDo} from '../model/todo';
 
 export enum TODO_ACTION {
   ADD = 'ADD',
@@ -10,7 +10,7 @@ export enum TODO_ACTION {
 
 export class addTodo implements Action {
   readonly type = TODO_ACTION.ADD;
-  constructor( public payload: TodoModel ) {
+  constructor( public payload: ToDo ) {
   }
 }
 export class doneTodo implements Action {
