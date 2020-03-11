@@ -16,7 +16,8 @@ export class CalculatorComponent implements OnInit {
 
   ngOnInit() {}
 
-  // затуп не работает, когда операция простая т.е. 1 + 1
+  // ввод чисел больше 10
+  // убрать возможность вводить первым знак и двойной знак
   click(data) {
     this.task = document.getElementById('task').innerHTML;
     this.task = data;

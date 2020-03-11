@@ -9,14 +9,12 @@ import {TicketService} from './service/ticket.service';
 import {HttpClientModule} from '@angular/common/http';
 import {EffectsModule} from '@ngrx/effects';
 import {CitiesEffect} from './store/effects/cities.effect';
-import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [SearchAviaComponent],
     imports: [
         CommonModule,
-        // RouterModule,
         TicketRoutingModule,
         HttpClientModule,
         StoreModule.forRoot(appReducers),

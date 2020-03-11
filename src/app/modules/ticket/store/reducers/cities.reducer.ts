@@ -6,7 +6,7 @@ export function CitiesReducer( state = InitialCitiesState, action: fromCitiesAct
   switch (action.type) {
     case CITIES_ACTION.ADD_CITIES_OK:
       return {
-        ...state
+        ...state, city: action.payload
       };
     case CITIES_ACTION.ADD_CITIES_ERR:
       return state;

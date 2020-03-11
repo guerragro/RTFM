@@ -3,13 +3,13 @@ import {TODO_ACTION} from './todo.action';
 import {Todo, ToDo} from '../model/todo';
 
 export interface ToDoState {
-  todos: ToDo[];
+  todo: ToDo[];
   done: ToDo[];
   delete: ToDo[];
 }
 
 export const InitialTodosState: ToDoState = {
-  todos: [
+  todo: [
     new Todo('Изменить фон', 0, false, false),
     new Todo('Добавить счетчик активных задач', 1, false, false),
     new Todo('Придумать', 2, false, false),
@@ -25,20 +25,20 @@ export function TodoReducer(state = InitialTodosState, action: fromAction.Action
     case TODO_ACTION.ADD:
       const newTodo: ToDo = action.payload;
       return {
-        ...state, todos: [...state.todos, newTodo]
+        ...state, todos: [...state.todo, newTodo]
       };
     //  удаление
     case TODO_ACTION.DEL:
-      const del = state.todos
+      const del = state.todo
                        .filter(t => t.id !== action.payload);
       return {
         ...state, todos: del
       };
     //  выполненные
     case TODO_ACTION.DONE:
-      const doneTodo = state.todos
+      const doneTodo = state.todo
                             .find(t => (t.id === action.payload) ? t.done = true : false);
-      const todo = state.todos
+      const todo = state.todo
                         .filter(t => t.done === false);
       return {
         ...state, done: [...state.done, doneTodo], todos: todo
@@ -47,7 +47,7 @@ export function TodoReducer(state = InitialTodosState, action: fromAction.Action
     case TODO_ACTION.EDIT:
       console.log(action.payload);
       console.log(action.id);
-      state.todos.filter(t => (t.id === action.id) ? t.todo = action.payload : state);
+      state.todo.filter(t => (t.id === action.id) ? t.todo = action.payload : state);
       // нужно поменять задачу, а не добавлять новую (использовать replace или удалить массив и вернуть новый)
       return state;
     default:

@@ -1,4 +1,3 @@
-import * as fromState from './todo.reducer';
 import {TodoReducer, ToDoState} from './todo.reducer';
 import {ActionReducerMap} from '@ngrx/store';
 

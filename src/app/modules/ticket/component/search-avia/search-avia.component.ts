@@ -27,8 +27,9 @@ export class SearchAviaComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch( new fromCitiesAction.addCities() );
-    this.store.subscribe(res => this.cities = res);
-    this.service.getPriceMonth().subscribe(res => console.log(res));
+    this.store.select('cities').subscribe(res => console.log(res));
+    this.store.subscribe(res => console.log(res));
+    // this.service.getPriceMonth().subscribe(res => console.log(res));
   }
 //  стыковка, если стыковка больше одной, то ищем другие даты
 //  если рейс прямой, ищем промежуточные, которые можно потратить на дополнительный отдых

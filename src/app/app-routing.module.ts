@@ -21,10 +21,6 @@ export const appRoutes: Routes = [
     loadChildren: './modules/weather/weather.module#WeatherModule'
   },
   {
-    path: 'avia-ticket',
-    loadChildren: './modules/avia-ticket/avia-ticket.module#AviaTicketModule'
-  },
-  {
     // Todo, привести в порядок и сделать игру против компьютера
     path: 'tic-tac-toe',
     loadChildren: './modules/tic-tac-toe/tic-tac-toe.module#TicTacToeModule'
