@@ -21,7 +21,7 @@ export class TodoComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.store.select('todos').subscribe(res => this.todoList = res['todos']);
+    this.store.select('todos').subscribe(res => this.todoList = res['todo']);
     console.log(this.todoList);
   }
 
@@ -51,7 +51,5 @@ export class TodoComponent implements OnInit {
     console.log(this.todoList.filter(a => (a.id === id) ? true : false));
     // this.store.dispatch( new fromAction.editTodo(task, id) );
   }
-
-
 }
 // https://github.com/mashish584/ngrx-todo-app-example/blob/master/src/app/store/reducers/todo.reducers.ts

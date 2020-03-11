@@ -3,42 +3,11 @@
   <div class="input-group mb-3">
     <input type="text" class="form-control" id="task" [(ngModel)]="task">
     <div class="input-group-append">
-      <button class="btn btn-outline-secondary" type="button">enter</button>
+      <button class="btn btn-outline-secondary" type="button" (click)="click('=')">=</button>
     </div>
   </div>
 
-<!--  <div class="row">-->
-<!--    <div class="col-3" *ngFor="let numb of [7, 8, 9, '/']">-->
-<!--      <div>-->
-<!--        <button class="btn btn-default form-control" (click)="click(numb)">-->
-<!--          {{numb}}-->
-<!--        </button>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="col-3" *ngFor="let numb of [4, 5, 6, '*']">-->
-<!--      <div>-->
-<!--        <button class="btn btn-default form-control" (click)="click(numb)">-->
-<!--          {{numb}}-->
-<!--        </button>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="col-3" *ngFor="let numb of [1, 2, 3, '-']">-->
-<!--      <div>-->
-<!--        <button class="btn btn-default form-control" (click)="click(numb)">-->
-<!--          {{numb}}-->
-<!--        </button>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="col-3" *ngFor="let numb of ['.', 0, '=', '+']">-->
-<!--      <div>-->
-<!--        <button class="btn btn-default form-control" (click)="click(numb)">-->
-<!--          {{numb}}-->
-<!--        </button>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-
-  <div class="row" *ngFor="let a of [[7, 8, 9, '/'], [4, 5, 6, '*'], [1, 2, 3, '-'], ['.', 0, '=', '+']]">
+  <div class="row" *ngFor="let a of [['7', '8', '9', '/'], ['4', '5', '6', '*'], ['1', '2', '3', '-'], ['.', '0', 'C', '+']]">
     <div class="col-3" *ngFor="let numb of a">
       <div>
         <button class="btn btn-default form-control" (click)="click(numb)">

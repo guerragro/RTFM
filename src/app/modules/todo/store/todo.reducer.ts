@@ -24,15 +24,17 @@ export function TodoReducer(state = InitialTodosState, action: fromAction.Action
     // добавление
     case TODO_ACTION.ADD:
       const newTodo: ToDo = action.payload;
+      console.log(state);
+      console.log(newTodo);
       return {
-        ...state, todos: [...state.todo, newTodo]
+        ...state, todo: [...state.todo, newTodo]
       };
     //  удаление
     case TODO_ACTION.DEL:
       const del = state.todo
                        .filter(t => t.id !== action.payload);
       return {
-        ...state, todos: del
+        ...state, todo: del
       };
     //  выполненные
     case TODO_ACTION.DONE:
