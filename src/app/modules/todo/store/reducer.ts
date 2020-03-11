@@ -1,5 +1,5 @@
-import * as fromAction from './todo.action';
-import {TODO_ACTION} from './todo.action';
+import * as fromAction from './action';
+import {TODO_ACTION} from './action';
 import {Todo, ToDo} from '../model/todo';
 
 export interface ToDoState {
@@ -19,7 +19,7 @@ export const InitialTodosState: ToDoState = {
 };
 
 
-export function TodoReducer(state = InitialTodosState, action: fromAction.TodoType) {
+export function todoReducer(state = InitialTodosState, action: fromAction.TodoType) {
   switch (action.type) {
     // добавление
     case TODO_ACTION.TODO_ADD:

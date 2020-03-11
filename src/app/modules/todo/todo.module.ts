@@ -6,7 +6,7 @@ import { StoreModule} from '@ngrx/store';
 import { TodoComponent } from './component/todo/todo.component';
 import { TodoRoutingModule } from './todo-routing.module';
 
-import { todoReducer } from './store/todo.selector';
+import { reducers } from './store/index.reducer';
 
 @NgModule({
   declarations: [TodoComponent],
@@ -14,7 +14,7 @@ import { todoReducer } from './store/todo.selector';
     CommonModule,
     FormsModule,
     TodoRoutingModule,
-    StoreModule.forRoot(todoReducer)
+    StoreModule.forRoot(reducers)
   ],
   providers: [],
   bootstrap: [TodoComponent]

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Store} from '@ngrx/store';
-import * as fromAction from '../../store/todo.action';
+import * as fromAction from '../../store/action';
 import { Todo, ToDo } from '../../model/todo';
 import icons from 'glyphicons';
 

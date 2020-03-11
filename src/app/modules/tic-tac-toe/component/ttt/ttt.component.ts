@@ -36,36 +36,40 @@ export class TttComponent implements OnInit {
     } else {
       this.box2.splice(turn, 1, this.player);
     }
-    (this.game === 'PVE') ? this.turn(this.box2, this.player) : this.howWon(this.box, this.player);
+    // (this.game === 'PVE') ? this.turn(this.box2, this.player) : this.howWon(this.box, this.player);
+    (true) ? this.turn(this.box2, this.player) : this.howWon(this.box, this.player);
   }
 
-  // [ +10, +10, +10,]
-  // [ +10, x, +10,]
-  // [ +10, +10, +10,]
+  // [ +10, +10, +10,]  [0 1 2]
+  // [ +10, x, +10,]    [3 4 5]
+  // [ +10, +10, +10,]  [6 7 8]
   turn(res, player) {
     console.log('PVE');
     // первый блок условий
-    if (res[0] === 'x' && res[1] === 'x') {
-      res[2] += 10;
-    } else if (res[0] === 'x' && res[2] === 'x') {
-      res[1] += 10;
-    } else if (res[1] === 'x' && res[2] === 'x') {
-      res[2] += 10;
-    //  второй блок условий
-    } else if (res[3] === 'x' && res[4] === 'x') {
-      res[5] += 10;
-    } else if (res[3] === 'x' && res[5] === 'x') {
-      res[4] += 10;
-    } else if (res[4] === 'x' && res[5] === 'x') {
-      res[3] += 10;
-    //  третий блок условий
-    } else if (res[6] === 'x' && res[7] === 'x') {
-      res[8] += 10;
-    } else if (res[6] === 'x' && res[8] === 'x') {
-      res[7] += 10;
-    } else if (res[7] === 'x' && res[8] === 'x') {
-      res[6] += 10;
+    if (res[4] === 'x') {
+      res[0] += 10; res[1] += 10; res[2] += 10; res[3] += 10; res[5] += 10; res[6] += 10; res[7] += 10; res[8] += 10;
     }
+    // if (res[0] === 'x' && res[1] === 'x') {
+    //   res[2] += 10;
+    // } else if (res[0] === 'x' && res[2] === 'x') {
+    //   res[1] += 10;
+    // } else if (res[1] === 'x' && res[2] === 'x') {
+    //   res[2] += 10;
+    // //  второй блок условий
+    // } else if (res[3] === 'x' && res[4] === 'x') {
+    //   res[5] += 10;
+    // } else if (res[3] === 'x' && res[5] === 'x') {
+    //   res[4] += 10;
+    // } else if (res[4] === 'x' && res[5] === 'x') {
+    //   res[3] += 10;
+    // //  третий блок условий
+    // } else if (res[6] === 'x' && res[7] === 'x') {
+    //   res[8] += 10;
+    // } else if (res[6] === 'x' && res[8] === 'x') {
+    //   res[7] += 10;
+    // } else if (res[7] === 'x' && res[8] === 'x') {
+    //   res[6] += 10;
+    // }
     // Math.max.apply(null, res);
     console.log(res);
     // this.howWon(res, 'x');
