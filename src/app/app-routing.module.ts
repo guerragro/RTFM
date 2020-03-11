@@ -48,10 +48,6 @@ export const appRoutes: Routes = [
     loadChildren: './modules/site/site.module#SiteModule'
   },
   {
-    path: 'tour-of-heroes',
-    loadChildren: './modules/tour-of-heroes/tour-of-heroes.module#TourOfHeroesModule'
-  },
-  {
     path: 'Тест',
     loadChildren: './modules/test/test.module#TestModule'
   },
