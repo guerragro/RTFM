@@ -31,7 +31,7 @@ export class TodoComponent implements OnInit {
     if (event.keyCode === 13 || event.type === 'click') {
       const todo = new Todo(this.todo, this.id++, false, false);
       this.store.dispatch(new fromAction.addTodo(todo));
-      this.todo = null;
+      this.todo = '';
     }
   }
 

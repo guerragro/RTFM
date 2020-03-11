@@ -15,37 +15,30 @@ export const InitialTodosState: ToDoState = {
     new Todo('Поправить структуру', 2, false, false),
   ],
   done: null,
-  delete: null
+  delete: null,
 };
-
 
 export function todoReducer(state = InitialTodosState, action: fromAction.TodoType) {
   switch (action.type) {
-    // добавление
     case TODO_ACTION.TODO_ADD:
-      const newTodo: ToDo = action.payload;
-      console.log(state);
-      console.log(newTodo);
+      const todo = [...state.todo, action.payload];
       return {
-        ...state, todo: [...state.todo, newTodo]
+        ...state, todo
       };
-    //  удаление
     case TODO_ACTION.TODO_DEL:
       const del = state.todo
                        .filter(t => t.id !== action.payload);
       return {
         ...state, todo: del
       };
-    //  выполненные
     case TODO_ACTION.TODO_DONE:
       const doneTodo = state.todo
                             .find(t => (t.id === action.payload) ? t.done = true : false);
-      const todo = state.todo
-                        .filter(t => t.done === false);
+      // const todo = state.todo
+      //                   .filter(t => t.done === false);
       return {
         ...state, done: [...state.done, doneTodo], todos: todo
       };
-    //  редактирование
     case TODO_ACTION.TODO_EDIT:
       console.log(action.payload);
       console.log(action.id);
