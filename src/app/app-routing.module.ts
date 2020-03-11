@@ -11,17 +11,17 @@ export const appRoutes: Routes = [
     loadChildren: './modules/readme/readme.module#ReadMeModule'
   },
   {
-    // Todo, по моим прикидкам готовность 70-80%
+    // Todo 70-80%
     path: 'todoList',
     loadChildren: './modules/todo/todo.module#TodoModule'
   },
   {
-    // Todo, готово получение данных, добавлен некоторый функционал, сделать внешнее оформление
+    // Todo 70-80%
     path: 'weatherService',
     loadChildren: './modules/weather/weather.module#WeatherModule'
   },
   {
-    // Todo, привести в порядок и сделать игру против компьютера
+    // Todo 70-80%
     path: 'tic-tac-toe',
     loadChildren: './modules/tic-tac-toe/tic-tac-toe.module#TicTacToeModule'
   },
@@ -31,17 +31,13 @@ export const appRoutes: Routes = [
     loadChildren: './modules/ticket/ticket.module#TicketModule'
   },
   {
-    // Todo, по моим прикидкам готовность 70-80%, набросаны первые стили
+    // Todo 70-80%
     path: 'calculator',
     loadChildren: './modules/calculator/calculator.module#CalculatorModule'
   },
   {
     path: 'Zen-wallet',
     loadChildren: './modules/zen-money/money.module#MoneyModule'
-  },
-  {
-    path: 'selfdev',
-    loadChildren: './modules/self-dev/self-dev.module#SelfDevModule'
   },
   {
     path: 'site',
