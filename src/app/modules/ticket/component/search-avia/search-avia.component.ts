@@ -34,7 +34,7 @@ export class SearchAviaComponent implements OnInit {
 //  стыковка, если стыковка больше одной, то ищем другие даты
 //  если рейс прямой, ищем промежуточные, которые можно потратить на дополнительный отдых
 
-  // search() {}
+  search() {}
 
   dataHandle(ans) {
     (ans.hasOwnProperty('origin')) ? console.log(ans) : console.log('Неправильно введенные города');
