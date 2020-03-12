@@ -2,14 +2,6 @@
   width: 100%;
   height: 100ch;
   background-color: #FFDAB9;
-  font: 12pt sans-serif;
-}
-
-.color-l {
-  background-color: #2a52be;
-}
-.color-r {
-  background-color: #007ba7;
 }
 
 tr {
@@ -21,7 +13,7 @@ tr {
   margin: 2px;
   border-radius: .25rem;
 }
-.margin-5 {
+.margin-bottom-5 {
   margin-bottom: 5px;
 }
 .margin-top-5 {

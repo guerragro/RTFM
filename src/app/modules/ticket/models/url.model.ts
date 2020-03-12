@@ -251,30 +251,8 @@ export class UrlModels {
   //   flight_number — номер рейса.
   //   currency — валюта ответа.
 
-  // Данные города в формате JSON
-  public static Cities = 'http://api.travelpayouts.com/data/ru/cities.json';
-
-  // Параметры ответа
-  // code — IATA-code страны.
-  // name — Название страны.
-  // currency — Валюта страны.
-  // name_translations  — Название страны на других языках.
-
   // Список стран (неопязательный)
   // public static Countries = 'http://api.travelpayouts.com/data/ru/countries.json';
-
-  // Данные об аэропортах в json формате
-  public static Airports = 'http://api.travelpayouts.com/data/ru/airports.json';
-
-  // Параметры ответа
-  // code — iata-код.
-  // name — название аэропорта (вокзала или автобусной станции).
-  // coordinates — координаты.
-  // time_zone — часовой пояс относительно гринвича.
-  // name_translations — название на разных языках.
-  // country_code — iata-код страны.
-  // city_code — iata-код города.
-  // flightable — является ли действующим аэропортом (true - является, false - нет).
 
   // Данные о маршрутах в json формате
   // Запрос возвращает файл со списком маршрутов из базы данных.
@@ -294,26 +272,12 @@ export class UrlModels {
 
   public static Special = 'http://api.travelpayouts.com/v2/prices/special-offers?token=49679098347c457387656573a8437d2d';
 
-  // Определение местоположения пользователя по IP адресу
-  // Описание
-  //
-  // Возвращает IATA-код и название ближайшего от пользователя города.
-  //
-  // Запрос
-  //
-  public static LocalCity = 'http://www.travelpayouts.com/whereami?locale=ru&callback=useriata&ip=62.105.128.0';
-  //
-  //   Параметры запроса
-  //
-  // locale — язык, на котором возвращается название города (доступны языки: en, ru, de, fr, it, pl, th. По умолчанию установлен русский);
-  // callback — задает имя функции, в которой содержится ответ на запрос (обязательный параметр);
-  // ip — ip-aдрес пользователя (если адрес не передается, система определяет ip из header запроса).
-  // Пример ответа
-  //
-  // useriata({"iata":"MOW","name":"Москва"})
+  // Данные города в формате JSON
+  public static Cities = 'http://api.travelpayouts.com/data/ru/cities.json';
+
   // Параметры ответа
-  //
-  // iata — ИАТА-код города, в котором находится пользователь;
-  // name — название города.
-  public static city = '';
+  // code — IATA-code страны.
+  // name — Название страны.
+  // currency — Валюта страны.
+  // name_translations  — Название страны на других языках.
 }

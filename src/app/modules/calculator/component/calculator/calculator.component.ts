@@ -18,7 +18,7 @@ export class CalculatorComponent implements OnInit {
 
   // ввод чисел больше 10
   // убрать возможность вводить первым знак и двойной знак
-  click(data) {
+  amount(data) {
     switch (data) {
       case '/':
       case '*':

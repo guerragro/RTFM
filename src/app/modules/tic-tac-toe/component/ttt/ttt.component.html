@@ -1,11 +1,13 @@
-<div class="container text-center margin-5" *ngIf="this.game === ''">
-  Choose the game
-  <div class="row">
-    <div class="col-6">
-      <button (click)="choice('PVP')">PVP</button>
-    </div>
-    <div class="col-6">
-      <button (click)="choice('PVE')">PVE</button>
+<div class="box">
+  <div *ngIf="this.game === ''">
+    Choose the game
+    <div class="container row">
+      <div class="col-6">
+        <button class="btn btn-default" (click)="choice('PVP')">PVP</button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-default" (click)="choice('PVE')">PVE</button>
+      </div>
     </div>
   </div>
 </div>
@@ -31,6 +33,6 @@
 </div>
 
 <div class="text-center margin-5">
-  <button (click)="clear()">очистка</button>
+  <button (click)="clear()">restart</button>
 </div>
 

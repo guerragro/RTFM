@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {appRoutes, AppRoutingModule} from '../../../../app-routing.module';
+import {Component, OnInit} from '@angular/core';
+import {appRoutes} from '../../../../app-routing.module';
 
 @Component({
   selector: 'app-menu',
@@ -9,21 +9,19 @@ import {appRoutes, AppRoutingModule} from '../../../../app-routing.module';
 export class MenuComponent implements OnInit {
 
   menuList: any;
+  altmenu: boolean = true;
 
   constructor() { }
 
   ngOnInit() {
-    this.menuList = appRoutes;
-    console.log(this.menuList);
     this.fillmenulist();
   }
 
   fillmenulist() {
-    console.log('загружаем меню');
+    this.altmenu = !this.altmenu;
+    this.menuList = (this.altmenu) ? appRoutes.filter(project => project['path'] !== 'menu') :
+      appRoutes.filter(project => project['path'] !== 'menu' && project['path'] !== 'site' && project['path'] !== 'Zen-wallet'
+      && project['path'] !== 'Тест'
+      );
   }
-
-  teleport(event) {
-    console.log(event);
-  }
-
 }

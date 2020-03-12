@@ -1,12 +1,9 @@
-<div class="container">
+<div class="m-container">
 
-  <div class="container-flex flex-row center-flex">
-    <div class="margin-2">
-      <input type="text" id="addData" placeholder="Новый проект" [(ngModel)]="proj">
-    </div>
-    <div class="margin-2">
-<!--      создаем проект-->
-      <button (click)="addData(proj)">добавить проект</button>
+  <div class="input-group mb-3">
+    <input class="form-control" type="text" id="addData" placeholder="Новый проект" [(ngModel)]="proj">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" (click)="addData(proj)"> add </button>
     </div>
   </div>
 
@@ -14,33 +11,26 @@
 
     <div *ngFor="let proj of dataList">
       <div class="btn btn-block dataList margin-2" (click)="toggle(proj)">{{proj.project}}</div>
-      <!--    другой цвет-->
-      <!--    меньше размера родительского блока  -->
       <div class="container" *ngIf="proj.view">
         <div class="taskList" *ngFor="let t of proj.tasks">
-          <!--          список задач-->
           <div class="container-flex flex-row" [ngClass]="{red: t.done}">
             <div class="btn btn-block" (click)="clickMe(t.task)">{{t.task}}</div>
-            <!--          кнопка-->
             <div>
               <button class="btn btn-block">del</button>
             </div>
-            <!--          кнопка-->
             <div>
               <button class="btn btn-block" (click)="done(t.id)">ok</button>
             </div>
           </div>
+        </div>
 
-        </div>
-        <div class="container-flex flex-row">
-          <div class="btn btn-block">
-            <input type="text" placeholder="Добавление новой задачи" [(ngModel)]="task">
-          </div>
-<!--          создаем задачу-->
-          <div class="btn btn-block">
-            <button (click)="addData(task, proj.id)">+</button>
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Добавление новой задачи" [(ngModel)]="task">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="addData(task, proj.id)">+</button>
           </div>
         </div>
+
       </div>
     </div>
 

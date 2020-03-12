@@ -23,32 +23,20 @@ export class SearchAviaComponent implements OnInit {
 
   constructor( private store: Store<fromAppState.AppTicketState>,
                private service: TicketService
-               ) { }
+               ) {}
 
   ngOnInit() {
     this.store.dispatch( new fromCitiesAction.addCities() );
     this.store.select('cities').subscribe(res => console.log(res));
     this.store.subscribe(res => console.log(res));
-    // this.service.getPriceMonth().subscribe(res => console.log(res));
+    this.service.getPriceMonth().subscribe(res => console.log(res));
   }
 //  стыковка, если стыковка больше одной, то ищем другие даты
 //  если рейс прямой, ищем промежуточные, которые можно потратить на дополнительный отдых
 
-  search() {
-    // console.log(this.cities);
-    // this.departure = this.cities.citi.filter(a => a.name);
-    // this.service.getCity(this.origin, this.destination).subscribe(
-    //   res => this.dataHandle(res)
-    // );
-    console.log(this.cities);
-  }
+  // search() {}
 
   dataHandle(ans) {
-    if (ans.hasOwnProperty('origin')) {
-      console.log(ans);
-    } else {
-      console.log('Неправильно введенные города');
-    }
-    console.log();
+    (ans.hasOwnProperty('origin')) ? console.log(ans) : console.log('Неправильно введенные города');
   }
 }

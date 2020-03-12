@@ -7,7 +7,9 @@ import { UrlModels } from '../models/url.model';
 export class TicketService {
 
   backendUrl: string = 'http://127.0.0.1:8080';
+
   constructor( public http: HttpClient) {}
+
   public getPriceList() {
     const params = {
         origin: 'VVO',
@@ -49,9 +51,5 @@ export class TicketService {
       // token: '49679098347c457387656573a8437d2d'
     };
     return this.http.get(UrlModels.PriceTik, {params: (params)});
-  }
-
-  getCity(origin, destination) {
-    // return this.http.get(UrlModels.city + 'Из%20' + origin + '%20в%20' + destination);
   }
 }
