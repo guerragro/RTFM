@@ -48,6 +48,10 @@ export const appRoutes: Routes = [
     loadChildren: './modules/test/test.module#TestModule'
   },
   {
+    path: 'cource',
+    loadChildren: './modules/course/course.module#CourseModule'
+  },
+  {
     // Todo, сделано, но через жопу
     path: 'menu',
     loadChildren: './modules/menu/menu.module#MenuModule'

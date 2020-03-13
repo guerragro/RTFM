@@ -1,9 +1,9 @@
 <div class="m-container">
 
   <div class="input-group mb-3">
-    <input class="form-control" type="text" id="addData" placeholder="Новый проект" [(ngModel)]="proj">
+    <input class="form-control" type="text" id="addTask" placeholder="Новый проект" [(ngModel)]="proj">
     <div class="input-group-append">
-      <button class="btn btn-outline-secondary" type="button" (click)="addData(proj)"> add </button>
+      <button class="btn btn-outline-secondary" type="button" (click)="addTask(proj)"> add </button>
     </div>
   </div>
 
@@ -14,12 +14,12 @@
       <div class="container" *ngIf="proj.view">
         <div class="taskList" *ngFor="let t of proj.tasks">
           <div class="container-flex flex-row" [ngClass]="{red: t.done}">
-            <div class="btn btn-block" (click)="clickMe(t.task)">{{t.task}}</div>
-            <div>
+            <div class="btn btn-block">{{t.task}}</div>
+            <div class="btn btn-block">
               <button class="btn btn-block">del</button>
             </div>
-            <div>
-              <button class="btn btn-block" (click)="done(t.id)">ok</button>
+            <div class="btn btn-block">
+              <button class="btn btn-block" (click)="changeStatus(t.id)">ok</button>
             </div>
           </div>
         </div>
@@ -27,7 +27,7 @@
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Добавление новой задачи" [(ngModel)]="task">
           <div class="input-group-append">
-            <button class="btn btn-outline-secondary" (click)="addData(task, proj.id)">+</button>
+            <button class="btn btn-outline-secondary" (click)="addTask(task, proj.id)">+</button>
           </div>
         </div>
 
