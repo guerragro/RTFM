@@ -17,6 +17,7 @@ export class CourseComponent implements OnInit {
   }
 }
 
+// https://www.cbr.ru/currency_base/daily
 // timestamp: 1584072001
 // base: "USD"
 // rates:

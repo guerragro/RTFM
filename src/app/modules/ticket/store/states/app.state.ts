@@ -1,9 +1,9 @@
 import {CitiesStateInterface} from './cities.state';
 
-export interface AppTicketState {
+export interface AppState {
   cities: CitiesStateInterface;
 }
 
-export const InitialAppState: AppTicketState = {
+export const InitialAppState: AppState = {
   cities: null
 };

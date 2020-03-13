@@ -22,7 +22,7 @@
         <div class="col-2">
           <button class="b-center" (click)="edit(todo.id)">{{icons.edit}}</button>
         </div>
-        <div class="col-8 task-form">{{todo.todo}}</div>
+        <div class="col-8 task-form" [ngClass]="{done: todo.done}">{{todo.todo}}</div>
         <div class="col-2">
           <button class="b-center" (click)="delete(todo.id)">{{icons.cross}}</button>
         </div>

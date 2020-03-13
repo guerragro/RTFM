@@ -99,4 +99,8 @@ button {
   border-radius: .25rem;
 }
 
+.done {
+  text-decoration: line-through;
+}
+
 
