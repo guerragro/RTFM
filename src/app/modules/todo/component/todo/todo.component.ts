@@ -25,8 +25,6 @@ export class TodoComponent implements OnInit {
     console.log(this.todoList);
   }
 
-  // Todo проверка на пустую строку;
-  // Todo проверка на количество символов, либо делать переност слова;
   add(event) {
     if (event.keyCode === 13 || event.type === 'click') {
       const todo = new Todo(this.todo, this.id++, false, false);
@@ -39,17 +37,14 @@ export class TodoComponent implements OnInit {
     this.store.dispatch( new fromAction.delTodo(id) );
   }
 
-  // // TODO сделать какую нибудь анимацию;
-  // done(id) {
-  //   this.store.dispatch( new fromAction.doneTodo(id) );
-  // }
+  done(id) {
+    this.store.dispatch( new fromAction.doneTodo(id) );
+  }
 
-  // TODO нужны фиксы
-  edit(id) {
-    console.log(id);
-    this.todoList = this.todoList.filter((a) => (a.id === id) ? a.edit = true : this.todoList);
-    console.log(this.todoList.filter(a => (a.id === id) ? true : false));
-    // this.store.dispatch( new fromAction.editTodo(task, id) );
+  edit(id, view?) {
+    // TODO насколько правильно эти вещи вставлять в HTML код и стоит ли выдергивать value подобный образом?
+    const test = document.getElementById('todo') as HTMLInputElement;
+    this.store.dispatch( new fromAction.editTodo(test.value, id));
   }
 }
 // https://github.com/mashish584/ngrx-todo-app-example/blob/master/src/app/store/reducers/todo.reducers.ts

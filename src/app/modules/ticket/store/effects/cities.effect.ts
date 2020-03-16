@@ -8,14 +8,14 @@ import * as fromCitiesAction from '../actions/cities.action';
 @Injectable()
 export class CitiesEffect {
   constructor(
-    public ticketService: TicketService,
+    public service: TicketService,
     public action$: Actions
   ) {}
 
   @Effect()
   loadCities = this.action$.pipe(
     ofType(CITIES_ACTION.ADD_CITIES),
-    mergeMap( () => this.ticketService.getDataCities().pipe(
+    mergeMap( () => this.service.getDataCities().pipe(
       map( cities => new fromCitiesAction.addCitiesOk(cities))
     ))
   );

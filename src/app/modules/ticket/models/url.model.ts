@@ -55,6 +55,8 @@ export class UrlModels {
   // distance  - расстояние между пунктом отправления и пунктом назначения.
   // actual  - актуальность предложения.
 
+  public static CityDirection = 'http://api.travelpayouts.com/v1/city-directions';
+
   // поддерживаемые направления
   // todo слишком много совпадающих направлений
   public static SupDirection = 'http://map.aviasales.ru/supported_directions.jsons';

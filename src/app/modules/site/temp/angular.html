@@ -175,6 +175,11 @@
       </div>
 
     </div>
+    <div>
+      В ts у элемента input, при попытке получить значение value будет ошибка, все потому что в ts тип возвращаемоего элемента
+      не имеет значение value, но зато под тим HTMLInputElement его имеет. Для того, чтобы все заработало нужно указать
+      document.getElementById('name') as HTMLInputElement.value
+    </div>
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
 </body>

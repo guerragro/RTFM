@@ -1,5 +1,4 @@
 import * as fromAction from './action';
-import {TODO_ACTION} from './action';
 import {Todo, ToDo} from '../model/todo';
 
 export interface ToDoState {
@@ -20,30 +19,27 @@ export const InitialTodosState: ToDoState = {
 
 export function todoReducer(state = InitialTodosState, action: fromAction.TodoType) {
   switch (action.type) {
-    case TODO_ACTION.TODO_ADD:
+    case fromAction.TODO_ACTION.TODO_ADD:
       const todo = [...state.todo, action.payload];
       return {
         ...state, todo
       };
-    case TODO_ACTION.TODO_DEL:
+    case fromAction.TODO_ACTION.TODO_DEL:
       const del = state.todo
                        .filter(t => t.id !== action.payload);
       return {
         ...state, todo: del
       };
-    case TODO_ACTION.TODO_DONE:
+    case fromAction.TODO_ACTION.TODO_DONE:
       const doneTodo = state.todo
                             .find(t => (t.id === action.payload) ? t.done = true : false);
-      // const todo = state.todo
-      //                   .filter(t => t.done === false);
       return {
         ...state, done: [...state.done, doneTodo], todos: todo
       };
-    case TODO_ACTION.TODO_EDIT:
+    case fromAction.TODO_ACTION.TODO_EDIT:
       console.log(action.payload);
       console.log(action.id);
       state.todo.filter(t => (t.id === action.id) ? t.todo = action.payload : state);
-      // нужно поменять задачу, а не добавлять новую (использовать replace или удалить массив и вернуть новый)
       return state;
     default:
       return state;

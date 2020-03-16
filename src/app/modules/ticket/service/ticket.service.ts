@@ -24,4 +24,12 @@ export class TicketService {
     };
     return this.http.get(UrlModels.SupDirection, {params: (params)});
   }
+  getCityDirection() {
+    const params = {
+      origin: 'VVO',
+      currence: 'rub',
+      token: '49679098347c457387656573a8437d2d'
+    };
+    return this.http.get(UrlModels.CityDirection, {params: (params)});
+  }
 }

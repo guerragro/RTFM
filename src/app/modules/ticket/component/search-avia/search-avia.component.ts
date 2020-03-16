@@ -30,8 +30,9 @@ export class SearchAviaComponent implements OnInit {
     this.store.dispatch( new fromCitiesAction.addCities() );
     // this.store.select('cities').subscribe(res => console.log(res));
     // this.store.subscribe(res => console.log(res));
-    this.service.getSupDirection('VVO').subscribe(res => this.origin = res['directions']);
-    this.service.getSupDirection('LAX').subscribe(res => this.destination = res['directions']);
+    // this.service.getSupDirection('VVO').subscribe(res => this.origin = res['directions']);
+    // this.service.getSupDirection('LAX').subscribe(res => this.destination = res['directions']);
+    this.service.getCityDirection().subscribe(res => console.log(res));
   }
 
   search() {
