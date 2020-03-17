@@ -13,14 +13,26 @@
       </div>
     </div>
 
-    <div *ngFor="let todo of todoList" >
+    <div class="container row">
+      <div class="col-3">show:</div>
+      <div class="col-3">
+        <button class="btn btn-block">all</button>
+      </div>
+      <div class="col-3">
+        <button class="btn btn-block">active</button>
+      </div>
+      <div class="col-3">
+        <button class="btn btn-block">complete</button>
+      </div>
+    </div>
 
+    <div *ngFor="let todo of todoList" >
 <!--      список-->
       <div class="row" *ngIf="!todo.edit">
         <div class="col-2">
           <button class="b-center" (click)="todo.edit = true">{{icons.edit}}</button>
         </div>
-        <div class="col-8 task-form" [ngClass]="{done: todo.done}">{{todo.todo}}</div>
+        <div class="col-8 task-form" [ngClass]="{done: todo.complete}">{{todo.todo}}</div>
         <div class="col-2">
           <button class="b-center" (click)="delete(todo.id)">{{icons.cross}}</button>
         </div>

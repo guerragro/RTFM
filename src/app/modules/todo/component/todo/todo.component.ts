@@ -21,6 +21,7 @@ export class TodoComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.store.dispatch(new fromAction.getTodo());
     this.store.select('todos').subscribe(res => this.todoList = res['todo']);
     console.log(this.todoList);
   }
@@ -34,7 +35,7 @@ export class TodoComponent implements OnInit {
   }
 
   delete(id) {
-    this.store.dispatch( new fromAction.delTodo(id) );
+    this.store.dispatch(new fromAction.delTodo(id));
   }
 
   done(id) {
@@ -48,3 +49,4 @@ export class TodoComponent implements OnInit {
   }
 }
 // https://github.com/mashish584/ngrx-todo-app-example/blob/master/src/app/store/reducers/todo.reducers.ts
+// https://github.com/GarryBrown/ngrx-films-list

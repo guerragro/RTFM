@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title></title>
+  </head>
+  <body>
+    <div>
+      <div>
+        Фильтр уникальных значений, работает только для примитивных значений: string, number, boolean, null, undefined
+        var newArray = [1, 2, 2, 'Игорь', 'Игорь', 'Вася']
+        var filterArray = [...new Set(newArray)]
+      </div>
+      <div>
+        for (let i = 0; i < array.length; i++){
+        console.log(i);
+        }
+        Смысл такой, что при каждой итерации, цикл пересматривает длину массива, поэтому будет в большинстве случаев
+        определить длину в переменную
+        for(let i = 0, length = array.length; i < length; i++) {
+          console.log(i)
+        }
+        Теперь не теряется время на проверку длины массива
+      </div>
+      <div>
+        Math.float(), метод для работы с числами с плавающей точкой, но есть более быстрый способ
+        console.log(23,9 | 0) // 23
+        Есть недостаток, если число имеет отрицательное значение, округление пойдет в меньшую сторону
+        console.log(-23,9 | 0) // 23
+      </div>
+      <div>
+        Возведение в степень:
+        console.log(2 ** 2)
+      </div>
+    </div>
+  </body>
+</html>

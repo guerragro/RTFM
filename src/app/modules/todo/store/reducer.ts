@@ -3,7 +3,7 @@ import {Todo, ToDo} from '../model/todo';
 
 export interface ToDoState {
   todo: ToDo[];
-  done: ToDo[];
+  complete: ToDo[];
   delete: ToDo[];
 }
 
@@ -13,12 +13,16 @@ export const InitialTodosState: ToDoState = {
     new Todo('Добавить счетчик активных задач', 1, false, false),
     new Todo('Поправить структуру', 2, false, false),
   ],
-  done: null,
+  complete: null,
   delete: null,
 };
 
 export function todoReducer(state = InitialTodosState, action: fromAction.TodoType) {
   switch (action.type) {
+    case fromAction.TODO_ACTION.TODO_GET_SUCCESS:
+      return {
+        ...state, todo: action.payload
+      };
     case fromAction.TODO_ACTION.TODO_ADD:
       const todo = [...state.todo, action.payload];
       return {
@@ -31,10 +35,10 @@ export function todoReducer(state = InitialTodosState, action: fromAction.TodoTy
         ...state, todo: del
       };
     case fromAction.TODO_ACTION.TODO_DONE:
-      const doneTodo = state.todo
-                            .find(t => (t.id === action.payload) ? t.done = true : false);
+      const completeTodo = state.todo
+                            .find(t => (t.id === action.payload) ? t.complete = true : false);
       return {
-        ...state, done: [...state.done, doneTodo], todos: todo
+        ...state, complete: [...state.complete, completeTodo], todos: todo
       };
     case fromAction.TODO_ACTION.TODO_EDIT:
       console.log(action.payload);

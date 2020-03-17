@@ -7,6 +7,9 @@ import { TodoComponent } from './component/todo/todo.component';
 import { TodoRoutingModule } from './todo-routing.module';
 
 import { reducers } from './store/index.reducer';
+import {TodoService} from './service/todo.service';
+import {EffectsModule} from '@ngrx/effects';
+import {TodoEffect} from './store/todo.effect';
 
 @NgModule({
   declarations: [TodoComponent],
@@ -14,9 +17,10 @@ import { reducers } from './store/index.reducer';
     CommonModule,
     FormsModule,
     TodoRoutingModule,
-    StoreModule.forRoot(reducers)
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([TodoEffect])
   ],
-  providers: [],
+  providers: [TodoService],
   bootstrap: [TodoComponent]
 })
 export class TodoModule { }
