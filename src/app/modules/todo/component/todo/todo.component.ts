@@ -23,19 +23,19 @@ export class TodoComponent implements OnInit {
   ngOnInit() {
     this.store.dispatch(new fromAction.getTodo());
     this.store.select('todos').subscribe(res => this.todoList = res['todo']);
-    console.log(this.todoList);
+    this.store.subscribe(res => console.log(res));
   }
 
   add(event) {
     if (event.keyCode === 13 || event.type === 'click') {
-      const todo = new Todo(this.todo, this.id++, false, false);
+      const todo = new Todo(this.todo, this.id++);
       this.store.dispatch(new fromAction.addTodo(todo));
       this.todo = '';
     }
   }
 
-  delete(id) {
-    this.store.dispatch(new fromAction.delTodo(id));
+  remove(id) {
+    this.store.dispatch(new fromAction.removeTodo(id));
   }
 
   done(id) {
@@ -45,6 +45,7 @@ export class TodoComponent implements OnInit {
   edit(id, view?) {
     // TODO насколько правильно эти вещи вставлять в HTML код и стоит ли выдергивать value подобный образом?
     const test = document.getElementById('todo') as HTMLInputElement;
+    console.log(test.value);
     this.store.dispatch( new fromAction.editTodo(test.value, id));
   }
 }

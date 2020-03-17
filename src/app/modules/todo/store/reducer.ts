@@ -1,18 +1,16 @@
 import * as fromAction from './action';
-import {Todo, ToDo} from '../model/todo';
+import {ToDo} from '../model/todo';
 
 export interface ToDoState {
+  id: number;
   todo: ToDo[];
   complete: ToDo[];
   delete: ToDo[];
 }
 
 export const InitialTodosState: ToDoState = {
-  todo: [
-    new Todo('Изменить ', 0, false, false),
-    new Todo('Добавить счетчик активных задач', 1, false, false),
-    new Todo('Поправить структуру', 2, false, false),
-  ],
+  id: 1,
+  todo: null,
   complete: null,
   delete: null,
 };
@@ -28,24 +26,31 @@ export function todoReducer(state = InitialTodosState, action: fromAction.TodoTy
       return {
         ...state, todo
       };
-    case fromAction.TODO_ACTION.TODO_DEL:
-      const del = state.todo
-                       .filter(t => t.id !== action.payload);
+    case fromAction.TODO_ACTION.TODO_REMOVE:
+      const remove = state.todo
+                          .filter(t => t.id !== action.payload);
+      console.log(remove);
       return {
-        ...state, todo: del
+        ...state, todo: remove
       };
     case fromAction.TODO_ACTION.TODO_DONE:
-      const completeTodo = state.todo
-                            .find(t => (t.id === action.payload) ? t.complete = true : false);
+      const complete = state.todo.find(t => {
+        if (t.id === action.payload) {
+          return t.complete = true;
+        }
+      });
       return {
-        ...state, complete: [...state.complete, completeTodo], todos: todo
+        ...state, complete: [...state.complete, complete]
       };
     case fromAction.TODO_ACTION.TODO_EDIT:
-      console.log(action.payload);
-      console.log(action.id);
-      state.todo.filter(t => (t.id === action.id) ? t.todo = action.payload : state);
+      state.todo.filter(t => {
+        if (t.id === action.id) {
+          return t.todo = action.payload;
+        }
+      });
       return state;
     default:
       return state;
   }
 }
+// https://palantir.github.io/tslint/rules/no-shadowed-variable/

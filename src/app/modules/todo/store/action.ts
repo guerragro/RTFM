@@ -5,7 +5,7 @@ export enum TODO_ACTION {
   TODO_GET = 'GET_TODO',
   TODO_GET_SUCCESS = 'TODO_GET_SUCCESS',
   TODO_ADD = 'TODO_ADD',
-  TODO_DEL = 'TODO_DEL',
+  TODO_REMOVE = 'TODO_REMOVE',
   TODO_DONE = 'TODO_DONE',
   TODO_EDIT = 'TODO_EDIT'
 }
@@ -24,8 +24,8 @@ export class doneTodo implements Action {
   readonly type = TODO_ACTION.TODO_DONE;
   constructor(public payload: number) {}
 }
-export class delTodo implements Action {
-  readonly type = TODO_ACTION.TODO_DEL;
+export class removeTodo implements Action {
+  readonly type = TODO_ACTION.TODO_REMOVE;
   constructor( public payload: number) {}
 }
 export class editTodo implements Action {
@@ -33,4 +33,4 @@ export class editTodo implements Action {
   constructor(public payload: string, public id: number) {}
 }
 
-export type TodoType = getTodo | getTodoSuccess | addTodo | delTodo | doneTodo | editTodo;
+export type TodoType = getTodo | getTodoSuccess | addTodo | removeTodo | doneTodo | editTodo;

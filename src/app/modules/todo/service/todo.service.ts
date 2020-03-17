@@ -8,15 +8,11 @@ export class TodoService {
   constructor() {}
 
   getTodo(): Observable<any> {
-    // setTimeout(() => of([
-    //   new Todo('Изменить ', 0, false, false),
-    //   new Todo('Добавить счетчик активных задач', 1, false, false),
-    //   new Todo('Поправить структуру', 2, false, false),
-    // ]), 5000);
     return of([
-        new Todo('Изменить ', 0, false, false),
-        new Todo('Добавить счетчик активных задач', 1, false, false),
-        new Todo('Поправить структуру', 2, false, false),
+        new Todo('Решить проблему присвоение id', 0),
+        new Todo('Решить проблему редактирование задачи', 0),
+        new Todo('Добавить счетчик активных задач', 1),
+        new Todo('Поправить структуру и код', 2),
       ]);
   }
 }

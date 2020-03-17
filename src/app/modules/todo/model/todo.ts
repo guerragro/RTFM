@@ -1,8 +1,8 @@
 export interface ToDo {
   todo: string;
   id: number;
-  complete: boolean;
-  edit: boolean;
+  complete?: boolean;
+  edit?: boolean;
 }
 
 export class Todo {
@@ -10,10 +10,10 @@ export class Todo {
   id: number;
   complete: boolean;
   edit: boolean;
-  constructor(todo: string, id: number, complete: boolean, edit: boolean) {
+  constructor(todo: string, id: number) {
     this.todo = todo;
     this.id = id;
-    this.complete = complete;
-    this.edit = edit;
+    this.complete = false;
+    this.edit = false;
   }
 }
