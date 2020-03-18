@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { action, observable} from 'mobx';
 import { ReadMeService } from '../service/readme.service';
-import {ProjectWorld, ProjectWorldInterface, ToDoWorld} from '../../../models/todo.model';
+import { ProjectWorld, ProjectWorldInterface, ToDoWorld} from '../../../models/todo.model';
 
 @Injectable()
 export class ReadMeStore {
@@ -13,7 +13,7 @@ export class ReadMeStore {
   ) {}
 
   @action getDataProject() {
-    this.todos = this.service.getProject();
+    this.service.getProject().subscribe(res => this.todos = res);
     console.log(this.todos);
   }
   @action addTask(data, id?) {

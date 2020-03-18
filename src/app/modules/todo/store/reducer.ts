@@ -4,14 +4,12 @@ import {ToDo} from '../model/todo';
 export interface ToDoState {
   id: number;
   todo: ToDo[];
-  complete: ToDo[];
   delete: ToDo[];
 }
 
 export const InitialTodosState: ToDoState = {
   id: 1,
   todo: null,
-  complete: null,
   delete: null,
 };
 
@@ -28,24 +26,25 @@ export function todoReducer(state = InitialTodosState, action: fromAction.TodoTy
       };
     case fromAction.TODO_ACTION.TODO_REMOVE:
       const remove = state.todo
-                          .filter(t => t.id !== action.payload);
+                          .filter(t => t.id !== action.payload.id);
       console.log(remove);
       return {
         ...state, todo: remove
       };
     case fromAction.TODO_ACTION.TODO_DONE:
       const complete = state.todo.find(t => {
-        if (t.id === action.payload) {
+        if (t.id === action.payload.id) {
           return t.complete = true;
         }
       });
       return {
-        ...state, complete: [...state.complete, complete]
+        ...state, todo: [...state.todo, complete]
       };
     case fromAction.TODO_ACTION.TODO_EDIT:
+      console.log(action.payload);
       state.todo.filter(t => {
-        if (t.id === action.id) {
-          return t.todo = action.payload;
+        if (t.id === action.payload.id) {
+          return t.todo = action.payload.todo;
         }
       });
       return state;

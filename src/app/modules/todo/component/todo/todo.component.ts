@@ -13,6 +13,7 @@ export class TodoComponent implements OnInit {
 
   icons = icons;
   todo: string;
+  _todo: string;
   todoList: ToDo[];
   id = 1;
 
@@ -21,8 +22,8 @@ export class TodoComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.store.dispatch(new fromAction.getTodo());
     this.store.select('todos').subscribe(res => this.todoList = res['todo']);
+    this.store.dispatch(new fromAction.getTodo());
     this.store.subscribe(res => console.log(res));
   }
 
@@ -34,19 +35,20 @@ export class TodoComponent implements OnInit {
     }
   }
 
-  remove(id) {
-    this.store.dispatch(new fromAction.removeTodo(id));
+  remove(todo) {
+    this.store.dispatch(new fromAction.removeTodo(todo));
   }
 
-  done(id) {
-    this.store.dispatch( new fromAction.doneTodo(id) );
+  done(todo) {
+    this.store.dispatch( new fromAction.doneTodo(todo) );
   }
 
-  edit(id, view?) {
+  edit(todo, view?) {
+    // передаем всю задачу
     // TODO насколько правильно эти вещи вставлять в HTML код и стоит ли выдергивать value подобный образом?
-    const test = document.getElementById('todo') as HTMLInputElement;
-    console.log(test.value);
-    this.store.dispatch( new fromAction.editTodo(test.value, id));
+    // const test = document.getElementById('todo') as HTMLInputElement;
+    // console.log(test.value);
+    this.store.dispatch( new fromAction.editTodo(todo));
   }
 }
 // https://github.com/mashish584/ngrx-todo-app-example/blob/master/src/app/store/reducers/todo.reducers.ts

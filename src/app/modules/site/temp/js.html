@@ -34,6 +34,14 @@
         Возведение в степень:
         console.log(2 ** 2)
       </div>
+      <div>
+        Для копирования объект используете Object.assign()
+        var number = {number: 1}
+        var age = {age: 1}
+        var user = Object.assign({}, number, age)
+        Но если вы сделаете следующим образом, то перезапищете объект, который идет первым
+        var user = Object.assign(number, age)
+      </div>
     </div>
   </body>
 </html>

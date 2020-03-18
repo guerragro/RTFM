@@ -12,7 +12,7 @@
 
 <!--    переделать -->
     <div *ngFor="let proj of dataList">
-      <div class="btn btn-block dataList margin-2" (click)="toggle(proj)">{{proj.project}}</div>
+      <div class="btn btn-block dataList margin-2" (click)="proj.view = (proj.view) ?  false : true">{{proj.project}}</div>
       <div class="container" *ngIf="proj.view">
         <div class="taskList" *ngFor="let t of proj.tasks">
           <div class="container-flex flex-row" [ngClass]="{red: t.done}">
@@ -37,5 +37,11 @@
       </div>
     </div>
 
+  </div>
+
+  <div class="container" *ngIf="this.dataList">
+    <div *ngFor="let proj of this.dataList">
+      <p></p>
+    </div>
   </div>
 </div>

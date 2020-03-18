@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {Observable, of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,8 +8,8 @@ export class ReadMeService {
 
   constructor() { }
 
-  public getProject() {
-    return [
+  public getProject(): Observable<any> {
+    return of([
       {
         id: 40,
         project: 'mobx',
@@ -159,6 +160,6 @@ export class ReadMeService {
         ],
         view: false
       }
-    ];
+    ]);
   }
 }

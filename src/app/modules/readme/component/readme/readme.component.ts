@@ -33,17 +33,9 @@ export class ReadmeComponent implements OnInit {
     );
   }
 
-  toggle(proj) {
-    // переделать эту чушь
-    proj.view = (this.shifter) ? this.shifter = false : this.shifter = true;
-  }
-
   addTask(data, id?) {
     this.readMeStore.addTask(data, id);
-    // либо через переменную будем дергать value, либо через getElement
-    // нужно узнать как правильно?!
-    // this.test = document.getElementById('addData');
-    // console.log(this.test.value, typeof this.test.value);
+  //  todo выдергивать задач
   }
 
   changeStatus(id) {

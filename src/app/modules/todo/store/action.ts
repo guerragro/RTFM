@@ -22,15 +22,15 @@ export class addTodo implements Action {
 }
 export class doneTodo implements Action {
   readonly type = TODO_ACTION.TODO_DONE;
-  constructor(public payload: number) {}
+  constructor(public payload: ToDo) {}
 }
 export class removeTodo implements Action {
   readonly type = TODO_ACTION.TODO_REMOVE;
-  constructor( public payload: number) {}
+  constructor( public payload: ToDo) {}
 }
 export class editTodo implements Action {
   readonly type = TODO_ACTION.TODO_EDIT;
-  constructor(public payload: string, public id: number) {}
+  constructor(public payload: ToDo) {}
 }
 
 export type TodoType = getTodo | getTodoSuccess | addTodo | removeTodo | doneTodo | editTodo;
