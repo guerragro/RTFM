@@ -8,7 +8,7 @@ export interface ToDoState {
 }
 
 export const InitialTodosState: ToDoState = {
-  id: 1,
+  id: 4,
   todo: null,
   delete: null,
 };

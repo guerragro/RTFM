@@ -3,6 +3,7 @@ import {Store} from '@ngrx/store';
 import * as fromAction from '../../store/action';
 import { Todo, ToDo } from '../../model/todo';
 import icons from 'glyphicons';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-todo',
@@ -14,29 +15,29 @@ export class TodoComponent implements OnInit {
   icons = icons;
   todo: string;
   _todo: string;
-  todoList: ToDo[];
-  id = 1;
+  todoList: Observable<ToDo[]>;
 
   constructor(
     private store: Store<any>
   ) {}
 
   ngOnInit() {
-    this.store.select('todos').subscribe(res => this.todoList = res['todo']);
+    this.store.select('todos').subscribe(res => this.todoList = res);
     this.store.dispatch(new fromAction.getTodo());
-    this.store.subscribe(res => console.log(res));
+    console.log(this.todoList);
   }
 
   add(event) {
     if (event.keyCode === 13 || event.type === 'click') {
-      const todo = new Todo(this.todo, this.id++);
+      console.log(this.todoList['id']);
+      const todo = new Todo(this.todo, this.todoList['id']++);
       this.store.dispatch(new fromAction.addTodo(todo));
       this.todo = '';
     }
   }
 
   remove(todo) {
-    this.store.dispatch(new fromAction.removeTodo(todo));
+    this.store.dispatch( new fromAction.removeTodo(todo) );
   }
 
   done(todo) {

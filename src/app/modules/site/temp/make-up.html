@@ -7,6 +7,31 @@
     <title>верстка</title>
   </head>
   <body>
+    <div>
+      Пример 2
+      .content и .sidebar с относительной шириной заданной в %
+      фиксированное расстояние между ними (20px) :
+
+      .content
+      width: calc(70% - 20px)
+      .sidebar
+      30%
+      Пример 3
+      .content с относительной шириной заданной в %
+      .sidebar с фиксированной шириной :
+
+      .content
+      width: calc(100% - 200px - 20px).sidebar
+      200px
+      Пример 4
+      .content с относительной шириной заданной в %
+      .sidebar и .nav с фиксированний шириной
+
+      .nav
+      150px.content
+      width: calc(100% - 300px - 20px - 20px).sidebar
+      150px
+    </div>
     Опасность float, в том что он уберает из потока элемент, поэтому не забывает очищать в конце clear: left | right | both
   </body>
 </html>
