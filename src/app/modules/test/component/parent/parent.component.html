@@ -1,9 +1,22 @@
-<div class="header">
-  <div class="input-form">
-    <input type="text">
-    <button>два</button>
+<div class="container">
+  <h3 class="text-center">Please sign in</h3>
+
+  <div class="form-sign" >
+    <input type="text" style="width: 100%" [(ngModel)]="user.username">
+    <input type="text" style="width: 100%" [(ngModel)]="user.password">
+    <div>
+      <button class="btn btn-success" style="width: 100%; margin-top: 5px" (click)="click()">sign</button>
+    </div>
+
   </div>
+
 </div>
+<!--<div class="header">-->
+<!--  <div class="input-form">-->
+<!--    <input type="text">-->
+<!--    <button>два</button>-->
+<!--  </div>-->
+<!--</div>-->
 
 <!--<div class="container">-->
 <!--  <div class="input-group mb-3">-->

@@ -9,7 +9,7 @@
 // import { ReplenishmentService } from '../../../services/replenishment.service';
 // import { ReplenishmentPalletComponent } from '../replenishment-pallet.component';
 // import { MatBottomSheet, MatBottomSheetRef, MatDialog, MatSnackBar } from '@angular/material';
-// import { ReplenishmentTaskStore } from '../../../stores/replenishment-task.test-store';
+// import { ReplenishmentTaskStore } from '../../../stores/replenishment-task.parent-store';
 // import { BarcodeService } from '../../../../shared/services/barcode.service';
 // import { fromMobx } from '../../../../../helpers/from-mobx';
 // import { NewBarcodeTypes } from '../../../../../models/barcode-types.model';

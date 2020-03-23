@@ -47,8 +47,8 @@ export class TodoComponent implements OnInit {
   edit(todo, view?) {
     // передаем всю задачу
     // TODO насколько правильно эти вещи вставлять в HTML код и стоит ли выдергивать value подобный образом?
-    // const test = document.getElementById('todo') as HTMLInputElement;
-    // console.log(test.value);
+    // const parent = document.getElementById('todo') as HTMLInputElement;
+    // console.log(parent.value);
     this.store.dispatch( new fromAction.editTodo(todo));
   }
 }

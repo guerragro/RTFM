@@ -1,30 +1,31 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {FormsModule} from '@angular/forms';
 
 import { TestRoutingModule } from './test-routing.module';
-import { TestComponent } from './component/test/test.component';
-import {FormsModule} from '@angular/forms';
+import { ParentComponent } from './component/parent/parent.component';
 import {StoreModule} from '@ngrx/store';
 import {TestStore} from './store/mobx.store';
 import {Service} from './service/service';
 import {HttpClientModule} from '@angular/common/http';
-import {reducers} from './component/test';
+// import {reducers} from './store';
+import { ChildComponent } from './component/child/child.component';
 
 @NgModule({
-  declarations: [TestComponent],
+  declarations: [ParentComponent, ChildComponent],
   imports: [
     CommonModule,
     TestRoutingModule,
     FormsModule,
     HttpClientModule,
-    StoreModule.forRoot(reducers)
+    // StoreModule.forRoot(reducers)
   ],
   providers: [
     TestStore,
     Service,
     HttpClientModule
   ],
-  bootstrap: [TestComponent]
+  bootstrap: [ParentComponent]
 })
 export class TestModule { }
 

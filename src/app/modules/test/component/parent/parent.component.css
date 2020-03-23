@@ -1,0 +1,69 @@
+/*#input-form {*/
+/*  border: none;*/
+/*  outline: none;*/
+/*  width: calc(90% - 5px);*/
+/*  border-bottom: 1px solid black;*/
+/*  text-indent: 100px;*/
+/*  background: transparent;*/
+/*}*/
+/*.right {*/
+/*  float: right;*/
+/*  width: 5%*/
+/*}*/
+/*.btn-b {*/
+/*  width: 100%;*/
+/*  border: none;*/
+/*  outline: none;*/
+/*  background: transparent;*/
+/*}*/
+/*.header {*/
+/*  position: relative;*/
+/*  background: #EB5757;*/
+/*  height: 200px;*/
+/*}*/
+/*input {*/
+/*  width: 100%;*/
+/*  padding: 15px;*/
+/*  border: none;*/
+/*}*/
+/*button {*/
+/*  position: absolute;*/
+/*  right: 0;*/
+/*  padding: 10px 55px;*/
+/*  background: #F76060;*/
+/*  color: #fff;*/
+/*  border: none;*/
+/*  height: 100%;*/
+/*  bottom: 0;*/
+/*}*/
+/*.input-form {*/
+/*  position: absolute;*/
+/*  width: 80%;*/
+/*  bottom: -15px;*/
+/*  left: 50%;*/
+/*  transform: translateX(-250px);*/
+/*  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.25);*/
+/*}*/
+/*#input-form {*/
+/*  background: transparent;*/
+/*  font-size: 20px;*/
+/*  border: none;*/
+/*  outline: none;*/
+/*  width: 100%;*/
+/*  text-indent: 20px;*/
+/*  color: #fff;*/
+/*  transition: all 0.3s;*/
+/*  border-bottom: 1px solid #fff;*/
+/*}*/
+/*#input-form:focus {*/
+/*  border-bottom: 1px solid #000;*/
+/*}*/
+/*#input-form::-webkit-input-placeholder {*/
+/*  color: #fff;*/
+/*}*/
+/*#input-form:-moz-input-placeholder {*/
+/*  color: #fff;*/
+/*}*/
+/*#input-form:-ms-input-placeholder {*/
+/*  color: #fff;*/
+/*}*/

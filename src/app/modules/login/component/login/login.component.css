@@ -1,0 +1,11 @@
+.form-sign {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+input, button {
+  width: 100%;
+}
+button {
+  margin-top: 5px;
+}

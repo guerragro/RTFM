@@ -1,22 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import icons from 'glyphicons';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Service } from '../../service/service';
 import { Store } from '@ngrx/store';
-import {TestStore} from '../../store/mobx.store';
-import {fromMobx} from 'ngx-mobx';
+import { TestStore } from '../../store/mobx.store';
+import { fromMobx } from 'ngx-mobx';
 import * as fromAction from '../../store/test.action';
+import {observe} from 'mobx';
 
 @Component({
   selector: 'app-test',
-  templateUrl: './test.component.html',
-  styleUrls: ['./test.component.css']
+  templateUrl: './parent.component.html',
+  styleUrls: ['./parent.component.css']
 })
-export class TestComponent implements OnInit {
+export class ParentComponent implements OnInit {
 
   icons = icons;
   todo: any;
   temp: any;
+  observable = 'observable';
 
   // number$: Observable<NumberInterface>;
 
@@ -27,53 +29,23 @@ export class TestComponent implements OnInit {
     private service: Service,
     private store: Store<any>,
   ) {
-    // this.store.subscribe(res => console.log(res));
-    this.store.select('todos').subscribe(res => console.log(res));
-    // this.todo = this.service.getTodo();
-    // console.log(this.todo);
-    // this.todos$ = ngrxStore.select(fromRoot.getTodos);
-    // this.id$ = ngrxStore.select(getIds);
-    // console.log(this.todos$);
-    // this.number$ = fromMobx(() => this.mobxStore.number);
+    // this.store.select('todos').subscribe(res => console.log(res));
   }
 
   ngOnInit() {
-    // this.addTodo();
-    this.temp = this.service.getTodo();
-    console.log(this.temp);
+    // this.task(this.observable, this.next(letter));
   }
-
-  addTodo() {
-    this.store.dispatch( new fromAction.addTodo('helloa'));
-  }
-
-  handleErr(ans) {
-    // this.error = ans;
-    // console.log(this.error['error']['text']);
-  }
-
-  upNumber() {
-    // this.mobxStore.upNumber();
-    // this.model = new NumberModel('1', ['2']);
-    // console.log(this.model);
-    // this.store.dispatch ( new fromAction.add(this.test) );
-  }
-
-  click(event) {
-    console.log(event);
-  }
-
-  edit(id) {
-    // console.log(this.test);
-    // this.test = !this.test;
-    // console.log(this.test);
-    // this.todoList.forEach(a => (a.id === id) ? a.edit = true : false);
-    // console.log(this.todoList);
-  }
+  click() {}
+  // task(observable, next): any {
+  //   for (let letter of observable) {
+  //     next(letter);
+  //   }
+  // }
+  // next(letter) {
+  //   console.log(letter);
+  // }
 
 }
-
-
 
 // only JS самый первый опыт написания todo-list
 // _div: any;
@@ -85,7 +57,7 @@ export class TestComponent implements OnInit {
 //
 // public task = [];
 //
-// test: any;
+// parent: any;
 // arr: any;
 //
 // constructor() {
