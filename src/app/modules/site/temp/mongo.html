@@ -13,7 +13,24 @@
     </div>
     <div>
       Путь к базе данных var/lib/mongodb
+      Путь к конфигурации /etc/mongodb.conf
       Если вам нужна другой путь к файлом запускайте со флагом --dbpath
+    </div>
+    <div>
+      Подключение к MongoDB осуществляет по url = 'mongodb://localhost:27017/myproject'
+      разберем
+      mongodb:// сам протокол
+      localhost:27017 сервер
+      /myproject это название вашей базы данных
+    </div>
+    <div>
+      sudo mongoexport --db newdb -c restaurants --out newdbexport.json
+      newbd название вашей базы данный
+      restaurants - название коллекции
+      newdbexport.json - название вашего json файла
+    </div>
+    <div>
+      sudo mongoimport --db newdb --collection restaurants --file primer-dataset.json
     </div>
     <div>
       <table>
@@ -42,10 +59,18 @@
         запускаем в консоле:
         $ mongo
         создание базы данных
-        $ use todolist
+        $ use todo
         вы увидите switched to db todolist, это значит, что база данных подключена
+        далее мы создаем коллекцию в этой базе данных
+        $ db.createCollection('todolist')
         вставляем запись
         db.todolist.insert({number: 1})
+        Чтобы посмотреть все созданные коллекции
+        $ show collections
+        для удаления коллекция
+        $ db.todolist.drop()
+        для удаления всей базы данных
+        @ db.dropDatabase()
       </div>
     </div>
   </body>

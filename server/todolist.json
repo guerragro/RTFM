@@ -1,0 +1,3 @@
+{"_id":{"$oid":"5e79bcc666ff99a45af23ad1"},"todo":"Решить проблему присвоение id","id":1.0,"complete":false,"edit":false}
+{"_id":{"$oid":"5e79bce566ff99a45af23ad2"},"todo":"Решить проблему редактирование задачи","id":2.0,"complete":false,"edit":false}
+{"_id":{"$oid":"5e79bcfe66ff99a45af23ad3"},"todo":"Поправить структуру и код","id":3.0,"complete":false,"edit":false}
