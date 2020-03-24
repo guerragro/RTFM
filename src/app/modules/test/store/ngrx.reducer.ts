@@ -1,5 +1,5 @@
-import * as fromAction from '../store/test.action';
-import { TODO_ACTION } from '../store/test.action';
+import * as fromAction from './ngrx.action';
+import { TODO_ACTION } from './ngrx.action';
 
 export interface ToDo {
   id: number;
@@ -11,13 +11,7 @@ export interface ToDoState {
   todo: ToDo[];
 }
 export const initialState: ToDoState = {
-  todo: [
-    {
-      id: 1,
-      todo: 'hello world',
-      edit: false
-    }
-  ]
+  todo: null
 };
 
 export function todoReducer(state = initialState, action: fromAction.TodoAction) {

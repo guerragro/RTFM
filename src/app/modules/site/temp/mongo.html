@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="src/styles.css">
+    <title></title>
+  </head>
+  <body>
+    <div>
+      Установка базы данных:
+      sudo apt update
+      sudo apt install -y mongo
+    </div>
+    <div>
+      Путь к базе данных var/lib/mongodb
+      Если вам нужна другой путь к файлом запускайте со флагом --dbpath
+    </div>
+    <div>
+      <table>
+        <tr>
+          <td>sudo systemctl status mongodb</td>
+          <td>проверить состояние службы</td>
+        </tr>
+        <tr>
+          <td>sudo systemctl stop mongodb</td>
+          <td>остановить</td>
+        </tr>
+        <tr>
+          <td>sudo systemctl restart mongodb</td>
+          <td>Для рестарта</td>
+        </tr>
+        <tr>
+          <td>sudo systemctl disable mongodb</td>
+          <td>По умолчанию MongoDB настроена для автоматического запуска вместе с сервером. Если вы хотите отключить автоматический запуск</td>
+        </tr>
+        <tr>
+          <td>sudo systemctl enable mongodb</td>
+          <td>Чтобы автоматический запуск восстановить</td>
+        </tr>
+      </table>
+      <div>
+        запускаем в консоле:
+        $ mongo
+        создание базы данных
+        $ use todolist
+        вы увидите switched to db todolist, это значит, что база данных подключена
+        вставляем запись
+        db.todolist.insert({number: 1})
+      </div>
+    </div>
+  </body>
+</html>

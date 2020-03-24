@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Service } from '../../service/service';
 import icons from 'glyphicons';
 import { Observable } from 'rxjs';
-import { Service } from '../../service/service';
 import { Store } from '@ngrx/store';
 import { TestStore } from '../../store/mobx.store';
 import { fromMobx } from 'ngx-mobx';
-import * as fromAction from '../../store/test.action';
+import * as fromAction from '../../store/ngrx.action';
 import {observe} from 'mobx';
 
 @Component({
@@ -17,17 +17,10 @@ export class ParentComponent implements OnInit {
 
   icons = icons;
   todo: any;
-  temp: any;
-  observable = 'observable';
-
-  // number$: Observable<NumberInterface>;
-
   error: any;
 
   constructor(
-    private mobxStore: TestStore,
     private service: Service,
-    private store: Store<any>,
   ) {
     // this.store.select('todos').subscribe(res => console.log(res));
   }
@@ -36,109 +29,4 @@ export class ParentComponent implements OnInit {
     // this.task(this.observable, this.next(letter));
   }
   click() {}
-  // task(observable, next): any {
-  //   for (let letter of observable) {
-  //     next(letter);
-  //   }
-  // }
-  // next(letter) {
-  //   console.log(letter);
-  // }
-
 }
-
-// only JS самый первый опыт написания todo-list
-// _div: any;
-// _task: any;
-// elem: any;
-// delButton: any;
-// doneButton: any;
-// parent: any;
-//
-// public task = [];
-//
-// parent: any;
-// arr: any;
-//
-// constructor() {
-// }
-//
-// ngOnInit() {
-// }
-//
-// // function create task
-// create() {
-//   this._task = document.getElementById('Task');
-//   if (this._task.value === '') {
-//     // block the button if the element is empty
-//     this.successTask = null;
-//   } else {
-//     // create Div
-//     this._div = document.createElement('div');
-//     this._div.innerHTML = this._task.value;
-//     this._div.className = 'task-list';
-//     // create button and event for delete task
-//     this.delButton = document.createElement('input');
-//     this.delButton.type = 'button';
-//     this.delButton.id = 'del';
-//     this.delButton.className = 'del';
-//     this.delButton.value = 'В корзину';
-//     this.delButton.onclick = this.deleteTask;
-//     // create button and event for success task
-//     this.doneButton = document.createElement('input');
-//     this.doneButton.type = 'button';
-//     this.doneButton.id = 'done';
-//     this.doneButton.className = 'done';
-//     this.doneButton.value = 'Выполнено';
-//     this.doneButton.onclick = this.successTask;
-//     //
-//     this.parent = document.getElementById('parent');
-//     this.parent.appendChild(this._div);
-//     this._div.appendChild(this.delButton);
-//     this._div.appendChild(this.doneButton);
-//     // массив с задачами
-//     // this.task.push(this._task.value);
-//     // после ввода задачи очищаем поле
-//     this._task.value = '';
-//   }
-// }
-//
-// // function clear task
-// clear() {
-//   this._task.value = '';
-// }
-//
-// // function success task
-// // How to edit done the task?
-// successTask() {
-//   console.log('Success task');
-//   // this.elem = document.getElementById()
-//   // this.elem = document.getElementsByClassName()
-//   // if (elem.style.textDecoration === 'line-through') {
-//   //   elem.style.textDecoration = 'none';
-//   // } else {
-//   //   elem.style.textDecoration = 'line-through';
-//   // }
-// }
-//
-// // function delete task
-// // How delete the task?
-// deleteTask() {
-//   // this.elem = document.getElementsByClassName('del');
-//   // this.elem = document.getElementById('del');
-//   this.elem = document.getElementsByClassName('task-list');
-//   // this.elem.remove();
-//   console.log(this.elem);
-// }
-//
-// // const div = document.getElementsByClassName('task-list');
-// // // превратили HTMLCollection в массив
-// // // var arr = [].slice.call(div);
-// // this.arr = Array.from(div);
-// // this.arr = this.arr.forEach(a => console.log(a.innerText));
-//
-// // delete all task
-// // removeall() {
-// //   this.elem = document.querySelector('.task-list');
-// //   this.elem.parentNode.remove();
-// // }

@@ -48,10 +48,6 @@ export const appRoutes: Routes = [
     loadChildren: './modules/test/test.module#TestModule'
   },
   {
-    path: 'cource',
-    loadChildren: './modules/course/course.module#CourseModule'
-  },
-  {
     path: 'login',
     loadChildren: './modules/login/login.module#LoginModule'
   },
