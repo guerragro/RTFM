@@ -44,7 +44,7 @@ export const appRoutes: Routes = [
     loadChildren: './modules/site/site.module#SiteModule'
   },
   {
-    path: 'Тест',
+    path: 'test',
     loadChildren: './modules/test/test.module#TestModule'
   },
   {

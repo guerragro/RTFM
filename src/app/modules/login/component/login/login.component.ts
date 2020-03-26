@@ -21,7 +21,10 @@ export class LoginComponent implements OnInit {
     if (this.user.username && this.user.password) {
       this.service.validateLogin(this.user).subscribe(
         res => this.handle(res),
-        err => console.log('error is', err)
+        err => {
+          alert('Нет ответа от сервера');
+          console.log(err);
+        }
       );
     } else {
       alert('Вы не ввели логин или пароль');

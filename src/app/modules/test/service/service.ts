@@ -5,16 +5,18 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class Service {
 
-  backendUrl = 'http://127.0.0.1:8080/';
+  backendUrl = 'http://127.0.0.1:3000/todo';
 
   constructor(
     public http: HttpClient
   ) {}
 
-  makeRequest() {
-    return this.http.get(this.backendUrl);
+  // makeRequest() {}
+
+  makeGetRequest() {
+    return this.http.get('api/todo');
   }
-  getTodo() {
-    // return setTimeout(() => new Todo(1, 'разбор работы ngrx', false), 5000);
+  makePostRequest() {
+    return this.http.post('api/todo', {todo: 1});
   }
 }

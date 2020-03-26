@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import {Todo} from '../model/todo';
 import {Observable, of} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 
 export class TodoService {
-  constructor() {}
+  constructor(
+    public http: HttpClient
+  ) {}
 
   getTodo(): Observable<any> {
     return of([
@@ -15,4 +18,11 @@ export class TodoService {
         new Todo('Поправить структуру и код', 3),
       ]);
   }
+  addTodo(todo) {
+    return this.http.post('api/todo', {todo: 1});
+  }
+
+  updateTodo() {}
+
+  deleteTodo() {}
 }

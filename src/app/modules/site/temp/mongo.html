@@ -12,13 +12,12 @@
       sudo apt install -y mongo
     </div>
     <div>
-      Путь к базе данных var/lib/mongodb
+      Путь к базе данных /var/lib/mongodb
       Путь к конфигурации /etc/mongodb.conf
       Если вам нужна другой путь к файлом запускайте со флагом --dbpath
     </div>
     <div>
       Подключение к MongoDB осуществляет по url = 'mongodb://localhost:27017/myproject'
-      разберем
       mongodb:// сам протокол
       localhost:27017 сервер
       /myproject это название вашей базы данных
@@ -70,7 +69,10 @@
         для удаления коллекция
         $ db.todolist.drop()
         для удаления всей базы данных
-        @ db.dropDatabase()
+        $ db.dropDatabase()
+      </div>
+      <div>
+        В одной базе данных может быть множество коллекций
       </div>
     </div>
   </body>

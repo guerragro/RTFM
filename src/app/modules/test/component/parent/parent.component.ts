@@ -20,13 +20,31 @@ export class ParentComponent implements OnInit {
   error: any;
 
   constructor(
-    private service: Service,
+    public service: Service,
   ) {
     // this.store.select('todos').subscribe(res => console.log(res));
   }
 
   ngOnInit() {
+    // this.service.makeRequest().subscribe(
+    //   res => console.log(res),
+    //   err => {
+    //     // alert(err['statusText']);
+    //     console.log(err);
+    //   }
+    // );
     // this.task(this.observable, this.next(letter));
   }
-  click() {}
+  getRequest() {
+    this.service.makeGetRequest().subscribe(
+      res => console.log(res),
+      err => console.log(err)
+    );
+  }
+  postRequest() {
+    this.service.makePostRequest().subscribe(
+      res => console.log(res),
+      err => console.log(err)
+    );
+  }
 }

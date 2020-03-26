@@ -3,12 +3,12 @@
   <div class="input-group mb-3">
     <input type="text" class="form-control" id="task" [(ngModel)]="task">
     <div class="input-group-append">
-      <button class="btn btn-outline-secondary" type="button" (click)="amount('=')">=</button>
+      <button class="btn btn-outline-secondary" type="button" (click)="amount('C')">C</button>
     </div>
   </div>
 
-  <div class="row" *ngFor="let a of [['7', '8', '9', '/'], ['4', '5', '6', '*'], ['1', '2', '3', '-'], ['.', '0', 'C', '+']]">
-    <div class="col-3" *ngFor="let numb of a">
+  <div class="row" *ngFor="let numbArray of [['7', '8', '9', '/'], ['4', '5', '6', '*'], ['1', '2', '3', '-'], ['.', '0', '=', '+']]">
+    <div class="col-3" *ngFor="let numb of numbArray">
       <button class="btn btn-default form-control" (click)="amount(numb)">
         {{numb}}
       </button>
