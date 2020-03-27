@@ -7,6 +7,7 @@ const port = 3000;
 const app = express();
 
 app.get('/', (req, res) => {
+  res.send('роутинг: ' + ' /api/todo')
   // res.writeHead(200, {'Content-Type': 'text/plain'});
   // var myReadShot = fs.createReadStream(__dirname + '/article.txt', 'utf8');
   // // var myWriteShot = fs.createWriteStream(__dirname + '/new.txt');

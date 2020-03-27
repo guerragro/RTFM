@@ -14,7 +14,6 @@ export class AppComponent {
   timeSeoul: any;
 
   constructor() {
-    console.log('main component');
     this.getTimes();
   }
 

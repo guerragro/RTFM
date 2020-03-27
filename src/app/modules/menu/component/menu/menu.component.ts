@@ -19,9 +19,9 @@ export class MenuComponent implements OnInit {
 
   fillmenulist() {
     this.altmenu = !this.altmenu;
-    this.menuList = (this.altmenu) ? appRoutes.filter(project => project['path'] !== 'menu') :
-      appRoutes.filter(project => project['path'] !== 'menu' && project['path'] !== 'site' && project['path'] !== 'Zen-wallet'
-      && project['path'] !== 'Тест'
+    this.menuList = (this.altmenu) ? appRoutes.filter(proj => proj['path'] !== 'menu' && proj['path'] !== '') :
+      appRoutes.filter(proj => proj['path'] !== 'menu' && proj['path'] !== 'site' && proj['path'] !== 'Zen-wallet'
+      && proj['path'] !== 'Тест' && proj['path'] !== ''
       );
   }
 }
