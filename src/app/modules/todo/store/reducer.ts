@@ -41,10 +41,9 @@ export function todoReducer(state = InitialTodosState, action: fromAction.TodoTy
         ...state, todo: [...state.todo, complete]
       };
     case fromAction.TODO_ACTION.TODO_EDIT:
-      console.log(action.payload);
-      state.todo.filter(t => {
-        if (t.id === action.payload.id) {
-          return t.todo = action.payload.todo;
+      state.todo.forEach(a => {
+        if (a.id === action.payload.id) {
+          a.todo = action.payload.todo;
         }
       });
       return state;

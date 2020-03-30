@@ -45,11 +45,14 @@ export class TodoComponent implements OnInit {
   }
 
   edit(todo, view?) {
-    // передаем всю задачу
-    // TODO насколько правильно эти вещи вставлять в HTML код и стоит ли выдергивать value подобный образом?
+    if (!todo.edit) {
+      todo.todo = this.todo;
+      this.store.dispatch( new fromAction.editTodo(todo));
+    } else {
+      this.todo = todo.todo;
+    }
     // const parent = document.getElementById('todo') as HTMLInputElement;
-    // console.log(parent.value);
-    this.store.dispatch( new fromAction.editTodo(todo));
+    // this.store.dispatch( new fromAction.editTodo(todo));
   }
 }
 // https://github.com/mashish584/ngrx-todo-app-example/blob/master/src/app/store/reducers/todo.reducers.ts

@@ -41,4 +41,7 @@ export class ReadmeComponent implements OnInit {
   changeStatus(id) {
     this.readMeStore.changeTaskStatus(id);
   }
+  click(a) {
+    console.log(a);
+  }
 }
