@@ -11,9 +11,13 @@ import {TodoService} from './service/todo.service';
 import {EffectsModule} from '@ngrx/effects';
 import {TodoEffect} from './store/todo.effect';
 import {HttpClientModule} from '@angular/common/http';
+import {EditModalComponent} from './component/todo/modal/edit';
 
 @NgModule({
-  declarations: [TodoComponent],
+  declarations: [
+    TodoComponent,
+    EditModalComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,

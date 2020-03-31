@@ -16,7 +16,7 @@ export class TodoEffect {
   loadTodo = this.$action.pipe(
     ofType(TODO_ACTION.TODO_GET),
       mergeMap(() => this.service.getTodo().pipe(
-        map(todo => new fromAction.getTodoSuccess(todo))
+        map(todo => new fromAction.GETTODOSUCCESS(todo))
       ))
   );
 }

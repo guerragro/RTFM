@@ -20,38 +20,31 @@
     </div>
 
     <div *ngFor="let t of todoList['todo']">
-<!--&lt;!&ndash;      список&ndash;&gt;-->
-<!--      <div class="row" *ngIf="!t.edit">-->
-<!--        <div class="col-2">-->
-<!--          <button class="b-center" (click)="t.edit = true; todo = t.todo">{{icons.edit}}</button>-->
-<!--        </div>-->
-<!--        <div class="col-8 task-form">{{t.todo}}</div>-->
-<!--        <div class="col-2">-->
-<!--          <button class="b-center" (click)="remove(t)">{{icons.cross}}</button>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--&lt;!&ndash; форма для редактирования &ndash;&gt;-->
-<!--      <div class="row" *ngIf="t.edit">-->
-<!--        <div class="col-2">-->
-<!--          <button class="b-center" (click)="edit(t, t.edit = false)">{{icons.edit}}</button>-->
-<!--        </div>-->
-<!--        <div class="col-8 task-form">-->
-<!--          <input type="text" id="todo" value="{{t.todo}}" class="edit" [(ngModel)]="_todo"  [ngClass]="{done: t.complete}">-->
-<!--        </div>-->
-<!--      </div>-->
-            <div class="row">
-              <div class="col-2">
-                <button class="b-center" (click)="t.edit = !t.edit; edit(t)">{{icons.edit}}</button>
-              </div>
-              <div class="col-8 task-form" [ngClass]="{done: t.edit, complete: t.complete}">{{t.todo}}</div>
-              <div class="col-2">
-                <button class="b-center" (click)="remove(t)">{{icons.cross}}</button>
-              </div>
-            </div>
-
+      <div class="row">
+        <div class="col-2">
+          <button class="b-center" (click)="edit(t)">{{icons.edit}}</button>
+        </div>
+        <div class="col-8 task-form" [ngClass]="{done: t.edit, complete: t.complete}">{{t.todo}}</div>
+        <div class="col-2">
+          <button class="b-center" (click)="remove(t)">{{icons.cross}}</button>
+        </div>
+      </div>
+<!--      форма редактирования через input-->
+<!--            <div class="row">-->
+<!--              <div class="col-2">-->
+<!--                <button class="b-center" (click)="t.edit = !t.edit; edit(t)">{{icons.edit}}</button>-->
+<!--              </div>-->
+<!--              <div class="col-8 task-form" [ngClass]="{done: t.edit, complete: t.complete}">{{t.todo}}</div>-->
+<!--              <div class="col-2">-->
+<!--                <button class="b-center" (click)="remove(t)">{{icons.cross}}</button>-->
+<!--              </div>-->
+<!--            </div>-->
     </div>
+
 
   </div>
 </div>
+
+<app-edit></app-edit>
 
 

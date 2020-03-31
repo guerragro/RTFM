@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundModule } from './modules/page-not-found/page-not-found.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {CustomMaterialModule} from './modules/custom-material/custom-material.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { PageNotFoundModule } from './modules/page-not-found/page-not-found.modu
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    // CustomMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
