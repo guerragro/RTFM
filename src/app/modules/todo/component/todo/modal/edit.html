@@ -1,33 +1,16 @@
-<!--<div  *ngIf="showWindows">-->
-<!--  <div class="modal fade" id="TodoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
-<!--    <div class="modal-dialog" role="document">-->
-<!--      <div class="modal-body">-->
-<!--&lt;!&ndash;        {{todo['todo']}}&ndash;&gt;-->
-<!--        hello World-->
-<!--      </div>-->
-<!--      <div class="model-footer">-->
-<!--        <button type="button" class="btn btn-secondary" (click)="close()">close</button>-->
-<!--        <button type="button" class="btn btn-success" (click)="save()">save</button>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-
-<!--</div>-->
-
-<div *ngIf="showWindows" class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
+<div *ngIf="showWindows" class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
     <div class="modal-content">
+      <div class="modal-header">
+        редактирования задачи
+      </div>
       <div class="modal-body">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ipsam officiis quasi! Accusamus at aut consequatur corporis cumque, earum eos fuga iste nostrum obcaecati, odio quo repudiandae ullam veritatis voluptatum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, nesciunt, placeat? A consequuntur ex ipsa tenetur velit. Blanditiis dolore, ea esse nulla optio perspiciatis quisquam, quo repellendus soluta veniam voluptates!
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" Sa>Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button>закрыть</button>
+        <button>отправить</button>
       </div>
     </div>
   </div>
 </div>
-
-<!--<div *ngIf="showWindows">-->
-<!--  hello world-->
-<!--</div>-->

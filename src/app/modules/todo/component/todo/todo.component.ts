@@ -12,6 +12,7 @@ import {EditModalComponent} from './modal/edit';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
+
   @ViewChild(EditModalComponent)
   editModalComponent: EditModalComponent;
 
@@ -60,6 +61,10 @@ export class TodoComponent implements OnInit {
     // }
     // const parent = document.getElementById('todo') as HTMLInputElement;
     // this.store.dispatch( new fromAction.editTodo(todo));
+  }
+
+  changeOn(event) {
+    console.log(event);
   }
 }
 // https://github.com/mashish584/ngrx-todo-app-example/blob/master/src/app/store/reducers/todo.reducers.ts

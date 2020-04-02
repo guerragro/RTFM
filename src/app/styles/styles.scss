@@ -1,30 +1,26 @@
-//@import "colors";
-//@import "theme";
-//@import "font-awesome.css";
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #bfbfbf;
+  font-family: 'Varela Round', sans-serif;
+}
 
-//@import "fonts.css";
-//@import 'main.css';
+.m-container {
+  width: 70%;
+  margin: auto;
+}
 
-//@import 'icon.css';
+.margin-5 {
+  margin: 5px;
+}
 
-//@import "animate.css";
-//@import "modules/block";
+@media (min-width: 1200px) {
+  .m-container {
+    width: 40%;
+    margin: auto
+  }
+}
 
-// Article Management
-//@import "../modules/article-management/components/article-list/article-list.component";
-//@import "../modules/article-management/components/manage-article/manage-article.component";
-//@import "../modules/article-management/components/article-menu/article-menu.component";
+color-red {}
 
-//Forms
-//@import "modules/forms/input";
-
-// Always down
-//@import "general_styles";
-//@import "bootstrap_theme_darkly";
-//@import "fonts.css";
-//@import "main.css";
-//@import "icon.css";
-//@import "./modules/forms/input.scss";
-//@import "./modules/general_styles";
-//@import "./modules/pallet-moving";
-//@import "./modules/pick_date";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

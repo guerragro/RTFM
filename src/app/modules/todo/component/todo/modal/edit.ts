@@ -1,20 +1,22 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
-  selector: 'app-edit',
+  selector: 'app-edit-modal',
   templateUrl: './edit.html',
   styleUrls: ['./edit.css']
 })
 
 export class EditModalComponent implements OnInit {
 
-  showWindows: boolean;
-  // todo: object;
+  @Output()
+  changeOn = new EventEmitter();
+
+  showWindows: boolean = false;
 
   constructor() {
   }
   ngOnInit() {
-    this.showWindows = false;
+    // this.showWindows = false;
   }
 
   open(todo) {

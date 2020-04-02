@@ -10,9 +10,14 @@ import {Service} from './service/service';
 import {HttpClientModule} from '@angular/common/http';
 // import {reducers} from './store';
 import { ChildComponent } from './component/child/child.component';
+import {PresentModalComponent} from './component/parent/modal/present';
 
 @NgModule({
-  declarations: [ParentComponent, ChildComponent],
+  declarations: [
+    ParentComponent,
+    ChildComponent,
+    PresentModalComponent
+  ],
   imports: [
     CommonModule,
     TestRoutingModule,
