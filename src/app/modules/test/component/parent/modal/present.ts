@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 
 export class PresentModalComponent {
+  showWindow: boolean;
   constructor() {
+    this.showWindow = false;
+  }
+  open() {
+    this.showWindow = true;
   }
 }

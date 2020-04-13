@@ -2,7 +2,6 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {Store} from '@ngrx/store';
 import * as fromAction from '../../store/action';
 import { Todo, ToDo } from '../../model/todo';
-import icons from 'glyphicons';
 import {Observable} from 'rxjs';
 import {EditModalComponent} from './modal/edit';
 
@@ -16,7 +15,6 @@ export class TodoComponent implements OnInit {
   @ViewChild(EditModalComponent)
   editModalComponent: EditModalComponent;
 
-  icons = icons;
   todo: string;
   todoList: Observable<ToDo[]>;
 
@@ -64,7 +62,7 @@ export class TodoComponent implements OnInit {
   }
 
   changeOn(event) {
-    console.log(event);
+    this.store.dispatch(new fromAction.EDITTODO(event));
   }
 }
 // https://github.com/mashish584/ngrx-todo-app-example/blob/master/src/app/store/reducers/todo.reducers.ts

@@ -11,15 +11,15 @@ export class EditModalComponent implements OnInit {
   @Output()
   changeOn = new EventEmitter();
 
-  showWindows: boolean = false;
+  showWindows: boolean;
 
   constructor() {
   }
   ngOnInit() {
-    // this.showWindows = false;
+    this.showWindows = false;
   }
 
-  open(todo) {
+  public open(todo) {
     this.showWindows = true;
     // this.todo = todo;
     console.log('form-edit');

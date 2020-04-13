@@ -1,15 +1,18 @@
-<div *ngIf="showWindows" class="modal fade" id="myModal" role="dialog">
-  <div class="modal-dialog">
+<div *ngIf="showWindows" class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        редактирования задачи
-      </div>
       <div class="modal-body">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, nesciunt, placeat? A consequuntur ex ipsa tenetur velit. Blanditiis dolore, ea esse nulla optio perspiciatis quisquam, quo repellendus soluta veniam voluptates!
-      </div>
-      <div class="modal-footer">
-        <button>закрыть</button>
-        <button>отправить</button>
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Редактирование задачи">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary">
+              <span class="glyphicon glyphicon-edit"></span>
+            </button>
+            <button class="btn btn-outline-secondary">
+              <span class="glyphicon glyphicon-remove"></span>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -28,6 +28,6 @@ export class ReadMeStore {
   }
   // todo знаю проблему
   @action changeTaskStatus(id) {
-    this.todos = this.todos.filter(a => a.tasks.find(b => b.done = (b.id === id) ? true : false));
+    this.todos = this.todos.filter(a => a.tasks.find(b => b.complete = (b.id === id) ? true : false));
   }
 }

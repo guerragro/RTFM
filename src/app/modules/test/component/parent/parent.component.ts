@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { Service } from '../../service/service';
 import icons from 'glyphicons';
 import { Observable } from 'rxjs';
@@ -7,6 +7,7 @@ import { TestStore } from '../../store/mobx.store';
 import { fromMobx } from 'ngx-mobx';
 import * as fromAction from '../../store/ngrx.action';
 import {observe} from 'mobx';
+import {PresentModalComponent} from './modal/present';
 
 @Component({
   selector: 'app-test',
@@ -14,6 +15,9 @@ import {observe} from 'mobx';
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent implements OnInit {
+
+  @ViewChild(PresentModalComponent)
+  presentModal: PresentModalComponent;
 
   icons = icons;
   todo: any;
@@ -46,5 +50,8 @@ export class ParentComponent implements OnInit {
       res => console.log(res),
       err => console.log(err)
     );
+  }
+  present() {
+    this.presentModal.open();
   }
 }

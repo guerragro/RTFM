@@ -1,1 +1,23 @@
-@import "main.css";
+/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body {
+  background-color: red;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.m-container {
+  width: 90%;
+  margin: auto;
+}
+
+.margin-5 {
+  margin: 5px;
+}
+
+@media (min-width: 1200px) {
+  .m-container {
+    width: 50%;
+    margin: auto
+  }
+}

@@ -16,9 +16,8 @@ import {CustomMaterialModule} from './modules/custom-material/custom-material.mo
     PageNotFoundModule,
     BrowserModule,
     FormsModule,
+    // CustomMaterialModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    // CustomMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

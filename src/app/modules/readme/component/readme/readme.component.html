@@ -41,7 +41,10 @@
 
   <div class="container" *ngIf="this.dataList">
     <div *ngFor="let proj of this.dataList">
-      <p></p>
+      <div class="dataList margin-2 text-center">{{proj.project}}</div>
+      <div class="container taskList" *ngFor="let tasks of proj.tasks">
+        {{tasks.task}}
+      </div>
     </div>
   </div>
 </div>

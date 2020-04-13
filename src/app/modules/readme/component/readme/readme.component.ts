@@ -4,6 +4,7 @@ import {ReadMeStore} from '../../store/readMeStore';
 import {Observable} from 'rxjs';
 import {fromMobx} from 'ngx-mobx';
 import {ProjectWorldInterface} from '../../../../models/todo.model';
+import icons from 'glyphicons';
 
 @Component({
   selector: 'app-readme',
@@ -14,6 +15,7 @@ export class ReadmeComponent implements OnInit {
 
   dataList$: Observable<ProjectWorldInterface[]>;
   dataList;
+  icons = icons;
 
   proj: string;
   task: string;

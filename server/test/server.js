@@ -14,11 +14,11 @@ app.get('/', (req, res) => {
   // myReadShot.pipe(res)
 });
 app.get('/api/todo', (req, res) => {
-  // res.setHeader("Access-Control-Allow-Origin", "*");
-  // res.send('get request to the homepage');
-  // res.status(200).json([{
-  //   message: 'держи список'
-  // }])
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.send('get request to the homepage');
+  res.status(200).json([{
+    message: 'держи список'
+  }])
 });
 //
 // app.post('/api/todo', (req, res) => {
