@@ -1,19 +1,19 @@
 <div class="m-container text-center">
   <h2>Project</h2>
-  <div *ngIf="altmenu">
+  <div *ngIf="altmenu; else elseBlock">
     <div *ngFor="let menu of menuList">
       <button class="btn btn-block color">
         <a routerLink="/{{menu.path}}">{{menu.path}}</a>
       </button>
     </div>
   </div>
-  <div *ngIf="!altmenu">
+  <ng-template #elseBlock>
     <div *ngFor="let menu of menuList">
       <button class="btn btn-block color">
         <a routerLink="/{{menu.path}}">{{menu.path}}</a>
       </button>
     </div>
-  </div>
+  </ng-template>
   <div>
     <button class="btn btn-block color" (click)="fillmenulist()">альтернативное</button>
   </div>

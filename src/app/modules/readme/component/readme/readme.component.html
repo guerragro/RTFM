@@ -1,50 +1,47 @@
-<div class="m-container">
+<!-- Todo Набросать стили-->
+<div>
 
 <!--  все ок-->
   <div class="input-group mb-3">
-    <input class="form-control" type="text" id="addTask" placeholder="Новый проект" [(ngModel)]="proj">
+    <input class="form-control" type="text" id="addTask" placeholder="Новый проект" [(ngModel)]="project">
     <div class="input-group-append">
-      <button class="btn btn-outline-secondary" type="button" (click)="addTask(proj)"> add </button>
+      <button class="btn btn-outline-secondary" type="button" (click)="addTask(project)">
+        <span class="glyphicon glyphicon-plus"></span>
+      </button>
     </div>
-  </div>
-
-  <div class="container-flex flex-column" *ngIf="this.dataList">
-
-<!--    переделать -->
-    <div *ngFor="let proj of dataList">
-      <div class="btn btn-block dataList margin-2" (click)="proj.view = (proj.view) ?  false : true">{{proj.project}}</div>
-      <div class="container" *ngIf="proj.view">
-        <div class="taskList" *ngFor="let t of proj.tasks">
-          <div class="container-flex flex-row" [ngClass]="{red: t.done}">
-            <div class="btn btn-block" (click)="click(t.task)">{{t.task}}</div>
-            <div class="btn btn-block">
-              <button class="btn btn-block">del</button>
-            </div>
-            <div class="btn btn-block">
-              <button class="btn btn-block" (click)="changeStatus(t.id)">ok</button>
-            </div>
-          </div>
-        </div>
-
-<!--        все ок -->
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Добавление новой задачи" [(ngModel)]="task">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary" (click)="addTask(task, proj.id)">+</button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
   </div>
 
   <div class="container" *ngIf="this.dataList">
-    <div *ngFor="let proj of this.dataList">
-      <div class="dataList margin-2 text-center">{{proj.project}}</div>
-      <div class="container taskList" *ngFor="let tasks of proj.tasks">
-        {{tasks.task}}
+
+    <div *ngFor="let project of dataList">
+
+      <div class="text-center" (click)="project['view'] = (project['view']) ? false : true">{{project['project']}}</div>
+
+      <div *ngIf="project['view']">
+        <div class="container row" *ngFor="let task of project['tasks']">
+          <div class="col-10">{{task['task']}}</div>
+          <div class="col-1">
+            <button class="btn btn-default">
+              <span class="glyphicon glyphicon-edit"></span>
+            </button>
+          </div>
+          <div class="col-1">
+            <button class="btn btn-default">
+              <span class="glyphicon glyphicon-remove"></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Добавление новой задачи">
+          <button class="btn btn-outline-secondary">
+            <span class="glyphicon glyphicon-plus"></span>
+          </button>
+        </div>
+
       </div>
     </div>
+
   </div>
+
 </div>

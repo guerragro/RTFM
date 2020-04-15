@@ -1,16 +1,4 @@
-<div class="box">
-  <div *ngIf="this.game === ''">
-    Choose the game
-    <div class="container row">
-      <div class="col-6">
-        <button class="btn btn-default" (click)="choice('PVP')">PVP</button>
-      </div>
-      <div class="col-6">
-        <button class="btn btn-default" (click)="choice('PVE')">PVE</button>
-      </div>
-    </div>
-  </div>
-</div>
+<app-choice-model></app-choice-model>
 
 <div class="container-box text-center">
   <table style="margin: auto">

@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { action, observable} from 'mobx';
 import { ReadMeService } from '../service/readme.service';
-import { ProjectWorld, ProjectWorldInterface, ToDoWorld} from '../../../models/todo.model';
+import {Project, ProjectModel, ToDo} from '../model/proj';
 
 @Injectable()
 export class ReadMeStore {
 
-  @observable todos: ProjectWorldInterface[] = [];
+  @observable todos: Project[] = [];
 
   constructor(
     public service: ReadMeService
@@ -19,11 +19,11 @@ export class ReadMeStore {
   @action addTask(data, id?) {
     if (id) {
       // добавление задачи
-      this.todos.filter(a => (a.id === id) ? a.tasks.push( new ToDoWorld(1, data)) : false);
+      this.todos.filter(a => (a.id === id) ? a.tasks.push( new ToDo(1, data)) : false);
     } else {
       // todo есть проблема с добаление новой задачи у нового проекта, problem in id
       // добавление проекта
-      this.todos.push(new ProjectWorld(id, data));
+      this.todos.push(new ProjectModel(id, data));
     }
   }
   // todo знаю проблему

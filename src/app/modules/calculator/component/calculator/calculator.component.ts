@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class CalculatorComponent implements OnInit {
 
   box = [];
-  number: string = '';
   result: string;
   task: any;
 
@@ -18,34 +17,31 @@ export class CalculatorComponent implements OnInit {
 
   amount(data) {
     console.log(typeof data, data, typeof Number(data));
-    console.log(this.box.length);
+    console.log(this.box, this.box.length);
     // todo create the condition
-    if (true) {
-      switch (data) {
-        case '/':
-        case '*':
-        case '+':
-        case '-':
+    switch (data) {
+      case '/':
+      case '*':
+      case '+':
+      case '-':
+        if (this.box.length) {
           const sign = data;
-          this.box.push(this.number, sign);
-          this.number = '';
-          break;
-        case '=':
-          this.box.push((this.number === '') ? data : this.number);
-          this.result = eval(this.box.join(''));
-          this.box.length = 0;
-          this.number = '';
-          break;
-        case 'C':
-          this.box.length = 0;
-          break;
-        default:
-          this.number += data;
-      }
-      this.task = document.getElementById('task').innerHTML;
-      this.task = (data === '=') ? this.result : this.number;
-    } else {
-      alert('Неверная операция');
+          this.box.push(sign);
+        } else {
+          alert('Неверная операция');
+        }
+        break;
+      case '=':
+        this.result = eval(this.box.join(''));
+        this.box.length = 0;
+        break;
+      case 'C':
+        this.box.length = 0;
+        break;
+      default:
+        this.box.push(data);
     }
+    this.task = document.getElementById('task').innerHTML;
+    this.task = (data === '=') ? this.result : data;
   }
 }

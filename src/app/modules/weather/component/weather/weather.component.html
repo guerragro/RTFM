@@ -1,17 +1,19 @@
 <div class="box">
 
-  <div>
-    WeatherService
-  </div>
   <div style="background-color: #17a2b8">
-    <div class="container">
-      <div class="row">
-        <div class="col-8">
-          <input type="text" class="form-control button-center" [(ngModel)]="name">
-        </div>
-        <div class="col-4">
-          <button type="button" class="btn btn-secondary button-center" (click)="loadWeather(name)">load</button>
-        </div>
+    <div class="container row">
+      <div class="col-3">
+        <h5 style="margin-top: 8px">
+          WeatherService
+        </h5>
+      </div>
+      <div class="col-8">
+        <input type="text" class="form-control button-center" [(ngModel)]="name">
+      </div>
+      <div class="col-1">
+        <button type="button" class="btn btn-secondary button-center" (click)="loadWeather(name)">
+          <span class="glyphicon glyphicon-search"></span>
+        </button>
       </div>
     </div>
   </div>
@@ -66,7 +68,7 @@
           </table>
           <div>
             <button type="button" class="btn btn-warning" (click)="delete(a.id)">
-              delete
+              <span class="glyphicon glyphicon-remove"></span>
             </button>
           </div>
         </div>
@@ -74,111 +76,4 @@
 
     </div>
   </div>
-
-<!--  <h1>Вариант 2</h1>-->
-<!--  <div class="container">-->
-<!--    <div class="row">-->
-<!--      <div class="col-8">-->
-<!--        <input type="text" class="form-control" [(ngModel)]="name">-->
-<!--      </div>-->
-<!--      <div class="col-4">-->
-<!--        <button type="button" class="btn btn-secondary" (click)="loadWeather(name)">load</button>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--    <div class="row">-->
-
-<!--      <div class="col-5 border">-->
-<!--        <h4>Weather Service</h4>-->
-<!--        <div *ngFor="let city of cities">-->
-<!--          <div class="btn-info block" (click)="showWeather(city.id)">{{city.name}}</div>-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--      <div class="col-7 border">-->
-<!--        <div *ngFor="let a of city" class="text-center">-->
-
-<!--          <div c>{{a.name | uppercase}}</div>-->
-<!--          <div style="width: 120px; height: 47px;" class="text-center">-->
-<!--            <div style="background-color: #0ce3ac">{{a['ТЕМПЕРАТУРА']}}</div>-->
-<!--            <div style="background-color: #2e6da4; font-size: smaller">По ощущению {{a['ОЩУЩАЕТСЯ']}}</div>-->
-<!--          </div>-->
-<!--          <table class="text-center">-->
-<!--            <tr>-->
-<!--              <td>Восход: </td>-->
-<!--              <td>{{a['ВОСХОД']}}</td>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--              <td>Закат: </td>-->
-<!--              <td>{{a['ЗАКАТ']}}</td>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--              <td>Скорость ветра: </td>-->
-<!--              <td>{{a['СКОРОСТЬ ВЕТРА']}}</td>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--              <td>Направление:</td>-->
-<!--              <td>{{a['НАПРАВЛЕНИЕ']}}</td>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--              <td>Облачность: </td>-->
-<!--              <td>{{a['ОБЛАЧНОСТЬ']}}</td>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--              <td>Влажность: </td>-->
-<!--              <td>{{a['ВЛАЖНОСТЬ']}}</td>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--              <td>Давление: </td>-->
-<!--              <td>{{a['ДАВЛЕНИЕ']}}</td>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--              <td>Температура: </td>-->
-<!--              <td>{{a['ТЕМПЕРАТУРА']}}</td>-->
-<!--            </tr>-->
-<!--          </table>-->
-
-<!--          <div>-->
-<!--            <button type="button" class="btn btn-warning" (click)="delete(a.id)">-->
-<!--              убрать город-->
-<!--            </button>-->
-<!--          </div>-->
-
-<!--        </div>-->
-<!--      </div>-->
-
-<!--    </div>-->
-
-<!--  </div>-->
-
 </div>
-<!--  <div>-->
-<!--    <img src="https://images.unian.net/photos/2018_01/1516692813-7337.jpg">-->
-<!--  </div>-->
-
-
-
-
-<!--<style>-->
-<!--  .vyrovnyat {-->
-<!--    height: 7em; /* можно заменить на min-height */-->
-<!--    text-align: center;-->
-<!--    background: #fff5d7;-->
-<!--  }-->
-<!--  .vyrovnyat div {-->
-<!--    display: inline-block;-->
-<!--    vertical-align: middle;-->
-<!--    background: #9F9;-->
-<!--  }-->
-<!--  .vyrovnyat:before { /* для IE8+ */-->
-<!--    content: "";-->
-<!--    display: inline-block;-->
-<!--    min-height: inherit;-->
-<!--    height: 100%;-->
-<!--    vertical-align: middle;-->
-<!--  }-->
-<!--</style>-->
-
-<!--<div class="vyrovnyat">-->
-<!--  <div>первая строка<br>вторая строка</div>-->
-<!--</div>-->

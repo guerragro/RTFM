@@ -30,7 +30,7 @@ export const appRoutes: Routes = [
     path: 'tic-tac-toe', loadChildren: './modules/tic-tac-toe/tic-tac-toe.module#TicTacToeModule'
   },
   {
-    // Todo, все на стадии зачатия, есть первые сподвижки
+    // Todo, все на стадии зачатия
     path: 'ticketService', loadChildren: './modules/ticket/ticket.module#TicketModule'
   },
   {

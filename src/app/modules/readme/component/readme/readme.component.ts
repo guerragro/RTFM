@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ReadMeService} from '../../service/readme.service';
 import {ReadMeStore} from '../../store/readMeStore';
 import {Observable} from 'rxjs';
 import {fromMobx} from 'ngx-mobx';
-import {ProjectWorldInterface} from '../../../../models/todo.model';
-import icons from 'glyphicons';
+import {Project} from '../../model/proj';
 
 @Component({
   selector: 'app-readme',
@@ -13,16 +11,13 @@ import icons from 'glyphicons';
 })
 export class ReadmeComponent implements OnInit {
 
-  dataList$: Observable<ProjectWorldInterface[]>;
-  dataList;
-  icons = icons;
+  dataList$: Observable<Project[]>;
+  dataList: Project[];
 
-  proj: string;
+  project: string;
   task: string;
-  shifter: boolean = false;
 
   constructor(
-    public service: ReadMeService,
     public readMeStore: ReadMeStore
   ) { }
 

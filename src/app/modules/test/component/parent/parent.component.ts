@@ -1,6 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import { Service } from '../../service/service';
-import icons from 'glyphicons';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { TestStore } from '../../store/mobx.store';
@@ -19,7 +18,6 @@ export class ParentComponent implements OnInit {
   @ViewChild(PresentModalComponent)
   presentModal: PresentModalComponent;
 
-  icons = icons;
   todo: any;
   error: any;
 

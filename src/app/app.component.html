@@ -1,8 +1,10 @@
-<div>{{date}}</div>
+<!--<div>{{date}}</div>-->
+<div class="text-center">{{date | date: 'hh:mm:ss'}}</div>
 <router-outlet></router-outlet>
 
 <div class="text-center margin-5">
-  <button routerLink="/menu">
-    <span class="glyphicon glyphicon-home"></span>
+  <button routerLink="/menu" class="btn btn-sm btn-primary">
+    Go back to home
+<!--    <span class="glyphicon glyphicon-home"></span>-->
   </button>
 </div>
