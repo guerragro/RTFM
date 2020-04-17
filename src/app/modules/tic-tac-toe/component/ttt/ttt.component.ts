@@ -8,9 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class TttComponent implements OnInit {
 
   box = ['', '', '', '', '', '', '', '', ''];
-  counter: boolean = false;
-  player: string;
-  game: string = '';
+  player: string = '';
+  game: string = 'PVE';
 
   box2: any = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
@@ -19,7 +18,6 @@ export class TttComponent implements OnInit {
   ngOnInit() {
   }
 
-  // выбор игры, не знаю зачем сделал
   choice(game) {
     if (game === 'PVP') {
       this.game = 'PVP';
@@ -28,16 +26,35 @@ export class TttComponent implements OnInit {
     }
   }
 
-  play(turn) {
-    this.counter = !this.counter;
-    this.player = (this.counter === true) ? 'x' : 'y';
-    if (this.counter) {
-      this.box2.splice(turn, 1, this.player);
+  play(start) {
+    this.player = (this.player === '0') ? 'x' : '0';
+    if (this.player === 'x') {
+      this.box.splice(start, 1, this.player);
     } else {
-      this.box2.splice(turn, 1, this.player);
+      this.box.splice(start, 1, this.player);
     }
-    // (this.game === 'PVE') ? this.turn(this.box2, this.player) : this.howWon(this.box, this.player);
-    (true) ? this.turn(this.box2, this.player) : this.howWon(this.box, this.player);
+    this.howWon(this.box, this.player);
+  }
+
+  howWon(res, player) {
+    console.log(res);
+    if (
+      (res[0] === player && res[1] === player && res[2] === player) ||
+      (res[3] === player && res[4] === player && res[5] === player) ||
+      (res[6] === player && res[7] === player && res[8] === player) ||
+      (res[0] === player && res[4] === player && res[8] === player) ||
+      (res[2] === player && res[4] === player && res[6] === player) ||
+      (res[0] === player && res[3] === player && res[6] === player) ||
+      (res[1] === player && res[4] === player && res[7] === player) ||
+      (res[2] === player && res[5] === player && res[8] === player)
+    ) {
+      console.log('выйграл ' + player);
+    } else {
+      if (this.game === 'PVE') {
+        console.log('vs comp')
+        // this.turn(this.box2, this.player)
+      }
+    }
   }
 
   // [ +10, +10, +10,]  [0 1 2]
@@ -48,6 +65,8 @@ export class TttComponent implements OnInit {
     // первый блок условий
     if (res[4] === 'x') {
       res[0] += 10; res[1] += 10; res[2] += 10; res[3] += 10; res[5] += 10; res[6] += 10; res[7] += 10; res[8] += 10;
+    } else if(true) {
+
     }
     // if (res[0] === 'x' && res[1] === 'x') {
     //   res[2] += 10;
@@ -74,21 +93,8 @@ export class TttComponent implements OnInit {
     console.log(res);
     // this.howWon(res, 'x');
   }
-  // выйгрышные комбинации;
-  howWon(res, player) {
-    console.log(res);
-    if (
-      (res[0] === player && res[1] === player && res[2] === player) ||
-      (res[3] === player && res[4] === player && res[5] === player) ||
-      (res[6] === player && res[7] === player && res[8] === player) ||
-      (res[0] === player && res[4] === player && res[8] === player) ||
-      (res[2] === player && res[4] === player && res[6] === player) ||
-      (res[0] === player && res[3] === player && res[6] === player) ||
-      (res[1] === player && res[4] === player && res[7] === player) ||
-      (res[2] === player && res[5] === player && res[8] === player)
-    ) {
-      console.log('выйграл ' + player);
-    }
+  checkComp() {
+
   }
 
   clear() {
@@ -96,19 +102,3 @@ export class TttComponent implements OnInit {
     this.box2 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
   }
 }
-
-// Подумать логигу по switch-case;
-// Возможно цикл;
-// запоминать пустые поля в переменную, и эту переменную
-// тот элемент который уже считался, убирать из поиска
-// или добавлять в новый массив, по которыму и будет считаться
-// ['', '', '', '', '', '', '', '', ''] = ['', '', '', '', 'x', '0', '', '', ''];
-// new Array = ['x', '0', '', '', '', '', '', '', ''];
-// ['', '', '', '', 'x', '0', '0', 'x', ''];
-// new Array = ['x', '0', '0', 'x', '', '', '', '', ''];
-// возвращение индексы пустых строк
-// сделать массив с очками, хороший ход +10, плохой -10, 0 это заполненные клетки
-
-// Порядок:
-// - после первого хода, нужно раствавить? значения и поставить 'y' в клетку
-// далее пока непонятно
