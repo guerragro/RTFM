@@ -1,77 +1,65 @@
 <div class="box">
 
-  <div style="background-color: #17a2b8">
-    <div class="container row">
-      <div class="col-3">
-        <h5 style="margin-top: 8px">
-          WeatherService
-        </h5>
-      </div>
-      <div class="col-8">
-        <input type="text" class="form-control button-center" [(ngModel)]="name">
-      </div>
-      <div class="col-1">
-        <button type="button" class="btn btn-secondary button-center" (click)="loadWeather(name)">
-          <span class="glyphicon glyphicon-search"></span>
-        </button>
-      </div>
+  <div style="background-color: #17a2b8" class="row">
+    <div class="col-3">
+      Weather Service
+    </div>
+    <div class="col-7">
+      <input type="text" class="form-control button-center" style="margin-left: 5px" [(ngModel)]="name">
+    </div>
+    <div class="col-2">
+      <button type="button" class="btn btn-secondary button-center" (click)="loadWeather(name)">
+        <span class="glyphicon glyphicon-search"></span>
+      </button>
     </div>
   </div>
 
   <div style="width: 90%; margin: auto">
     <div class="row margin-top-5">
-      <!--    блок выбора города -->
       <div class="col-4">
-        <div *ngFor="let city of cities">
-          <div class="btn-info block text-center" (click)="showWeather(city.id)">{{city.name}}</div>
+        <div *ngFor="let city of cities" style="margin: 2px">
+          <button class="btn btn-info btn-block" (click)="showWeather(city.id)">{{city.name}}</button>
         </div>
       </div>
-      <!--    блог погодных данных -->
-      <div class="col-8">
-        <div *ngFor="let a of city" class="text-center">
-          <!--        todo tooltip?-->
-          <div>{{a.name | uppercase}}</div>
-          <div style="width: 120px; height: 47px;" class="text-center block">
-            <div style="background-color: #0ce3ac">{{a['ТЕМПЕРАТУРА']}}</div>
-            <div style="background-color: #17a2b8; font-size: smaller">По ощущению {{a['ОЩУЩАЕТСЯ']}}</div>
-          </div>
-          <div>Ощущается как {{a['ОЩУЩАЕТСЯ']}}</div>
-          <table class="text-center margin-bottom-5">
-            <tr>
-              <td class="left">Восход: </td>
-              <td>{{a['ВОСХОД']}}</td>
-            </tr>
-            <tr>
-              <td class="left">Закат: </td>
-              <td>{{a['ЗАКАТ']}}</td>
-            </tr>
-            <tr>
-              <td class="left">Скорость и направление ветра: </td>
-              <td>{{a['СКОРОСТЬ ВЕТРА'] }} {{a['НАПРАВЛЕНИЕ']}}</td>
-            </tr>
-            <tr>
-              <td class="left">Облачность: </td>
-              <td>{{a['ОБЛАЧНОСТЬ']}}</td>
-            </tr>
-            <tr>
-              <td class="left">Влажность: </td>
-              <td>{{a['ВЛАЖНОСТЬ']}}</td>
-            </tr>
-            <tr>
-              <td class="left">Давление: </td>
-              <td>{{a['ДАВЛЕНИЕ']}}</td>
-            </tr>
-<!--            <tr>-->
-<!--              <td class="left">Температура: </td>-->
-<!--              <td>{{a['ТЕМПЕРАТУРА']}}</td>-->
-<!--            </tr>-->
-          </table>
-          <div>
-            <button type="button" class="btn btn-warning" (click)="delete(a.id)">
-              <span class="glyphicon glyphicon-remove"></span>
-            </button>
-          </div>
+      <div class="col-8" *ngIf="city">
+
+        <div>{{city[0].name | uppercase}}</div>
+        <div class="text-center info-block">
+          <div style="background-color: #0ce3ac">{{city[0]['ТЕМПЕРАТУРА']}}</div>
+          <div style="background-color: #17a2b8; font-size: smaller">По ощущению {{city[0]['ОЩУЩАЕТСЯ']}}</div>
         </div>
+        <table class="text-center margin-bottom-5">
+          <tr>
+            <td class="left">Восход: </td>
+            <td>{{city[0]['ВОСХОД']}}</td>
+          </tr>
+          <tr>
+            <td class="left">Закат: </td>
+            <td>{{city[0]['ЗАКАТ']}}</td>
+          </tr>
+          <tr>
+            <td class="left">Скорость и направление ветра: </td>
+            <td>{{city[0]['СКОРОСТЬ ВЕТРА'] }} {{city[0]['НАПРАВЛЕНИЕ']}}</td>
+          </tr>
+          <tr>
+            <td class="left">Облачность: </td>
+            <td>{{city[0]['ОБЛАЧНОСТЬ']}}</td>
+          </tr>
+          <tr>
+            <td class="left">Влажность: </td>
+            <td>{{city[0]['ВЛАЖНОСТЬ']}}</td>
+          </tr>
+          <tr>
+            <td class="left">Давление: </td>
+            <td>{{city[0]['ДАВЛЕНИЕ']}}</td>
+          </tr>
+        </table>
+        <div>
+          <button type="button" class="btn btn-warning" (click)="delete(city[0].id)">
+            <span class="glyphicon glyphicon-remove"></span>
+          </button>
+        </div>
+
       </div>
 
     </div>

@@ -16,9 +16,7 @@ export class CalculatorComponent implements OnInit {
   ngOnInit() {}
 
   amount(data) {
-    console.log(typeof data, data, typeof Number(data));
-    console.log(this.box, this.box.length);
-    // todo create the condition
+    console.log(this.box);
     switch (data) {
       case '/':
       case '*':
@@ -39,7 +37,11 @@ export class CalculatorComponent implements OnInit {
         this.box.length = 0;
         break;
       default:
-        this.box.push(data);
+        if (data) {
+          console.log('десятичные дроби');
+        } else {
+          this.box.push(data);
+        }
     }
     this.task = document.getElementById('task').innerHTML;
     this.task = (data === '=') ? this.result : data;

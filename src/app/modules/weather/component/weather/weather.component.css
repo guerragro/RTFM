@@ -1,7 +1,7 @@
 .box {
   width: 100%;
   height: 100ch;
-  background-color: #FFDAB9;
+  /*background-color: #FFDAB9;*/
 }
 
 tr {
@@ -9,9 +9,10 @@ tr {
   text-align: right;
 }
 
-.block {
+.info-block {
   margin: 2px;
   border-radius: .25rem;
+  margin: auto;
 }
 .margin-bottom-5 {
   margin-bottom: 5px;
@@ -31,8 +32,4 @@ tr {
 }
 .right {
   text-align: right;
-}
-.border {
-  border: 1px solid black;
-  border-collapse: collapse;
 }

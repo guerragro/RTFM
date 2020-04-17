@@ -1,6 +1,7 @@
 export interface Project {
   id: number;
   project: string;
+  ready: string;
   tasks: ToDo[];
   view: boolean;
 }
@@ -8,11 +9,13 @@ export interface Project {
 export class ProjectModel {
   id: number;
   project: string;
+  ready: string;
   tasks: ToDo[] = [];
   view: boolean = false;
   constructor(id, data) {
     this.id = id;
     this.project = data;
+    this.ready = '0 %';
   }
 }
 

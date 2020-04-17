@@ -17,11 +17,12 @@ export class WeatherComponent implements OnInit {
   cities: CityWeatherInterface[];
 
   constructor(
-    public weatherStore: WeatherStore
-  ) {}
+    private weatherStore: WeatherStore
+  ) {
+    this.cities$ = fromMobx(() => weatherStore.cities);
+  }
 
   ngOnInit() {
-    this.cities$ = fromMobx(() => this.weatherStore.cities);
     this.cities$.subscribe(
       res => this.cities = res,
       err => console.log(err)
@@ -36,7 +37,7 @@ export class WeatherComponent implements OnInit {
 
   showWeather(id) {
     this.city = this.cities.filter(a => a.id === id);
-    // console.log(this.city);
+    console.log(this.city);
   }
   delete(id) {
     this.weatherStore.deleteWeather(id);

@@ -13,6 +13,7 @@ export class ReadMeService {
       {
         id: 40,
         project: 'mobx',
+        ready: '0%',
         tasks: [
           {
             id: 41,
@@ -24,6 +25,7 @@ export class ReadMeService {
       {
         id: 30,
         project: 'разобраться',
+        ready: '0%',
         tasks: [
           {
             id: 31,
@@ -55,6 +57,7 @@ export class ReadMeService {
       {
         id: 1,
         project: 'read me',
+        ready: '0%',
         tasks: [
           {
             id: 12,
@@ -101,6 +104,7 @@ export class ReadMeService {
       {
         id: 2,
         project: 'ticket Service',
+        ready: '10%',
         tasks: [
           {
             id: 8,
@@ -113,6 +117,7 @@ export class ReadMeService {
       {
         id: 3,
         project: 'weather Service',
+        ready: '70%',
         tasks: [
           {
             id: 9,
@@ -130,12 +135,14 @@ export class ReadMeService {
       {
         id: 15,
         project: 'подключить базу данных',
+        ready: '0%',
         tasks: [],
         view: false
       },
       {
         id: 16,
         project: 'Кошелек',
+        ready: '0%',
         tasks: [
           {
             id: 18,

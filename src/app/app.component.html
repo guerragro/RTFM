@@ -1,10 +1,9 @@
-<!--<div>{{date}}</div>-->
+<!--<app-spiner-modal *ngIf="show"></app-spiner-modal>-->
 <div class="text-center">{{date | date: 'hh:mm:ss'}}</div>
 <router-outlet></router-outlet>
-
 <div class="text-center margin-5">
   <button routerLink="/menu" class="btn btn-sm btn-primary">
-    Go back to home
-<!--    <span class="glyphicon glyphicon-home"></span>-->
+    Go back to home <span class="glyphicon glyphicon-home"></span>
   </button>
 </div>
+

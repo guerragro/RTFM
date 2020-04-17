@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
   handle(ans) {
     if (ans['status']) {
       console.log(ans);
-      this.router.navigate(['menu'], {relativeTo: this.route.parent});
+      this.router.navigate(['../menu'], {relativeTo: this.route.parent});
     } else {
       alert(ans['message']);
     }

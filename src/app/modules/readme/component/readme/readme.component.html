@@ -15,7 +15,10 @@
 
     <div *ngFor="let project of dataList">
 
-      <div class="text-center" (click)="project['view'] = (project['view']) ? false : true">{{project['project']}}</div>
+      <div class="text-center" (click)="project['view'] = (project['view']) ? false : true">
+        <span class="badge badge-light">{{project['ready']}}</span>
+        {{project['project']}}
+      </div>
 
       <div *ngIf="project['view']">
         <div class="container row" *ngFor="let task of project['tasks']">
