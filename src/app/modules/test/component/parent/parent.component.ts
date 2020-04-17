@@ -8,6 +8,10 @@ import * as fromAction from '../../store/ngrx.action';
 import {observe} from 'mobx';
 import {PresentModalComponent} from './modal/present';
 
+interface Food {
+  value: string;
+  viewValue: string;
+}
 @Component({
   selector: 'app-test',
   templateUrl: './parent.component.html',
@@ -20,6 +24,11 @@ export class ParentComponent implements OnInit {
 
   todo: any;
   error: any;
+  foods: Food[] = [
+    {value: 'steak-0', viewValue: 'Steak'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'}
+  ];
 
   constructor(
     public service: Service,
