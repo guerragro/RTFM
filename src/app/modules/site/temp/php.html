@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.css">
+  </head>
+  <body>
+    Чтобы запусть php через ngixn, делаем
+
+    sudo apt-get install php-fpm php-mysql
+
+    nano etc/nginx/nginx.conf
+      server {
+        listen 8080;
+        server_name localhost;
+
+        # Путь к папке с кодом
+        root /home/gusevya/Devel/php;
+
+        index index.php;
+
+        # Обработка php файлов с помощью fpm
+        location ~ \.php$ {
+        try_files $uri =404;
+        include /etc/nginx/fastcgi.conf;
+        # Не забываем ставить текущую версию fpm
+        fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+        }
+      }
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+</html>

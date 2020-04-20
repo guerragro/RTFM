@@ -41,7 +41,6 @@ export class WeatherComponent implements OnInit {
   }
   delete(id) {
     this.weatherStore.deleteWeather(id);
-    // this.cities.forEach((a, index) => (a.id === id) ? this.cities.splice(index, 1) : this.cities);
   }
 
 }

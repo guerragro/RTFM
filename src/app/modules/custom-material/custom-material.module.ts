@@ -11,12 +11,14 @@ import {
   MatTooltipModule,
   MatStepperModule
 } from '@angular/material';
+import {MatFormFieldModule} from "@angular/material/form-field";
 
 @NgModule({
   imports: [
     CommonModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatFormFieldModule,
     MatSlideToggleModule,
     MatProgressSpinnerModule,
     MatSnackBarModule,
@@ -32,7 +34,8 @@ import {
     MatSnackBarModule,
     MatInputModule,
     MatTooltipModule,
-    MatStepperModule
+    MatStepperModule,
+    MatFormFieldModule,
   ],
   declarations: []
 })

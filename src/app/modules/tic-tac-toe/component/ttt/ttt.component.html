@@ -1,7 +1,7 @@
 <app-choice-model *ngIf="true"></app-choice-model>
 
 <div>
-  <table>
+  <table style="margin: auto">
     <tr *ngFor="let numbArray of [['0', '1', '2'], ['3', '4', '5'], ['6', '7', '8']]">
       <td *ngFor="let numb of numbArray" (click)="play(numb)">
         {{numb}}

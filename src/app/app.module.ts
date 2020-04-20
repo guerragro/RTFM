@@ -18,7 +18,7 @@ import {SpinerComponent} from './modules/spiner/spiner';
     PageNotFoundModule,
     BrowserModule,
     FormsModule,
-    // CustomMaterialModule,
+    CustomMaterialModule,
     AppRoutingModule,
   ],
   providers: [],
