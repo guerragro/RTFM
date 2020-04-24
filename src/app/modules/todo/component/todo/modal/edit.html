@@ -1,19 +1,14 @@
-<div *ngIf="showWindows" class="modal fade" id="basicModal" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Редактирование задачи">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary">
-              <span class="glyphicon glyphicon-edit"></span>
-            </button>
-            <button class="btn btn-outline-secondary">
-              <span class="glyphicon glyphicon-remove"></span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+<div mat-dialog-title>
+  <h5>Отредактируйте задачу</h5>
+</div>
+<div mat-dialog-content>
+  <div class="input-group">
+    <input type="text" class=form-control>
+    <button mat-button class="btn-outline-secondary">
+      <span class="glyphicon glyphicon-edit"></span>
+    </button>
+    <button mat-button mat-dialog-close class="btn-outline-secondary">
+      <span class="glyphicon glyphicon-remove"></span>
+    </button>
   </div>
 </div>

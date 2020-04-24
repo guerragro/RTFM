@@ -1,0 +1,67 @@
+<button mat-button (click)="openDialog()">Open Dialog</button>
+
+<!--<mat-grid-list cols = "3" [rowHeight]="60">-->
+<!--  <mat-grid-tile>-->
+<!--      <select name="" id="">-->
+<!--        <option value="1">1</option>-->
+<!--        <option value="2">2</option>-->
+<!--        <option value="3">3</option>-->
+<!--      </select>-->
+<!--  </mat-grid-tile>-->
+<!--  <mat-grid-tile>-->
+<!--    <mat-form-field>-->
+<!--      <mat-label>День</mat-label>-->
+<!--      <input matInput placeholder="День">-->
+<!--    </mat-form-field>-->
+<!--  </mat-grid-tile>-->
+<!--  <mat-grid-tile>-->
+<!--    <mat-form-field>-->
+<!--      <mat-label>Ночь</mat-label>-->
+<!--      <input matInput placeholder="Ночь">-->
+<!--    </mat-form-field>-->
+<!--  </mat-grid-tile>-->
+<!--</mat-grid-list>-->
+<div class="container">
+
+  <div>Шапка</div>
+
+  <div>Таблица</div>
+  <table style="margin: auto; width: 100%">
+    <tr>
+      <td colspan="2">План день/ночь</td>
+      <td colspan="1">2</td>
+      <td colspan="1">3</td>
+      <td colspan="1">4</td>
+    </tr>
+    <tr>
+      <td colspan="2">СКУД день/ночь</td>
+      <td colspan="1">6</td>
+      <td colspan="1">7</td>
+      <td colspan="1">8</td>
+    </tr>
+  </table>
+
+
+  <div class="row" style="margin: auto">
+    <div class="col-4">Главное</div>
+    <div class="col-4">Событие</div>
+    <div class="col-4">Зоны</div>
+  </div>
+
+  <br>
+  <div>блок выбора</div>
+
+  <mat-grid-list cols="3">
+    <mat-grid-tile>Явка</mat-grid-tile>
+    <mat-grid-tile>День</mat-grid-tile>
+    <mat-grid-tile>Ночь</mat-grid-tile>
+  </mat-grid-list>
+
+  <br>
+  <div>Калькулятор</div>
+  <mat-grid-list cols="3" *ngFor="let numbArray of [[7,8,9], [4,5,6], [1,2,3], ['',0,'']]" style="padding: 1px">
+    <mat-grid-tile *ngFor="let numb of numbArray">
+      <button mat-button color="primary">{{numb}}</button>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

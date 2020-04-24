@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ChoiseModalComponent} from "./modal/choice";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-ttt',
@@ -7,21 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TttComponent implements OnInit {
 
-  box: number[] | string[] = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+  box: number[] | string[];
   player: string = '';
   game: string = 'PVE';
 
-  constructor() {}
-
-  ngOnInit() {
+  constructor(
+    public dialog: MatDialog
+  ) {
+    this.choise(true)
   }
 
-  choice(game) {
-    if (game === 'PVP') {
-      this.game = 'PVP';
-    } else {
-      this.game = 'PVE';
-    }
+  ngOnInit() {
   }
 
   play(start) {
@@ -70,7 +68,10 @@ export class TttComponent implements OnInit {
     console.log(res);
   }
 
-  clear() {
+  choise(event?) {
+    if(event) {
+      this.dialog.open(ChoiseModalComponent)
+    }
     this.box = [0, 0, 0, 0, 0, 0, 0, 0, 0];
   }
 }

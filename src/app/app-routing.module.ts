@@ -30,11 +30,17 @@ export const appRoutes: Routes = [
   {
     path: 'calculator', loadChildren: './modules/calculator/calculator.module#CalculatorModule'
   },
+  {
+    path: 'test', loadChildren: './modules/test/test.module#TestModule'
+  },
   // {
   //   path: 'Zen-wallet', loadChildren: './modules/zen-money/money.module#MoneyModule'
   // },
   {
     path: 'site', loadChildren: './modules/site/site.module#SiteModule'
+  },
+  {
+    path: 'sea-battle', loadChildren: './modules/sea-battle/sea-battle.module#SeaBattleModule'
   },
   {
     path: 'menu', loadChildren: './modules/menu/menu.module#MenuModule'

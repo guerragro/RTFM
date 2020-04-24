@@ -6,7 +6,6 @@ import { CityWeatherInterface } from '../models/cityWeather';
 @Injectable()
 export class WeatherStore {
 
-  test: any = [];
   dataCity: CityWeatherInterface;
   MONTHS_ARR: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   // https://uni.edu/storm/Wind%20Direction%20slide.pdf
@@ -26,17 +25,17 @@ export class WeatherStore {
   @action getWeather(data) {
     this.weatherService.getDataWeather(data).subscribe(
       res => this.fillWeatherInfo(res),
-      err => console.log(err)
+      err => {
+        alert('Такого города нет');
+        console.log(err)
+      }
     );
   }
 
   @action deleteWeather(id) {
-    this.cities = this.cities.filter((a, index) => (a.id !== id) ? this.cities.splice(index, 1) : this.cities);
+    this.cities = this.cities.filter(a => a.id !== id);
     console.log(this.cities);
-    // this.cities = this.cities.forEach((a, index) => (a.id === id) ? this.cities.splice(index, 1) : this.cities);
   }
-
-  // @computed
 
   fillWeatherInfo(ans) {
     console.log(ans);
@@ -58,9 +57,7 @@ export class WeatherStore {
       visible: false,
       tooltip: this.makeWeatherTooltip(city),
     };
-    this.test.push(this.dataCity);
     this.cities.push(this.dataCity);
-    console.log(this.test);
   }
 
   makeWeatherTooltip(city: any): string {

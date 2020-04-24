@@ -8,7 +8,7 @@ import { FieldComponent } from './component/field/field.component';
   declarations: [FieldComponent],
   imports: [
     CommonModule,
-    SeaBattleRoutingModule
+    SeaBattleRoutingModule,
   ]
 })
 export class SeaBattleModule { }

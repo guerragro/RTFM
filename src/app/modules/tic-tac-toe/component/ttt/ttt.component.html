@@ -1,4 +1,4 @@
-<app-choice-model *ngIf="true"></app-choice-model>
+<app-choice-model *ngIf="false"></app-choice-model>
 
 <div>
   <table style="margin: auto">
@@ -11,5 +11,6 @@
 </div>
 
 <div class="text-center margin-5">
-  <button (click)="clear()">restart</button>
+  <button (click)="choise()">restart</button>
+  <button (click)="choise(true)">new game</button>
 </div>

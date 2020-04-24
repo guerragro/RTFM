@@ -12,24 +12,27 @@ import {EffectsModule} from '@ngrx/effects';
 import {TodoEffect} from './store/todo.effect';
 import {HttpClientModule} from '@angular/common/http';
 import {EditModalComponent} from './component/todo/modal/edit';
+import {CustomMaterialModule} from "../custom-material/custom-material.module";
 
 @NgModule({
   declarations: [
     TodoComponent,
     EditModalComponent
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    TodoRoutingModule,
-    HttpClientModule,
-    StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([TodoEffect])
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        TodoRoutingModule,
+        HttpClientModule,
+        StoreModule.forRoot(reducers),
+        EffectsModule.forRoot([TodoEffect]),
+        CustomMaterialModule
+    ],
   providers: [
     TodoService,
     HttpClientModule
   ],
+  entryComponents: [EditModalComponent],
   bootstrap: [TodoComponent]
 })
 export class TodoModule { }

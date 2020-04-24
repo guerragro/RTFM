@@ -1,4 +1,5 @@
-<app-edit-modal></app-edit-modal>
+<app-edit-modal *ngIf="false"></app-edit-modal>
+
 <div class="box">
 
   <h1>To-Do List</h1>
@@ -35,16 +36,6 @@
           </button>
         </div>
       </div>
-<!--      форма редактирования через input-->
-<!--            <div class="row">-->
-<!--              <div class="col-2">-->
-<!--                <button class="b-center" (click)="t.edit = !t.edit; edit(t)">{{icons.edit}}</button>-->
-<!--              </div>-->
-<!--              <div class="col-8 task-form" [ngClass]="{done: t.edit, complete: t.complete}">{{t.todo}}</div>-->
-<!--              <div class="col-2">-->
-<!--                <button class="b-center" (click)="remove(t)">{{icons.cross}}</button>-->
-<!--              </div>-->
-<!--            </div>-->
     </div>
   </div>
 </div>

@@ -9,9 +9,12 @@ import {
   MatSnackBarModule,
   MatInputModule,
   MatTooltipModule,
-  MatStepperModule
+  MatStepperModule,
+  MatFormFieldModule,
+  MatGridListModule
 } from '@angular/material';
-import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatTableModule} from "@angular/material/table";
+import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   imports: [
@@ -25,6 +28,9 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     MatInputModule,
     MatTooltipModule,
     MatStepperModule,
+    MatGridListModule,
+    MatTableModule,
+    MatDialogModule
   ],
   exports: [
     MatButtonModule,
@@ -36,6 +42,9 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     MatTooltipModule,
     MatStepperModule,
     MatFormFieldModule,
+    MatGridListModule,
+    MatTableModule,
+    MatDialogModule
   ],
   declarations: []
 })

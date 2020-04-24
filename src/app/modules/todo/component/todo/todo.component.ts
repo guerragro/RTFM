@@ -4,6 +4,7 @@ import * as fromAction from '../../store/action';
 import { Todo, ToDo } from '../../model/todo';
 import {Observable} from 'rxjs';
 import {EditModalComponent} from './modal/edit';
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-todo',
@@ -19,6 +20,7 @@ export class TodoComponent implements OnInit {
   todoList: Observable<ToDo[]>;
 
   constructor(
+    public dialog: MatDialog,
     private store: Store<any>
   ) {}
 
@@ -50,7 +52,8 @@ export class TodoComponent implements OnInit {
   }
 
   edit(todo, view?) {
-    this.editModalComponent.open(todo);
+    this.dialog.open(EditModalComponent);
+    // this.editModalComponent.open(todo);
     // if (!todo.edit) {
     //   todo.todo = this.todo;
     //   this.store.dispatch( new fromAction.editTodo(todo));
